@@ -1,29 +1,38 @@
 import { anthropic } from "@ai-sdk/anthropic";
-import { openai } from "@ai-sdk/openai";
+import { createOpenAI, openai } from "@ai-sdk/openai";
 import { z } from "zod";
 import { getDb, schema } from "@/db";
+import { demoFreeModel, isDemo, llmAllowedHere, OPENROUTER_BASE_URL } from "./demo";
 
 export const AGENT_NAMES = ["orchestratorFallback", "portfolio", "evidence", "critic", "synthesizer"] as const;
 export type AgentName = (typeof AGENT_NAMES)[number];
 
-export const ModelConfig = z.object({ provider: z.enum(["openai", "anthropic"]), model: z.string() });
+export const ModelConfig = z.object({ provider: z.enum(["openai", "anthropic", "openrouter"]), model: z.string() });
 export type ModelConfig = z.infer<typeof ModelConfig>;
 export type Provider = ModelConfig["provider"];
 
-/** Defaults come from env; model names are never hardcoded. */
-const ENV_DEFAULTS: Record<AgentName, { provider: Provider; env: string }> = {
-  orchestratorFallback: { provider: "anthropic", env: "ORCHESTRATOR_MODEL" },
-  portfolio: { provider: "anthropic", env: "PORTFOLIO_MODEL" },
-  evidence: { provider: "anthropic", env: "EVIDENCE_MODEL" },
-  critic: { provider: "anthropic", env: "CRITIC_MODEL" },
-  synthesizer: { provider: "anthropic", env: "SYNTHESIZER_MODEL" },
+/** Defaults come from env; model names are never hardcoded. LLM_PROVIDER picks the provider for every agent (default anthropic). */
+const ENV_MODEL: Record<AgentName, string> = {
+  orchestratorFallback: "ORCHESTRATOR_MODEL",
+  portfolio: "PORTFOLIO_MODEL",
+  evidence: "EVIDENCE_MODEL",
+  critic: "CRITIC_MODEL",
+  synthesizer: "SYNTHESIZER_MODEL",
+};
+const defaultProvider = (): Provider => {
+  const p = ModelConfig.shape.provider.safeParse(process.env.LLM_PROVIDER);
+  return p.success ? p.data : "anthropic";
 };
 
+const KEY_ENV: Record<Provider, string> = { openai: "OPENAI_API_KEY", anthropic: "ANTHROPIC_API_KEY", openrouter: "OPENROUTER_API_KEY" };
+
+/** In the public demo only the free OpenRouter model counts as configured; the owner's other keys are ignored. */
 export function hasProviderKey(provider: Provider): boolean {
-  return Boolean(provider === "openai" ? process.env.OPENAI_API_KEY : process.env.ANTHROPIC_API_KEY);
+  if (isDemo()) return provider === "openrouter" && Boolean(demoFreeModel());
+  return Boolean(process.env[KEY_ENV[provider]]);
 }
 
-export const llmAvailable = () => hasProviderKey("openai") || hasProviderKey("anthropic");
+export const llmAvailable = () => llmAllowedHere() && (hasProviderKey("openai") || hasProviderKey("anthropic") || hasProviderKey("openrouter"));
 
 export async function getModelConfigs(): Promise<Record<AgentName, ModelConfig>> {
   const db = await getDb();
@@ -32,7 +41,7 @@ export async function getModelConfigs(): Promise<Record<AgentName, ModelConfig>>
   for (const agent of AGENT_NAMES) {
     const row = rows.find((r) => r.agent === agent);
     const parsed = row ? ModelConfig.safeParse({ provider: row.provider, model: row.model }) : undefined;
-    out[agent] = parsed?.success ? parsed.data : { provider: ENV_DEFAULTS[agent].provider, model: process.env[ENV_DEFAULTS[agent].env] ?? "" };
+    out[agent] = parsed?.success ? parsed.data : { provider: defaultProvider(), model: process.env[ENV_MODEL[agent]] ?? "" };
   }
   return out;
 }
@@ -50,11 +59,19 @@ export function getModel(config: ModelConfig) {
   if (!hasProviderKey(config.provider)) throw new ModelNotConfiguredError(`${config.provider} API key missing`);
   if (config.provider === "openai") return openai(config.model);
   if (config.provider === "anthropic") return anthropic(config.model);
+  if (config.provider === "openrouter") return createOpenAI({ baseURL: OPENROUTER_BASE_URL, apiKey: process.env.OPENROUTER_API_KEY, headers: { "X-Title": "My AI PB" } }).chat(config.model);
   throw new Error("Unsupported provider");
 }
 
 /** Resolves the model for an agent; falls back to any configured provider when the preferred one has no key. */
 export async function modelFor(agent: AgentName): Promise<{ model: ReturnType<typeof getModel>; config: ModelConfig }> {
+  if (!llmAllowedHere()) throw new ModelNotConfiguredError("LLM disabled for this request");
+  if (isDemo()) {
+    const model = demoFreeModel();
+    if (!model) throw new ModelNotConfiguredError("demo has no free OpenRouter model configured");
+    const config = { provider: "openrouter" as const, model };
+    return { model: getModel(config), config };
+  }
   const configs = await getModelConfigs();
   let config = configs[agent];
   if (!hasProviderKey(config.provider) || !config.model) {

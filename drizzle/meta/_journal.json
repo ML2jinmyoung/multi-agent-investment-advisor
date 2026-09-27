@@ -15,6 +15,13 @@
       "when": 1790068956354,
       "tag": "0001_small_mister_sinister",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1790068956355,
+      "tag": "0002_portfolio_inputs",
+      "breakpoints": true
     }
   ]
 }

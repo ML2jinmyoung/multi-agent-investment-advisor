@@ -90,4 +90,6 @@ export type AgentStreamEvent =
   | { type: "verification"; verification: VerificationResult }
   | { type: "answer"; answer: AgentAnswer }
   | { type: "error"; message: string }
+  /** UI-only notice (e.g. demo AI quota used up); not part of the answer */
+  | { type: "notice"; message: string }
   | { type: "done" };

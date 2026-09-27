@@ -46,6 +46,7 @@ export async function runAgent(
   let routing: RoutingDecision | undefined;
   try {
     const [snapshot, policy] = await Promise.all([getPortfolioSnapshot(userId), getPolicy(userId)]);
+    if (snapshot.valuationComplete === false) throw new Error("시세·환율을 확인하지 못해 자산 분석을 진행할 수 없습니다. 자산 화면의 데이터 안내를 확인해 주세요.");
     const { metrics, warnings: exposureWarnings, etf } = await tracer.step("exposure-engine", "deterministic", () => getMetrics(snapshot));
     const heldSymbols = [...new Set(snapshot.positions.filter((p) => p.assetType !== "cash").map((p) => p.symbol))];
     const dm = decisionModel();

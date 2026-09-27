@@ -13,7 +13,7 @@ const SnapshotView = z.object({
   asOf: z.string(),
   totalValueKRW: z.number(),
   buyingPowerKRW: z.number(),
-  accounts: z.array(z.object({ name: z.string(), type: z.string(), status: z.enum(["LIVE", "DEMO"]) })),
+  accounts: z.array(z.object({ name: z.string(), type: z.string(), status: z.enum(["LIVE", "DEMO", "MANUAL"]) })),
   positions: z.array(z.object({ symbol: z.string(), name: z.string(), account: z.string(), assetType: z.string(), marketValueKRW: z.number(), weightPct: z.number(), dailyChangePct: z.number().optional() })),
   byCurrencyPct: z.record(z.string(), z.number()),
   byCountryPct: z.record(z.string(), z.number()),
@@ -24,14 +24,15 @@ const SnapshotView = z.object({
 
 export async function snapshotView(userId = "demo", existing?: PortfolioSnapshot) {
   const snap = existing ?? await getPortfolioSnapshot(userId);
+  if (snap.valuationComplete === false) throw new Error("시세·환율을 확인하지 못해 자산 분석을 보류했습니다.");
   const { metrics, warnings } = await getMetrics(snap);
   const byId = new Map(snap.accounts.map((a) => [a.id, a]));
   const total = snap.totals.marketValueKRW || 1;
   return SnapshotView.parse({
     asOf: snap.asOf,
-    totalValueKRW: Math.round(total),
+    totalValueKRW: Math.round(snap.totals.marketValueKRW),
     buyingPowerKRW: Math.round(metrics.buyingPowerKRW),
-    accounts: snap.accounts.map((a) => ({ name: a.name, type: a.type, status: a.isLive ? "LIVE" : "DEMO" })),
+    accounts: snap.accounts.map((a) => ({ name: a.name, type: a.type, status: a.channel === "manual" ? "MANUAL" : a.isLive ? "LIVE" : "DEMO" })),
     positions: snap.positions
       .sort((a, b) => b.marketValueKRW - a.marketValueKRW)
       .map((p) => ({ symbol: p.symbol, name: p.name, account: byId.get(p.accountId)?.name ?? "", assetType: p.assetType, marketValueKRW: Math.round(p.marketValueKRW), weightPct: r1((p.marketValueKRW / total) * 100), dailyChangePct: p.dailyChangePct })),

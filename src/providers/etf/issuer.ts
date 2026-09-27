@@ -13,6 +13,7 @@ export class StaticEtfHoldingsProvider implements EtfHoldingsProvider {
   readonly source = "Static ETF holdings snapshot";
 
   async getHoldings(etf: string): Promise<EtfHoldings> {
+    if (process.env.MARKET_DATA_PROVIDER === "toss") throw new DataProviderError("NOT_AVAILABLE", this.source, "live ETF constituents not configured");
     let f: EtfFixture;
     try {
       f = loadFixture<EtfFixture>(`etf/${etf}.json`);

@@ -81,3 +81,9 @@ export const toolCalls = sqliteTable("tool_calls", {
   status: text("status").notNull(),
   createdAt: text("created_at").notNull(),
 });
+
+export const portfolioInputs = sqliteTable("portfolio_inputs", {
+  userId: text("user_id").primaryKey(),
+  json: text("json").notNull(),
+  updatedAt: text("updated_at").notNull(),
+});

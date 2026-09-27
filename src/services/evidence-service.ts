@@ -4,7 +4,7 @@ import { flag } from "@/lib/env";
 import { DartProvider } from "@/providers/disclosure/dart";
 import { SecProvider } from "@/providers/disclosure/sec";
 import { etfHoldingsProvider } from "@/providers/etf/issuer";
-import { liveTossTransport } from "@/providers/finance/toss-api";
+import { liveTossTransport, marketTossTransport } from "@/providers/finance/toss-api";
 
 const isKR = (symbol: string) => /^\d{6}$|^\d{5}[A-Z0-9]$/.test(symbol);
 const WARNING_LABEL: Record<string, string> = {
@@ -23,6 +23,7 @@ export class EvidenceService {
   private dart = new DartProvider(process.env.DART_API_KEY);
   private sec = new SecProvider(process.env.SEC_USER_AGENT);
   private etf = etfHoldingsProvider();
+  private filingsCache = new Map<string, { until: number; value: Promise<Filing[]> }>();
 
   private guard() {
     if (!flag("ENABLE_EXTERNAL_EVIDENCE", true)) throw new DataProviderError("NOT_AVAILABLE", "evidence", "external evidence disabled");
@@ -30,16 +31,26 @@ export class EvidenceService {
 
   getRecentFilings(symbol: string, days = 30): Promise<Filing[]> {
     this.guard();
-    return isKR(symbol) ? this.dart.getRecentFilings(symbol, days) : this.sec.getRecentFilings(symbol, days);
+    if (process.env.MARKET_DATA_PROVIDER === "toss" && !(isKR(symbol) ? process.env.DART_API_KEY : process.env.SEC_USER_AGENT)) throw new DataProviderError("NOT_AVAILABLE", "disclosure");
+    const key = `${symbol}:${days}`;
+    const hit = this.filingsCache.get(key);
+    if (hit && hit.until > Date.now()) return hit.value;
+    const value = isKR(symbol) ? this.dart.getRecentFilings(symbol, days) : this.sec.getRecentFilings(symbol, days);
+    const entry = { until: Date.now() + 300_000, value };
+    this.filingsCache.set(key, entry);
+    value.catch(() => { entry.until = Date.now() + 30_000; });
+    if (this.filingsCache.size > 128) this.filingsCache.delete(this.filingsCache.keys().next().value!);
+    return value;
   }
 
   getFinancialStatements(symbol: string): Promise<FinancialStatements> {
     this.guard();
+    if (process.env.MARKET_DATA_PROVIDER === "toss" && !(isKR(symbol) ? process.env.DART_API_KEY : process.env.SEC_USER_AGENT)) throw new DataProviderError("NOT_AVAILABLE", "disclosure");
     return isKR(symbol) ? this.dart.getFinancialStatements(symbol) : this.sec.getFinancialStatements(symbol);
   }
 
   async getStockWarnings(symbol: string): Promise<StockWarning[]> {
-    const t = flag("ENABLE_REAL_TOSS") && liveTossTransport();
+    const t = process.env.MARKET_DATA_PROVIDER === "toss" ? marketTossTransport() : flag("ENABLE_REAL_TOSS") && liveTossTransport();
     if (!t) return []; // demo: no recorded warnings
     const rows = await t.get<{ warningType: string; exchange: string | null; startDate: string | null }[]>(`/api/v1/stocks/${encodeURIComponent(symbol)}/warnings`);
     const retrievedAt = new Date().toISOString();

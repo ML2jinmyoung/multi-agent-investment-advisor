@@ -37,6 +37,7 @@ export function buildCandidates(input: RelevanceInputs): { candidates: TodayItem
     e.value += p.marketValueKRW;
     e.pnl += p.marketValueKRW - prev;
     if (!e.sources.some((s) => s.source === p.provenance.source)) e.sources.push(p.provenance);
+    if (p.marketProvenance && !e.sources.some((s) => s.source === p.marketProvenance!.source && s.isMock === p.marketProvenance!.isMock)) e.sources.push(p.marketProvenance);
     bySymbol.set(p.symbol, e);
   }
   const dailyPnLKRW = [...bySymbol.values()].reduce((s, e) => s + e.pnl, 0);
@@ -49,13 +50,13 @@ export function buildCandidates(input: RelevanceInputs): { candidates: TodayItem
     const exposurePct = exposure ? r1(exposure.portfolioWeightPct) : r1((e.value / total) * 100);
     const contribution = dailyPnLKRW !== 0 && Math.sign(e.pnl) === Math.sign(dailyPnLKRW) ? Math.round((e.pnl / dailyPnLKRW) * 100) : undefined;
     const facts = [
-      `${e.name} 오늘 ${signedPct(e.changePct)}`,
+      `${e.name} 이전 거래일 종가 대비 ${signedPct(e.changePct)}`,
       exposure && exposure.indirectValueKRW > 0
         ? `직접 보유와 ETF 내부 노출을 합하면 연결 자산의 ${exposurePct}%가 ${e.name}에 노출`
         : `연결 자산의 ${exposurePct}%를 ${e.name}이(가) 차지`,
-      `직접 보유분의 오늘 손익 ${krw(Math.round(e.pnl))}`,
+      `직접 보유분의 가격 변동 영향 (현재 환율 기준) ${krw(Math.round(e.pnl))}`,
     ];
-    if (contribution !== undefined) facts.push(`오늘 전체 일간 ${dailyPnLKRW < 0 ? "손실" : "이익"}의 약 ${contribution}%`);
+    if (contribution !== undefined) facts.push(`확인된 가격 변동 ${dailyPnLKRW < 0 ? "손실" : "이익"}의 약 ${contribution}%`);
     const check = proximity.get(symbol);
     if (check) facts.push(`투자 원칙: ${check.label} ${check.after}% / 한도 ${check.limit}% (${check.status === "violation" ? "위반" : "근접"})`);
     candidates.push({
@@ -80,7 +81,7 @@ export function buildCandidates(input: RelevanceInputs): { candidates: TodayItem
     const value = (exposurePct / 100) * total;
     const impact = value - value / (1 + fx.changePct / 100);
     const facts = [
-      `${CURRENCY_LABEL[fx.currency] ?? fx.currency} 오늘 ${signedPct(fx.changePct)}`,
+      `${CURRENCY_LABEL[fx.currency] ?? fx.currency} 24시간 전 대비 ${signedPct(fx.changePct)}`,
       `연결 자산 중 ${fx.currency} 노출 약 ${exposurePct}% (KR 상장 해외 ETF 포함)`,
       `환율 변화만으로 원화 환산 평가액에 ${krw(Math.round(impact))} 영향`,
     ];

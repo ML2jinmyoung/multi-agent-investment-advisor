@@ -18,7 +18,7 @@ export class SecProvider {
     if (!this.userAgent) throw new DataProviderError("AUTH_FAILED", SOURCE, "SEC_USER_AGENT missing");
     let res: Response;
     try {
-      res = await fetch(url, { headers: { "User-Agent": this.userAgent, Accept: "application/json" }, cache: "no-store" });
+      res = await fetch(url, { headers: { "User-Agent": this.userAgent, Accept: "application/json" }, cache: "no-store", signal: AbortSignal.timeout(8_000) });
     } catch {
       throw new DataProviderError("NETWORK_ERROR", SOURCE);
     }

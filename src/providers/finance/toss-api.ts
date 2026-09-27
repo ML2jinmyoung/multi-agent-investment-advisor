@@ -1,5 +1,6 @@
 import { DataProviderError } from "@/domain/portfolio";
 import { loadFixture } from "@/lib/fixtures";
+import { flag } from "@/lib/env";
 
 /**
  * Toss Securities Open API transport.
@@ -65,6 +66,7 @@ export class LiveTossTransport implements TossTransport {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams({ grant_type: "client_credentials", client_id: this.clientId, client_secret: this.clientSecret }),
         cache: "no-store",
+        signal: AbortSignal.timeout(12_000),
       });
     } catch {
       throw new DataProviderError("NETWORK_ERROR", TOSS_SOURCE);
@@ -82,12 +84,12 @@ export class LiveTossTransport implements TossTransport {
     if (accountSeq !== undefined) headers["X-Tossinvest-Account"] = String(accountSeq);
     let res: Response;
     try {
-      res = await fetch(url, { headers, cache: "no-store" });
+      res = await fetch(url, { headers, cache: "no-store", signal: AbortSignal.timeout(12_000) });
     } catch {
       throw new DataProviderError("NETWORK_ERROR", TOSS_SOURCE);
     }
     if (res.status === 429 && !retried.rate) {
-      await new Promise((r) => setTimeout(r, Number(res.headers.get("Retry-After") ?? 1) * 1000));
+      await new Promise((r) => setTimeout(r, Math.min(5, Math.max(1, Number(res.headers.get("Retry-After")) || 1)) * 1000));
       return this.get<T>(path, params, accountSeq, { ...retried, rate: true });
     }
     if (res.status === 401 && !retried.auth) {
@@ -106,8 +108,57 @@ export class LiveTossTransport implements TossTransport {
 let live: LiveTossTransport | null | undefined;
 /** Singleton so the single valid token is shared across the process. null when credentials are missing. */
 export function liveTossTransport(): LiveTossTransport | null {
+  // A public demo must never expose the operator's brokerage account, even if
+  // live credentials or ENABLE_REAL_TOSS are set by mistake.
+  if (flag("PUBLIC_DEMO_MODE")) return null;
   if (live !== undefined) return live;
   const { TOSS_CLIENT_ID, TOSS_CLIENT_SECRET, TOSS_BASE_URL } = process.env;
   live = TOSS_CLIENT_ID && TOSS_CLIENT_SECRET ? new LiveTossTransport(TOSS_CLIENT_ID, TOSS_CLIENT_SECRET, TOSS_BASE_URL || undefined) : null;
   return live;
+}
+
+
+/** Shared public-market transport. No account endpoint or account header can pass. */
+export class MarketOnlyTossTransport implements TossTransport {
+  readonly isLive = true;
+  private cache = new Map<string, { expires: number; value: Promise<unknown> }>();
+  private lanes = new Map<string, Promise<unknown>>();
+  private failure?: { until: number; error: DataProviderError };
+  constructor(private transport: TossTransport) {}
+
+  async get<T>(path: string, params?: Record<string, string>, accountSeq?: number): Promise<T> {
+    const allowed = ["/api/v1/prices", "/api/v1/candles", "/api/v1/exchange-rate", "/api/v1/stocks"].includes(path)
+      || /^\/api\/v1\/stocks\/[A-Z0-9.-]+\/warnings$/.test(path);
+    if (!allowed || accountSeq !== undefined) throw new DataProviderError("NOT_AVAILABLE", TOSS_SOURCE, "market-only access");
+    const cacheKey = path + JSON.stringify(Object.entries(params ?? {}).sort());
+    const hit = this.cache.get(cacheKey);
+    if (hit && hit.expires > Date.now()) return hit.value as Promise<T>;
+    const group = path.includes("exchange-rate") ? "info" : path.includes("stocks") ? "stock" : path.includes("candles") ? "chart" : "price";
+    const interval = { info: 350, stock: 220, chart: 60, price: 80 }[group];
+    const previous = this.lanes.get(group) ?? Promise.resolve();
+    const value = previous.catch(() => {}).then(async () => {
+      if (this.failure && this.failure.until > Date.now()) throw this.failure.error;
+      try { return await this.transport.get<T>(path, params); }
+      catch (error) {
+        if (error instanceof DataProviderError && ["AUTH_FAILED", "NETWORK_ERROR", "RATE_LIMITED"].includes(error.code)) this.failure = { until: Date.now() + 10_000, error };
+        throw error;
+      }
+    });
+    this.lanes.set(group, value.catch(() => {}).then(() => new Promise<void>((resolve) => setTimeout(resolve, interval))));
+    const entry = { expires: Date.now() + 60_000, value };
+    this.cache.set(cacheKey, entry);
+    value.then(() => { entry.expires = Date.now() + 60_000; }, () => { entry.expires = Date.now() + 5_000; });
+    if (this.cache.size > 512) this.cache.delete(this.cache.keys().next().value!);
+    return value;
+  }
+}
+
+let marketOnly: MarketOnlyTossTransport | undefined;
+export function marketTossTransport(): MarketOnlyTossTransport | null {
+  if (marketOnly) return marketOnly;
+  const id = process.env.TOSS_MARKET_CLIENT_ID;
+  const secret = process.env.TOSS_MARKET_CLIENT_SECRET;
+  if (!id || !secret) return null;
+  marketOnly = new MarketOnlyTossTransport(new LiveTossTransport(id, secret));
+  return marketOnly;
 }

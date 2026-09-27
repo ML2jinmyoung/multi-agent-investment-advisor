@@ -55,7 +55,7 @@ export function simulateTrade(req: TradeSimulationRequest, inputs: SimulationInp
   const warnings = [...before.warnings, ...(inputs.warnings ?? [])];
   const held = snapshot.positions.filter((p) => p.symbol === req.symbol && p.assetType !== "cash");
   if (req.action === "sell" && !held.length) throw new SimulationError(`${req.symbol}은(는) 보유하고 있지 않아 매도 시뮬레이션을 할 수 없습니다.`);
-  const meta = securityMetaOrUnknown(req.symbol, held[0] ? { name: held[0].name, assetType: held[0].assetType, market: held[0].market, currency: held[0].currency } : { currency: inputs.quote?.currency });
+  const meta = securityMetaOrUnknown(req.symbol, held[0] ? { name: held[0].name, assetType: held[0].assetType, market: held[0].market, currency: held[0].currency } : { name: inputs.quote?.name, assetType: inputs.quote?.assetType, market: inputs.quote?.market, currency: inputs.quote?.currency });
   const currency = held[0]?.currency ?? inputs.quote?.currency ?? meta.currency;
   const price = held[0]?.currentPrice ?? inputs.quote?.price;
   if (price === undefined) throw new SimulationError(`${req.symbol}의 시세를 확인하지 못해 시뮬레이션할 수 없습니다.`);
@@ -209,6 +209,7 @@ export async function runSimulation(
 ): Promise<SimulationResult> {
   const userId = context.userId ?? "demo";
   const snapshot = context.snapshot ?? await getPortfolioSnapshot(userId);
+  if (snapshot.valuationComplete === false) throw new Error("시세·환율을 확인하지 못해 매매 시뮬레이션을 계산할 수 없습니다.");
   const policy = context.policy ?? await getPolicy(userId);
   const etf = context.etf ?? (await getMetrics(snapshot)).etf;
   let quote: Quote | undefined;
@@ -221,12 +222,13 @@ export async function runSimulation(
   }
   let commissionRates: Record<string, number> | undefined;
   const warnings: string[] = [];
+  if (snapshot.marketMode === "live") warnings.push("수수료·세금은 데모의 기본 가정입니다. 실제 계좌별 체결 비용을 조회하지 않습니다.");
   if (req.type === "trade") {
     const held = snapshot.positions.filter((p) => p.symbol === req.symbol && p.assetType !== "cash");
     const accounts = snapshot.accounts.filter((a) => a.type === "brokerage");
     const cash = (id: string) => snapshot.positions.filter((p) => p.accountId === id && p.assetType === "cash").reduce((sum, p) => sum + p.marketValueKRW, 0);
     const accountId = req.accountId ?? (req.action === "sell" ? held.sort((a, b) => b.quantity - a.quantity)[0]?.accountId : accounts.sort((a, b) => cash(b.id) - cash(a.id))[0]?.id);
-    if (accountId?.startsWith("toss-")) {
+    if (snapshot.marketMode !== "live" && accountId?.startsWith("toss-")) {
       try {
         commissionRates = await getCommissionRates(accountId);
       } catch {

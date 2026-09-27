@@ -1,3 +1,6 @@
+import { LiveMarketProvider } from "@/providers/market/live-toss";
+import { ManualPortfolioProvider } from "@/providers/finance/manual";
+import { getPortfolioInput } from "./portfolio-input-store";
 import { describeError, PortfolioSnapshot, type Position, type Provenance, type Quote, valueKRW } from "@/domain/portfolio";
 import { flag } from "@/lib/env";
 import type { PortfolioProvider } from "@/providers/finance/interface";
@@ -9,7 +12,7 @@ import { MockMarketDataProvider } from "@/providers/market/mock";
 import { TossMarketDataProvider } from "@/providers/market/toss";
 
 const MARKET_PRICED = new Set(["stock", "etf", "fund", "bond"]);
-const TTL_MS = 60_000; // ponytail: short in-memory TTL only; holdings are never persisted
+
 
 /** Live Toss when ENABLE_REAL_TOSS and credentials exist; otherwise the recorded demo fixture (shown as DEMO). */
 const tossTransport = () => (flag("ENABLE_REAL_TOSS") && liveTossTransport()) || new FixtureTossTransport();
@@ -26,20 +29,18 @@ export function portfolioProviders(): PortfolioProvider[] {
 
 export function marketDataProvider(): MarketDataProvider {
   if (!marketProvider) {
+    if (process.env.MARKET_DATA_PROVIDER === "toss") return marketProvider = new LiveMarketProvider();
     const t = tossTransport();
     marketProvider = t.isLive ? new TossMarketDataProvider(t) : new MockMarketDataProvider();
   }
   return marketProvider;
 }
 
-const cache = new Map<string, { at: number; snap: PortfolioSnapshot }>();
-
 export async function getPortfolioSnapshot(userId = "demo", opts: { fresh?: boolean } = {}): Promise<PortfolioSnapshot> {
-  const hit = cache.get(userId);
-  if (!opts.fresh && hit && Date.now() - hit.at < TTL_MS) return hit.snap;
-  const snap = await buildSnapshot(portfolioProviders(), marketDataProvider());
-  cache.set(userId, { at: Date.now(), snap });
-  return snap;
+  // Holdings are always read fresh; shared market requests retain their 60s rate-limit cache.
+  void opts;
+  const input = await getPortfolioInput(userId);
+  return buildSnapshot(input ? [new ManualPortfolioProvider(input)] : portfolioProviders(), marketDataProvider());
 }
 
 export async function getCommissionRates(accountId: string): Promise<Record<string, number> | undefined> {
@@ -71,6 +72,7 @@ export async function buildSnapshot(providers: PortfolioProvider[], market: Mark
   const fxBuyRates: Record<string, number> = { KRW: 1 };
   try {
     for (const f of await market.getFxRates()) {
+      sources.push(f.provenance);
       fxRates[f.currency] = f.rateKRW;
       if (f.buyRateKRW !== undefined) fxBuyRates[f.currency] = f.buyRateKRW;
     }
@@ -85,22 +87,27 @@ export async function buildSnapshot(providers: PortfolioProvider[], market: Mark
     const first = quotes.values().next().value;
     sources.push({ source: market.source, retrievedAt: now, isMock: market.isMock, asOf: first?.provenance.asOf });
   } catch (e) {
-    warnings.push(`시세: ${describeError(e)} — 제공자의 평가금액을 사용합니다.`);
+    warnings.push(`시세: ${describeError(e)} — 최신 평가금액을 확인할 수 없습니다.`);
   }
 
-  const positions = raw.map((p) => {
+  const positions = raw.map((p): Position => {
     const q = quotes.get(p.symbol);
-    const price = q?.price ?? p.currentPrice ?? p.averagePrice;
-    if (!q && MARKET_PRICED.has(p.assetType)) {
-      warnings.push(`${p.name}(${p.symbol}): 최신 시세를 확인하지 못해 ${p.currentPrice ? "제공자 평가가" : "매입가"} 기준으로 계산했습니다.`);
-    }
-    const v = price === undefined ? undefined : valueKRW(p.quantity, price, p.currency, fxRates);
-    if (v === undefined) warnings.push(`${p.name}: ${p.currency} 환율 정보가 없어 원화 환산이 불완전합니다.`);
-    return { ...p, currentPrice: price, dailyChangePct: q?.changePct ?? p.dailyChangePct, marketValueKRW: v ?? p.marketValueKRW };
+    const priced = MARKET_PRICED.has(p.assetType);
+    const price = q?.price ?? ((!market.isMock && priced) ? undefined : p.currentPrice ?? p.averagePrice);
+    const currency = q?.currency ?? p.currency;
+    if (!q && priced) warnings.push(`${p.name}(${p.symbol}): 최신 시세를 확인하지 못했습니다.`);
+    const v = price === undefined ? undefined : valueKRW(p.quantity, price, currency, fxRates);
+    if (v === undefined) warnings.push(`${p.name}: 시세 또는 환율이 없어 평가액을 계산하지 않았습니다.`);
+    if (q && q.changePct === undefined && priced) warnings.push(`${q.name ?? p.name}: 이전 거래일 종가가 없어 등락률을 계산하지 않았습니다.`);
+    return { ...p, name: q?.name ?? p.name, assetType: q?.assetType ?? p.assetType, market: q?.market ?? p.market,
+      currency, currentPrice: price, dailyChangePct: market.isMock ? q?.changePct ?? p.dailyChangePct : q?.changePct,
+      marketProvenance: q?.provenance, valuationAvailable: v !== undefined, marketValueKRW: v ?? (market.isMock ? p.marketValueKRW : 0) };
   });
 
   return PortfolioSnapshot.parse({
     asOf: now,
+    marketMode: market.isMock ? "fixture" : "live",
+    valuationComplete: positions.every((p) => p.valuationAvailable) && accounts.length > 0,
     accounts,
     positions,
     totals: computeTotals(accounts, positions),

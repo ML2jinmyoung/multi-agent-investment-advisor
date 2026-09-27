@@ -29,6 +29,8 @@ export type TodayItem = z.infer<typeof TodayItem>;
 export const TodayResponse = z.object({
   asOf: z.string(),
   totalValueKRW: z.number(),
+  valuationComplete: z.boolean().optional(),
+  marketMode: z.enum(["live", "fixture"]).optional(),
   dailyPnLKRW: z.number(),
   items: z.array(TodayItem),
   limitations: z.array(z.string()),

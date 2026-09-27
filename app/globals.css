@@ -128,3 +128,218 @@
     @apply font-sans;
   }
 }
+/* ── AI PB orb & briefing motion ───────────────────────────── */
+.pb-orb {
+  position: relative;
+  flex: none;
+  border-radius: 9999px;
+  overflow: hidden;
+  isolation: isolate;
+  background: radial-gradient(circle at 50% 60%, oklch(0.36 0.12 285), oklch(0.17 0.05 270));
+  box-shadow: inset 0 0 0 1px oklch(1 0 0 / 0.08), 0 10px 36px -10px oklch(0.62 0.22 295 / 0.6);
+  transition: width 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), height 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.pb-orb-blob {
+  position: absolute;
+  inset: -12%;
+  border-radius: 9999px;
+  filter: blur(var(--orb-blur, 8px));
+  mix-blend-mode: screen;
+  animation: pb-orb-spin var(--d) linear infinite;
+}
+.pb-orb-a { --d: 5s; background: radial-gradient(circle at 30% 35%, oklch(0.8 0.15 215) 0 22%, transparent 50%); }
+.pb-orb-b { --d: 7s; animation-direction: reverse; background: radial-gradient(circle at 70% 40%, oklch(0.7 0.24 345) 0 20%, transparent 48%); }
+.pb-orb-c { --d: 9s; background: radial-gradient(circle at 50% 75%, oklch(0.72 0.2 290) 0 24%, transparent 52%); }
+.pb-orb-core {
+  position: absolute;
+  inset: 24%;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 42% 38%, oklch(1 0 0 / 0.9), oklch(1 0 0 / 0) 70%);
+  filter: blur(var(--orb-blur, 8px));
+  animation: pb-orb-breathe 3.2s ease-in-out infinite;
+}
+.pb-orb[data-state="thinking"] { animation: pb-orb-pulse 1.6s ease-in-out infinite; }
+.pb-orb[data-state="thinking"] .pb-orb-blob { animation-duration: calc(var(--d) / 2.5); }
+.pb-orb[data-state="thinking"] .pb-orb-core { animation-duration: 1.6s; }
+.pb-pop { animation: pb-pop 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.pb-orb.pb-pop[data-state="thinking"] { animation: pb-pop 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both, pb-orb-pulse 1.6s ease-in-out 0.6s infinite; }
+
+.pb-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  margin-left: 2px;
+  vertical-align: -0.15em;
+  background: currentColor;
+  animation: pb-blink 1s steps(1) infinite;
+}
+.pb-dots > span { animation: pb-blink 1.2s ease-in-out infinite; }
+.pb-dots > span:nth-child(2) { animation-delay: 0.2s; }
+.pb-dots > span:nth-child(3) { animation-delay: 0.4s; }
+
+/* staggered entrance: set animation-delay inline */
+.pb-rise { animation: pb-rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+@keyframes pb-orb-spin { to { transform: rotate(360deg); } }
+@keyframes pb-orb-breathe { 50% { transform: scale(1.2); opacity: 0.7; } }
+@keyframes pb-orb-pulse { 50% { transform: scale(1.06); } }
+@keyframes pb-pop { from { transform: scale(0.4); opacity: 0; } }
+@keyframes pb-blink { 50% { opacity: 0; } }
+@keyframes pb-rise { from { transform: translateY(14px); opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .pb-orb, .pb-orb *, .pb-pop, .pb-rise, .pb-caret, .pb-dots > span { animation: none !important; }
+  .pb-orb { transition: none; }
+}
+
+/* ── AI PB chat: status tokens (one color = one meaning) ────── */
+:root {
+  --pb-live: oklch(0.54 0.23 292);   /* PB is working on this now (orb hue) · ≈6.5:1 on white */
+  --pb-fail: oklch(0.55 0.22 27);
+}
+.dark {
+  --pb-live: oklch(0.74 0.16 292);
+  --pb-fail: oklch(0.7 0.19 25);
+}
+
+/* flow nodes */
+.flow-node {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  background: var(--card);
+  transition: border-color 0.35s, background-color 0.35s, box-shadow 0.35s, opacity 0.35s, transform 0.35s;
+}
+.flow-detail { color: var(--muted-foreground); }
+.flow-badge { background: var(--muted); color: var(--muted-foreground); }
+.flow-node[data-status="idle"] { opacity: 0.55; }
+.flow-node[data-status="running"] {
+  border-color: var(--pb-live);
+  background: color-mix(in oklch, var(--pb-live) 9%, var(--card));
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--pb-live) 22%, transparent), 0 6px 20px -8px color-mix(in oklch, var(--pb-live) 70%, transparent);
+  transform: scale(1.015);
+  animation: flow-glow 1.6s ease-in-out infinite;
+}
+.flow-node[data-status="running"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 20%, color-mix(in oklch, var(--pb-live) 18%, transparent) 50%, transparent 80%);
+  transform: translateX(-100%);
+  animation: flow-shimmer 1.8s ease-in-out infinite;
+  pointer-events: none;
+}
+.flow-node[data-status="running"] .flow-badge { background: var(--pb-live); color: white; }
+.flow-node[data-status="ok"] {
+  border-color: var(--foreground);
+  box-shadow: inset 0 0 0 1px var(--foreground);
+  animation: flow-settle 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.flow-node[data-status="skipped"] { border-style: dashed; background: transparent; opacity: 0.7; }
+.flow-node[data-status="error"] { border-color: var(--pb-fail); background: color-mix(in oklch, var(--pb-fail) 8%, var(--card)); }
+
+/* status glyphs: shape + color, never color alone */
+.flow-glyph, .flow-spinner {
+  display: inline-grid;
+  place-items: center;
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+[data-status="idle"] .flow-glyph { border: 1.5px solid var(--muted-foreground); opacity: 0.6; }
+[data-status="ok"] .flow-glyph { background: var(--foreground); color: var(--background); animation: flow-pop 0.45s cubic-bezier(0.3, 1.6, 0.5, 1); }
+[data-status="skipped"] .flow-glyph { border: 1.5px dashed var(--muted-foreground); color: var(--muted-foreground); }
+[data-status="error"] .flow-glyph { background: var(--pb-fail); color: white; }
+.flow-spinner {
+  border: 2px solid color-mix(in oklch, var(--pb-live) 25%, transparent);
+  border-top-color: var(--pb-live);
+  animation: flow-spin 0.8s linear infinite;
+}
+.flow-legend .flow-glyph, .flow-legend .flow-spinner { animation: none; }
+
+/* links between stages */
+.flow-link {
+  position: relative;
+  margin: 0 auto;
+  width: 2px;
+  height: 1rem;
+  border-radius: 2px;
+  background: var(--border);
+  overflow: hidden;
+}
+.flow-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.45s ease-out;
+  background: var(--foreground);
+}
+.flow-link[data-state="done"]::after { transform: scaleY(1); }
+.flow-link[data-state="flowing"]::after {
+  transform: scaleY(1);
+  background: linear-gradient(to bottom, transparent 0 30%, var(--pb-live) 50%, transparent 70%) 0 0 / 100% 200%;
+  animation: flow-stream 0.9s linear infinite;
+}
+.flow-stage[data-stage="idle"] > p { opacity: 0.55; }
+
+/* live run card + progress */
+.pb-run { background: linear-gradient(180deg, color-mix(in oklch, var(--pb-live) 6%, var(--card)), var(--card) 40%); }
+.pb-progress-fill {
+  background: linear-gradient(90deg, var(--pb-live), oklch(0.72 0.19 330), var(--pb-live)) 0 0 / 200% 100%;
+  transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: pb-sheen 2s linear infinite;
+}
+.pb-swap { animation: pb-swap 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+/* floating glass composer (functional layer only) */
+.pb-composer-shell {
+  position: relative;
+  background: color-mix(in oklch, var(--background) 72%, transparent);
+  backdrop-filter: blur(20px) saturate(1.6);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 30px -12px oklch(0 0 0 / 0.25);
+  transition: border-color 0.4s, box-shadow 0.4s;
+}
+.pb-composer-shell::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  border-radius: inherit;
+  background: conic-gradient(from var(--pb-angle, 0deg), oklch(0.8 0.15 215), oklch(0.7 0.24 345), oklch(0.72 0.2 290), oklch(0.8 0.15 215));
+  filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.pb-composer[data-active="true"] .pb-composer-shell { border-color: transparent; }
+.pb-composer[data-active="true"] .pb-composer-shell::before { opacity: 0.7; animation: pb-aura 4s linear infinite; }
+.pb-send { background: var(--pb-live); color: white; box-shadow: 0 4px 14px -4px var(--pb-live); }
+@property --pb-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+
+@keyframes flow-glow { 50% { box-shadow: 0 0 0 5px color-mix(in oklch, var(--pb-live) 14%, transparent), 0 6px 24px -8px color-mix(in oklch, var(--pb-live) 80%, transparent); } }
+@keyframes flow-shimmer { to { transform: translateX(100%); } }
+@keyframes flow-settle { from { transform: scale(1.015); } }
+@keyframes flow-pop { from { transform: scale(0.2); } }
+@keyframes flow-spin { to { transform: rotate(360deg); } }
+@keyframes flow-stream { from { background-position: 0 100%; } to { background-position: 0 -100%; } }
+@keyframes pb-sheen { to { background-position: -200% 0; } }
+@keyframes pb-swap { from { opacity: 0; transform: translateY(6px); filter: blur(2px); } }
+@keyframes pb-aura { to { --pb-angle: 360deg; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-node, .flow-node::after, .flow-glyph, .flow-spinner, .flow-link::after,
+  .pb-progress-fill, .pb-swap, .pb-composer-shell::before { animation: none !important; }
+  .flow-node[data-status="running"] { transform: none; }
+  .flow-node[data-status="running"]::after { display: none; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .pb-composer-shell { background: var(--background); backdrop-filter: none; -webkit-backdrop-filter: none; }
+}

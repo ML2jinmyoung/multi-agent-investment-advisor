@@ -27,7 +27,7 @@ export class DartProvider {
     for (const [k, v] of Object.entries({ crtfc_key: this.apiKey, ...params })) url.searchParams.set(k, v);
     let res: Response;
     try {
-      res = await fetch(url, { cache: "no-store" });
+      res = await fetch(url, { cache: "no-store", signal: AbortSignal.timeout(8_000) });
     } catch {
       throw new DataProviderError("NETWORK_ERROR", SOURCE);
     }

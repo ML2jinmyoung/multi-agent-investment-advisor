@@ -17,7 +17,7 @@ export const Account = z.object({
   name: z.string(),
   type: AccountType,
   isLive: z.boolean(),
-  channel: z.enum(["open_api", "mydata"]),
+  channel: z.enum(["open_api", "mydata", "manual"]),
 });
 export type Account = z.infer<typeof Account>;
 
@@ -41,6 +41,8 @@ export const Position = z.object({
   dailyChangePct: z.number().optional(),
   marketValueKRW: z.number(),
   provenance: Provenance,
+  marketProvenance: Provenance.optional(),
+  valuationAvailable: z.boolean().optional(),
 });
 export type Position = z.infer<typeof Position>;
 
@@ -61,6 +63,8 @@ export const PortfolioSnapshot = z.object({
   sources: z.array(Provenance),
   /** stale / missing data notes, surfaced to the user verbatim */
   warnings: z.array(z.string()),
+  marketMode: z.enum(["live", "fixture"]).optional(),
+  valuationComplete: z.boolean().optional(),
 });
 export type PortfolioSnapshot = z.infer<typeof PortfolioSnapshot>;
 
@@ -69,6 +73,9 @@ export type Money = z.infer<typeof Money>;
 
 export const Quote = z.object({
   symbol: z.string(),
+  name: z.string().optional(),
+  assetType: AssetType.optional(),
+  market: Market.optional(),
   price: z.number(),
   currency: z.string(),
   changePct: z.number().optional(), // day change

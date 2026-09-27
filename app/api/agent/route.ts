@@ -2,6 +2,8 @@ import { z } from "zod";
 import type { AgentStreamEvent } from "@/domain/agent";
 import { runAgent } from "@/orchestration/orchestrator";
 import { userIdFromRequest } from "@/lib/user-session";
+import { demoQuestionsPerDay, isDemo, takeDemoQuestion, withoutLlm } from "@/providers/llm/demo";
+import { llmAvailable } from "@/providers/llm/registry";
 import { addMessage, DEFAULT_CONVERSATION, listMessages, memoryTurns } from "@/services/conversation-store";
 
 export const dynamic = "force-dynamic";
@@ -23,7 +25,11 @@ export async function POST(req: Request) {
       const send = (e: AgentStreamEvent) => controller.enqueue(encoder.encode(`data: ${JSON.stringify(e)}\n\n`));
       try {
         await addMessage(userId, conversationId, "user", message);
-        const { answer, runId } = await runAgent(message, send, { userId, history });
+        // public demo: each session gets a few free-model questions a day, then deterministic answers
+        const outOfQuota = isDemo() && llmAvailable() && !takeDemoQuestion(userId);
+        if (outOfQuota) send({ type: "notice", message: `데모에서는 AI 질문을 하루 ${demoQuestionsPerDay()}개까지 할 수 있어요. 오늘은 규칙 기반으로 답해 드릴게요.` });
+        const run = () => runAgent(message, send, { userId, history });
+        const { answer, runId } = await (outOfQuota ? withoutLlm(run) : run());
         await addMessage(userId, conversationId, "assistant", answer, runId);
         send({ type: "done" });
       } catch (e) {

@@ -15,7 +15,7 @@ export function securityMetaOrUnknown(symbol: string, hint: Partial<SecurityMeta
       symbol,
       name: hint.name ?? symbol,
       assetType: hint.assetType ?? "other",
-      assetClass: hint.assetClass ?? "other",
+      assetClass: hint.assetClass ?? (hint.assetType === "stock" ? "equity" : hint.assetType === "cash" ? "cash" : hint.assetType === "bond" ? "bond" : "other"),
       market: hint.market ?? "OTHER",
       currency: hint.currency ?? "KRW",
       sector: hint.sector,

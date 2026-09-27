@@ -50,7 +50,7 @@ export function computeMetrics(snapshot: PortfolioSnapshot, etf: Map<string, Etf
         add(byCountry, cm?.exposureCountry ?? meta.exposureCountry, cv);
         add(byCurrency, cm?.exposureCurrency ?? meta.exposureCurrency, cv);
       }
-      if (!h && meta.assetClass === "equity") {
+      if (!h && (meta.assetClass === "equity" || snapshot.marketMode === "live")) {
         warnings.push(`${p.name}(${p.symbol}): 구성 종목 데이터를 확인하지 못해 ETF 내부 보유량은 look-through 계산에서 제외했습니다.`);
       }
       const residual = Math.max(0, 100 - covered);

@@ -7,9 +7,6 @@ import { getPolicy } from "./policy-store";
 import { getPortfolioSnapshot, marketDataProvider } from "./portfolio-aggregator";
 import { buildCandidates, rank } from "./relevance-engine";
 
-const TTL_MS = 5 * 60_000;
-const cache = new Map<string, { at: number; value: TodayResponse }>();
-
 /** Optional model steps, injected so the deterministic pipeline works without any API key. */
 export interface TodayModelHooks {
   /** returns 0..1 relevance per candidate id (Jev noul: "materially relevant to this investor today?") */
@@ -19,10 +16,9 @@ export interface TodayModelHooks {
 }
 
 export async function getToday(userId = "demo", hooks: TodayModelHooks = {}, opts: { fresh?: boolean; topN?: number } = {}): Promise<TodayResponse> {
-  const hit = cache.get(userId);
-  if (!opts.fresh && hit && Date.now() - hit.at < TTL_MS) return hit.value;
   const limitations: string[] = [];
-  const [snapshot, policy] = await Promise.all([getPortfolioSnapshot(userId), getPolicy(userId)]);
+  const [snapshot, policy] = await Promise.all([getPortfolioSnapshot(userId, opts), getPolicy(userId)]);
+  if (snapshot.valuationComplete === false) return { asOf: snapshot.asOf, totalValueKRW: snapshot.totals.marketValueKRW, dailyPnLKRW: 0, items: [], marketMode: snapshot.marketMode, valuationComplete: false, limitations: [...snapshot.warnings, "시세·환율을 모두 확인한 후 자산 변화 분석을 제공합니다."] };
   const { metrics, warnings: exposureWarnings } = await getMetrics(snapshot);
   limitations.push(...snapshot.warnings, ...exposureWarnings);
 
@@ -71,7 +67,6 @@ export async function getToday(userId = "demo", hooks: TodayModelHooks = {}, opt
     }
   }
 
-  const value: TodayResponse = { asOf: snapshot.asOf, totalValueKRW: metrics.totalValueKRW, dailyPnLKRW, items, limitations: [...new Set(limitations)] };
-  cache.set(userId, { at: Date.now(), value });
+  const value: TodayResponse = { marketMode: snapshot.marketMode, valuationComplete: snapshot.valuationComplete, asOf: snapshot.asOf, totalValueKRW: metrics.totalValueKRW, dailyPnLKRW, items, limitations: [...new Set(limitations)] };
   return value;
 }

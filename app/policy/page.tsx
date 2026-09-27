@@ -12,7 +12,7 @@ export default async function PolicyPage() {
   const userId = await currentUserId();
   const [policy, snap] = await Promise.all([getPolicy(userId), getPortfolioSnapshot(userId)]);
   const { metrics } = await getMetrics(snap);
-  const checks = checkPolicy(metrics, metrics, policy);
+  const checks = snap.valuationComplete === false ? [] : checkPolicy(metrics, metrics, policy);
 
   return (
     <div className="space-y-6">
@@ -22,7 +22,7 @@ export default async function PolicyPage() {
       </header>
       <section className="space-y-2">
         <h2 className="font-medium">현재 포트폴리오 점검</h2>
-        <PolicyChecks checks={checks} />
+        {snap.valuationComplete === false ? <p className="text-sm text-amber-800">시세·환율을 확인하지 못해 원칙 점검을 보류했습니다. 자산 화면에서 데이터 상태를 확인하세요.</p> : <PolicyChecks checks={checks} />}
       </section>
       <section className="space-y-2">
         <h2 className="font-medium">원칙 설정</h2>
