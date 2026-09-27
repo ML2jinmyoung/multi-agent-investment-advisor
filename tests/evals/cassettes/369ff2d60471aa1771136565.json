@@ -1,0 +1,62 @@
+{
+  "key": "369ff2d60471aa1771136565",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T11:10:12.981Z",
+  "preview": "STATE:\n{\"question\":\"엔비디아 최근 실적 어때?\",\"summary\":\"엔비디아(NVDA)의 '실적'(매출·EPS·가이던스 등) 자체는 이번 조회에서 확인할 수 없었습니다. 공시(10-K/10-Q/8-K)와 재무제표 조회가 모두 '데이터 없음'으로 실패했기 때문입니다. 다만 가격 데이터 기준으로는 최근 3개월간 178.9~199.7달러 사이에서",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"unsupported_claim\",\"probability\":0.15},{\"id\":\"policy_conflict\",\"probability\":0.85},{\"id\":\"prediction_as_fact\",\"probability\":0.25},{\"id\":\"missing_material_risk\",\"probability\":0.35},{\"id\":\"stale_evidence\",\"probability\":0.90}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 1118,
+        "noCache": 1118,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 80
+      },
+      "raw": {
+        "input_tokens": 1118,
+        "output_tokens": 80,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 1118,
+          "output_tokens": 80,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

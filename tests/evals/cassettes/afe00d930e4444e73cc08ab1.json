@@ -1,0 +1,70 @@
+{
+  "key": "afe00d930e4444e73cc08ab1",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T11:20:48.164Z",
+  "preview": "USER: QQQ 안에 NVDA 비중은?\nSYMBOLS: QQQ, NVDA\n\n관련 종목의 최근 공시, 재무 지표, 최근 가격 흐름, 유의사항, (ETF면) 구성 종목을 tool로 확인하고 근거 목록을 만드세요. tool이 error를 반환하면 그 사실을 limitations에 적습니다.",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"evidence\":[{\"kind\":\"etf\",\"claim\":\"QQQ 내 NVDA 비중은 8.8%로 구성 종목 중 1위(2위 MSFT 8.0%, 3위 AAPL 7.5%)\",\"source\":\"Invesco holdings (static POC snapshot)\",\"asOf\":\"2026-08-31\"},{\"kind\":\"market\",\"claim\":\"NVDA 현재가 182.31 USD, 전일 대비 -7.0%\",\"source\":\"Mock market data (fixture)\",\"asOf\":\"2026-09-22T15:30:00+09:00\",\"isMock\":true},{\"kind\":\"market\",\"claim\":\"QQQ 현재가 520.2 USD, 전일 대비 -2.4%\",\"source\":\"Mock market data (fixture)\",\"asOf\":\"2026-09-22T15:30:00+09:00\",\"isMock\":true},{\"kind\":\"market\",\"claim\":\"NVDA 최근 1개월 가격은 178.9→182.31 구간에서 등락, 기간 변동률 +1.9% (단, 최종일 9/22에 196→182.31로 큰 하락 발생)\",\"source\":\"getPriceHistory (1m)\",\"asOf\":\"2026-09-22\"},{\"kind\":\"warning\",\"claim\":\"NVDA에 대해 조회된 거래소 매수 유의사항 없음(빈 목록)\",\"source\":\"getStockWarnings\",\"asOf\":\"2026-09-22\"}],\"risks\":[\"ETF 구성 비중 데이터가 2026-08-31 기준 정적 스냅샷(static POC snapshot)으로 표기되어 있어 실제 최신 비중과 차이가 있을 수 있음\",\"NVDA 주가가 최근 거래일(9/22)에 196.0→182.31로 급락(당일 -7.0%)했는데, 이는 공시나 재무 데이터로 원인이 확인되지 않음\",\"시장 데이터 자체가 'Mock market data (fixture)'로 표시되어 있어 실거래 데이터가 아닐 가능성이 있음\"],\"limitations\":[\"NVDA 최근 공시(getRecentFilings) 조회 결과 데이터 없음(error) — SEC 공시 확인 불가\",\"NVDA 재무제표(getFinancialStatements) 조회 결과 데이터 없음(error) — 매출/영업이익/순이익 확인 불가\",\"QQQ 자체의 가격 이력, 공시, 유의사항은 별도로 조회하지 않았음(질문 초점이 NVDA 비중이라 생략)\",\"ETF 구성 데이터의 as_of(2026-08-31)와 현재 조회 시점(2026-09-22) 사이 약 3주 차이가 있어 최신 비중과 다를 수 있음\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4104,
+        "noCache": 4104,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 924,
+        "text": 924,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 4104,
+        "output_tokens": 924,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4104,
+          "output_tokens": 924,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

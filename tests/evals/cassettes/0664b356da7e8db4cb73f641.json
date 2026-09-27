@@ -1,0 +1,79 @@
+{
+  "key": "0664b356da7e8db4cb73f641",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T11:44:12.663Z",
+  "preview": "USER: 내 USD 노출이 얼마나 돼?\n\nPORTFOLIO (deterministic, as of 2026-09-27T11:43:39.232Z):\n{\"asOf\":\"2026-09-27T11:43:39.232Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EqcCCpABCBIYAipAjyy53kRPNVybD8N9mu1oCjg6QzDusnCdZxBceYLTRourSzsz97ZHfW4v5fFMTVG6XiqxLtmLC1ikl8ZtzdtsDjIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAfqC5NUGEgwlMoJPJEQU9PvIUP0aDHYqWALu6qzReWJYnSIwuPDlXxCb46TXwWdMN9uMnJHOBzbNdFJHviJ3MiELtD4dmwFRu/5vqHg9sGR0XYnmKkRuqiuW+lG6mhNRA+6tr9KDiaJ1CAEkOmIcus2z7Qca4fl48hFay89imOL4OiMy7LHfTHvsYwFlHjCMrAhjZpw6GxenAhgB"
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"summary\":\"현재 USD(달러) 노출은 포트폴리오 전체의 48.4%(통화 기준)이며, 이는 국가 기준 US 비중 48.4%와 동일합니다. 원화 환산 금액으로는 약 1,889만 원 수준(3,904만 원 × 48.4%)입니다.\",\"evidence\":[{\"kind\":\"portfolio\",\"claim\":\"byCurrencyPct 기준 USD 48.4% / KRW 51.6%, byCountryPct 기준 US 48.4% / KR 51.6% (두 값이 동일 → 원화 상장 해외추종 ETF의 환노출도 이미 look-through 반영된 수치로 보임)\",\"source\":\"getPortfolioSnapshot\",\"asOf\":\"2026-09-27T11:43:39.232Z\"},{\"kind\":\"portfolio\",\"claim\":\"USD 노출 구성 추정: USD 현금 7.1%(276만원), VOO 15.9%(619만원), 360750 TIGER 미국S&P500 10.8%(420만원, 기초자산 USD), AAPL 8.3%(324만원), NVDA 6.4%(252만원) — 합산 약 48.5% (반올림 오차로 스냅샷 48.4%와 근사 일치)\",\"source\":\"getPortfolioSnapshot\",\"asOf\":\"2026-09-27T11:43:39.232Z\"},{\"kind\":\"policy\",\"claim\":\"해외자산(overseasPct) 한도 70% 대비 현재 48.4% → 여유 있음\",\"source\":\"checkInvestmentPolicy\"},{\"kind\":\"warning\",\"claim\":\"섹터 한도(Technology 35%) 대비 현재 37%로 초과 — USD 노출 자산(VOO, AAPL, NVDA, TIGER 미국S&P500) 상당수가 Technology 섹터에 집중되어 있어 USD 노출 확대는 섹터 집중도 완화와 상충될 수 있음\",\"source\":\"checkInvestmentPolicy\"}],\"alternatives\":[{\"title\":\"USD 노출 유지\",\"description\":\"현재 48.4%는 해외자산 한도(70%) 내이므로 추가 조치 없이 유지 가능. 다만 Technology 섹터 초과분(37%→35% 목표)은 별도로 조정 필요.\"},{\"title\":\"USD 노출 확대 시 섹터 분산 고려\",\"description\":\"달러 자산을 추가한다면 Technology 비중이 낮은 미국 자산(예: 논-테크 섹터 ETF 등)을 선택해 섹터 집중을 심화시키지 않는 방향 고려 가능(특정 종목 추천은 아님).\"}],\"risks\":[{\"title\":\"섹터 집중 한도 위반\",\"description\":\"Technology 섹터 비중이 37%로 정책 한도 35%를 초과한 상태이며, USD 노출 자산 상당수가 이 섹터에 속해 있어 USD 노출을 늘릴 경우 섹터 집중 리스크가 더 커질 수 있음\",\"severity\":\"medium\"},{\"title\":\"환율 변동 리스크\",\"description\":\"USD 노출 48.4%는 원/달러 환율 변동에 따라 원화환산 평가액이 변동됨. 투자 성향(fxRisk: medium)과 비교해 현재 수준이 적정한지 정기 점검 필요\",\"severity\":\"low\"}],\"costs\":[],\"policyChecks\":[{\"rule\":\"singleStockPct\",\"label\":\"단일 종목 최대 비중\",\"status\":\"ok\",\"limit\":15,\"before\":11.7,\"after\":11.7,\"subject\":\"005930\"},{\"rule\":\"sectorPct\",\"label\":\"단일 섹터 최대 비중\",\"status\":\"violation\",\"limit\":35,\"before\":37,\"after\":37,\"subject\":\"Technology\"},{\"rule\":\"overseasPct\",\"label\":\"해외자산 최대 비중\",\"status\":\"ok\",\"limit\":70,\"before\":48.4,\"after\":48.4},{\"rule\":\"minLiquidityPct\",\"label\":\"최소 유동성\",\"status\":\"ok\",\"limit\":10,\"before\":27.6,\"after\":27.6}],\"recommendation\":\"USD 노출 자체(48.4%)는 해외자산 한도 내라 문제 없으나, 현재 Technology 섹터가 37%로 한도를 초과한 상태입니다. USD 노출을 추가로 늘리기 전에 섹터 분산(Technology 외 자산 비중 확대 또는 리밸런싱)을 우선 검토하시길 권합니다. 이는 특정 종목 매수/매도 추천이 아니라 원칙 준수 관점의 제안입니다.\",\"limitations\":[\"ETF(VOO, 360750, 069500 등) 내부 개별 종목 단위의 상세 look-through 노출은 getExposure 툴을 별도 호출하지 않아 이번 답변에 포함되지 않았습니다.\",\"포지션 데이터 출처가 '방문자 직접 입력 (미검증)' 및 Mock market data(DEMO)로, 실제 계좌 데이터와 다를 수 있습니다.\",\"환율 변동에 따른 원화환산 금액은 스냅샷 시점 기준이며 실시간 값이 아닙니다.\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4961,
+        "noCache": 4961,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 1801,
+        "text": 1783,
+        "reasoning": 18
+      },
+      "raw": {
+        "input_tokens": 4961,
+        "output_tokens": 1801,
+        "output_tokens_details": {
+          "thinking_tokens": 18
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4961,
+          "output_tokens": 1801,
+          "output_tokens_details": {
+            "thinking_tokens": 18
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

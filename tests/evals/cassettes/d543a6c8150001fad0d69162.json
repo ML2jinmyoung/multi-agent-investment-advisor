@@ -1,0 +1,79 @@
+{
+  "key": "d543a6c8150001fad0d69162",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T11:12:04.889Z",
+  "preview": "USER: 삼성전자 최근 공시 있어?\n\nPORTFOLIO (deterministic, as of 2026-09-27T11:11:51.459Z):\n{\"asOf\":\"2026-09-27T11:11:51.459Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"t",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EsgGCpABCBIYAipAasO5MYzl4Jd8LxhRxebWfYj5NPLhw42Ed3F6Z8+Q+GSFFysTSBLibPeHhJjUL1HJ17NNFSPBOfPJSbzUjroQxTIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAfzz49UGEgzDjxRg7rXV8jXrxDQaDD5cHknkHMuY5Gs1rCIwlvHi6antfRnr6vNN0D41A7TW+avQ/hT/QIJc82p4b6lRoDCuAzS1nrtTtsKcT/yFKuQEcm5vVY95hfUTmaAOOG9jJx+dQrmDazbGjSIFxCUxKeQBBWHIR1esmxi9/9+e7U28etqzw1I2bCmZkbbzzzBENl3/7B5VpzsitpwsuS7lNBP5U/uzW2IFNNIb3ocG3WMkgKp9gUT/GSwnJbHLTZut2Clo8aMPoLRa1bwFbmWHMW6i0xyR4ihh15X/OXVavoKTQfYgzHqXV3OjxLjA7O9FTkOhEkBWYKfZ7NzbcsP4RCp4Oww1z0CKDd+FcZNvh5tXDPbhh3M5+/7m5R1aZX7kRfLwExotv4JjTMH+oNwZfmqg3Mf1me4TUNcsnN6pB0CfOIVpx17J8iay2vuxHGMAXPPwAISulKsm28fhuSCkM+VG9Gz+XE825CHaONywKQJzs47mWssw9tPO89Ze8TEWPmgu0WL5J5w4Yvdr+kMjIE8JrrT/RPJr/YsJ9xiypmn7pVW/2ZQCSwvMRKeI+U5OJJNLaRpsvZJCF8zlOcIXGTrCm3eZzlxx73p5gu7c86yTkEqDJ7QA4vZWqXfekL3yYUSV3OSmBX2Kq7LCUug28J9wQWGAS66TVZFFLWvj8cPplr9T+E4DVGbZpkAfzNQE4swOdiVTEg+f46gUQRiZgdDgctQL4Rs5AYIVKDmdwGS6fCmmsUrJ7R13Awyb9dWoe1s9RozmcKsFxYXmAnZuT13mOomODOlEmsiKgOcyTnIqbGs8OT6RN0Gpb+Ltsv/adjT5rR/2EStZuHtXFBzZr02743tAQSbDdHvOVBLQTH8WB1mdSqpxh7mgKAFD37As/aKu3mqQFUvMm1AEiO28Wb9MJD9QGAE="
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"meaning\":\"죄송하지만 저는 종목의 공시(뉴스/재무보고 등) 정보를 조회할 수 있는 도구가 없어서 '삼성전자 최근 공시' 자체에는 답할 수 없습니다. 다만 삼성전자가 고객님 포트폴리오에서 어떤 위치에 있는지는 확인해 드릴 수 있습니다.\",\"keyFacts\":[\"보유 데이터 기준(2026-09-27), 삼성전자(005930) 평가금액은 3,480,000원으로 전체 자산(39,040,386원)의 8.9%를 차지합니다.\",\"일간 변동률은 +0.8%로 기록되어 있습니다(출처: 방문자 직접 입력, Mock market data(fixture) DEMO — 실시간 공시나 뉴스 데이터가 아닙니다).\",\"투자 원칙상 단일 종목 한도는 15%이며, 현재 8.9%는 이 한도 내에 있어 정책 위반은 없습니다(POLICY CHECKS: 없음).\",\"Technology 섹터 비중은 37%로, 정책상 섹터 한도 35%를 이미 초과한 상태이며 삼성전자도 이 섹터에 포함됩니다.\",\"공시(정기보고서, 수시공시 등) 원문이나 발생 여부를 확인할 수 있는 데이터 소스는 현재 제공되지 않습니다.\"],\"alternatives\":[\"전자공시시스템(DART)이나 증권사 앱에서 삼성전자 최근 공시를 직접 확인하실 수 있습니다.\",\"공시 대신 현재 보유 비중·노출이 궁금하시면 getPosition이나 getExposure로 상세 내역을 다시 조회해 드릴 수 있습니다.\",\"삼성전자 관련 특정 가정 시나리오(예: 주가 ±X% 변동)의 포트폴리오 영향을 시뮬레이션해 보고 싶으시면 말씀해 주세요.\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3674,
+        "noCache": 3674,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 884,
+        "text": 700,
+        "reasoning": 184
+      },
+      "raw": {
+        "input_tokens": 3674,
+        "output_tokens": 884,
+        "output_tokens_details": {
+          "thinking_tokens": 184
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3674,
+          "output_tokens": 884,
+          "output_tokens_details": {
+            "thinking_tokens": 184
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

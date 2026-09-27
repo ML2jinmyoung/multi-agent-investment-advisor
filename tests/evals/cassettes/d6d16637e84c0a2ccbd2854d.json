@@ -1,0 +1,88 @@
+{
+  "key": "d6d16637e84c0a2ccbd2854d",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T11:20:41.612Z",
+  "preview": "USER: QQQ 안에 NVDA 비중은?\n\nPORTFOLIO (deterministic, as of 2026-09-27T11:20:30.300Z):\n{\"asOf\":\"2026-09-27T11:20:30.300Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "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"
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01AZJazACjoRLny2qpVF1JoZ",
+        "toolName": "getExposure",
+        "input": "{\"symbol\":\"NVDA\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3675,
+        "noCache": 3675,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 731,
+        "text": 55,
+        "reasoning": 676
+      },
+      "raw": {
+        "input_tokens": 3675,
+        "output_tokens": 731,
+        "output_tokens_details": {
+          "thinking_tokens": 676
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3675,
+          "output_tokens": 731,
+          "output_tokens_details": {
+            "thinking_tokens": 676
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

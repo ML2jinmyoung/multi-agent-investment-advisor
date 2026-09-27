@@ -1,13 +1,13 @@
 {
   "key": "f7bd8f6342ee7f69afdea468",
   "modelId": "claude-haiku-4-5-20251001",
-  "recordedAt": "2026-09-27T10:39:22.830Z",
+  "recordedAt": "2026-09-27T11:35:37.274Z",
   "preview": "STATE:\n{\"message\":\"투자 가능 금액 얼마야?\",\"hasPortfolio\":true,\"hasInvestmentPolicy\":true,\"symbolsMentioned\":[],\"heldSymbolsMentioned\":[],\"tradeDetected\":null,\"scenarioDetected\":null,\"recentConversation\":[]}\n\n",
   "result": {
     "content": [
       {
         "type": "text",
-        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.95},{\"id\":\"needs_simulation\",\"probability\":0.05},{\"id\":\"needs_external_evidence\",\"probability\":0.1},{\"id\":\"needs_policy_check\",\"probability\":0.05},{\"id\":\"needs_risk_review\",\"probability\":0.05},{\"id\":\"is_prediction_request\",\"probability\":0.0}]}"
+        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.95},{\"id\":\"needs_simulation\",\"probability\":0.05},{\"id\":\"needs_external_evidence\",\"probability\":0.05},{\"id\":\"needs_policy_check\",\"probability\":0.1},{\"id\":\"needs_risk_review\",\"probability\":0.05},{\"id\":\"is_prediction_request\",\"probability\":0.0}]}"
       }
     ],
     "finishReason": {

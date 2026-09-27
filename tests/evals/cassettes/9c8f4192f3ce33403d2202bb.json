@@ -1,0 +1,62 @@
+{
+  "key": "9c8f4192f3ce33403d2202bb",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T11:23:49.339Z",
+  "preview": "STATE:\n{\"question\":\"환율이 10% 떨어지면?\",\"summary\":\"이 질문은 예측이 아니라 '원/달러 환율이 10% 하락한다면'이라는 가정 시나리오에 대한 계산 결과입니다. 현재 포트폴리오의 USD 노출 비중이 48.4%로 절반에 가까워, 원화 강세 시 달러 표시 자산의 원화 환산 가치가 줄어들며 총 평가액이 감소하는 효과가 나타납니다. 다",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"unsupported_claim\",\"probability\":0.15},{\"id\":\"policy_conflict\",\"probability\":0.72},{\"id\":\"prediction_as_fact\",\"probability\":0.08},{\"id\":\"missing_material_risk\",\"probability\":0.25},{\"id\":\"stale_evidence\",\"probability\":0.12}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 1745,
+        "noCache": 1745,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 80
+      },
+      "raw": {
+        "input_tokens": 1745,
+        "output_tokens": 80,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 1745,
+          "output_tokens": 80,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

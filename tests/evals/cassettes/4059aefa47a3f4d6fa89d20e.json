@@ -1,54 +1,24 @@
 {
   "key": "4059aefa47a3f4d6fa89d20e",
   "modelId": "claude-sonnet-5",
-  "recordedAt": "2026-09-27T10:44:29.693Z",
+  "recordedAt": "2026-09-27T11:41:29.008Z",
   "preview": "USER: VOO 구성 종목 알려줘\nSYMBOLS: VOO\n\n관련 종목의 최근 공시, 재무 지표, 최근 가격 흐름, 유의사항, (ETF면) 구성 종목을 tool로 확인하고 근거 목록을 만드세요. tool이 error를 반환하면 그 사실을 limitations에 적습니다.",
   "result": {
     "content": [
       {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "Eo8CCpABCBIYAipAnmzdpivTGNk/s0GmR7VQcjqPAag6iBS9qwotKKuUpr6RWK17qjtUdon0ijUFRpISsJMn9HBgaU531dWfox0atDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAeiB5NUGEgwQ6VRLH82lplAbxbQaDNDsFhtJ1W7wyPt4BCIwO8YNeyiY5trwoIEdvQ1WWBwsXJ0bLE3u+3SIG8Bf+fwNtuGKhKlQyO7jaJ3BpUPYKizCtjy63a4HgmNyE7VqfrMZewRCkrOxDqULYZ2IHETZ6F5Swu58r/xsUIqathgB"
+          }
+        }
+      },
+      {
         "type": "tool-call",
-        "toolCallId": "toolu_01RtYKxNG7H4SfWsszhCSYXv",
+        "toolCallId": "toolu_01FvU4aACJ9Yv5ChUY3bD24f",
         "toolName": "getEtfHoldings",
         "input": "{\"symbol\":\"VOO\"}",
-        "providerMetadata": {
-          "anthropic": {
-            "caller": {
-              "type": "direct"
-            }
-          }
-        }
-      },
-      {
-        "type": "tool-call",
-        "toolCallId": "toolu_0152uagsP7AGnRzWkLEqSTSU",
-        "toolName": "getPriceHistory",
-        "input": "{\"symbol\":\"VOO\",\"period\":\"1m\"}",
-        "providerMetadata": {
-          "anthropic": {
-            "caller": {
-              "type": "direct"
-            }
-          }
-        }
-      },
-      {
-        "type": "tool-call",
-        "toolCallId": "toolu_01NuT6jB8oFDZobiDfHNzMxo",
-        "toolName": "getStockWarnings",
-        "input": "{\"symbol\":\"VOO\"}",
-        "providerMetadata": {
-          "anthropic": {
-            "caller": {
-              "type": "direct"
-            }
-          }
-        }
-      },
-      {
-        "type": "tool-call",
-        "toolCallId": "toolu_018iLxLKdLb3rmKcNteEeLhW",
-        "toolName": "getQuotes",
-        "input": "{\"symbols\":[\"VOO\"]}",
         "providerMetadata": {
           "anthropic": {
             "caller": {
@@ -70,15 +40,15 @@
         "cacheWrite": 0
       },
       "outputTokens": {
-        "total": 235,
-        "text": 235,
-        "reasoning": 0
+        "total": 74,
+        "text": 57,
+        "reasoning": 17
       },
       "raw": {
         "input_tokens": 2369,
-        "output_tokens": 235,
+        "output_tokens": 74,
         "output_tokens_details": {
-          "thinking_tokens": 0
+          "thinking_tokens": 17
         },
         "cache_creation_input_tokens": 0,
         "cache_read_input_tokens": 0,
@@ -95,9 +65,9 @@
       "anthropic": {
         "usage": {
           "input_tokens": 2369,
-          "output_tokens": 235,
+          "output_tokens": 74,
           "output_tokens_details": {
-            "thinking_tokens": 0
+            "thinking_tokens": 17
           },
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,

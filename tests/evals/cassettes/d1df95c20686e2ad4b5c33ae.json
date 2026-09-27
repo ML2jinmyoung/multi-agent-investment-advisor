@@ -1,0 +1,88 @@
+{
+  "key": "d1df95c20686e2ad4b5c33ae",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T11:35:19.661Z",
+  "preview": "USER: 단일 종목 한도 넘은 거 있어?\n\nPORTFOLIO (deterministic, as of 2026-09-27T11:35:04.526Z):\n{\"asOf\":\"2026-09-27T11:35:04.526Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\"",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EowDCpABCBIYAipA2poU13aI6FdYymq9x39cFoQsx6gAkVMnOyKzpsTf5FIGjCcNMJg5O721ACP+Qlf/h22OzpxQZ+7nde1BJrvTNTIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAff+49UGEgxDS2qRxpB7WjOLbf0aDIsKZIUBe+1Y3b7rxiIwFNXPmGsiPndyslT5qnNtkulZ3oKBBUFDpAzHaZedIHNaPdgynLvP8j2+HCwuV5DhKqgBTnvQUcEkcKlrM2aSOZSgecAOBLyTOCkBAlkDuSM7rVDQRXvuWirdlxpMPCA1Du6ILOpa2KEUvFR5h0Apk9626f7KBhl0KnI5ePHZmEZzOcX1SldEa4GCn+CDjljmnNn/JEBoDR58Cl9sGr7yOWYwaBYkr42SfGl1bcUkEzKmvUTLtAN5TaQKgKT2YPkqN3nUWAEvNiOOwfk3aPygtRGDXxUrh1CmUcwqGAE="
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_018JC7XuJEbk27LDPn1cDsLq",
+        "toolName": "getInvestmentPolicy",
+        "input": "{}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 6045,
+        "noCache": 6045,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 96,
+        "text": 34,
+        "reasoning": 62
+      },
+      "raw": {
+        "input_tokens": 6045,
+        "output_tokens": 96,
+        "output_tokens_details": {
+          "thinking_tokens": 62
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 6045,
+          "output_tokens": 96,
+          "output_tokens_details": {
+            "thinking_tokens": 62
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

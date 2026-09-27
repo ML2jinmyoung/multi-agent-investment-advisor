@@ -1,7 +1,7 @@
 {
   "key": "8421e1460d22cc014fe5a718",
   "modelId": "claude-sonnet-5",
-  "recordedAt": "2026-09-27T09:45:21.797Z",
+  "recordedAt": "2026-09-27T11:16:17.941Z",
   "preview": "USER: 삼성전자 오를까?\nSYMBOLS: 005930\n\n관련 종목의 최근 공시, 재무 지표, 최근 가격 흐름, 유의사항, (ETF면) 구성 종목을 tool로 확인하고 근거 목록을 만드세요. tool이 error를 반환하면 그 사실을 limitations에 적습니다.",
   "result": {
     "content": [
@@ -10,13 +10,13 @@
         "text": "",
         "providerMetadata": {
           "anthropic": {
-            "signature": "EsECCpABCBIYAipA4NdOB2b74QKihYUFiI7JaJVu0coBkvIm9IZcLJpPccoxCBBzYnmdbbTicmA0gW9PXvZRyzYDaPQ/w9MIIuX0XzIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAbDL49UGEgx3t0VvSFoR9kv+X7gaDGErKgrUx+00KoQWlSIwgwKfiLmutdP4TJvD6uklJ/HDz55rfmP0SMNhx6i7TakbJyEyRQ0/Wzn5eEj5+V6HKl5972UpZiY0v0kSN6xSKMzvn+RFvHZ1dibyL3NnZlgrRiY6KewKKhJ8xAXD5DUL4OjhHLmSeueSpd0IoSDyWqUfslS5JtjDYKFOKwWP64UszNYjw2HUOxha5v7FzGC1GAE="
+            "signature": "EsICCpABCBIYAipAZmC5USssuaYiF7AxunMfkbrFHH8FiaYcU1GIaffJZt1Ip31X4t2/ZpgfwOfG5P+IGREr1QQnu1jWgU5ASb/7+TIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAYD249UGEgwSKl/i8VL9KbYb+nAaDM73PLn3LPWGSI0KkCIwrDh1k8tQ3MAoZrf0S96u4H5zV0Cw6vHcwd+jipkRB0v9zWL6B9az+oVipqGYH1UXKl8LCccJjIMJwQd/d4MCJck6yOydyaPY/RA94cuxFOdIQosyumc7jFGQGcdi6iDUoH7LP3uZOnTx0sS9Q9ArTobW9hRc70JIPABkC15HBqEAWERfZ1WCfvpBiDtJT2y1MRgB"
           }
         }
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_017z7VTtBjvxjcHcbYjBhTtK",
+        "toolCallId": "toolu_01TwTYUGRk38YxFT2LdRwhwa",
         "toolName": "getRecentFilings",
         "input": "{\"symbol\":\"005930\",\"days\":30}",
         "providerMetadata": {
@@ -29,7 +29,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01J8QwR9ECAcznN9YPCsv9dN",
+        "toolCallId": "toolu_01UDM89gaTfiTDD8zJ4X9qhT",
         "toolName": "getFinancialStatements",
         "input": "{\"symbol\":\"005930\"}",
         "providerMetadata": {
@@ -42,7 +42,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01292R6Td2EmgDgKK6vWmzWc",
+        "toolCallId": "toolu_01LCvkaVPqLtPCA4zdvcNWMr",
         "toolName": "getPriceHistory",
         "input": "{\"symbol\":\"005930\",\"period\":\"1m\"}",
         "providerMetadata": {
@@ -55,7 +55,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_013Rm5boMpjnvcNu2PXg6iwG",
+        "toolCallId": "toolu_01ScX1U5hnPeBgJFDWXDz3WQ",
         "toolName": "getStockWarnings",
         "input": "{\"symbol\":\"005930\"}",
         "providerMetadata": {
@@ -68,7 +68,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_016zd5s2yEXoBMajiXtVJeG1",
+        "toolCallId": "toolu_01Rt986YUYz9cmNxTTwfrbwV",
         "toolName": "getQuotes",
         "input": "{\"symbols\":[\"005930\"]}",
         "providerMetadata": {

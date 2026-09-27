@@ -1,13 +1,13 @@
 {
   "key": "4247acf44c640bf1e3c3a932",
   "modelId": "claude-haiku-4-5-20251001",
-  "recordedAt": "2026-09-27T10:02:10.086Z",
+  "recordedAt": "2026-09-27T11:31:59.130Z",
   "preview": "STATE:\n{\"message\":\"나스닥이 15% 떨어지면?\",\"hasPortfolio\":true,\"hasInvestmentPolicy\":true,\"symbolsMentioned\":[],\"heldSymbolsMentioned\":[],\"tradeDetected\":null,\"scenarioDetected\":{\"kind\":\"market\",\"target\":\"US\"",
   "result": {
     "content": [
       {
         "type": "text",
-        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.85},{\"id\":\"needs_simulation\",\"probability\":0.92},{\"id\":\"needs_external_evidence\",\"probability\":0.15},{\"id\":\"needs_policy_check\",\"probability\":0.65},{\"id\":\"needs_risk_review\",\"probability\":0.7},{\"id\":\"is_prediction_request\",\"probability\":0.08}]}"
+        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.85},{\"id\":\"needs_simulation\",\"probability\":0.90},{\"id\":\"needs_external_evidence\",\"probability\":0.15},{\"id\":\"needs_policy_check\",\"probability\":0.70},{\"id\":\"needs_risk_review\",\"probability\":0.75},{\"id\":\"is_prediction_request\",\"probability\":0.05}]}"
       }
     ],
     "finishReason": {

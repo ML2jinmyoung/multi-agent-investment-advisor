@@ -1,13 +1,13 @@
 {
   "key": "0ff887ba1a05a044f6debfca",
   "modelId": "claude-haiku-4-5-20251001",
-  "recordedAt": "2026-09-27T10:37:25.619Z",
+  "recordedAt": "2026-09-27T11:34:19.883Z",
   "preview": "STATE:\n{\"message\":\"데이터 언제 기준이야?\",\"hasPortfolio\":true,\"hasInvestmentPolicy\":true,\"symbolsMentioned\":[],\"heldSymbolsMentioned\":[],\"tradeDetected\":null,\"scenarioDetected\":null,\"recentConversation\":[]}\n\nY",
   "result": {
     "content": [
       {
         "type": "text",
-        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.85},{\"id\":\"needs_simulation\",\"probability\":0.05},{\"id\":\"needs_external_evidence\",\"probability\":0.15},{\"id\":\"needs_policy_check\",\"probability\":0.1},{\"id\":\"needs_risk_review\",\"probability\":0.05},{\"id\":\"is_prediction_request\",\"probability\":0.02}]}"
+        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.85},{\"id\":\"needs_simulation\",\"probability\":0.05},{\"id\":\"needs_external_evidence\",\"probability\":0.1},{\"id\":\"needs_policy_check\",\"probability\":0.05},{\"id\":\"needs_risk_review\",\"probability\":0.05},{\"id\":\"is_prediction_request\",\"probability\":0.02}]}"
       }
     ],
     "finishReason": {

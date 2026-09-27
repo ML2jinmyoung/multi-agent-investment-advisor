@@ -6,6 +6,24 @@ import { Tracer } from "@/orchestration/tracer";
 
 const held = ["NVDA", "QQQ", "VOO", "AAPL", "005930", "000660", "069500", "TSLA", "360750", "152380", "133690"];
 
+describe("rule floor under the model router (F-011)", () => {
+  it("a low-scoring model cannot drop portfolio for a held symbol or policy/risk for a decision question", async () => {
+    const r = await route(input("삼성전자 최근 공시 있어?"), fakeModel(0.05), new Tracer("t"));
+    expect(r.decidedBy).toBe("jev");
+    expect(buildPlan(r).portfolio).toBe(true);
+    const d = await route(input("엔비디아 최근 실적 어때?"), fakeModel(0.05), new Tracer("t"));
+    expect(buildPlan(d)).toMatchObject({ portfolio: true, evidence: true, policy: true, riskReview: true });
+  });
+  it("the model can still add specialists the rules did not select", async () => {
+    const r = await route(input("삼성전자 오를까?"), fakeModel(0.95), new Tracer("t"));
+    expect(buildPlan(r).evidence).toBe(true); // rules alone: false
+  });
+  it("rule hints below the threshold do not force a node", async () => {
+    const r = await route(input("환율 앞으로 어떻게 될까?"), fakeModel(0.05), new Tracer("t"));
+    expect(buildPlan(r).portfolio).toBe(false); // rule score 0.25 is a hint, model said no
+  });
+});
+
 describe("quantity parsing (F-004)", () => {
   it("reads share counts followed by Hangul, particles or punctuation", () => {
     expect(parseMessage("애플 5주 팔까?", held).trade?.quantity).toBe(5);

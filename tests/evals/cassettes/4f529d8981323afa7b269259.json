@@ -1,0 +1,62 @@
+{
+  "key": "4f529d8981323afa7b269259",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T11:25:58.148Z",
+  "preview": "STATE:\n{\"question\":\"달러가 5% 오르면 내 자산은?\",\"summary\":\"이 답변은 '달러/원 환율이 5% 상승한다면'이라는 가정(시나리오) 계산이며, 실제 환율 예측이 아닙니다. 현재 포트폴리오의 USD 노출은 48.4%로, 환율만 5% 오른다고 가정하면 원화 환산 총자산은 39,040,386원 → 39,985,905원으로 약 945,51",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"unsupported_claim\",\"probability\":0.15},{\"id\":\"policy_conflict\",\"probability\":0.75},{\"id\":\"prediction_as_fact\",\"probability\":0.25},{\"id\":\"missing_material_risk\",\"probability\":0.35},{\"id\":\"stale_evidence\",\"probability\":0.20}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 1092,
+        "noCache": 1092,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 80
+      },
+      "raw": {
+        "input_tokens": 1092,
+        "output_tokens": 80,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 1092,
+          "output_tokens": 80,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

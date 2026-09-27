@@ -1,0 +1,88 @@
+{
+  "key": "c01020a2434234a4bc7ae701",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T11:41:45.188Z",
+  "preview": "USER: VOO 구성 종목 알려줘\n\nPORTFOLIO (deterministic, as of 2026-09-27T11:41:25.515Z):\n{\"asOf\":\"2026-09-27T11:41:25.515Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"ty",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "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"
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01LgZ8Z77eduJVqhq3BfGib4",
+        "toolName": "getExposure",
+        "input": "{}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3672,
+        "noCache": 3672,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 1422,
+        "text": 28,
+        "reasoning": 1394
+      },
+      "raw": {
+        "input_tokens": 3672,
+        "output_tokens": 1422,
+        "output_tokens_details": {
+          "thinking_tokens": 1394
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3672,
+          "output_tokens": 1422,
+          "output_tokens_details": {
+            "thinking_tokens": 1394
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

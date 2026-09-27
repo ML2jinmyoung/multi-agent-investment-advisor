@@ -1,0 +1,62 @@
+{
+  "key": "dfcf1f15e18b3b98304db792",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T11:46:14.665Z",
+  "preview": "STATE:\n{\"question\":\"코스피가 10% 하락하면 내 손실은?\",\"summary\":\"이것은 예측이 아니라 '코스피 10% 하락'이라는 가정 시나리오에 대한 계산 결과입니다. 이 시나리오를 적용하면 귀하의 전체 포트폴리오 평가액은 약 39,040,386원에서 38,157,386원으로 줄어, 손실 규모는 약 -883,000원(전체 자산 대비 약 -2",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\": [{\"id\": \"unsupported_claim\", \"probability\": 0.15}, {\"id\": \"policy_conflict\", \"probability\": 0.25}, {\"id\": \"prediction_as_fact\", \"probability\": 0.08}, {\"id\": \"missing_material_risk\", \"probability\": 0.20}, {\"id\": \"stale_evidence\", \"probability\": 0.35}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 1661,
+        "noCache": 1661,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 95
+      },
+      "raw": {
+        "input_tokens": 1661,
+        "output_tokens": 95,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 1661,
+          "output_tokens": 95,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

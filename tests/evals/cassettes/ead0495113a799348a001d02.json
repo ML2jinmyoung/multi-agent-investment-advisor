@@ -1,0 +1,70 @@
+{
+  "key": "ead0495113a799348a001d02",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T11:34:31.170Z",
+  "preview": "USER: 데이터 언제 기준이야?\n\nPORTFOLIO (deterministic, as of 2026-09-27T11:34:17.959Z):\n{\"asOf\":\"2026-09-27T11:34:17.959Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"typ",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"summary\":\"현재 포트폴리오 데이터 기준시각은 2026-09-27 11:34(UTC, 방금 재조회 기준 11:34:22)입니다. 보유자산은 방문자가 직접 입력한 값이며 시세 일부는 Mock(DEMO) 데이터입니다.\",\"evidence\":[{\"kind\":\"portfolio\",\"claim\":\"포트폴리오 스냅샷 기준시각 asOf=2026-09-27T11:34:22.402Z, 총평가액 39,040,386원\",\"source\":\"getPortfolioSnapshot\",\"asOf\":\"2026-09-27T11:34:22.402Z\"},{\"kind\":\"portfolio\",\"claim\":\"보유 자산 목록은 방문자 직접 입력(미검증) 값이며, 일부 시세(가격/등락률)는 Mock market data (fixture) (DEMO)를 사용함\",\"source\":\"방문자 직접 입력 (미검증); Mock market data (fixture) (DEMO)\"}],\"alternatives\":[],\"risks\":[{\"title\":\"데이터 신뢰도 제한\",\"description\":\"보유 종목·수량은 사용자가 직접 입력한 값으로 검증되지 않았고, 가격/등락률 일부는 실제 시장 데이터가 아닌 Mock(DEMO) 데이터입니다. 실제 잔고·시세와 차이가 있을 수 있습니다.\",\"severity\":\"medium\"}],\"costs\":[],\"policyChecks\":[],\"recommendation\":\"데이터가 실제 계좌 잔고 및 실시간 시세와 정확히 일치하는지 주기적으로 확인하시고, 중요한 의사결정 전에는 증권사 앱 등에서 실제 수치를 재확인하는 것을 권장합니다.\",\"limitations\":[\"보유자산 입력값은 미검증(방문자 직접 입력)이며, 시세 데이터 일부는 실제가 아닌 Mock(DEMO) fixture입니다.\",\"실시간 시세가 아니라 조회 시점 스냅샷 기준입니다.\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 5119,
+        "noCache": 5119,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 709,
+        "text": 709,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 5119,
+        "output_tokens": 709,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 5119,
+          "output_tokens": 709,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

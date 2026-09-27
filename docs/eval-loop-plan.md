@@ -8,7 +8,7 @@
 | 1 데이터셋 v1 | **완료** 2026-09-27 · 125 + holdout 24, 10개 층, 프로필 6종 |
 | 2 하네스·게이트 | **완료** 2026-09-27 · 코드 채점기 12종, 결과물 분해 표, 교차 케이스 그룹(invariant/contrast), 변형 비교(`--variant`, `eval:compare`), judge, CI. regression cassette 기록은 Phase 4 수정 뒤 |
 | 3 judge 캘리브레이션 | **도구 완료** 2026-09-27 · `eval:queue`(라벨 큐) / `eval:calibrate`(κ·정밀도·재현율·임계값 표). 사람 라벨 0건, 소유자 입력 대기 |
-| 4 루프 엔지니어링 | **진행 중** · F-004 수량 파싱 수정 완료(전/후 CHANGELOG). 다음: F-011 LLM 라우터 누락, F-002 Critic 정책 컨텍스트, F-001 임계값. golden 30문항 기록 완료, replay 25/30(F-011 누락 5건) |
+| 4 루프 엔지니어링 | **진행 중** · 수정 3건 완료(F-004 수량 파싱, F-011 라우터 하한, F-002 Critic 정책 컨텍스트) · golden replay 25→30/30 · 다음: F-002b Critic 도구 결과, F-012 단순 조회 정책 점검, F-001 임계값 |
 | 5 운영 루프 | 미착수 |
 
 대상은 `src/orchestration`·`src/agents`의 멀티 에이전트 파이프라인이다. 보유자산 입력·시세 조회 분리 작업(Codex 담당)과는 `PortfolioSnapshot`/`MarketDataProvider` 인터페이스에서만 만나며, 이 문서의 모든 평가는 **fixture 기반 스냅샷**으로 실행해 실시간 시세에 의존하지 않는다.

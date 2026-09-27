@@ -1,0 +1,79 @@
+{
+  "key": "925a905b11c734513d3dd0c5",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T11:36:39.716Z",
+  "preview": "USER: 투자 가능 금액 얼마야?\n\nPORTFOLIO (as of 2026-09-27T11:35:35.839Z): {\"asOf\":\"2026-09-27T11:35:35.839Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"type\":\"brokerage\"",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EqIKCpABCBIYAipA6bn73CBrIUh8fZxP5V61GPXBd9YEhIVGZmYZ0mDbjSdPCjJpnVfr5sKFWNMFTodjIeSIr6zmravTSOqwjUMp1DIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAbT/49UGEgzMSRifrwJknIghbuQaDAGzX/46SBJs7bODnCIw7WOEMAwYFlOHM3UfVgOAiIiG6WmsM79gaAGFLhIT8he41/+IzWuYdbxV8IBkkRpEKr4IPPBH4Ka0HngkRN+o//qEEJJ24dncjwhwsSvm6xp8AwYkwCmSrBr1ZVBMil8vqv68XUj4oofrD9Woc71Oy03ngNr2Lm+HUhMb6syYa4fP+qKO1+gA4To4zgi2pwEU+aUYn+lBgX6y5kZG9X2HUH+9/IGjw2Iqi0p+QDlEHQzn8QIIo9LMhdXweOtEmkl15CCPD9gQqRm3rJ5guDPfGUliF4+LDa9f3u1TSouRCIErFmomrnVN5DDJJX1cryjjvcAWZ1GoOguJuE4CZY6rrcoQ92crs8o96DoN0koEQhv5F9h61ARAjsE0arq/y2mCPwa+Z6hwUEEF1O9aJzZWiE1vlQAIhi4ibwJ6hBV4sGyBspMFggdjCfBOWCrkAWbxd+nVOZRe2qaUqBIS/JrqOF6LR6Tieerincp/cHT6tpZRmXwav0es8uEhzPSGKZMJ4Xm/ZZokCQmo0uU3KKYcbWWOg68IgiXHe8ojxfFWLGCock8+68VYl/VIXvcfW/m4LrlbvXDLThwaIVpggtyjjSTZC4RxUU1cR+7DGXlJdSpfBhM+Gyc40ZdWgjFwHprnxKhQYiKg3QHfl6v1WIgU04TgJ5LTY3TiIUjX4+SP5fpNdXQ5jEs3hcWY97ksmMTmuqQeJLfP4G6KdoRnssucaNYolBxiLj0OvbSd5JIuyFXYNLCTS1nI2tSY5Kheo6XHXRFK4HfJatsMW+DjsRQp51cdB0j+L0vQx6LgytOqmTZ51/S3lzU2IgtkOSCo9WbYqMv46XigOn1pFUWAoiz/jpHXQqvwYngCa9DOtU7swDp0gYFqXr29LYbfliJxxwZVhztrrK/dv+YY/e8EOa07WFr3XQjgg/TrqfUsSYAerFvoXF3fNvLTHQeqGIALmKIkedWKUwAzpnFvFmsVcMRApeIy+CpWFlxXq/WtK72epTw5QAMWF0rfrauAx1O6dT8MD/LeeXPd3MVgApyGTHZ5JyMaQft+AH5h+5vzoEjCHqtNFpRoSu796LFYkG/Ay19VAxI89TWzhNXS2TqfMk36Y9gyiMc3FRizn2pmP7aszaZt2XSyqxUqaIZpy1JMWRz0PWlZcwa4nrBOihGEVZGoX1dcG7CunLI6OLDJcagUYU2eTxSNnUxgrluLulZ0drM6u4S+CCeVrgORVBmMuP21ulSepDE6tZEjCshV+ruk5IzFvhxtrjgPBOhCVaNvHpSF3B+qhAKaK1SbHBIJkqtgfrExVvHa5V1g3Q+zfh8Cp2Q1VvoTzbXOMzOerdpOD/39u05NqvETVeHQUyl3eNsYmYEyM/S/DSfOAznJPMBeIns5q2oVVyl89D28Tmmf0MhzfTTNIDfNiuylDcc9pDXQvzNbloPlvHUmLZT/J7Znl+2rTnfCUGXh68gCiVpckrII1JsLd+u2B2W9IHKhCIRRKWQiOa7Jrh53/O1fP+HGhnqEGAE="
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"summary\":\"현재 buyingPowerKRW로 표시된 매수 가능 금액은 10,760,000원입니다. 다만 이 수치가 KRW현금(8,000,000)+USD현금(2,760,000)의 합인지 여부는 데이터에 명시되어 있지 않아 단정할 수 없습니다.\",\"evidence\":[{\"kind\":\"portfolio\",\"claim\":\"buyingPowerKRW = 10,760,000원 (산정 근거는 데이터에 명시되지 않음)\",\"source\":\"방문자 직접 입력 (미검증)\",\"asOf\":\"2026-09-27T11:35:35.839Z\"},{\"kind\":\"portfolio\",\"claim\":\"총 자산가치(totalValueKRW) = 39,040,386원, 현금 비중 27.6%(KRW 20.5% + USD 7.1%)\",\"source\":\"방문자 직접 입력 (미검증)\",\"asOf\":\"2026-09-27T11:35:35.839Z\"},{\"kind\":\"portfolio\",\"claim\":\"KRW현금 8,000,000원 + USD현금(원화환산) 2,760,000원 = 10,760,000원으로 수치상 일치하나, buyingPowerKRW 필드 자체가 이 합산 공식으로 계산된다는 근거는 데이터에 없음(증거금·예약주문 등 다른 요인 가능)\",\"source\":\"방문자 직접 입력 (미검증)\",\"asOf\":\"2026-09-27T11:35:35.839Z\"},{\"kind\":\"portfolio\",\"claim\":\"bySectorPct: Technology 37%\",\"source\":\"방문자 직접 입력 (미검증)\",\"asOf\":\"2026-09-27T11:35:35.839Z\"},{\"kind\":\"market\",\"claim\":\"당일 변동률: NVDA -7%, TIGER 미국S&P500 -3.2%, VOO -1.5%\",\"source\":\"Mock market data (fixture) (DEMO)\",\"asOf\":\"2026-09-27T11:35:35.839Z\",\"isMock\":true}],\"alternatives\":[{\"title\":\"아무것도 하지 않음\",\"description\":\"현재 매수여력 산정 근거가 불확실하고 Technology 섹터 비중이 이미 높은 상태이므로, 신규 매수 없이 증권사 앱에서 실제 매수가능금액을 재확인한 뒤 결정해도 무방합니다.\"},{\"title\":\"증권사 실제 잔고로 재확인 후 소액 매수\",\"description\":\"buyingPowerKRW 수치를 증권사 HTS/MTS에서 재확인한 후, 필요하다면 그 범위 내에서 소액으로 분할 매수를 검토합니다.\"},{\"title\":\"기존 비중 조정(리밸런싱) 우선 검토\",\"description\":\"Technology 섹터 비중이 37%로 높은 편이므로, 신규 매수보다 비중 축소 또는 다른 섹터 자산 편입을 통한 리밸런싱을 먼저 고려할 수 있습니다.\"}],\"risks\":[{\"title\":\"매수여력 산정 근거 불명확\",\"description\":\"buyingPowerKRW(10,760,000원)이 KRW현금+USD현금 합계와 수치상 일치하지만, 데이터에 이 산정 공식이 명시되어 있지 않아 실제로는 증거금, 예약 현금 등 다른 요인이 반영됐을 가능성을 배제할 수 없습니다.\",\"severity\":\"medium\"},{\"title\":\"섹터 집중도\",\"description\":\"bySectorPct 기준 Technology 섹터 비중이 37%로 다른 자산군 대비 높은 편입니다. 일반적인 분산 투자 관점에서 추가 기술주 매수 시 집중 위험이 더 커질 수 있습니다.\",\"severity\":\"medium\"},{\"title\":\"당일 변동성\",\"description\":\"NVDA(-7%), TIGER 미국S&P500(-3.2%), VOO(-1.5%) 등 일부 포지션이 당일 큰 폭으로 하락했습니다(Mock 데이터 기준). 이는 총자산가치와 비중 계산에 영향을 줄 수 있는 단기 변동성이며, 실시간 실제 시세와 차이가 있을 수 있습니다.\",\"severity\":\"medium\"},{\"title\":\"미검증 데이터\",\"description\":\"포트폴리오 데이터는 사용자가 직접 입력한 값으로 실시간 증권사 연동 검증이 되어 있지 않습니다.\",\"severity\":\"low\"}],\"costs\":[],\"policyChecks\":[],\"recommendation\":\"제공된 데이터 상 매수 가능 금액은 10,760,000원으로 표시되어 있으나, 이 수치의 산정 방식이 데이터에 명시되지 않아 정확한 근거로 단정하기 어렵습니다. 또한 현재 Technology 섹터 비중이 37%로 높은 편이고, 일부 보유 종목이 당일 큰 폭(NVDA -7% 등)으로 하락한 상태이므로, 신규 매수를 서두르기보다 증권사에서 실제 매수가능금액을 재확인하고 섹터 집중도를 함께 점검하는 것을 권장합니다. 별도 투자 원칙(policyChecks) 점검 결과가 이번 요청에는 제공되지 않아 공식적인 위반/충족 판정은 내리지 않습니다.\",\"limitations\":[\"데이터는 사용자가 직접 입력한 값으로 실제 증권사 잔고와 다를 수 있습니다.\",\"시장 시세(Mock market data)는 데모용 데이터로 실제 가격과 차이가 있을 수 있습니다.\",\"buyingPowerKRW의 정확한 산정 로직(증거금, 예약주문 등 포함 여부)은 확인되지 않았습니다.\",\"이번 요청에는 policyChecks(투자 원칙 점검) 데이터가 제공되지 않아 공식 판정을 포함하지 않았습니다.\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4250,
+        "noCache": 4250,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 2429,
+        "text": 2051,
+        "reasoning": 378
+      },
+      "raw": {
+        "input_tokens": 4250,
+        "output_tokens": 2429,
+        "output_tokens_details": {
+          "thinking_tokens": 378
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4250,
+          "output_tokens": 2429,
+          "output_tokens_details": {
+            "thinking_tokens": 378
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

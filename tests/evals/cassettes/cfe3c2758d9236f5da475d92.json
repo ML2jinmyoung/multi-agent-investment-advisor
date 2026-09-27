@@ -1,8 +1,8 @@
 {
   "key": "cfe3c2758d9236f5da475d92",
   "modelId": "claude-sonnet-5",
-  "recordedAt": "2026-09-27T10:37:29.107Z",
-  "preview": "USER: 데이터 언제 기준이야?\n\nPORTFOLIO (deterministic, as of 2026-09-27T10:37:23.334Z):\n{\"asOf\":\"2026-09-27T10:37:23.334Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"typ",
+  "recordedAt": "2026-09-27T11:34:22.399Z",
+  "preview": "USER: 데이터 언제 기준이야?\n\nPORTFOLIO (deterministic, as of 2026-09-27T11:34:17.959Z):\n{\"asOf\":\"2026-09-27T11:34:17.959Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"typ",
   "result": {
     "content": [
       {
@@ -10,14 +10,14 @@
         "text": "",
         "providerMetadata": {
           "anthropic": {
-            "signature": "EugCCpABCBIYAipALeUKV32baDULgkQpqKgZVlGrTkS1WqxPKCbkkw23P4963/Ilk8YEgbCf7WNjDhvyJwPGMeazrXGKQ4bB2ycxfzIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAejj49UGEgx4OEu47da1QqFFKHkaDCn/VbmxHjKM19sIzCIwlzIde2eZNVM2oxQd/HqKXN3FjgUCLmPhaA7Dyj9Ic8LtzJhPnr7iijJ4I44bubh+KoQB+UqEorV62GvbckaKo9goaACnmjximUVXVRVfLhSbK+/e3i4YQy/AQK7nl4yDlByApCqaEUGyICLQNSE6zQOySDJaTBCdStg4f60KEYmAC31DxIFHHOcUBpd8Vex5X02+j1sknaW+MRS7t6bxGwDZJuyxNP7bsSyFtdGnycvHU4216zhgGAE="
+            "signature": "EtACCpABCBIYAipAA0RN/dhzzaE95v3Di9yfhdkW+/1BwVMFAzCDMHHyRHeqejg7YcgpCX0OZ7d7HWhvS4RQ8suUWbgTZN3opYvfaDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAb7+49UGEgxUJ/3KqBb3NbJmWp0aDB6JdGVFr6PtF06ugyIwz6w2HTCkYDxTXDNoArBDF/73UKN8OtjD60omjFpkm2TcuTHMUtGh41j+HuKgZli0Km1STbNg6RW3dEHaPcTS5HIIpsX1IgiUWxXzFHRRcTYLR2Dk7bT005h3LnSpH6V9WoBKokMZjzfBbzwT0XUGMIX8czTmmnVTq/s5WFCVoquhdNfW4GwNc+UbDRN74Qhu6WvlA5F9Zw3iNh50h/nEGAE="
           }
         }
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01FZwgdY8Q1cGDGxAqeFqbQS",
-        "toolName": "getInvestmentPolicy",
+        "toolCallId": "toolu_013m1JQAnf3C727TwrGkEbws",
+        "toolName": "getPortfolioSnapshot",
         "input": "{}",
         "providerMetadata": {
           "anthropic": {
@@ -40,15 +40,15 @@
         "cacheWrite": 0
       },
       "outputTokens": {
-        "total": 69,
-        "text": 35,
-        "reasoning": 34
+        "total": 66,
+        "text": 36,
+        "reasoning": 30
       },
       "raw": {
         "input_tokens": 4009,
-        "output_tokens": 69,
+        "output_tokens": 66,
         "output_tokens_details": {
-          "thinking_tokens": 34
+          "thinking_tokens": 30
         },
         "cache_creation_input_tokens": 0,
         "cache_read_input_tokens": 0,
@@ -65,9 +65,9 @@
       "anthropic": {
         "usage": {
           "input_tokens": 4009,
-          "output_tokens": 69,
+          "output_tokens": 66,
           "output_tokens_details": {
-            "thinking_tokens": 34
+            "thinking_tokens": 30
           },
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,

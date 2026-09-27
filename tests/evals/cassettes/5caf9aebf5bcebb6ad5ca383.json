@@ -1,15 +1,24 @@
 {
   "key": "5caf9aebf5bcebb6ad5ca383",
   "modelId": "claude-sonnet-5",
-  "recordedAt": "2026-09-27T09:42:59.983Z",
+  "recordedAt": "2026-09-27T11:13:57.001Z",
   "preview": "USER: NVDA 더 살까?\nSYMBOLS: NVDA\n\n관련 종목의 최근 공시, 재무 지표, 최근 가격 흐름, 유의사항, (ETF면) 구성 종목을 tool로 확인하고 근거 목록을 만드세요. tool이 error를 반환하면 그 사실을 limitations에 적습니다.",
   "result": {
     "content": [
       {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EpsCCpABCBIYAipAaaSXTj3vYowB/2I6xn6FmpOXX7opR96MVGI9lQwDexPAP6nDjPKpHclwFI3Pd9Net15CnF5Z6XA9ejXbr9l1LzIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAfP049UGEgyLZr5ZsYyA8VJHjFsaDMhETilcI5qVuM531yIwhkWkaiI2sHmpCu/ApA4NoCPoEmDo94NrehPt/UPltls7aUmYgAeT7w9mJnO66ZIdKjgt2VRn/uRVYEjslTJyFyFToek5z5fgbqlhAiU15AFsUQP0ibqwTNeP2RSBz5M5m3Ehq+twgaka/BgB"
+          }
+        }
+      },
+      {
         "type": "tool-call",
-        "toolCallId": "toolu_015KGmsHqEkDieA2bkfYmoEu",
+        "toolCallId": "toolu_01KQq7cUBY2Nfs9oAbMQoRws",
         "toolName": "getRecentFilings",
-        "input": "{\"symbol\":\"NVDA\"}",
+        "input": "{\"symbol\":\"NVDA\",\"days\":90}",
         "providerMetadata": {
           "anthropic": {
             "caller": {
@@ -20,7 +29,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01LNsYmYXfRHGZjSsUD7XRe3",
+        "toolCallId": "toolu_01VrLnu9D2zxStRhMCVtVMDk",
         "toolName": "getFinancialStatements",
         "input": "{\"symbol\":\"NVDA\"}",
         "providerMetadata": {
@@ -33,7 +42,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01QgskebYAnV8iZk86GTM5Hy",
+        "toolCallId": "toolu_01Rrx6rB7xadNhg5JmbrY9CW",
         "toolName": "getPriceHistory",
         "input": "{\"symbol\":\"NVDA\",\"period\":\"3m\"}",
         "providerMetadata": {
@@ -46,7 +55,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_018DYWBW7EH3uDNCg3QPN6Nf",
+        "toolCallId": "toolu_01ULQm1HU9ETWq7VU7Ut5ZfY",
         "toolName": "getStockWarnings",
         "input": "{\"symbol\":\"NVDA\"}",
         "providerMetadata": {
@@ -59,7 +68,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_019gSxwHGu752UqWxLpeapVD",
+        "toolCallId": "toolu_018QHFTpdhjVKzyUnhusPPY7",
         "toolName": "getQuotes",
         "input": "{\"symbols\":[\"NVDA\"]}",
         "providerMetadata": {
@@ -83,15 +92,15 @@
         "cacheWrite": 0
       },
       "outputTokens": {
-        "total": 292,
-        "text": 292,
-        "reasoning": 0
+        "total": 332,
+        "text": 314,
+        "reasoning": 18
       },
       "raw": {
         "input_tokens": 2366,
-        "output_tokens": 292,
+        "output_tokens": 332,
         "output_tokens_details": {
-          "thinking_tokens": 0
+          "thinking_tokens": 18
         },
         "cache_creation_input_tokens": 0,
         "cache_read_input_tokens": 0,
@@ -108,9 +117,9 @@
       "anthropic": {
         "usage": {
           "input_tokens": 2366,
-          "output_tokens": 292,
+          "output_tokens": 332,
           "output_tokens_details": {
-            "thinking_tokens": 0
+            "thinking_tokens": 18
           },
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,

@@ -1,0 +1,88 @@
+{
+  "key": "2c85838b0fe1b360b67f156a",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T11:03:54.040Z",
+  "preview": "USER: 삼성전자 1000만원 매수하면 원칙 위반이야?\n\nPORTFOLIO (deterministic, as of 2026-09-27T11:03:43.295Z):\n{\"asOf\":\"2026-09-27T11:03:43.295Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "Eo4ICpABCBIYAipAKnlWsm2QMv+HV8KdQPXCf8pIaZklS333ENxC/3Q2tb1lWFkStxV8e2tGhClrKpWHhBn8AyMEKJ1QQjMlnswYSzIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAZnw49UGEgxokrLv7bUzIh3ATUQaDDzqSY0wiG3kQypVDSIwkTs9r3f7hpHnorc70VhgiolLURZO9Dttvh/VO3OMprlFsIOhn5skTGJF1A4HTnQDKqoG/j66s8n+XOYSAGggxcWkr3uM+Zm8U0mC6fsGImXewxugCMNk2c5OCmMh1c0cwq20cUKI+v+a59Ug/+bGNGVg6fawGcFIfLXzXPDxFJaOQbjN2LJXKDFywmx+jBwPiaPYMTYKS9a4KQchfhBYIGrrlsomnJHg67rVhoYtIfMhYKzM7v0pWkHkxPMnZPssr8z8PJ+NY1NX/adcGboziPicfK2flmLGcRSAGXnh+HhbXPzbjF/VXJuQ+etxJSqpj/GcqYxfGKM8n2y5gp5EzEY1qi7HCSSlzstrwSOOaf4+qCRpnksCzH48qlCYUTPu+Pv8nWHQHxzR7tx/5ZAOZJUZIS78ft9P4AU3J0LuK5QWvHFmaMg9SlAgsePWxNF2Rt8rVtD7sSRN/l/svVxTE6+0icurIr9AZmePueu1Frhzb9rYhcq+3ascYsAzr1hLJLh8k6q2/bNETkUitjGLGSQzah31dpV61VPJk1jtLwPyT+moAISUutX7U2YUUd7QYypeakju4rHcEKIb41CVDpFpwJyJz4oG/yiijdFapVJL8B58Ezjxvx97+ATGC9LQ5Ojfd/kkW4gdMr272MKRJ8OZQc/DR4mvCUKetAbN4J+QqWaaFVLhdjLdUEmFX1atO5cxDo5KEMSJSwGxYGol3kWLiTNpWupL79DE2Ibk7bmoTZJDbJHNQKwyWcTbQHRI1s/fHHQ81PubeYvsqJP/1cq7JPtPvF7J7tqvUUayyWXdBBezhgBR0wps8grHvodjh8nVi71tvHgdgCMAfubLZs49Ql03Gt74MmAQlo2/i57/Qqz2ncWB++iveM8VfSHH0Szc3aOeW+8sIRVdb9qgcYj0ElRrkTMK5eavFzTFpMaIjzID58ayHw+uR7zAMHhjRzVe4DHnMO1i2Ht0CM0CGY2G8YdbveH1yicaPhI6PRICQ1rndHK6GOILFfgiK0ahu9qhg/rdS+eaMzzvM3aidbNz5kBY03m4Wb93fjkvwNolxpWiHjX35SmsCDuXb7d+ZkhbjY/98g1BnHYILRrfLlujW6PEKv36Ln4rBmdu32o3cfFuIMQxOr0wCbeSGAE="
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01J3t9pWmP5dgJJZrsRdG4Fd",
+        "toolName": "simulateTrade",
+        "input": "{\"symbol\":\"005930\",\"action\":\"buy\",\"amountKRW\":8000000}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4155,
+        "noCache": 4155,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 427,
+        "text": 103,
+        "reasoning": 324
+      },
+      "raw": {
+        "input_tokens": 4155,
+        "output_tokens": 427,
+        "output_tokens_details": {
+          "thinking_tokens": 324
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4155,
+          "output_tokens": 427,
+          "output_tokens_details": {
+            "thinking_tokens": 324
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

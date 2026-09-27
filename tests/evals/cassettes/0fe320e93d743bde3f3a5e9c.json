@@ -1,0 +1,70 @@
+{
+  "key": "0fe320e93d743bde3f3a5e9c",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T11:35:34.240Z",
+  "preview": "USER: 단일 종목 한도 넘은 거 있어?\n\nPORTFOLIO (deterministic, as of 2026-09-27T11:35:04.526Z):\n{\"asOf\":\"2026-09-27T11:35:04.526Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\"",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"summary\":\"단일 종목 한도(15%)를 넘은 종목은 없습니다. ETF 내부 보유분까지 합산한 실질 노출 기준으로 가장 비중이 큰 종목은 삼성전자(005930)로 11.7%이며 한도 이내입니다. 다만 섹터 한도(Technology 35%)는 37%로 초과된 상태입니다.\",\"evidence\":[{\"kind\":\"portfolio\",\"claim\":\"직접 보유 기준 삼성전자 비중은 8.9%(3,480,000원)\",\"source\":\"getPortfolioSnapshot\",\"asOf\":\"2026-09-27T11:35:04.526Z\",\"isMock\":true},{\"kind\":\"etf\",\"claim\":\"ETF look-through 포함 시 삼성전자 실질 노출은 직접 3,480,000원+간접(ETF 내부) 1,092,000원=총 4,572,000원, 비중 11.7%\",\"source\":\"getExposure(005930)\",\"isMock\":true},{\"kind\":\"etf\",\"claim\":\"상위 10개 실질 노출 중 최대치도 삼성전자 11.7%로, AAPL 9.9%, NVDA 8.3%, SK하이닉스 4.7% 등 모두 15% 한도 이내\",\"source\":\"getExposure()\",\"isMock\":true},{\"kind\":\"policy\",\"claim\":\"단일 종목 최대 비중 한도 15%, 섹터 한도 35%, 해외자산 한도 70%, 최소 유동성 10%\",\"source\":\"getInvestmentPolicy\"},{\"kind\":\"policy\",\"claim\":\"코드 점검 결과: singleStockPct ok(11.7%/15%), sectorPct violation(37%/35%, Technology), overseasPct ok(48.4%/70%), minLiquidityPct ok(27.6%/10%)\",\"source\":\"checkInvestmentPolicy\"}],\"alternatives\":[{\"title\":\"섹터 집중도 완화\",\"description\":\"단일 종목 한도는 문제없으나 Technology 섹터가 37%로 한도(35%)를 소폭 초과했습니다. VOO·360750·삼성전자·NVDA·AAPL 등 여러 보유가 모두 기술주 노출을 만들고 있어, 신규 매수 시 비기술 섹터(예: 헬스케어, 금융) 비중을 늘리는 방향을 검토할 수 있습니다.\"},{\"title\":\"현 상태 유지\",\"description\":\"단일 종목 기준으로는 위반이 없으므로 종목 리밸런싱이 급하지 않습니다. 섹터 문제만 별도로 모니터링해도 됩니다.\"}],\"risks\":[{\"title\":\"섹터 집중 위반\",\"description\":\"Technology 섹터 비중이 37%로 정책 한도 35%를 초과한 상태이며, 이는 단일 종목 문제와는 별개입니다.\",\"severity\":\"medium\"},{\"title\":\"ETF 이중 노출\",\"description\":\"VOO·360750·069500 등 여러 ETF가 삼성전자, AAPL, NVDA 등 동일 종목을 내부에 담고 있어 직접 보유 비중만 보면 실제 집중도를 과소평가할 수 있습니다.\",\"severity\":\"low\"}],\"costs\":[],\"policyChecks\":[{\"rule\":\"singleStockPct\",\"label\":\"단일 종목 최대 비중\",\"status\":\"ok\",\"limit\":15,\"before\":11.7,\"after\":11.7,\"subject\":\"005930\"},{\"rule\":\"sectorPct\",\"label\":\"단일 섹터 최대 비중\",\"status\":\"violation\",\"limit\":35,\"before\":37,\"after\":37,\"subject\":\"Technology\"},{\"rule\":\"overseasPct\",\"label\":\"해외자산 최대 비중\",\"status\":\"ok\",\"limit\":70,\"before\":48.4,\"after\":48.4},{\"rule\":\"minLiquidityPct\",\"label\":\"최소 유동성\",\"status\":\"ok\",\"limit\":10,\"before\":27.6,\"after\":27.6}],\"recommendation\":\"\",\"limitations\":[]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 6251,
+        "noCache": 6251,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 1353,
+        "text": 1353,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 6251,
+        "output_tokens": 1353,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 6251,
+          "output_tokens": 1353,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

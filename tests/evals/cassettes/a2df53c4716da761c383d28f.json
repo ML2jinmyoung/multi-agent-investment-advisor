@@ -1,13 +1,13 @@
 {
   "key": "a2df53c4716da761c383d28f",
   "modelId": "claude-haiku-4-5-20251001",
-  "recordedAt": "2026-09-27T09:59:37.954Z",
+  "recordedAt": "2026-09-27T11:29:42.023Z",
   "preview": "STATE:\n{\"message\":\"기술주가 20% 빠지는 경우 손실은?\",\"hasPortfolio\":true,\"hasInvestmentPolicy\":true,\"symbolsMentioned\":[],\"heldSymbolsMentioned\":[],\"tradeDetected\":null,\"scenarioDetected\":{\"kind\":\"sector\",\"target",
   "result": {
     "content": [
       {
         "type": "text",
-        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.95},{\"id\":\"needs_simulation\",\"probability\":0.92},{\"id\":\"needs_external_evidence\",\"probability\":0.08},{\"id\":\"needs_policy_check\",\"probability\":0.15},{\"id\":\"needs_risk_review\",\"probability\":0.25},{\"id\":\"is_prediction_request\",\"probability\":0.05}]}"
+        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.95},{\"id\":\"needs_simulation\",\"probability\":0.92},{\"id\":\"needs_external_evidence\",\"probability\":0.05},{\"id\":\"needs_policy_check\",\"probability\":0.15},{\"id\":\"needs_risk_review\",\"probability\":0.25},{\"id\":\"is_prediction_request\",\"probability\":0.05}]}"
       }
     ],
     "finishReason": {

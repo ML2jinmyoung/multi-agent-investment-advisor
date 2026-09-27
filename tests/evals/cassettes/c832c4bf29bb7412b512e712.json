@@ -1,0 +1,70 @@
+{
+  "key": "c832c4bf29bb7412b512e712",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T11:36:56.538Z",
+  "preview": "USER: 애플 20주 팔까?\n\nPORTFOLIO (deterministic, as of 2026-09-27T11:36:39.739Z):\n{\"asOf\":\"2026-09-27T11:36:39.739Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"type\"",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"meaning\":\"현재 보유한 애플(AAPL) 수량은 10주로, 요청하신 20주 매도는 실제 보유 수량을 초과합니다. 시뮬레이션은 이를 '보유 전량(10주) 매도'로 처리했습니다. 이 경우 애플 비중이 사실상 사라지면서 기술주 섹터 비중이 낮아지고 현금성 유동성이 늘어나는 효과가 있습니다.\",\"keyFacts\":[\"현재 AAPL 보유 수량은 10주(평단가 190달러, 현재가 235.1달러)이며, 20주 매도는 보유량을 초과해 시뮬레이션에서 전량(10주) 매도로 계산되었습니다.\",\"전량 매도 시 애플의 ETF look-through 포함 실질 비중은 9.9%→1.6%로 감소합니다.\",\"Technology 섹터 비중은 37%→28.7%로 낮아지며, 이는 정책 한도(35%) 이내로 더 여유가 생기는 방향입니다.\",\"매도 후 투자 가능 금액은 10,760,000원 → 14,001,136원으로 증가하고, 유동성 비중은 27.6%→35.9%로 늘어납니다.\",\"거래 비용은 수수료 3,244원이며, 해외주식 양도소득세(연 250만원 초과분 22%)는 별도로 발생할 수 있습니다.\",\"현재 및 매도 후 모두 단일종목·섹터·해외비중·유동성 등 투자 원칙 점검은 'ok' 상태입니다.\"],\"alternatives\":[\"보유 수량 그대로 10주 전량 매도 (요청한 20주가 아닌 실제 보유량 기준으로 재확인 필요)\",\"일부만 매도(예: 5주)해 애플 비중을 축소하되 완전히 없애지 않는 방안\",\"매도하지 않고 현재 비중 유지 (단일종목·섹터 한도는 현재도 위반 없음)\",\"다른 보유 종목(NVDA 등, 일일 변동 -7%)의 리스크를 먼저 점검한 뒤 결정\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 5064,
+        "noCache": 5064,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 743,
+        "text": 743,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 5064,
+        "output_tokens": 743,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 5064,
+          "output_tokens": 743,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

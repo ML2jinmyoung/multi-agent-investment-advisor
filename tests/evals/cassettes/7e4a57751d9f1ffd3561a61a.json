@@ -1,13 +1,13 @@
 {
   "key": "7e4a57751d9f1ffd3561a61a",
   "modelId": "claude-haiku-4-5-20251001",
-  "recordedAt": "2026-09-27T09:28:14.054Z",
+  "recordedAt": "2026-09-27T10:57:11.011Z",
   "preview": "STATE:\n{\"message\":\"내가 제일 많이 가진 종목은?\",\"hasPortfolio\":true,\"hasInvestmentPolicy\":true,\"symbolsMentioned\":[],\"heldSymbolsMentioned\":[],\"tradeDetected\":null,\"scenarioDetected\":null,\"recentConversation\":[]",
   "result": {
     "content": [
       {
         "type": "text",
-        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.95},{\"id\":\"needs_simulation\",\"probability\":0.02},{\"id\":\"needs_external_evidence\",\"probability\":0.05},{\"id\":\"needs_policy_check\",\"probability\":0.1},{\"id\":\"needs_risk_review\",\"probability\":0.05},{\"id\":\"is_prediction_request\",\"probability\":0.02}]}"
+        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.95},{\"id\":\"needs_simulation\",\"probability\":0.05},{\"id\":\"needs_external_evidence\",\"probability\":0.1},{\"id\":\"needs_policy_check\",\"probability\":0.15},{\"id\":\"needs_risk_review\",\"probability\":0.1},{\"id\":\"is_prediction_request\",\"probability\":0.05}]}"
       }
     ],
     "finishReason": {

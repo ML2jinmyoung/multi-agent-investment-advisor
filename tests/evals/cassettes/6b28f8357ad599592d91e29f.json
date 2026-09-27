@@ -1,0 +1,88 @@
+{
+  "key": "6b28f8357ad599592d91e29f",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T11:04:00.173Z",
+  "preview": "USER: 삼성전자 1000만원 매수하면 원칙 위반이야?\n\nPORTFOLIO (deterministic, as of 2026-09-27T11:03:43.295Z):\n{\"asOf\":\"2026-09-27T11:03:43.295Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "Eq8ECpABCBIYAipAZLL3qyZkgR3MgNGs7gwXG9qx6EhQoqJIhphxp5eXST5WqboqDJIQGwqCxZCId3Xk9md4dVFZFHVV9++RCMIc3DIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAZ/w49UGEgySzKzljdLwvuXg33QaDG35SMEm2xFvam+BSyIwpsVj6tEwOuTL41CeYgT1DTAUtvMCxKUC+4zOxx8cZHXq5MMXixQSb9Dxs5pqVA+AKssCEVwr6oJRURgVFvtt6mFKN3JdGsRmI87QNbKam638ZyCS+qWRE6uvPccxAVl37bT7ODgbJeq0oYvHxybwukm+4rQQud/CLmAVRvFbcbJLjwEpeK9kxHEHgU7T0xG31RR36tYlaC9uVjmbHomEsv6WpsMXJjXLMihneWNnyBscoYz+zN3FO5Mb0QvoFt9dgReB+5v8ZjWmuAPFeaxDB7Uv2Z7JUAnE8ddBJKPr7xSg2vZ07pf705efaGm0rFht1QUHD2PMY1WoEE/+kfTtQWVZAh2nYNQuFhS4n/Xv6gQQgv5JjH/WOdMCA016xo0UW5OBUr+HR1Sq7I0kbIdo9a19JZ9iRDbXy2WQIAv5DfMg24V9vRkAspQduXWwx1qhkQ421KiTlKbJ+Gd1dQPlERwAUsz43nQf6CrpKNmouVyQcs11eO4nGtOW+aEhrhgB"
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01MSinQG4cyvDNA4yeebMv6N",
+        "toolName": "getBuyingPower",
+        "input": "{}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 5399,
+        "noCache": 5399,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 178,
+        "text": 31,
+        "reasoning": 147
+      },
+      "raw": {
+        "input_tokens": 5399,
+        "output_tokens": 178,
+        "output_tokens_details": {
+          "thinking_tokens": 147
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 5399,
+          "output_tokens": 178,
+          "output_tokens_details": {
+            "thinking_tokens": 147
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

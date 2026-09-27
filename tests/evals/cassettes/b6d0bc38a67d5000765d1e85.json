@@ -1,0 +1,79 @@
+{
+  "key": "b6d0bc38a67d5000765d1e85",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T10:59:26.923Z",
+  "preview": "USER: 내 포트폴리오에서 미국 주식 비중이 얼마야?\n\nVERIFICATION FLAGS: {\"unsupported_claim\":0.15,\"policy_conflict\":0.05,\"prediction_as_fact\":0.1,\"missing_material_risk\":0.35,\"stale_evidence\":0.25}\n\nDATA (as of 2026-09-2",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "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"
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"problems\":[{\"kind\":\"missing_risk\",\"detail\":\"데이터에 포함된 dailyChangePct(NVDA -7%, TIGER 미국S&P500(360750) -3.2%, VOO -1.5%, AAPL -1.2%)는 미국 익스포저의 최근 변동성을 보여주는 중요한 정보인데 초안에는 전혀 언급되지 않았습니다. 특히 NVDA -7%는 단일 종목 기준 큰 폭의 하락이며, 미국 비중 질문과 직접 관련된 리스크이므로 risks 섹션에 '최근 변동성/낙폭' 항목을 추가해야 합니다. 수정 예: risks에 다음 항목 추가 - {'title':'최근 미국 자산 변동성','description':'제공된 시세 기준 NVDA -7.0%, TIGER 미국S&P500 -3.2%, VOO -1.5%, AAPL -1.2%로 미국 익스포저 내 상당한 단기 하락이 관측됩니다(Mock/DEMO 데이터).','severity':'medium'}\"},{\"kind\":\"unsupported_claim\",\"detail\":\"초안의 recommendation에서 'policyChecks 결과도 위반 없음(빈 배열)으로 나타났습니다'라고 단정했으나, 제공된 policyChecks는 빈 배열([])일 뿐 '검사를 수행했고 모두 통과했다'는 의미인지 '검사가 수행되지 않았다'는 의미인지 데이터만으로는 알 수 없습니다. 이를 '위반 없음'으로 해석하는 것은 근거 없는 주장입니다. 수정 예: recommendation 문구를 '제공된 코드 기반 policyChecks 항목이 비어 있어 세부 규칙별 위반 여부는 확인되지 않았습니다. overseasPct(70%) 한도 대비 현재 48.4%는 한도 내로 보이나, 다른 항목(예: singleStockPct 15%, sectorPct 35%)에 대한 자동 점검 결과는 없습니다.'로 변경하고, limitations에도 이미 있는 문구를 유지하되 recommendation에서는 단정적 표현을 제거해야 합니다.\"}],\"verdict\":\"revise\"}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3474,
+        "noCache": 3474,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 3235,
+        "text": 799,
+        "reasoning": 2436
+      },
+      "raw": {
+        "input_tokens": 3474,
+        "output_tokens": 3235,
+        "output_tokens_details": {
+          "thinking_tokens": 2436
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3474,
+          "output_tokens": 3235,
+          "output_tokens_details": {
+            "thinking_tokens": 2436
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

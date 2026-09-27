@@ -1,13 +1,13 @@
 {
   "key": "162ae2b6024ab2ab52808513",
   "modelId": "claude-haiku-4-5-20251001",
-  "recordedAt": "2026-09-27T09:57:20.394Z",
+  "recordedAt": "2026-09-27T11:27:18.711Z",
   "preview": "STATE:\n{\"message\":\"NVDA가 30% 하락하면 내 포트폴리오는?\",\"hasPortfolio\":true,\"hasInvestmentPolicy\":true,\"symbolsMentioned\":[\"NVDA\"],\"heldSymbolsMentioned\":[\"NVDA\"],\"tradeDetected\":null,\"scenarioDetected\":{\"kind\":",
   "result": {
     "content": [
       {
         "type": "text",
-        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.95},{\"id\":\"needs_simulation\",\"probability\":0.92},{\"id\":\"needs_external_evidence\",\"probability\":0.05},{\"id\":\"needs_policy_check\",\"probability\":0.15},{\"id\":\"needs_risk_review\",\"probability\":0.25},{\"id\":\"is_prediction_request\",\"probability\":0.02}]}"
+        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.95},{\"id\":\"needs_simulation\",\"probability\":0.92},{\"id\":\"needs_external_evidence\",\"probability\":0.15},{\"id\":\"needs_policy_check\",\"probability\":0.35},{\"id\":\"needs_risk_review\",\"probability\":0.25},{\"id\":\"is_prediction_request\",\"probability\":0.05}]}"
       }
     ],
     "finishReason": {

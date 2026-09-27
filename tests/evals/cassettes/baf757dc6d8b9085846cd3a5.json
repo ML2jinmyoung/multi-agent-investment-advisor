@@ -1,8 +1,8 @@
 {
   "key": "baf757dc6d8b9085846cd3a5",
   "modelId": "claude-sonnet-5",
-  "recordedAt": "2026-09-27T09:51:49.714Z",
-  "preview": "USER: 내 ETF 안에 엔비디아가 얼마나 들어있어?\n\nPORTFOLIO (deterministic, as of 2026-09-27T09:51:45.582Z):\n{\"asOf\":\"2026-09-27T09:51:45.582Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력",
+  "recordedAt": "2026-09-27T11:22:38.800Z",
+  "preview": "USER: 내 ETF 안에 엔비디아가 얼마나 들어있어?\n\nPORTFOLIO (deterministic, as of 2026-09-27T11:22:34.779Z):\n{\"asOf\":\"2026-09-27T11:22:34.779Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력",
   "result": {
     "content": [
       {
@@ -10,13 +10,13 @@
         "text": "",
         "providerMetadata": {
           "anthropic": {
-            "signature": "EqoDCpABCBIYAipAoK8JJ3KYE5HsMWjlttFYBp9n8/TLvQvjgbskrRUdnq+v5PZNFDA2MJ5lHs3dPqIpW8i6RiYVnlljBqtH6vp8dDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAbXO49UGEgx8ztSo0v1o23hk6ZIaDFr1unJ1IkX9Io4poSIwsMRfwXOedJAU9rQg6IrcMurK5LjXLeW545RAJqbxfEgxxSpp/l5yTQJe3e10T+oTKsYBaIBDaoteApuhYAMXpe7b/7SLSg59XoYjlmIFCjthsH85HQr7xvOg/4LKPmFXUpIEFv6BGsoj0M+1HSQwk3kNaDVwzFSkOPOMNJIAbnThUiJxbnAa9mvejClklTOQQ1yCfxR+mzo5A6V2b2BlTrBXNFxrhqvLvgUczO2QIFAtbC4uKUYDTleCusM6wUOOwMDi4AlchkpHD9xgh46GINgwjB5KCWJ6spzmD8zENBV39VTbe2qXyFvWywDuz4p9dYWstaVzBgkBGAE="
+            "signature": "EsoCCpABCBIYAipAzfIQmZ/lNM8JHTK5g5MN8CiWaxGaK5sSHKO9Dm1ElujTH1rv53rdS8azYP82BKOA2mKXjpHjCD2c6/2osky6vDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAf7449UGEgyt48Gfsbrhg4XgQagaDGsUrOYtz2mmOEteoyIwTb4WOus+7niFr/FyjkKe8yPstnw3eONqrqGtIk1GuieGcS/mFNTjUWo0ETwyV4vjKmfI8kt+j9864y/bjTKfb0p7arGpo6GX4klTMu/9ytTbYidZrShzv4tUIrMwix9ny9B9V4qDEeKUK5XbAIgJPgj5m/njivW1D8G/PVJZKGEW6PK7y2Ksr2tweZ/YczFpQ7bjHSGlLxK9GAE="
           }
         }
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01DZ7tifgo9RKntAo9TMPnHZ",
+        "toolCallId": "toolu_01RWTn68HB1tsqnZtFTtKWJn",
         "toolName": "getExposure",
         "input": "{\"symbol\":\"NVDA\"}",
         "providerMetadata": {
@@ -40,15 +40,15 @@
         "cacheWrite": 0
       },
       "outputTokens": {
-        "total": 126,
-        "text": 55,
-        "reasoning": 71
+        "total": 94,
+        "text": 53,
+        "reasoning": 41
       },
       "raw": {
         "input_tokens": 4023,
-        "output_tokens": 126,
+        "output_tokens": 94,
         "output_tokens_details": {
-          "thinking_tokens": 71
+          "thinking_tokens": 41
         },
         "cache_creation_input_tokens": 0,
         "cache_read_input_tokens": 0,
@@ -65,9 +65,9 @@
       "anthropic": {
         "usage": {
           "input_tokens": 4023,
-          "output_tokens": 126,
+          "output_tokens": 94,
           "output_tokens_details": {
-            "thinking_tokens": 71
+            "thinking_tokens": 41
           },
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,

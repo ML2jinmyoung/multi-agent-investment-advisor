@@ -1,7 +1,7 @@
 {
   "key": "589ef8e09c0d8776a8acd17d",
   "modelId": "claude-sonnet-5",
-  "recordedAt": "2026-09-27T09:36:46.273Z",
+  "recordedAt": "2026-09-27T11:07:00.198Z",
   "preview": "USER: NVDA 왜 떨어졌어?\nSYMBOLS: NVDA\n\n관련 종목의 최근 공시, 재무 지표, 최근 가격 흐름, 유의사항, (ETF면) 구성 종목을 tool로 확인하고 근거 목록을 만드세요. tool이 error를 반환하면 그 사실을 limitations에 적습니다.",
   "result": {
     "content": [
@@ -10,13 +10,13 @@
         "text": "",
         "providerMetadata": {
           "anthropic": {
-            "signature": "EpsCCpABCBIYAipAaaSXTj3vYowB/2I6xn6FmpOXX7opR96MVGI9lQwDexPAP6nDjPKpHclwFI3Pd9Net15CnF5Z6XA9ejXbr9l1LzIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAazH49UGEgy7f3TIglIDP/rXNOsaDIGv8p852gj5gfisZiIwLHewmcTYrq8aUu/OvHkLUKNM7r0b0/mBsHttK0JGI9OGKQc0lnSReOIQHTShwIZjKjhfpjXlHgR7jILYy7PV4DAIyP0kkQD3fplKHWHSQyqcTrOEpcqzCzH/QrVylJJ+wSqpBSJ3cyipsBgB"
+            "signature": "EuQDCpABCBIYAipAS3h/XKH4MmAq8aUrvOIIHtw1I93c6+OD+Y7Ln7Sr7tLN6E2FBpi+99r2E8VTz1tJmWUn4kQdoff6C9ttPDeiJzIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAdLx49UGEgwpxU53JQWqoU+1RtoaDCiw5tzTL+a54AiAAiIwGDYQMavUUquo2mFNNvHF1CFuTveHYQMGZivA2IE7snGZ8FHryKgrlIYpCp9UPfv8KoACEFiC9XWd8FAe1NUtOP4p7yLz6SwoAHNkdsswwrXlzzBLERA4+BLK4OCRDXtd+sO8taqp4CPvgkZ75IE3Rvl+2XeaCzn+c0TlX8aPBkNzZHSNHQvPODezi4HQLa5y7WYvLCbq5e/HdT1IpNkshoTEB9Mimo4KFUtudOzfnfGrz8QGqZB3ZHk4V/4Igsc46Jx2m5T/0OrnIxi0dWqqWfxyBouZZRT3rtOzUErC8nXo5dWXP4ff1xavr+vC3HoAHOCuzDrXgV6TOw97v58du6Cw4pkGrr/l5K1FVoTwTv0VvUOnuG3WBG/L8Zsqa04/+i5MOfLPbTK8UzTBxwEPWrMPuRgB"
           }
         }
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_0125f6h7qKT4hMZV67CZPqpB",
+        "toolCallId": "toolu_01M18xhqk5Qx4oxLkHLTEL38",
         "toolName": "getRecentFilings",
         "input": "{\"symbol\":\"NVDA\",\"days\":30}",
         "providerMetadata": {
@@ -29,7 +29,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01KyFq9WhKhPhREYWK5uCVbv",
+        "toolCallId": "toolu_015Rhv4DmN7qfACQvjjGanes",
         "toolName": "getFinancialStatements",
         "input": "{\"symbol\":\"NVDA\"}",
         "providerMetadata": {
@@ -42,7 +42,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_018B9FwYp1F6m9SDudz7NV8U",
+        "toolCallId": "toolu_01D1btqFnpRmT4SfpkNKVZzH",
         "toolName": "getPriceHistory",
         "input": "{\"symbol\":\"NVDA\",\"period\":\"1m\"}",
         "providerMetadata": {
@@ -55,22 +55,9 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_014DxkRXvkxV5j2SQjMD6Ntr",
+        "toolCallId": "toolu_018ecEJuzg1jF9E2veeeQJzU",
         "toolName": "getStockWarnings",
         "input": "{\"symbol\":\"NVDA\"}",
-        "providerMetadata": {
-          "anthropic": {
-            "caller": {
-              "type": "direct"
-            }
-          }
-        }
-      },
-      {
-        "type": "tool-call",
-        "toolCallId": "toolu_01AyoCX6HuDBHxRhbDbBk14g",
-        "toolName": "getQuotes",
-        "input": "{\"symbols\":[\"NVDA\"]}",
         "providerMetadata": {
           "anthropic": {
             "caller": {
@@ -92,15 +79,15 @@
         "cacheWrite": 0
       },
       "outputTokens": {
-        "total": 332,
-        "text": 314,
-        "reasoning": 18
+        "total": 356,
+        "text": 261,
+        "reasoning": 95
       },
       "raw": {
         "input_tokens": 2371,
-        "output_tokens": 332,
+        "output_tokens": 356,
         "output_tokens_details": {
-          "thinking_tokens": 18
+          "thinking_tokens": 95
         },
         "cache_creation_input_tokens": 0,
         "cache_read_input_tokens": 0,
@@ -117,9 +104,9 @@
       "anthropic": {
         "usage": {
           "input_tokens": 2371,
-          "output_tokens": 332,
+          "output_tokens": 356,
           "output_tokens_details": {
-            "thinking_tokens": 18
+            "thinking_tokens": 95
           },
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,

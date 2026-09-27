@@ -1,13 +1,13 @@
 {
   "key": "dd185d920106df29366855f6",
   "modelId": "claude-haiku-4-5-20251001",
-  "recordedAt": "2026-09-27T10:38:49.630Z",
+  "recordedAt": "2026-09-27T11:35:05.758Z",
   "preview": "STATE:\n{\"message\":\"단일 종목 한도 넘은 거 있어?\",\"hasPortfolio\":true,\"hasInvestmentPolicy\":true,\"symbolsMentioned\":[],\"heldSymbolsMentioned\":[],\"tradeDetected\":null,\"scenarioDetected\":null,\"recentConversation\":[",
   "result": {
     "content": [
       {
         "type": "text",
-        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.95},{\"id\":\"needs_simulation\",\"probability\":0.05},{\"id\":\"needs_external_evidence\",\"probability\":0.15},{\"id\":\"needs_policy_check\",\"probability\":0.92},{\"id\":\"needs_risk_review\",\"probability\":0.10},{\"id\":\"is_prediction_request\",\"probability\":0.02}]}"
+        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.95},{\"id\":\"needs_simulation\",\"probability\":0.05},{\"id\":\"needs_external_evidence\",\"probability\":0.15},{\"id\":\"needs_policy_check\",\"probability\":0.92},{\"id\":\"needs_risk_review\",\"probability\":0.20},{\"id\":\"is_prediction_request\",\"probability\":0.02}]}"
       }
     ],
     "finishReason": {

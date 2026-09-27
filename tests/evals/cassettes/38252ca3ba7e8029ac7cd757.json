@@ -1,7 +1,7 @@
 {
   "key": "38252ca3ba7e8029ac7cd757",
   "modelId": "claude-sonnet-5",
-  "recordedAt": "2026-09-27T09:29:53.830Z",
+  "recordedAt": "2026-09-27T10:59:51.702Z",
   "preview": "USER: NVDA 500만원 더 사면?\nSYMBOLS: NVDA\n\n관련 종목의 최근 공시, 재무 지표, 최근 가격 흐름, 유의사항, (ETF면) 구성 종목을 tool로 확인하고 근거 목록을 만드세요. tool이 error를 반환하면 그 사실을 limitations에 적습니다.",
   "result": {
     "content": [
@@ -10,13 +10,13 @@
         "text": "",
         "providerMetadata": {
           "anthropic": {
-            "signature": "Ev4CCpABCBIYAipA0yxwb1zLKvQVPr/ThnLVciip9u7yQ4dwum/89ezfDZsnQLmNx31jIIYAP7ATad3qNn8a3rDKJgNWei36brYfJjIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAY/E49UGEgyRopMYKEJlzMSp2GcaDPFVzwwIxkREJB1TVCIwN9Xmz0LzS6Bt/qMvqDG3beVUkZNohIle4SZgYBmuJM9UiIQXb0g+8h7usVgtLUe7KpoB1dM9vNDEtMmCtU3Q0m2szhbZcH0lEq3VUdOmX6LMF/BqXx/a7snmdTe6lFO3lQgfQJZj+/pSWhZnsWZ4YT3PahblcvL0+xFk3sCkOcMJMaPT8zZtq0sE0FMqywggkTEVzltvllIwwAhkkHodkPc+NCgzwOEp0vseynZHsbOOIuU501DkdcIHnJVMJc+7ndJmpNm6W5u6r92BGRgB"
+            "signature": "EtUDCpABCBIYAipAxDlK50PD7OF98SkP2EEfPG27gjD1flzy2m8fYmvWqHCQ2k1ZTW5gfgTQc795wFUEBIW0mBcMGvH3a2/2HbNptTIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAaXu49UGEgxZCwOlV5bwKFXUh9oaDMI10KkgOwCikr0xByIwHI8PxpS4zukXLJNhFs0+PmOJO3vjFywwxE/wDj4B5bmUstmZMQBQ1TrsNogBiV1zKvEBq3yTR6itbsevclbY1AB2uv5flYrvLhYOnJ8sonog1ecPfpNJ6WR7tb2ZoJqmgMdieDKG3tKI+JmENRgHdkn+7DwIPOELUEG+GIpJyLUSMXuUmUyxxAX25ntuFQUc/zNcP50aevVkhtIPn4O2eiBOQpQxRm3JgFhqi+iBaEGfxhvQB7lZv7uuUQXPKmXU57orwOnhYZtXwhAtBYTLXKJCcdRFbhTtkv7Oh8aHlsTzkBFNQEzwyhDUg6V+P+43x4zqLXmLEONtwjEE68AzTJdPh9FWj8S6BIAopYAueVg9R5sCiVIhTWqzCVOL0K+mxnhiSxgB"
           }
         }
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01LhJ6U8uSbtreX51oMABK1C",
+        "toolCallId": "toolu_01Q37aKNDmDZoxuBrNxy24JD",
         "toolName": "getRecentFilings",
         "input": "{\"symbol\":\"NVDA\",\"days\":90}",
         "providerMetadata": {
@@ -29,7 +29,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01WvJ9iUsbDWK8u4WBqHCHCt",
+        "toolCallId": "toolu_01A3nCA1Gy9Uf2vkdpz3YZ92",
         "toolName": "getFinancialStatements",
         "input": "{\"symbol\":\"NVDA\"}",
         "providerMetadata": {
@@ -42,7 +42,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01Dm4JUB3KrPKT3FT8tG7chf",
+        "toolCallId": "toolu_01PGVunKfe6W3V6sXHYoXrdc",
         "toolName": "getPriceHistory",
         "input": "{\"symbol\":\"NVDA\",\"period\":\"3m\"}",
         "providerMetadata": {
@@ -55,7 +55,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01Ba68ii8wfRQaHbiCg9RK8y",
+        "toolCallId": "toolu_014mJiAyN6hdkGWvL6WURrbS",
         "toolName": "getStockWarnings",
         "input": "{\"symbol\":\"NVDA\"}",
         "providerMetadata": {
@@ -68,7 +68,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01KLtHaDrngcJjYBgMRiq9YQ",
+        "toolCallId": "toolu_01CBzZskeCQQG75E51guGRVC",
         "toolName": "getQuotes",
         "input": "{\"symbols\":[\"NVDA\"]}",
         "providerMetadata": {
@@ -92,15 +92,15 @@
         "cacheWrite": 0
       },
       "outputTokens": {
-        "total": 379,
-        "text": 314,
-        "reasoning": 65
+        "total": 411,
+        "text": 315,
+        "reasoning": 96
       },
       "raw": {
         "input_tokens": 2370,
-        "output_tokens": 379,
+        "output_tokens": 411,
         "output_tokens_details": {
-          "thinking_tokens": 65
+          "thinking_tokens": 96
         },
         "cache_creation_input_tokens": 0,
         "cache_read_input_tokens": 0,
@@ -117,9 +117,9 @@
       "anthropic": {
         "usage": {
           "input_tokens": 2370,
-          "output_tokens": 379,
+          "output_tokens": 411,
           "output_tokens_details": {
-            "thinking_tokens": 65
+            "thinking_tokens": 96
           },
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,

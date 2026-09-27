@@ -27,7 +27,8 @@ export async function runCritic(ctx: RunContext, answer: AgentAnswer, verificati
         prompt: [
           `USER: ${ctx.message}`,
           `VERIFICATION FLAGS: ${JSON.stringify(verification.scores)}`,
-          `DATA (as of ${ctx.snapshot.asOf}): ${JSON.stringify({ portfolio: ctx.snapshot, simulation: ctx.simulationView, policyChecks: ctx.policyChecks })}`,
+          // F-002: the agents cite policy limits from ctx.policy; without it the critic flagged those numbers as invented
+          `DATA (as of ${ctx.snapshot.asOf}): ${JSON.stringify({ portfolio: ctx.snapshot, investmentPolicy: ctx.policy, simulation: ctx.simulationView, policyChecks: ctx.policyChecks })}`,
           `DRAFT ANSWER: ${JSON.stringify(answer)}`,
         ].join("\n\n"),
       });

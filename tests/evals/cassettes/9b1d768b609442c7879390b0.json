@@ -1,13 +1,13 @@
 {
   "key": "9b1d768b609442c7879390b0",
   "modelId": "claude-haiku-4-5-20251001",
-  "recordedAt": "2026-09-27T09:30:36.528Z",
+  "recordedAt": "2026-09-27T11:01:46.080Z",
   "preview": "STATE:\n{\"message\":\"NVDA 500만원 더 살까?\",\"hasPortfolio\":true,\"hasInvestmentPolicy\":true,\"symbolsMentioned\":[\"NVDA\"],\"heldSymbolsMentioned\":[\"NVDA\"],\"tradeDetected\":{\"symbol\":\"NVDA\",\"action\":\"buy\",\"amountK",
   "result": {
     "content": [
       {
         "type": "text",
-        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.95},{\"id\":\"needs_simulation\",\"probability\":0.85},{\"id\":\"needs_external_evidence\",\"probability\":0.75},{\"id\":\"needs_policy_check\",\"probability\":0.90},{\"id\":\"needs_risk_review\",\"probability\":0.85},{\"id\":\"is_prediction_request\",\"probability\":0.05}]}"
+        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.92},{\"id\":\"needs_simulation\",\"probability\":0.85},{\"id\":\"needs_external_evidence\",\"probability\":0.72},{\"id\":\"needs_policy_check\",\"probability\":0.88},{\"id\":\"needs_risk_review\",\"probability\":0.81},{\"id\":\"is_prediction_request\",\"probability\":0.15}]}"
       }
     ],
     "finishReason": {

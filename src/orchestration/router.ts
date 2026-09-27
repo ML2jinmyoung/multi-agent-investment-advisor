@@ -113,6 +113,12 @@ export function ruleScores(message: string, parsed: ParsedMessage, input: RouteI
   };
 }
 
+/** Rule scores at or above the ON threshold are hard signals; below it they are hints the model may override. */
+export const RULE_FLOOR = 0.5;
+export function withRuleFloor(model: Record<RoutingKey, number>, rule: Record<RoutingKey, number>): Record<RoutingKey, number> {
+  return Object.fromEntries(ROUTING_KEYS.map((k) => [k, rule[k] >= RULE_FLOOR ? Math.max(model[k], rule[k]) : model[k]])) as Record<RoutingKey, number>;
+}
+
 const PlannerOutput = z.object(Object.fromEntries([...ROUTING_KEYS, "is_prediction_request"].map((k) => [k, z.number().min(0).max(1)])) as Record<RoutingKey | "is_prediction_request", z.ZodNumber>);
 
 /**
@@ -144,14 +150,17 @@ export async function route(input: RouteInput, dm: DecisionModel | null, tracer:
     "router",
     "decision",
     async (rec) => {
-      let scores: Record<RoutingKey, number> = ruleScores(input.message, parsed, input);
+      const rule = ruleScores(input.message, parsed, input);
+      let scores: Record<RoutingKey, number> = rule;
       let decidedBy: RoutingDecision["decidedBy"] = "rule";
       let confidence = 1;
       let prediction = parsed.isPredictionRequest ? 1 : 0;
       if (dm) {
         try {
           const r = await dm.evaluateMany(state, QUESTIONS);
-          scores = Object.fromEntries(ROUTING_KEYS.map((k) => [k, r.probabilities[k]])) as Record<RoutingKey, number>;
+          // F-011: the model may add specialists the rules missed, never drop what a deterministic signal requires
+          // (held symbol -> portfolio, trade/scenario -> simulation+policy, decision wording -> policy+risk)
+          scores = withRuleFloor(Object.fromEntries(ROUTING_KEYS.map((k) => [k, r.probabilities[k]])) as Record<RoutingKey, number>, rule);
           prediction = Math.max(prediction, r.probabilities.is_prediction_request);
           decidedBy = dm.name;
           confidence = confidenceOf(scores);
@@ -168,7 +177,7 @@ export async function route(input: RouteInput, dm: DecisionModel | null, tracer:
         const { model, config } = await modelFor("orchestratorFallback");
         const r = await generateObject({ model, schema: PlannerOutput, system: PLANNER_SYSTEM, prompt: `STATE: ${JSON.stringify(state)}\nQUESTIONS: ${JSON.stringify(QUESTIONS)}` });
         tracer.usage(rec, r.usage, config.model);
-        scores = Object.fromEntries(ROUTING_KEYS.map((k) => [k, r.object[k]])) as Record<RoutingKey, number>;
+        scores = withRuleFloor(Object.fromEntries(ROUTING_KEYS.map((k) => [k, r.object[k]])) as Record<RoutingKey, number>, rule);
         prediction = Math.max(prediction, r.object.is_prediction_request);
         decidedBy = "llm";
         rec.model = `${rec.model ?? ""} -> ${config.provider}/${config.model}`;

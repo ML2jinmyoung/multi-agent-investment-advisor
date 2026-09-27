@@ -1,13 +1,13 @@
 {
   "key": "5f16062d18474e2bdc98fac8",
   "modelId": "claude-haiku-4-5-20251001",
-  "recordedAt": "2026-09-27T10:49:48.041Z",
+  "recordedAt": "2026-09-27T11:47:53.106Z",
   "preview": "STATE:\n{\"message\":\"현금 비중 더 늘려야 할까?\",\"hasPortfolio\":true,\"hasInvestmentPolicy\":true,\"symbolsMentioned\":[],\"heldSymbolsMentioned\":[],\"tradeDetected\":null,\"scenarioDetected\":null,\"recentConversation\":[]}",
   "result": {
     "content": [
       {
         "type": "text",
-        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.92},{\"id\":\"needs_simulation\",\"probability\":0.15},{\"id\":\"needs_external_evidence\",\"probability\":0.25},{\"id\":\"needs_policy_check\",\"probability\":0.88},{\"id\":\"needs_risk_review\",\"probability\":0.85},{\"id\":\"is_prediction_request\",\"probability\":0.05}]}"
+        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.92},{\"id\":\"needs_simulation\",\"probability\":0.15},{\"id\":\"needs_external_evidence\",\"probability\":0.25},{\"id\":\"needs_policy_check\",\"probability\":0.85},{\"id\":\"needs_risk_review\",\"probability\":0.78},{\"id\":\"is_prediction_request\",\"probability\":0.05}]}"
       }
     ],
     "finishReason": {

@@ -1,8 +1,8 @@
 {
   "key": "a1015351ab62882486ccca75",
   "modelId": "claude-sonnet-5",
-  "recordedAt": "2026-09-27T10:46:07.209Z",
-  "preview": "USER: 내 USD 노출이 얼마나 돼?\n\nPORTFOLIO (deterministic, as of 2026-09-27T10:45:54.053Z):\n{\"asOf\":\"2026-09-27T10:45:54.053Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",",
+  "recordedAt": "2026-09-27T11:43:53.287Z",
+  "preview": "USER: 내 USD 노출이 얼마나 돼?\n\nPORTFOLIO (deterministic, as of 2026-09-27T11:43:39.232Z):\n{\"asOf\":\"2026-09-27T11:43:39.232Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",",
   "result": {
     "content": [
       {
@@ -10,14 +10,14 @@
         "text": "",
         "providerMetadata": {
           "anthropic": {
-            "signature": "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"
+            "signature": "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"
           }
         }
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01AFoeVTotfEvjLNPPTaEkL7",
-        "toolName": "getExposure",
+        "toolCallId": "toolu_01Sp8NEmz2cKjTiYheLRh8va",
+        "toolName": "checkInvestmentPolicy",
         "input": "{}",
         "providerMetadata": {
           "anthropic": {
@@ -40,15 +40,15 @@
         "cacheWrite": 0
       },
       "outputTokens": {
-        "total": 731,
-        "text": 29,
-        "reasoning": 702
+        "total": 719,
+        "text": 36,
+        "reasoning": 683
       },
       "raw": {
         "input_tokens": 4014,
-        "output_tokens": 731,
+        "output_tokens": 719,
         "output_tokens_details": {
-          "thinking_tokens": 702
+          "thinking_tokens": 683
         },
         "cache_creation_input_tokens": 0,
         "cache_read_input_tokens": 0,
@@ -65,9 +65,9 @@
       "anthropic": {
         "usage": {
           "input_tokens": 4014,
-          "output_tokens": 731,
+          "output_tokens": 719,
           "output_tokens_details": {
-            "thinking_tokens": 702
+            "thinking_tokens": 683
           },
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,

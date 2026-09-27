@@ -1,13 +1,13 @@
 {
   "key": "5260ef077be8f1af423a70ed",
   "modelId": "claude-haiku-4-5-20251001",
-  "recordedAt": "2026-09-27T10:39:35.473Z",
+  "recordedAt": "2026-09-27T11:36:41.147Z",
   "preview": "STATE:\n{\"message\":\"애플 20주 팔까?\",\"hasPortfolio\":true,\"hasInvestmentPolicy\":true,\"symbolsMentioned\":[\"AAPL\"],\"heldSymbolsMentioned\":[\"AAPL\"],\"tradeDetected\":{\"symbol\":\"AAPL\",\"action\":\"sell\",\"quantity\":20",
   "result": {
     "content": [
       {
         "type": "text",
-        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.95},{\"id\":\"needs_simulation\",\"probability\":0.75},{\"id\":\"needs_external_evidence\",\"probability\":0.35},{\"id\":\"needs_policy_check\",\"probability\":0.85},{\"id\":\"needs_risk_review\",\"probability\":0.70},{\"id\":\"is_prediction_request\",\"probability\":0.05}]}"
+        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.95},{\"id\":\"needs_simulation\",\"probability\":0.85},{\"id\":\"needs_external_evidence\",\"probability\":0.35},{\"id\":\"needs_policy_check\",\"probability\":0.90},{\"id\":\"needs_risk_review\",\"probability\":0.75},{\"id\":\"is_prediction_request\",\"probability\":0.05}]}"
       }
     ],
     "finishReason": {

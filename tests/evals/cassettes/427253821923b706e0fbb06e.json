@@ -1,7 +1,7 @@
 {
   "key": "427253821923b706e0fbb06e",
   "modelId": "claude-sonnet-5",
-  "recordedAt": "2026-09-27T09:47:51.632Z",
+  "recordedAt": "2026-09-27T11:18:10.781Z",
   "preview": "USER: NVDA 얼마까지 갈까?\nSYMBOLS: NVDA\n\n관련 종목의 최근 공시, 재무 지표, 최근 가격 흐름, 유의사항, (ETF면) 구성 종목을 tool로 확인하고 근거 목록을 만드세요. tool이 error를 반환하면 그 사실을 limitations에 적습니다.",
   "result": {
     "content": [
@@ -10,15 +10,15 @@
         "text": "",
         "providerMetadata": {
           "anthropic": {
-            "signature": "ErsCCpABCBIYAipAqlgavImSAgXPpmbBzFobs7BT0qObrnhilL/rSGwkpHDiiDwjOzF5iLruIai3NLF3rjuyceLoGMH8xdkDnhFNBDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAcXM49UGEgxmeQozoH62yyNqI9MaDMbto1zNLvniFZOZ3yIwN3MfszyVhXZ/DIWg846rAHAfmYzvf9EDH3j3LFyUreNskr/AgPBhhQudpq0v74/aKlhZR4le/uX3yMyRqi/kVo+7EmE25kjUu/hMmW7uygO97wALegNT7QMogidxQVRX4OjOCzcp0oilOqI99ce2TU/L7tuHLPL3kzxrbBosEzIa2HcxpusGW8pWGAE="
+            "signature": "EvsCCpABCBIYAipAA8vxQuTU+yMxG5KKiG0iEEpaTXgjcs7jNjCvQm0ev9/ElVxEtT9aW2p88VWzSXScGBYqMVlwlSJiUYU3ADP9kDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAfD249UGEgwoZgtaM+AP5NwZBb4aDBNe8+IUMuuBkh5c2iIwDNNH2hb8uXuEfrnsk8Griei+DChXDzQz3zvGbmoYxnSjS7bd1bY3hGqw8tt1akigKpcBuhwBoygsmIvV8TaNB7iEN7U1jkqDV5bwnzjQkSDrISerx88oXE7XwA8yYF6FyLPFwB22OGlH2hYwRQlLgXQYEA4aPaz6yhbJ0eBnS+wPImLhgKCCVOsbUXOAy1CRgo5ssukcnAB0RUtu58aHT705jfoZZ+7u+JBBc/cVHT7UAJ6Gbg4heo3sXl1yHnru6ehKwCX+V4ScXxgB"
           }
         }
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01KdpPVAWNoHMeiQ2Wfns8ks",
+        "toolCallId": "toolu_01StFPV4dFPnQDHiWCYMRvRi",
         "toolName": "getRecentFilings",
-        "input": "{\"symbol\":\"NVDA\"}",
+        "input": "{\"symbol\":\"NVDA\",\"days\":90}",
         "providerMetadata": {
           "anthropic": {
             "caller": {
@@ -29,7 +29,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01RptSfmJGYFAr8ZZm155pYK",
+        "toolCallId": "toolu_012TcUHDnpUCXv5BbMXxXyFc",
         "toolName": "getFinancialStatements",
         "input": "{\"symbol\":\"NVDA\"}",
         "providerMetadata": {
@@ -42,9 +42,9 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01SYMDXxSfrwFGovpKPXqBx1",
+        "toolCallId": "toolu_016h73kpDthZ2eM6WzYYZZCa",
         "toolName": "getPriceHistory",
-        "input": "{\"symbol\":\"NVDA\",\"period\":\"3m\"}",
+        "input": "{\"symbol\":\"NVDA\",\"period\":\"6m\"}",
         "providerMetadata": {
           "anthropic": {
             "caller": {
@@ -55,7 +55,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01PfvYMwC2FCTpS6KKA9x5Q7",
+        "toolCallId": "toolu_011MC4YgtCUEhCcTUGjsj2PB",
         "toolName": "getStockWarnings",
         "input": "{\"symbol\":\"NVDA\"}",
         "providerMetadata": {
@@ -68,7 +68,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01K28frVk6KfyYEVVQfGyUhk",
+        "toolCallId": "toolu_01CsRJpwsiusYSrNjgivXJPu",
         "toolName": "getQuotes",
         "input": "{\"symbols\":[\"NVDA\"]}",
         "providerMetadata": {
@@ -92,15 +92,15 @@
         "cacheWrite": 0
       },
       "outputTokens": {
-        "total": 320,
-        "text": 294,
-        "reasoning": 26
+        "total": 379,
+        "text": 315,
+        "reasoning": 64
       },
       "raw": {
         "input_tokens": 2371,
-        "output_tokens": 320,
+        "output_tokens": 379,
         "output_tokens_details": {
-          "thinking_tokens": 26
+          "thinking_tokens": 64
         },
         "cache_creation_input_tokens": 0,
         "cache_read_input_tokens": 0,
@@ -117,9 +117,9 @@
       "anthropic": {
         "usage": {
           "input_tokens": 2371,
-          "output_tokens": 320,
+          "output_tokens": 379,
           "output_tokens_details": {
-            "thinking_tokens": 26
+            "thinking_tokens": 64
           },
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,

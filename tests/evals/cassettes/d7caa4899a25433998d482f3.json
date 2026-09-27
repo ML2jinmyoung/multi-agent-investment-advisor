@@ -1,7 +1,7 @@
 {
   "key": "d7caa4899a25433998d482f3",
   "modelId": "claude-haiku-4-5-20251001",
-  "recordedAt": "2026-09-27T09:49:49.925Z",
+  "recordedAt": "2026-09-27T11:20:31.691Z",
   "preview": "STATE:\n{\"message\":\"QQQ 안에 NVDA 비중은?\",\"hasPortfolio\":true,\"hasInvestmentPolicy\":true,\"symbolsMentioned\":[\"QQQ\",\"NVDA\"],\"heldSymbolsMentioned\":[\"NVDA\"],\"tradeDetected\":null,\"scenarioDetected\":null,\"rece",
   "result": {
     "content": [

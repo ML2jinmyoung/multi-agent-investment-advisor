@@ -78,3 +78,5 @@ fly secrets set DEMO_QUESTIONS_PER_DAY=5            # 선택, 세션(브라우�
 기존 VM 배포는 `docker-compose.prod.yml`과 Caddy HTTPS 구성을 사용합니다. 로컬 JEFF를 사용할 경우 `scripts/jeff.sh`의 설치 경로를 확인하고 `JEV_BASE_URL`을 해당 서버 주소로 설정합니다.
 
 최종 배포 검증: `b53e14f`를 별도 작업 폴더에서 빌드했고 55개 테스트와 lint를 통과했습니다. 공개 서버에서 직접 입력 저장·삭제, 브라우저 세션 분리, 입력 수량 × 실제 시세 × 환율 계산, Today 응답과 에이전트 SSE 응답을 확인했습니다.
+
+2026-09-27 저녁 배포(`e42a4be`, 평가 하네스 포함): `flyctl deploy --remote-only` 성공, 헬스 체크 통과. 공개 서버 `/api/portfolio/snapshot` 응답에서 `marketMode=live`, `valuationComplete=true`, 보유 종목 시세의 `marketProvenance.isMock=false`(Toss Securities Open API), 보유·현금은 데모 fixture/직접 입력 출처를 확인했다. 평가 하네스는 배포 이미지와 무관하게 로컬·CI에서만 실행된다(`data/eval.db`, cassette 파일).

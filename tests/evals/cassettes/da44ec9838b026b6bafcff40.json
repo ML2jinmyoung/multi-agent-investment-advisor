@@ -1,13 +1,13 @@
 {
   "key": "da44ec9838b026b6bafcff40",
   "modelId": "claude-haiku-4-5-20251001",
-  "recordedAt": "2026-09-27T09:34:52.708Z",
+  "recordedAt": "2026-09-27T11:06:10.217Z",
   "preview": "STATE:\n{\"message\":\"테슬라 다 팔면 어떻게 돼?\",\"hasPortfolio\":true,\"hasInvestmentPolicy\":true,\"symbolsMentioned\":[\"TSLA\"],\"heldSymbolsMentioned\":[],\"tradeDetected\":{\"symbol\":\"TSLA\",\"action\":\"sell\"},\"scenarioDete",
   "result": {
     "content": [
       {
         "type": "text",
-        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.92},{\"id\":\"needs_simulation\",\"probability\":0.85},{\"id\":\"needs_external_evidence\",\"probability\":0.15},{\"id\":\"needs_policy_check\",\"probability\":0.75},{\"id\":\"needs_risk_review\",\"probability\":0.25},{\"id\":\"is_prediction_request\",\"probability\":0.05}]}"
+        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.95},{\"id\":\"needs_simulation\",\"probability\":0.85},{\"id\":\"needs_external_evidence\",\"probability\":0.15},{\"id\":\"needs_policy_check\",\"probability\":0.70},{\"id\":\"needs_risk_review\",\"probability\":0.60},{\"id\":\"is_prediction_request\",\"probability\":0.05}]}"
       }
     ],
     "finishReason": {
