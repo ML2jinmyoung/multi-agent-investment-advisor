@@ -7,10 +7,7 @@
 
 [데모](https://my-ai-pb-jinmyoung.fly.dev)
 
-<video controls playsinline muted width="100%">
-  <source src="./demo.mp4" type="video/mp4" />
-  브라우저가 비디오 태그를 지원하지 않습니다.
-</video>
+[![My AI PB 데모 영상](./demo.gif)](./demo.mp4)
 
 - 오늘 내 자산의 주요 변화 3가지를 볼 수 있습니다.
 - 나만의 AI PB에게 질문을 하면, 적절한 에이전트와 도구들이 선택됩니다.금액·비중·수수료·투자 원칙은 TypeScript로 계산하고, LLM은 그 결과를 해석합니다.
