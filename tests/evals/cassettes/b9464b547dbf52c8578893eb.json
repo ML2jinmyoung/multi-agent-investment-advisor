@@ -1,0 +1,79 @@
+{
+  "key": "b9464b547dbf52c8578893eb",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:59:11.116Z",
+  "preview": "USER: NVDA 지금 안 사면 후회할까?\n\nVERIFICATION FLAGS: {\"unsupported_claim\":0.15,\"policy_conflict\":0.85,\"prediction_as_fact\":0.1,\"missing_material_risk\":0.25,\"stale_evidence\":0.05}\n\nDATA (as of 2026-09-27T12:5",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "Epc1CpABCBIYAipAhJvnx4vfQtcbUTXn2SIzVcIgelM3L9Q9x3eUKzecmgHyN8KPIbclN2qrIPkb0Q36HevR4XD8xwpY9md0gaR9tjIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAZKm5NUGEgzBy7F/Z5fd4CC165AaDBtt5C5etkEUwKfCHCIw4ysN9jErztoqEq5Y2G87GSRTvs2rMlb1NqdKuWdEeKyWSr8J8ID5qgvYDqIaEJN5KrMzyeVUDOfX4Xg4RARHkNt74jcCoEvQrYhSI6yq7vtVTi99MhQYPp6AtQjueXG7b6Wm8/73gzl8knCfzmOezXjeWF1GpyRgjMKZD58f3/xdh3J2FlZjXAKJdG4fx53p7E51zl8nEfHAfNGqnp5H6jJfcujHkLRZ0XYQQiHwY65M5k3rOM0yQmwtD0tITdcLgWsMcGlSgbvgrDypa16b7+kF9JNPnqmW+ndk/QhDnAPgfsUnhmH1N1v9ClPu+Qx6Tnz4TiU9j2YIFJkgST7brcvX+D42kRnFlYo/5vERMPPSaPqA6oOJOU9ZQIRvaisVlqmhXJB6qmnAiJ7hLTEC8yzYkn+PnlfukOBUbVU0XhMZ/Gf/2L+BdFhH0+YLeuSlBtIlNKhAVapuGkfQh1BzJpqO/4cndchcnlWMjdP7/jJRPaax9A/i3uBu5ULWs9mJNxIRvOPKU//zR3eZP6xqeN8vv2416OmQbWhWk0LvizL/C4ApokgMqO35ZPvvAk2U+q06vNJO/qzb2aqzoY3a3G8Unudf1wQdq7HoBxTYI/khGpUqGiPP8Xx3AA66T6uJcrOfPihrL3RQAbIDBuS7GhvC+BFFPaK5MG6Tlu0cjN4JnqKUkacBEYxowMEjcDFes7wm7anMhl2RdA2boKwZghCQLVS5NC8VfeK68TlQ2mSYCXEmRk/BSze5iF0SijKmW/ZDrp3tTdeWRPiUY0cLxP3LNxmVyd24XxOpuPKDCwePgoknPkqjHVtfUiuliBapL/HwVZDsbxxOv6yTfmgxGZNqC9cTwtgQXkK4rGs6FP0T72B8Scu4TVvqartWJnLkZ+V5aDx/IhjA2yaKG7DolYY7qzMHL/N6IKbtDLgKHcZm6bPy++mXgjn/eOA3/ulDAmRnG61kreDRIUHWOha2BtT7Zve7l0MxAjpwkTbqalOfh8PbZ2IBbOht5GUn8oYj9xudTsmI5GF87BkRHjKxZAdpI+SAnAOWcOXzwLWmzh8oKLbPsgoHpURMyWpanZvZ6+M8GipCgD6eRSHdsbqRaalB5mOZxON2lmL2/zPyXA6wP2t6JN0kT4lPh3+1dmnKIU20gO4egQixnj9gX+hrdH+MjQ9AEan3Od9k69mIy6h+fvDY3yr8oL2z/2YqVXaAJPEbUCJUx0rO1GjUh7BWi8ZVu81eOQ5B8/KlrR1ogdVfH81LFwprLaiyI1n7mbFRB3IAwAZli0lNVac82RQwP8i1H8KwHALl0TRN9eLptuMtCSb3pnHVg2R0fTFsT7tP7426T0KA46mPPd0iM1jvLcfqStBWHclcigQtzoWt43xRiZbM+bK9UCouH8vH0SUHAeajHnlWEzHinjRFX2XAXUr++xyrHB9+ZWDtYsEmKFg92FcZzH0swv6R+yHceTYW763N9GBDJRbp/aaaLnz5aYEj/tdIHVsm+jnYodXhZtQS7Vmj6kVfYkk4iW6ry4nEJB9OCsdcG3St9XlH5/HMvNK5kgO9torizeUAZJZvucW7RNHQpz0xEgG2cvT44ZS3Ss7wGFuTPl3IcaODREHlgCMFXCved51Ap7VOdyo8vleq/zEVCgvenHEmbRbegUeVDDxR5eNFLNzQxk4tobAIHwjddkbAU+upjlgWjX5otXJBI9TRiD24Lq9t5GezYknFn164zP+gns1lPAGHiFq/IUHaampCYydxM6W7QxCCr7ht5hHjEmPmcSuPbKaLcZjVHnbCoJeb3Ct2xguLLJ9dymBMv1TQoYAUmVJWOFlxoARo8Ep1xRXIerpVGr3nkFYtjDfrlTjtUm5PizczEXe+5WEzPJ2VmUbg8zf9abjvnwA/KQLr1onU3TRHE2CJeBYoRthTS+20zAR7t5cNvIuzVR1uUQ3LgHHWTXqeEXMyloV3gSJFuTcHNOx5+cK6RAf+UsTDcxgsXSmzyIBH8MukBU08M6uZSjk1C9zjdlpNZqnzRvWThtEPwofXN2XPbOU+RrlfNgoxoQUqAY9PwFswzm2Sfpy87meMW542uJJrcbC0xiSG0ob/gMenkCPO8j8vJP5eBXT8MTkkCE7eL9ntdetVJVM5CEifFEXJJZEinM/tb8npRZmxxlOMk5UC1cPVC3Ju3nW4EqIG8dmujHxVLuWAbIIJnaMjKTTuLHYVio5s3s8a6wbEO5HRVcTA78YScE9S1pTggmCVCI+7FD788jmq3AVVB8+xi6ZO0313oll6N+MlbGjoWHJ5A4hJwIWclwAqSquYE2CG0MQL9mo1R0x+Cz6jpjwT3J66l1o4LjnRUYkadVHAcm2qDPtIdQegN463n7MA5b4kIQK9JbXYyWF06D82YtlS40iqvGqPIoQOxKLjquKzKdcqqFd3980XMqg/7ukY2kUvr5RM6N53aDDWZn68X8bXWUafsdnsUd/V1xtzmJLT60AL69p0AHCXmOgITTHKlIB4dlFPoiiuS6MbFcE2VkYqaFhPlAIL3dMVu20cPe+2TOZIkx6oqg4SCMNhwYIxLGKsk0Q+n5iPWpkdrDAxErv9AyyzCGXUBUmObBGblZ/+WUUo0WpdzMhIuWcyt11eLBtN63GVtBqsTxaDPHn2D4NW39/iCLvBDT5j84gRJsYvwFN+XFHsh8hr4jXxRHu+dSeOAurilwwN7AldO4T++9x/Kq6DOcbVYTj+Zz1scOI4N1cOoFHxT9+4Z6QMakB6/sOHS+bzq/uyuH6trK6o6N30XQLd28tk3T7s0velVBzIiJRBLD4kyd9equ6m4kS75ImdA8pTusZCA+QSVcht8wbumL2Jn/F9N3mHp0/8Cq/xp0F1Rzxcs1U2vpEnyMVI89YiMfWTWjHr9b4cQNYQCeSxdG0NDNY8jfIollXyCumjeKDsKMnJvWrUlZYWIiL6DU3HPxojKYKiXXeS2cEXpFkyUdoQWhU3qhcSILygl9iSPyRL8RO/+vHFNj6BqGgwpw2atEMfBX2jeJhOc/f66PPODioKC0BiLfJH5nH+WX3qmkW3bmsZ/sWiq4/vxz75aRPn4XP4lj6EXKFpae1K+0KWVCJeVnPIOcZNIRBnog1UBXx5LxeE1ycjz/XftvBi+Q5OathFQRiQHhVX3bwq2iTU3NiipGfQSvNcbTITnmKDG8q5ggY9mris2bPb7r41VBShhxHk1aGfcdMhsFdf6qTbbHU0WZ4W3/TaFzhAc9TLbn/ho95vCiJqeAgDsZiVmbb0qypWT9TiXPRnzAlP5hLze5PyewfCxiOKMY0drSnOVHcdf8XB1tcQH+SH+ew6GanBzdCV4SuRAYKvXeNVZVH8i6ppsFEKqU/V3LGxQ9MvJT5AKkPElNYtWlNDeiGXE+1h3ulYwDYpfMXYNw+G1f42CYf1daTX8TUH6EK5p+2J/UhB8hEEPeDzOhBLU+0z/LF8EVKloyxEAH4TfdbMNOdOTl0+sQJ8CHCkM2rms7S0wpb3a2WG1U4wbdHrhfFfvR35uYn+5SXoYfg9Ul69K4jITQAUUSBi6bpE5HNGbuPAphv0u9ElWprod8g3fKCA/kWGDDx5HKQSN9ert/SYX4R611pR14YvaW2FHUIM7KBXGkCqQfO6qGaBbg/lb7HWKFPkFtc0CZBDAuWrlsmx7rP0/XhmDV1D+zuMcOZJQWXXjlvNOBvA3cMOxNNGpmHqO4cyYGmE1MQ5jF9P7L1SoCnZhG1PsqK1UqMS7k0PyDNC175OgN1lCKI8x4GBo5bFJybzZQXBtgOEF2vL2JkajGymJ40b/DYdxepHnvpjfMuHwk1FeXP52t7vpOigDpQ9roRy/Wn7xVdWMVyzfjGCl+ooz/0JzaOdo5s/gvyvZsqiVJC9kGn1APpJTCAEdl0Fry/M2fEaIOBKkO3/oqr8l+Uw2W+GN77Js3m4tERqHMAVmLzKnnK98FKe6QEztSoCZybVS+2SZvDlI+AGkUSdWJNsTcFgGtEL53uL9DaLylPzGgLh4duF1VNcJWMLnaQV7ev/09EIZcP8mY3ILJuJ8URFJrVurHHqdhGLmavxpT4G8yDtHBADRtPtkvkiq02AvwjZZEEEcoFfYPCbEPefDK8DYVV9qYyoR5y8Sfng4UGraMUXqpQtlkY1Mprne7DdTZZY0ow8mmN49bbX5mntqiIZwORMDyAAN6I4izMB+dEvB7FmKu+swYTQV9OxEaQoM7GOcF1fYUFfiF3Oh7brzfE4CX5Og/qvCP1+N67p/HpGn/fxybhzh7/doohj4kBY7rqGTS/C3Omh/bv3p4o+9Ra+T5XHKo1tAaQN8Cy9KBH32490zzec+fPt95QXewMA6ZvTkKpgiPmQWzmqiAhbtNhqEq5wfcxSUxU7qHZ9bzTwmmt7+QSSAChrIOY4FjN3AC6OMeiAsZ1ybJRh7ivfk28quwxvVnk1JSTeZecK3tY8U992Sf/GjDxREg187nLbkMIEsMj5oheGFOXdNnJoFbnyQp7nW/wEpft8Tqm/2/Ld5XrKCc8vkVzvPHeHS884oZUTnBcISgzIEEvvmg1iVXLMlkV+yIn+aitcQUyDnKGHz4UReG60eJR9HemlsLxyI5++n231zdZDeDFtyob4I8Wu85gqUPj+0IlgEFQbBMI6XiR1F0FS1Lnvsx0WHr1zN9Xh6FmSrMkvIgk40aH25s+9RRsDiqv2sLTePQudWnVUccWDgvMLrd4Tn+DiBDP7QN3gN9T/5H+bTidMpWkEZ8s1ZPYVXWB0IwszHQy76poYiQZobdRxGa6+tNAGYUzSPSR38MMleVmACsL7ntaR1mvxhJ6JTM2AQ1/aPRmKorJtNsCHlMDUWEU2m9SYUEi6wOcsBNmDTrTnleIPDBb6ABUs/+Eauu0dkoG3YtIsq6lW6mEoehGGoGge2AjF8xkjkP11D25XRzxd2s9H3cFL/E49iurDK/2X6EHCqwI5K6opmaEsXqNl/yISaYwAQ0Jxo9+rwqr3UPiUNbbwfPD6Nn4gJRKreRhTnzyV6cLw4qMvfgF1lgl3qYFToOPFxfeJ4lDy5n/OK/19l/kgWULLUPwCGGVrpTPT3VmgvvwdKF/EwDQisyloNnYxbWlvGqJpqIzCXfAYUZgdLVtWnn8MFkotlpYPDm3z0J85EY9macBzhtkjPLKq028ZjIEhVvXbHGgmxbn6yTOUlyJjxeQhkE6p2G4uJEwWvhQhd0mgeRCqpaEkD+OIzl+LIbs3bNF8jeKQ2DuUa16d+wJh6xV6glQ59YhkkUAFJW9IkRnwsPfjfA60lHsqnWsmkLredDq4u6hXb/2mifBqeLFc5LPFqonXURN+12K0u2n4Ejze8Rib5zY0Wz38rlNoO8XAzEVBaxPmMMjG8s5bTc0adw8h/H3wvCA6i+X5Mub84wQX+4excKk0OvipadFm6362fysLDvnYG12BlJ3XAbZXyrxvqQ1y5i0V2NFNLfNl4nHQXqpJBJT+Hmy4g8DquvI+OzPmfizoBAOwVrx7jJ2SfO5f/D/0EEnKADNNbO2mwcVN/SYp/w9OpIbgUBMGwGH+fRhDPOk8WNwGuwMvCViOAhLzvM5/dP399kkIKfrBQ7xqYn8lf9l584q6SZHS47jPVxbzrbxKz5izp2g1CxTS1Uly09hgcTciFDl4CTnwgG4c4EkrTFjf74Ws57/EdkaQr0E3Mn8faUdb5OGWMpW0Io/itvMhNXlpLsAAQlSaI8Wdpkb7aaEKD1W94WPum4EJrL7WFy54c1/G6vIagr937PiGUe7V7RmXtfYWNdO0LDwjMmdkXo4M+Cv3yEcrRfCYbjVRAFyTv8+gARsc4i+zj0RQa7TbguMBu/UU7yCY8+p+p1cmgHbWrqp/B2TstCRwPYAGn7OxwSuVOSDes+xvu9ifqnLr1pWmxnW0CPjHylxTBh5413BWHkZatxcnu3YsxpC+KQcXDbIm5b0g5bMqyHSTBb5syL27bU4K3dyINXumJSf5niWqzR1Vkk09uPvUVmtzOj2EdVYfhS9KH334UoWOXXv2vRQ5p4QjYCE4JH6MiiRJf8EJ2qrXe/yzkvg6mgv1BQ9TcxBz3l80jQOWZoPT283bB9fd05M2rCI58HfKyrUPvkhydfosBaZCxgwl9mV2rH7NX1UUz2jrZz7Kl7QRjluk2/tQLt8SnZ4cAmJkk8RnHfwcLfaipadG/zGSgZqWL6J/6NxDyD9UVNh5BVP3TV+pGxHPzapVhZwLhXpvHU8xh/kdI/i2nNoLTkJIsPSVF6PdzYA0yJSBsFFTWQP/73rE/QK63hH3aJW21SVm4ZlZ4HU52btkJCoouT4TFbGcTbyhQ9xwVq5LzVfVt24HUkr+CIXsPc0Ncc+u7j6yJubb2A2f7b96uTHj4n14tMBKmeO3IFUq97GrroWg4kHeafrDEVrrO1erfJyB/8d7qMP70Vrr/5BsFESBFhSB9J3W3jUdM/mCcHZ2Vz9RD9CJuJZKBimAlB8PZF/Xo0amnWHVGwDz52k72qiEeeRJorqQ7tMRklxdYhz6+VJf07kLvw3kf64/+OqrQJptSJt6NdC06JYS+hi8VBZjx6Uz5AuBm7QVYKP1ufJclKcYmGGMWtHCKhT8GRU0+sOADNBnLnyxsWt2D8zI0aRco6fs12tog2C8YCKDOOOYMVdLvOICmKrniodBzXgkbZO1njDTPiGzZub9j1bSoFeKN2fWfFcVKEey1ElOEvxCng+lVm2a1Ny5onczd0yicsb18dWf3UG86M9yziqql4wxbWH0xdrCOJkpr/Fa4IneLEgWwAD++TF2IUMBczLbOj9znQKvU5AWp8vh4sZnQOtvLqVZHPUAnICCm7R0Dz7VyC7vmwycMGPvtfrGokGk4cPYBhBLozMje/2vgukHlUfq3B7hAlmbFAmPyqyMeY6iURYfMzMlzdvCQenL8dpFhnz571kAQ9tN/J7wlBx0b5sMivw7XNa0UPUJ5+avqtGGhYxkrRud0K/l+TPMsDeKRRO9oZmzImJP5PUNgjFtxH3Xfatzg0PLXRqanZz5RusEi9SwS43EKoDD2zgOOGDLQYErTDzxZn9eBaFDUcBvjnf+A/mEC17jWQ7V4j6wN0mShIA4TPuMVMk+BL2U34fRimK+IYqTzImNWdTLXMoYmFVHqy4d7mQbpcryd0NxQYPhIBAkIWoLuwnrqVnMMuQCiT+hDf6FuicYNZqmROiR6cEFvicS8zasybWW1x91YF4+xKgVO+4ZmVihEoUvzniAyJ90mkf3LxPHn0UZ+hmSfIFLaVPz2rg9nfTM0dwUKnmCPkmjTk0QOvaSa2gz10WJSIWRjufX4o1//U900cSXep6/kJmo45sCUgrbDEep5v0cc0Mu9uSHOn7l0q7KE23oFyZjFKyg8E26S83X+kxDvlIUDpzs+tFU9rmQrANH9NqmHJQ5pPZGPVIHvgu7smMpGSqaSphGfe5uGobWqBqFo1TQQhPA8UUFwen1Bmq27ZjMFXnWjSk6NFOfE6abkuKxUm+rL8Zl7lQ5KY/Zi5D3M9igWXjdMd1k3L77UP/WP8lOUWYuHexyUxihJLmhgWGX4EHZLFXIKGbZck75S3dqEXOOywyk1XS1p4PPCnYEAq9Z7IPXPgiIxo8dfZXbjX0Udr3nmLgmWVgFUnxq2+NckbnmtXbFsTOi4/ahoL6d6vgb1gTY7XA22hPB50l1RHweQPfa7iKA53GF5pWm8Hqw4c6FGvwwnvpJG2p8MxZwQkJQk4BKhNMxW2/vG25AOjzbby3A7AKJ2T2lrDaa2SmQcZ5T+Ef/Km5zV5qqVzs05u8F7yH2sunt+G36RVjT/bvEdyUZR+wlAq3PJqc13Jvx4Ho/n7YNSeGKy2J44ipdXJLdqQS0Z2e6JnU0YeWuSWnAzLMHYDNBDgLrqUl68HmKBu8S3NeFcYyoB1e9AhawMiIsbsQzACv+JvVpWSwr0lfAZ/6ZJGOgXYmwHnet8jfKWBkgjlJaqlCRJQrwIGpfcJwcRPtO8oNZF0Bbg5J2QlH6K043134fZF8ybr9hNuJ34nCOGGb4Lh+KUhsICGdUSxHSquRWdJyWITFamgdVWqikgkaEbZUkEx8fqa/eQ4d+Uah1o6wa72rKNcgvvcJQaTe/WeTAY/MYrpjXZEx38Ulx/APBv5gUa4wD4YPE1IfPBbTo9iS8/6dn5BPKkSKv1gL7sj4e6bBcwk+ChgMNnsBjhLly8t7vTwRSIstl1+U2/3uoKmX1OnsA9xnmfkGRXNPIgtCLXZt4revAXRJ9bQVi/nqNkUUVQgEOYc1Zkz9I1dRGArZg270g3CBAG/xZaqsjQvT1mFRTbLT/OOJy4G4w/BrGcTMN91TNucZmnJy5qSevYjIJQj+Nokssc30kC/xvC2xw6IZGQnlbCprks8R84Zam44cP6lC8Y32wwR0w8lPnG1hWPXqkI9LEIE6y61zdZY29k/MoNqPxFEOL2+bZrfaBEEnVgf58V33xmI2+cwI2yDIE8Fh6Ia0kcuAmGb6UsRQ0ly3KgzSY3LCQ5KOlk3NCHOybos5KMUPTKI8vUwhOdFO8XPBfp+3aVOBLJZxwILjR99KAHrAaUlZi4kJLpf3hDZxVxwK8VFnwquxfX/7hGow0KMgBQjPzQcLmSY59OWO2bVnls7fSmIEzBdTSS7OC6XwxuGW0PElbJ/P19qxGiFE07lQD9Hx1xn/6WwMtUlo6KBkEi92WLvP8YITDpn6sxvT/3lS4B5bcK/De1QijFvmAmlc5Md9LNjvF5WKH/rLVyAXiuKYaUOsGQpshkH9+qAHdVD1130Ji6LqS98nO1t3DQ7YXGAE="
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"problems\":[{\"kind\":\"unsupported_claim\",\"detail\":\"‘ETF 내 간접 노출 727,309원, 실질 총 노출 3,243,187원(8.3%)’ 수치는 제공된 DATA에 근거가 없습니다. portfolio 데이터에는 VOO·360750 ETF의 종목별 구성(NVDA 편입비중)이 없으므로 이 계산은 새로 만들어낸 숫자입니다. 이 문장은 삭제하거나, 실제 lookthrough 데이터가 없다는 점을 명시해야 합니다.\"},{\"kind\":\"unsupported_claim\",\"detail\":\"evidence 항목 중 ‘NVDA 현재가 182.31 USD’, ‘6개월 종가 178.9→182.31, 고점 199.7’, ‘getStockWarnings 결과 해당 없음’은 제공된 DATA(JSON)에 전혀 포함되어 있지 않은 수치/조회 결과입니다. 이 답변이 실제로 참조 가능한 것은 portfolio.positions의 NVDA marketValueKRW=2,515,878, weightPct=6.4, dailyChangePct=-7 뿐입니다. 근거 없는 가격 이력·경고조회 결과를 인용해서는 안 됩니다.\"},{\"kind\":\"stale_data\",\"detail\":\"인용된 시장 데이터의 asOf가 2026-09-22인 반면 portfolio.asOf는 2026-09-27로 5일 차이가 있습니다. dailyChangePct -7%이 어느 날짜 기준인지 불명확해 두 데이터 소스 간 시점 불일치가 있습니다. 실제로는 portfolio 데이터의 asOf(2026-09-27) 기준 -7% 하락만 확인 가능한 사실로 명시해야 합니다.\"},{\"kind\":\"missing_risk\",\"detail\":\"investmentPolicy.preferences.fxRisk가 'medium'이고 byCurrencyPct상 USD 비중이 48.4%로 이미 상당한데, NVDA(USD 자산) 추가 매수 시 환노출이 커진다는 점이 risks에 언급되지 않았습니다. 또한 같은 날 VOO(-1.5%), 360750(-3.2%) 등 미국 관련 자산 전반이 하락한 정황(포트폴리오 내 dailyChangePct)도 맥락상 언급할 가치가 있으나 누락되었습니다.\"},{\"kind\":\"unsupported_claim\",\"detail\":\"costs 배열이 비어있음에도 실질 노출 재계산(간접노출 포함)을 근거로 alternatives·risks를 구성해, 마치 검증된 수치처럼 서술한 부분이 있어 전체 신뢰도를 떨어뜨립니다. 수정 답변에서는 오직 DATA에 있는 값(예: NVDA 6.4%, Technology 37% vs 한도 35%, 삼성전자 11.7%, USD 비중 48.4%, dailyChangePct -7 등)만 사용해야 합니다.\"}],\"verdict\":\"revise\"}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4391,
+        "noCache": 4391,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 3369,
+        "text": 1079,
+        "reasoning": 2290
+      },
+      "raw": {
+        "input_tokens": 4391,
+        "output_tokens": 3369,
+        "output_tokens_details": {
+          "thinking_tokens": 2290
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4391,
+          "output_tokens": 3369,
+          "output_tokens_details": {
+            "thinking_tokens": 2290
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

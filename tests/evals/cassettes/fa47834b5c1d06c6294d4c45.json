@@ -1,0 +1,79 @@
+{
+  "key": "fa47834b5c1d06c6294d4c45",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:17:47.193Z",
+  "preview": "USER: 환율 데이터는 언제 기준이야?\n\nPORTFOLIO (deterministic, as of 2026-09-27T12:17:28.347Z):\n{\"asOf\":\"2026-09-27T12:17:28.347Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EtwKCpABCBIYAipAfbsSwGEWVWbe3HjCzTDOs1N8RB+G0r+6bLnZ0CHbgwAEaURkyhbqn/8x8snvyPU1Kb3ucKQjsD38RuekkTEHgDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAd+S5NUGEgz+uWuBlyHJpXiwtycaDKVn6dxDyJXljaTekyIwpYcq9jqv6IU/xXiYTDTh3LlO0u9X2LsC/aPJHONxbdJOieXzDnGYQaRyrWsndBqgKvgI+tySEAHXszvwbewMhmErdepgMhnmJ+IkSpXLXkbDJvOd1eiasJwfpvltK4ZBoMxnwG05fHO6xK8mPTNqCqNkLpb6eQfd/Vm0LB3qHpWtVAX58e6VXXYg7nVJMN4vR7+GlC+C/LEyy2Ya7xA/y4q6HN0hhh8iiNQXRN5CJMdZCtMFmv5TTDlIFj4ZYuFG6Bm2o4ZdWv7xt0llZ/JrrbZSHX75ZwsJPFU6sDfuMy+c9MpZd5wnn9QHL491heU8IDYPEw5Yb5CPhk48G6JfSJmtFC0wcyA8DXX7VgKIu6wDorA20tHI6PYUeBWh7hrKL1x3JfsctoxNkFZG+u8wIfat3r6L5cj3VgaX+NzZ77LbvJe0ntNVatW6eGXh4y8p5wPhbu50L9FosZ1LgYPBx0LAbZoFtNSlc1BlUi3Srk+S93qtenvroUqVzn2kEiy/SugWu4TxWH7fFh6lASrvL/7Z4b4gmA8f/o58B3t96cSC9N/iqY3aylNdmFfe3YLnTRjxmohwpeOtZ5JowuVzXI5c6dZbBJG1CLjhCKBnZwTNVX9hjY6H6Jhmlbo4LX650EPuYU4f+RsxBYEutgoR9oVevnIPbXbtoTVkJ/EhTzibCsdAAeZ5Eybon0GCDtb1wz6bskeQbWfnJwcJg7XX+v5l0uicPz4WB8AQmWeymmKjDohvzF6lPZVpvjfUt/D5InXDHOaSWWAis4VaNe4Og9xGL0mfcJq9FnMusi/CZSDHv8JDokjaWXBvGm4yKtAlQxXFO0Oo7ANSUP0+w3xQmZNwixtUZRrhYqa2t9FbKHcuKIiKhLXTh1H1Spb8RJb7ML6A+/O9bD8OhL0daHRtY9g+uqnEqhjfNACWeQavVkFq8XdIDvib3o61ONCoB4puYp50ihnwWGzaCXz5MQOmJIFfYueBJ2SjBYVLVTN08860swkT4T+1IXsiw6nwKQ0r0Vrl0Bdmmlaar4+z795fQ6Fx/0WchQtmRr6GDNZiUBHcC+fYLCS8J3x4l0Fz+oaopA7mq2X/8bEI+RoDZeGPR97I/sj1PseilGOudOebK9fkhfUjSAgfQ06WOnmXdcPPUdYG2iMaB9IE1gzFpkh3OKvjC000yW0qClftWL7vUVVfXVq4lEgcGhPlxh0eVPaYcX3rtiY5ombFCdXS5NDGGGnCLPkmZq9hZ8cKMdvS12yqjQSgAAYxA5kMJ1WwjtrxGdGO5mHQItJSpWAUbnKJlaCro2sMob2kQQyx7A7+35U+2GqTn2qD3EAMVrvrICpSgiJvLvB+fRdKSoMauYETpBgWr3At8qoOAcsQfiE56idYQScyowKoO/mkNlL9loL30l3wM8UlmAU+9EQM+m/BEsS17LiSqwqZZO5KhTC0kNAKwdGFjwv3xJbX9sPA8UY3izDXRfDWdcpg3jxsKBbcCWWb5Y0eRUhR7cDNvqYr5BfJIOw069R/Mqk2GFr2mNWoooP1t5JUmo2QILgEf6Ryid64y05Hr1omRTDFKImX2SI9MC+hSRNC7SMSHhgB"
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"summary\":\"제공된 포트폴리오 데이터의 환율(원화 환산) 기준 시각은 스냅샷 전체의 as-of 시각인 2026-09-27T12:17:28.347Z와 동일합니다. 다만 이 수치는 실거래 시세가 아니라 Mock market data(fixture, DEMO)로 표시되어 있어, 실제 환율이 그 시점의 시장가와 일치한다는 보장은 없습니다.\",\"evidence\":[{\"kind\":\"portfolio\",\"claim\":\"포트폴리오 스냅샷의 기준 시각(asOf)은 2026-09-27T12:17:28.347Z이며, USD 표시 종목(VOO, AAPL, NVDA, USD 현금 등)의 KRW 환산액도 이 시점 기준으로 계산되어 있습니다.\",\"source\":\"getPortfolioSnapshot\",\"asOf\":\"2026-09-27T12:17:28.347Z\"},{\"kind\":\"market\",\"claim\":\"시세/환율 데이터 출처가 'Mock market data (fixture) (DEMO)'로 명시되어 있어 실거래 환율이 아닌 테스트용 고정값일 가능성이 있습니다.\",\"source\":\"getPortfolioSnapshot.sources\",\"isMock\":true},{\"kind\":\"portfolio\",\"claim\":\"보유자산 데이터 자체는 '방문자 직접 입력 (미검증)'으로 표시되어 있어, 원화 환산 전 원금(USD 등) 입력값의 신뢰도도 검증되지 않았습니다.\",\"source\":\"getPortfolioSnapshot.sources\"}],\"alternatives\":[],\"risks\":[{\"title\":\"환율 데이터 신뢰도 불명확\",\"description\":\"환율이 실시간 시장 환율인지, 스냅샷 생성 시점에 고정된 mock 값인지 구분할 근거가 데이터에 없습니다. USD 노출 비중(48.4%)이 커서 환율 오차가 전체 평가액(KRW 환산) 계산에 영향을 줄 수 있습니다.\",\"severity\":\"medium\"}],\"costs\":[],\"policyChecks\":[],\"recommendation\":\"환율 기준 시각을 정확히 확인하려면 실계좌 연동(증권사 API) 또는 실시간 시세 소스 연결이 필요합니다. 현재는 mock/미검증 데이터이므로, 실제 매매나 리밸런싱 의사결정 전에는 실시간 환율과 잔고를 별도로 재확인하시길 권합니다.\",\"limitations\":[\"환율 데이터의 정확한 소스(예: 특정 은행 고시환율, API 제공처)와 갱신 주기는 현재 tool 결과에 명시되어 있지 않습니다.\",\"데이터 출처가 'Mock market data (fixture) (DEMO)'로 표시되어 실거래 환율과 다를 수 있습니다.\",\"보유자산 원본 입력값 자체도 '미검증' 상태입니다.\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4013,
+        "noCache": 4013,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 1419,
+        "text": 1036,
+        "reasoning": 383
+      },
+      "raw": {
+        "input_tokens": 4013,
+        "output_tokens": 1419,
+        "output_tokens_details": {
+          "thinking_tokens": 383
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4013,
+          "output_tokens": 1419,
+          "output_tokens_details": {
+            "thinking_tokens": 383
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

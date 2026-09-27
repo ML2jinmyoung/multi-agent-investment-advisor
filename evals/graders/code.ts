@@ -50,9 +50,14 @@ export function gradeCode(input: GradeInput): Grade[] {
   if (keys.has("routing_plan_match")) out.push({ rubric: "routing_plan_match", pass: input.planDiff.length === 0, detail: input.planDiff.join("; ") || undefined });
 
   if (keys.has("numeric_grounding")) {
-    const allowed = allowedNumbers(run, c);
+    const allowed = allowedNumbers(run, c, input.previous);
     const found = extractNumbers(numericText(run.answer));
     const ungrounded = found.filter((n) => !isGrounded(n.value, allowed, n.scale));
+    if (ungrounded.length && process.env.EVAL_DEBUG_GRADES) {
+      console.log(`\n[numeric_grounding] ${c.id}: ${ungrounded.map((u) => u.raw).join(", ")}`);
+      for (const u of ungrounded) console.log(`  near ${u.value}: ${allowed.filter((a) => Math.abs(a - u.value) <= Math.max(1, Math.abs(u.value) * 0.15)).slice(0, 8).join(", ") || "nothing"}`);
+      console.log(`  text: ${numericText(run.answer).replace(/\n/g, " ").slice(0, 700)}`);
+    }
     out.push({ rubric: "numeric_grounding", pass: ungrounded.length === 0, detail: ungrounded.length ? `ungrounded: ${[...new Set(ungrounded.map((u) => u.raw))].slice(0, 6).join(", ")}` : `${found.length} numbers grounded` });
   }
 
@@ -171,6 +176,8 @@ export function extractNumbers(text: string): { raw: string; value: number; scal
 
 function collectNumbers(v: unknown, into: Set<number>, depth = 0) {
   if (depth > 6 || v === null || v === undefined) return;
+  // "상위 12개 종목": the size of a list the model saw is a legitimate number
+  if (Array.isArray(v) && v.length > 1) into.add(v.length);
   if (typeof v === "number" && Number.isFinite(v)) {
     into.add(v);
     return;
@@ -184,17 +191,32 @@ function collectNumbers(v: unknown, into: Set<number>, depth = 0) {
 }
 
 /** Every number the deterministic layer produced or the user typed, with the ways prose rounds them. */
-export function allowedNumbers(run: AgentRunResult, c: EvalCase): number[] {
+export function allowedNumbers(run: AgentRunResult, c: EvalCase, previous?: AgentRunResult): number[] {
   const base = new Set<number>();
-  collectNumbers(run.context.snapshot, base);
-  collectNumbers(run.context.simulationView, base);
-  collectNumbers(run.context.policyChecks, base);
-  collectNumbers(run.context.policy, base);
-  collectNumbers(run.trace.toolCalls.map((t) => t.output), base);
+  for (const r of [run, previous].filter((x): x is AgentRunResult => Boolean(x))) {
+    collectNumbers(r.context.snapshot, base);
+    collectNumbers(r.context.simulationView, base);
+    collectNumbers(r.context.policyChecks, base);
+    collectNumbers(r.context.policy, base);
+    collectNumbers(r.trace.toolCalls.map((t) => t.rawOutput ?? t.output), base);
+    if (r.routing.trade?.amountKRW) base.add(r.routing.trade.amountKRW);
+    if (r.routing.scenario) base.add(Math.abs(r.routing.scenario.changePct));
+    if (r.context.simulationView) for (const ch of r.context.simulationView.changes) base.add(Math.abs(ch.after - ch.before));
+  }
   for (const t of c.turns) collectNumbers(t.content, base);
-  if (run.routing.trade?.amountKRW) base.add(run.routing.trade.amountKRW);
-  if (run.routing.scenario) base.add(Math.abs(run.routing.scenario.changePct));
-  if (run.context.simulationView) for (const ch of run.context.simulationView.changes) base.add(Math.abs(ch.after - ch.before));
+  // derived arithmetic a PB is expected to do: sums/differences of two portfolio percentages ("VOO+360750 합산 26.7%"),
+  // and halves/doubles of amounts when the user asked for half ("절반", "반만")
+  const pcts = [...base].filter((v) => v > 0 && v <= 100);
+  const derived = new Set<number>();
+  for (const a of pcts) for (const b of pcts) if (a !== b) {
+    derived.add(round(a + b, 2));
+    derived.add(round(Math.abs(a - b), 2));
+  }
+  if (c.turns.some((t) => /절반|반만|반 정도|half/i.test(t.content))) for (const v of base) if (v >= 1000) {
+    derived.add(v / 2);
+    derived.add(v * 2);
+  }
+  for (const v of derived) base.add(v);
   const out = new Set<number>();
   for (const signed of base) {
     const v = Math.abs(signed);

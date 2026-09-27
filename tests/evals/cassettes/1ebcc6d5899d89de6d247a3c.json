@@ -1,0 +1,88 @@
+{
+  "key": "1ebcc6d5899d89de6d247a3c",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:13:30.400Z",
+  "preview": "USER: AAPL 최근 1년 주가 흐름 어때?\n\nPORTFOLIO (deterministic, as of 2026-09-27T12:13:22.349Z):\n{\"asOf\":\"2026-09-27T12:13:22.349Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EpELCpABCBIYAipAY+HEP4VnReAtXZv+aMoH3aV0cmiRi6hjpaEY2uFWm//gCnbY5TvV5iTa8DBpAvXLZqqu9xBxI4I2YtUAV2AM7DIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAeqQ5NUGEgz4G34bcjp4Zlr8ycsaDCIREUEw0jXYmul6yiIwctAFfnsZroAAZ3BnmdaQLUGzfFdW5uZPgcHaUPvpTftw8GYF/HL+3g7v2dW7ADZiKq0JaqqOTHVxaLH136egGGcVvBMpoltVFpTDgwHgK2+WpGOSq4WZEHkSZSTuB3VolsfMJN4WmfOXE1JiKYYGhf/Y0P/peIauiy5evzk5zdVfmFcJQTCtTTgG5aZ8lZBLJh2T4JyAosPsnBjUgK/OWnS63057tshzj+JQRBP+bQ+MVO3xXf4gGRB4YqOjB+2VnYFRu7cGjI4Fx58N1OYjk3HNl/if+r532Na278BGP/fIcjgcHMdsVCLx6s40/uw/+WB4WQcjkwQJsU0MuWqIHD07FDJkZlB6JytEDTzMAyU1Vl7/GaxLmkzLfZGUELsBJsgtuzlxbt+gVvEyjKq7MmeftPjt/ieVBmvtG7huUCm3RjZDY5bgEssEoUcual2t/1bbGnMwqYZui0xwpLWbJFK+eGK3TIUxO01tU85f1jKlpyIR71AyNBxICWadBhgFQy2GIncclHRxcqxTGlzctTsHEHzuXiiOaYpDBPkV51tS/uv9WeKUJLwcysdZLeAndSl6BdD2VNS3r1Qpl8VuXPxZ/rNvTGSlD+Y7XGCsrWrUz3K6HGrpQY8sim2+VLlDJw+3jBOt/FRctyPrdz/xr3ZFB4wGtDqjBIrWwu24rbGBzsDcAP/SK14qK+36lRq07dJPXrqkk9WQm/pFT7RYM48+PbECAdCf1EhtDWxHWULQW9m6ffl1zEzwhTEFcHn10NtHDK4GcrobHcBH543iTWrMyXMsWoVrrdHNrJFnKu/1y+lOlaBg1kD+cB7Nl0dmk+9GZdtkfo0dFHHz0x30mguif3v8xl1VtK5hZvuKg5S/dJXEbLCt3NhDjmiN/3RIEZcpOjcXL+KwH1wwpuz6tEaBu6kNLySdCzWITZS0SM01aT8EVQHqxQTGjnAoFKXupoPcSmgC0IC3jS3UHfq19ULGjb79ntax8a9TiQk3QF++Cq66iuSCZ5UOWkBT949WYgdMxFSkBYitpU+vLkSWv4s6g01Cmh8Xar6dKSHzR/QbucFYvODwNLmH7636afBGwqIN74TI47+CkLtXF8lcJ5+MNz/XbOZwZeprikTWlY5jOKJbj2eMtuPy3/qdXvhB7FKE0wwCjLEYow4tUUNUikxCuVI7TCC2YJVOdEDgkb1US/5ZnweiN7hrX3iQiNxm89y5Zo4qciSRZBHjIx+YuT/+OL2A5pkuqNMelboazy1dYsp0OxNPXjr+B90/pKxhlFCQIplPPOQDiVorLBYN6wIxnqjUbxIxhQ2SY9mBofldPZxCyNemzKOTRAPHByWlsnMJy9DQz3TGFT24vBgo2BCYJ/6g2U5i8mRWZ3J7lRX8mdqw57X+RPKg1OkaBZMW3VPmVH1kItwFhLda87W5a/CQeVli5Rm29YarSWYwXu/pQgkoBq63GqF+rNe5dWZbuLArDebPTxFMmPQ2FBZ5vk+zgh4MVxSM4baUtQQ1nketVXZNNn4fbfkX4JxMaI4awtG6Zt4SJPlSFeZOJVNukhvbHimY9uUYe9QDFBIqp79iGeTwzzlSfAQjektTWJ5kq04F4ewOzMeuAChH+bLqw6MSaaZ4x3DnjkoP+/+Op16maNXeHXquUiUHPAXhaeNMGAE="
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_017azxxB778CySRC3cMkzHYi",
+        "toolName": "getExposure",
+        "input": "{\"symbol\":\"AAPL\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3902,
+        "noCache": 3902,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 475,
+        "text": 55,
+        "reasoning": 420
+      },
+      "raw": {
+        "input_tokens": 3902,
+        "output_tokens": 475,
+        "output_tokens_details": {
+          "thinking_tokens": 420
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3902,
+          "output_tokens": 475,
+          "output_tokens_details": {
+            "thinking_tokens": 420
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

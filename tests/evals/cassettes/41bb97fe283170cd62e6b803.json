@@ -1,0 +1,70 @@
+{
+  "key": "41bb97fe283170cd62e6b803",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:30:00.653Z",
+  "preview": "USER: 애플 관련 뉴스 있어?\n\nPORTFOLIO (deterministic, as of 2026-09-27T12:29:40.508Z):\n{\"asOf\":\"2026-09-27T12:29:40.508Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"typ",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"meaning\":\"저는 실시간 뉴스 검색 기능이 없어서 애플 관련 최신 뉴스 자체를 가져올 수는 없습니다. 다만 보유 중인 포트폴리오 데이터 기준으로 애플(AAPL)이 회원님께 어떤 의미를 갖는 종목인지는 설명해 드릴 수 있어요.\", \"keyFacts\":[\"AAPL 직접 보유 평가액은 3,244,380원으로 전체 포트폴리오의 8.3%를 차지합니다.\", \"VOO, 360750(TIGER 미국S&P500) 등 ETF 내부 보유분을 합친 실질 노출(look-through)은 총 3,867,788원, 전체 비중 9.9%입니다.\", \"오늘 AAPL 자체 가격은 -1.2% 변동으로 기록되어 있습니다(뉴스 아님, 시세 데이터).\", \"투자 원칙상 단일 종목 한도는 15%인데, 실질 노출 9.9%는 한도 내에 있습니다.\", \"포트폴리오는 미국 자산 48.4%, Technology 섹터 37%로 이미 기술주 비중이 높은 편입니다.\"], \"alternatives\":[\"실제 뉴스는 증권사 앱, Bloomberg, Yahoo Finance 등 외부 뉴스 소스에서 직접 확인하시는 것을 권장합니다.\", \"특정 뉴스 이벤트(예: 실적 발표, 규제 이슈)를 가정해 simulateScenario로 포트폴리오 영향만 시뮬레이션해볼 수 있습니다.\", \"현재 AAPL 실질 노출(9.9%)이 부담스럽다면 simulateTrade로 매도 시나리오를 확인해볼 수 있습니다.\", \"기술주 비중(37%)이 이미 높으니 뉴스와 무관하게 섹터 집중도 점검을 원하시면 checkInvestmentPolicy 결과를 참고하실 수 있습니다.\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4321,
+        "noCache": 4321,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 712,
+        "text": 712,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 4321,
+        "output_tokens": 712,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4321,
+          "output_tokens": 712,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "key": "be399b240133032d29e84996",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:18:44.020Z",
+  "preview": "USER: 내 계좌 중에 데모 데이터인 건 뭐야?\n\nPORTFOLIO (deterministic, as of 2026-09-27T12:18:38.274Z):\n{\"asOf\":\"2026-09-27T12:18:38.274Z\",\"totalValueKRW\":100871802,\"buyingPowerKRW\":14190000,\"accounts\":[{\"name\":\"토스증권",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "Ev0ECpABCBIYAipAlImzgEb8VdPclWxVLyyroYf0MgPLMS8r9+3Kahq6dFdizzByCaPAJxABMqUmvLqz23LSTVvMNVLVfAIQXVKSBjIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAaOT5NUGEgwNP9LkhgILJHFHLFcaDAfXYlMfdC02Yx8reyIwRfxTrIGmCGqI5TLl6j0AOA5tF9TYS7EV73Wv4ULSChxRCmdR67BgLAU5srpf1aGOKpkDP+OEVr/q40j9UdsmeASYAAzveesGfD/NMHHzlD+dtY21GoT+dakwgzReLNYKbIeIYtypjm/2GtSTIrr+reeNmg4g2M9Oi8yBXCZl65XjDs+YVls7Yox3JvWDkUPLQ2lnQtBZcxrXe8BHxSAje9el2SP3DmqH6Cr+EiqFZ7Z+wD6ztXcFTNZl069voTmhAso27yRnfCm5UbBpDHI++Y98UlFSWBswhir9PhcUK5MXadssb2oPL28u4LWxUlHqQiALXrWwHRy0Tv9zAbZzQJ+Z4KjAz4hwz7wuXAqkGuAmZITrid5Hcc5HlpmePG5K+iCvSr49d0JYbK3bKmdL3WvcYmvWVUbxawPRX7E5MODJYOZ5JCqAklPswymvrbNxl6vhK38OV6erIrRYOHznW5C/DXPbIB/4/Hy0V+umSMkorx0lMe0KGbhcQrrTmCJhNPp54mBBS5F4beu5xxXArOUTO/JJ5guBtKI/VpBJ7etX1FS5hXDOhbg51uQ9f+515Lh6ys32B8DDJ4KzVWLHMHiyD4AFwZHeCJTplRgB"
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_016KAE41MNMkLhEVm4ksGmvG",
+        "toolName": "getPortfolioSnapshot",
+        "input": "{}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4664,
+        "noCache": 4664,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 189,
+        "text": 36,
+        "reasoning": 153
+      },
+      "raw": {
+        "input_tokens": 4664,
+        "output_tokens": 189,
+        "output_tokens_details": {
+          "thinking_tokens": 153
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4664,
+          "output_tokens": 189,
+          "output_tokens_details": {
+            "thinking_tokens": 153
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

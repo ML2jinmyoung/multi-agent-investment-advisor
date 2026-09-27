@@ -1,0 +1,127 @@
+{
+  "key": "9c183f5a79192698b373886f",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:31:25.632Z",
+  "preview": "USER: 마이크로소프트 실적 어땠어?\nSYMBOLS: MSFT\n\n관련 종목의 최근 공시, 재무 지표, 최근 가격 흐름, 유의사항, (ETF면) 구성 종목을 tool로 확인하고 근거 목록을 만드세요. tool이 error를 반환하면 그 사실을 limitations에 적습니다.",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EpsECpABCBIYAipAzpyu4wVLZYDg7cKFo8nU4tcxC4j3GL6adsZGEIBG0n2g1IM25ilgbXwgnK1w0QW8Zb4BpQOUyworaOwcgD33YzIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAZyZ5NUGEgy40QQgdWtFmNzOv+waDC7Rno7E4gLJgP8c6SIwn+L6dQAsSaN4JePwbEp6Z+pUhzZrdEIFg+Eae0ZnbJPcCfHm9SeDMeuSfmne3GglKrcC6H7/TSE8xndaVJaPM0c63Ql66UJzG9AfFz5ttb/WrjbbjAw0JaHTcgDM+xhSRldz+o36hH7BQ3Q5FrE7UyByg6aeMT474ZBXvWMHXSX0OHerCoyR5VUzqGmpg6geDcDUqvexUtLjWGcGa/RUhVvVGn/gHPtqCi6cv4jldHSW4l7aeQavCOMLZPwEw5yz/ng7sbwhRLB00fTRVHVG5ZOHEgzr4918ELPnXmSfnHKjN8lOovisJOguurTx79evpnRZUlUWHNmeBj2BSL5xnOu+xX+jBsGGroCihp0Y7Y/LhtYW5fVYWwb5MD/eVDLrh163goVVNklYzamgg0XoqV4AOQiSMpw/HpP4c+1U9QPPIbzRz6TOzjOmSa147a7qG/8cdv/d+LFmiix8/wBvPJt6FoBu2Qw/cGYYAQ=="
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01BKqLoafVrjMUASbn3Sbj3T",
+        "toolName": "getRecentFilings",
+        "input": "{\"symbol\":\"MSFT\",\"days\":90}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01FfrHNtfjsAVmp3utUHfZiv",
+        "toolName": "getFinancialStatements",
+        "input": "{\"symbol\":\"MSFT\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01PSKK5jihbnXfZB5LH4A5NT",
+        "toolName": "getPriceHistory",
+        "input": "{\"symbol\":\"MSFT\",\"period\":\"3m\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01LfiehP8tkqwS4c6CstS5V8",
+        "toolName": "getStockWarnings",
+        "input": "{\"symbol\":\"MSFT\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 2373,
+        "noCache": 2373,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 380,
+        "text": 260,
+        "reasoning": 120
+      },
+      "raw": {
+        "input_tokens": 2373,
+        "output_tokens": 380,
+        "output_tokens_details": {
+          "thinking_tokens": 120
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 2373,
+          "output_tokens": 380,
+          "output_tokens_details": {
+            "thinking_tokens": 120
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

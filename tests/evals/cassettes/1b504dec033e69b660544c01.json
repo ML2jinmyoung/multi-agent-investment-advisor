@@ -1,0 +1,62 @@
+{
+  "key": "1b504dec033e69b660544c01",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T12:29:40.505Z",
+  "preview": "RUBRICS:\n- limitation_honesty: 데이터 누락·조회 실패·데모(예시) 데이터·지연을 숨기지 않고 limitations에 적었는가. 없는 공시·뉴스·수치를 만들어내지 않았는가.\n- numeric_grounding: 답변의 모든 숫자가 제공된 데이터(스냅샷, 시뮬레이션, 정책 점검, 도구 결과)에 있는 값인가. 새 숫자를 만들지 않았는가.",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"verdicts\":[{\"rubric\":\"limitation_honesty\",\"pass\":true,\"quote\":\"SK하이닉스(000660)의 매출, 영업이익, 부채비율 등 재무제표 데이터는 이번 요청에 제공되지 않아 확인할 수 없습니다.\",\"reason\":\"답변이 재무제표 조회 실패, Mock 데이터 사용, 시뮬레이션 미제공 등을 명시적으로 limitations 섹션에서 상세히 열거했습니다. 데이터 공백을 숨기지 않음.\"},{\"rubric\":\"numeric_grounding\",\"pass\":true,\"quote\":\"SK하이닉스의 보유 수량, 평균단가, 현재가는 제공된 포트폴리오 데이터에 포함되어 있지 않습니다. SK하이닉스(000660) 평가금액 1,150,000원, 포트폴이오 비중 2.9%, 당일 등락률 -1%\",\"reason\":\"언급된 모든 숫자(1,150,000원, 2.9%, -1%, Technology 37%, 정책한도 35%, NVDA -7%, TIGER -3.2%, VOO -1.5%, 삼성전자 8.9% 등)가 제공된 DATA에 존재합니다. 새로운 수치를 생성하지 않음.\"}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4066,
+        "noCache": 4066,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 402
+      },
+      "raw": {
+        "input_tokens": 4066,
+        "output_tokens": 402,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4066,
+          "output_tokens": 402,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

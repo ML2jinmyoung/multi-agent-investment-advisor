@@ -1,0 +1,79 @@
+{
+  "key": "cf8c11eae2c72777f89df3ca",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:32:07.751Z",
+  "preview": "USER: 마이크로소프트 실적 어땠어?\n\nVERIFICATION FLAGS: {\"unsupported_claim\":0.05,\"policy_conflict\":0.05,\"prediction_as_fact\":0.02,\"missing_material_risk\":0.15,\"stale_evidence\":0.92}\n\nDATA (as of 2026-09-27T12:31:",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "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"
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"problems\":[{\"kind\":\"unsupported_claim\",\"detail\":\"evidence 배열의 '거래소 매수 유의사항(투자경고, 단기과열 등) 지정 내역 없음' 항목은 DATA에 전혀 포함되지 않은 내용으로, 어떤 tool 결과도 뒷받침하지 않는 근거 없는 주장입니다. MSFT 실적 질문과도 무관하여 삭제되어야 합니다.\"}],\"verdict\":\"revise\"}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3571,
+        "noCache": 3571,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 1033,
+        "text": 173,
+        "reasoning": 860
+      },
+      "raw": {
+        "input_tokens": 3571,
+        "output_tokens": 1033,
+        "output_tokens_details": {
+          "thinking_tokens": 860
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3571,
+          "output_tokens": 1033,
+          "output_tokens_details": {
+            "thinking_tokens": 860
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

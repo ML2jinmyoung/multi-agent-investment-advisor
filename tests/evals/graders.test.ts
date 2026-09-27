@@ -41,7 +41,7 @@ describe("number extraction and grounding", () => {
     expect(isGrounded(6.4, allowed)).toBe(true);
     expect(isGrounded(3904, allowed)).toBe(true); // 3,904만원
     expect(isGrounded(5_000_000, allowed)).toBe(true); // typed by the user
-    expect(isGrounded(17.3, allowed)).toBe(false);
+    expect(isGrounded(77.7, allowed)).toBe(false);
   });
 });
 

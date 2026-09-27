@@ -1,0 +1,62 @@
+{
+  "key": "fba03d920164658989f679f2",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T13:10:40.702Z",
+  "preview": "STATE:\n{\"question\":\"삼성전자 1000만원 매수하면 원칙 위반이야?\",\"summary\":\"삼성전자 1,000만원 매수는 현재 두 가지 문제로 그대로 실행하기 어렵습니다. 첫째, KRW 현금이 부족해 시뮬레이션 자체가 거부되었고(모자란 금액 2,001,500원), 둘째 실행 가능하더라도 이미 한도를 넘은 Technology 섹터 비중(37%>3",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"unsupported_claim\",\"probability\":0.15},{\"id\":\"policy_conflict\",\"probability\":0.92},{\"id\":\"prediction_as_fact\",\"probability\":0.05},{\"id\":\"missing_material_risk\",\"probability\":0.25},{\"id\":\"stale_evidence\",\"probability\":0.35}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 1877,
+        "noCache": 1877,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 80
+      },
+      "raw": {
+        "input_tokens": 1877,
+        "output_tokens": 80,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 1877,
+          "output_tokens": 80,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

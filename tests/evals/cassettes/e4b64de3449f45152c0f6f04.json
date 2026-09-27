@@ -1,0 +1,88 @@
+{
+  "key": "e4b64de3449f45152c0f6f04",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:28:04.153Z",
+  "preview": "USER: SK하이닉스 재무 상태 어때?\n\nPORTFOLIO (deterministic, as of 2026-09-27T12:27:54.987Z):\n{\"asOf\":\"2026-09-27T12:27:54.987Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "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"
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01TpJrLBjYHKDApL94JnCysj",
+        "toolName": "getPosition",
+        "input": "{\"symbol\":\"000660\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3898,
+        "noCache": 3898,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 553,
+        "text": 53,
+        "reasoning": 500
+      },
+      "raw": {
+        "input_tokens": 3898,
+        "output_tokens": 553,
+        "output_tokens_details": {
+          "thinking_tokens": 500
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3898,
+          "output_tokens": 553,
+          "output_tokens_details": {
+            "thinking_tokens": 500
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

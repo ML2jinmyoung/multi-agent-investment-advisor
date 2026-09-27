@@ -1,0 +1,62 @@
+{
+  "key": "91b10d87613f2b805ad5fd05",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T13:23:27.855Z",
+  "preview": "STATE:\n{\"message\":\"MSFT 200만원 사면 어때?\",\"hasPortfolio\":true,\"hasInvestmentPolicy\":true,\"symbolsMentioned\":[\"MSFT\"],\"heldSymbolsMentioned\":[],\"tradeDetected\":{\"symbol\":\"MSFT\",\"action\":\"buy\",\"amountKRW\":2",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.85},{\"id\":\"needs_simulation\",\"probability\":0.75},{\"id\":\"needs_external_evidence\",\"probability\":0.70},{\"id\":\"needs_policy_check\",\"probability\":0.88},{\"id\":\"needs_risk_review\",\"probability\":0.80},{\"id\":\"is_prediction_request\",\"probability\":0.15}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 777,
+        "noCache": 777,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 96
+      },
+      "raw": {
+        "input_tokens": 777,
+        "output_tokens": 96,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 777,
+          "output_tokens": 96,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

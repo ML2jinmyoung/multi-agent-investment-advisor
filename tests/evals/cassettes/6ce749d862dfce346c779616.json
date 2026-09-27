@@ -1,0 +1,70 @@
+{
+  "key": "6ce749d862dfce346c779616",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:29:51.497Z",
+  "preview": "USER: 애플 관련 뉴스 있어?\nSYMBOLS: AAPL\n\n관련 종목의 최근 공시, 재무 지표, 최근 가격 흐름, 유의사항, (ETF면) 구성 종목을 tool로 확인하고 근거 목록을 만드세요. tool이 error를 반환하면 그 사실을 limitations에 적습니다.",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"evidence\": [{\"kind\": \"warning\", \"claim\": \"AAPL에 대한 거래소 매수 유의사항(투자경고, 단기과열 등)이 현재 조회되지 않음\", \"source\": \"getStockWarnings\", \"asOf\": \"조회 시점\"}], \"risks\": [\"최근 공시, 재무 지표, 가격 흐름 데이터가 없어 현재 애플 관련 사실 확인이 제한적임\", \"유의사항이 없다는 것이 향후에도 없을 것이라는 의미는 아님\"], \"limitations\": [\"getRecentFilings(AAPL) 호출 결과: 데이터 없음 (SEC 공시 정보 확인 불가)\", \"getFinancialStatements(AAPL) 호출 결과: 데이터 없음 (매출/영업이익/순이익 등 재무 지표 확인 불가)\", \"getPriceHistory(AAPL, 1m) 호출 결과: 데이터 없음 (최근 1개월 가격 흐름 확인 불가)\", \"ETF 종목이 아니므로 getEtfHoldings는 조회하지 않음\", \"현재 제공 가능한 도구로는 '뉴스' 자체를 조회할 수 없으며, 공시·재무·가격·유의사항 데이터 범위 내에서만 확인 가능함\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 2866,
+        "noCache": 2866,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 458,
+        "text": 458,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 2866,
+        "output_tokens": 458,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 2866,
+          "output_tokens": 458,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

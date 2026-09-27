@@ -1,0 +1,88 @@
+{
+  "key": "4ecf72746226b5163f46973e",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:11:08.938Z",
+  "preview": "USER: TIGER 미국S&P500 안에 NVDA 얼마나 있어?\n\nPORTFOLIO (deterministic, as of 2026-09-27T12:10:59.383Z):\n{\"asOf\":\"2026-09-27T12:10:59.383Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"nam",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "Ep8ICpABCBIYAipApTMmVMm3/8PBBGwNWTwmhFtOvL6OWRkaP3ayreeykPSnpzlPBjk3j0dkyqPzhlFWqokwHioWhEant37GtzlTjjIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAdyP5NUGEgyDtdh27rqQvho8pMkaDHQPyr0n7WcmK6m4ZSIwD57PGvSfcQulRCyTn43D25b6D1Zf5sSoeJMj25Mta6+Veomq05u34wRv2a8JywLTKrsGBzANcIL6ZzwtqG0uhJ8x+iWTnrqtes121kTouNu0ZDc6FUbOGsECOvZNIyXPf2kjoi+FIqvHRyAd6DWCcdKOT3f0MaUbMABEBWHHbzAWhAmG67PwtWZ+nPfwTb7f3NelMJcMQTENNhhowhHPSuJFJUaoxgwF98LD0n5G7lG7poV6eFp/Sc5oORwp/nIwZFzBsqyJMSocDjZ0s/LoQ0imPpHc+wMKc9V/vtqTbLTfK8lvBCevmoy1BqgGMEqIC4vOebpNkKHWI4byR1TV0WydxZ8iQ3MqXyh5MoAJ5bf0zfYSDsuA0VJTxkpQAHInwHgUL/KnA0T3Vw8Ciohxo4miBYXFPy5UuPPdHxsI1uV9nacDAh8rwkIzCWSRjSepxaQCyMLjNbTl4LRskVupvurA3KL1kxtMdgoVHoHvnofb/7b67t9uLcUdx5SGY15Q+2kQBQzOsZ+NYUy/Ik7keAzAmBJoBSi69hmkkeDyDti0C2382NE0ccZc+4PBP1wwAeEJBXwz1tR+cACFkCZosVXI/gV9l3Lg4+sTU1Rymo1GQOBDCHtutMC5vXUz5uxd9pM7n18YQcLp54O1Amix22aGxpY0TlrU10A1psK2HMXrvPvG6Rde+aR2pdldDLaUAiyfq70RcWiNt1VsRsMPeG6YN9z+luybWjLUMoca4QSJHtkBHuT+qwRQPprTkB5vFSkNxyFr1dOLHhM2+k5pnR4zYVdPMS50heib1KmgvSI2nQ0c1Yo4KswMhex2yGkD15/yVKwH27SaK4/s2Kp1kED/mOHgnbceGdrQ3HHbw5avM4qTw7pI6I9RY/R9rDXEME/PJVn+0wEdrNUnDqsxZ5IM0h81XN1VmEGZQ4YmifZbOWOWEjQ62Z9wtoiK3gG0t/xSYzv5UmLyT4gLHZz43XkWuvvCtdgDmaV8zHXUaDABSXD6V4F1ciY+B0K1Vhd9NJA9iOMhc1yXm0PHzIraD+8aMS+jFF62e62HN3EQ5lZI219FrgS4fun+mt65ymgbUJqKcxsqKT8lcVqWTZ3+FPicJWZfns8UTQtgSL3kR9eCgj4/bV7pQbf0qO0HcUNDDtNKHE6ykiksiOUL6kYYAQ=="
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01MKVXNL9XmJX7GGZchHkxUz",
+        "toolName": "getPosition",
+        "input": "{\"symbol\":\"360750\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3936,
+        "noCache": 3936,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 391,
+        "text": 52,
+        "reasoning": 339
+      },
+      "raw": {
+        "input_tokens": 3936,
+        "output_tokens": 391,
+        "output_tokens_details": {
+          "thinking_tokens": 339
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3936,
+          "output_tokens": 391,
+          "output_tokens_details": {
+            "thinking_tokens": 339
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

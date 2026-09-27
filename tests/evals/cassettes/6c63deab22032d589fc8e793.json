@@ -1,0 +1,88 @@
+{
+  "key": "6c63deab22032d589fc8e793",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:25:45.740Z",
+  "preview": "USER: VOO 구성 종목 알려줘\n\nPORTFOLIO (deterministic, as of 2026-09-27T12:25:31.418Z):\n{\"asOf\":\"2026-09-27T12:25:31.418Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"ty",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "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"
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01R3cPzSpLMmst5oKihG7u2G",
+        "toolName": "getInvestmentPolicy",
+        "input": "{}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3920,
+        "noCache": 3920,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 569,
+        "text": 35,
+        "reasoning": 534
+      },
+      "raw": {
+        "input_tokens": 3920,
+        "output_tokens": 569,
+        "output_tokens_details": {
+          "thinking_tokens": 534
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3920,
+          "output_tokens": 569,
+          "output_tokens_details": {
+            "thinking_tokens": 534
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

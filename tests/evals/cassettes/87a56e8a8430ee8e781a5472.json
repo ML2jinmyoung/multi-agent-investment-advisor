@@ -1,0 +1,140 @@
+{
+  "key": "87a56e8a8430ee8e781a5472",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T13:21:26.010Z",
+  "preview": "USER: 삼성전자 더 사고 싶은데\nSYMBOLS: 005930\n\n관련 종목의 최근 공시, 재무 지표, 최근 가격 흐름, 유의사항, (ETF면) 구성 종목을 tool로 확인하고 근거 목록을 만드세요. tool이 error를 반환하면 그 사실을 limitations에 적습니다.",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "Ep0DCpABCBIYAipAu04SEbQJXqX9TC6BFtsWQLTe9JrsA4R08Dqe233AQ//m5ROezQSRn0uzTRANftn7De36AF4wCysum6KtW75pnTIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAdSw5NUGEgxzHIsGrgWTFLUj3EwaDNO32Oqi+41wYUS0HSIwN+Rd1Jq5PLHKlp6bHx8Fa6mh+dACJ/BnWx19krGeRNhv9MlvVlJqxtNldyZd+O7QKrkB5Z597+aqlLH+FDI3ah4QF0xO62cncqENFQnFR53POaHgcbXDYjPQbN3+w6eYETNxzUXwyGDy4A+FysMmlVeTInSyuqQ05stj7ajEZNENpOJjmR5JC+04BaRsCzLf+PBCf5dFRrrhYP5hIcxbhbjGAjn3y4k9NHihrnCQ6rEaGOS1oFM7Z7X0jr/gy28OW3lQqlrx1zfozY/WkkC48unsWCn3gh9ICo1btZhqkEpPUXhCOMtAvFvuPFEYAQ=="
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01L1esNeriaKZLtgKY8afg6s",
+        "toolName": "getRecentFilings",
+        "input": "{\"symbol\":\"005930\",\"days\":30}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_017A8JwD2odaHgit2tNQdqMD",
+        "toolName": "getFinancialStatements",
+        "input": "{\"symbol\":\"005930\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_012j3J9XEw4V7dQ9xrswgaMB",
+        "toolName": "getPriceHistory",
+        "input": "{\"symbol\":\"005930\",\"period\":\"3m\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01PqH8rhQ9PL2nBzpxTpjXgn",
+        "toolName": "getStockWarnings",
+        "input": "{\"symbol\":\"005930\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01Y4QTKeeVnPursm4LtYFJhM",
+        "toolName": "getQuotes",
+        "input": "{\"symbols\":[\"005930\"]}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 2371,
+        "noCache": 2371,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 380,
+        "text": 304,
+        "reasoning": 76
+      },
+      "raw": {
+        "input_tokens": 2371,
+        "output_tokens": 380,
+        "output_tokens_details": {
+          "thinking_tokens": 76
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 2371,
+          "output_tokens": 380,
+          "output_tokens_details": {
+            "thinking_tokens": 76
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

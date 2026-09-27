@@ -1,0 +1,62 @@
+{
+  "key": "dbdd4fdef2025e8db3b7646a",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T12:28:31.977Z",
+  "preview": "STATE:\n{\"question\":\"SK하이닉스 재무 상태 어때?\",\"summary\":\"SK하이닉스의 재무 상태(매출, 영업이익, 부채비율 등)를 조회하는 도구에서 데이터를 가져오지 못해 재무제표 기반 평가는 불가능합니다. 대신 회원님 포트폴리오 내 SK하이닉스의 위치와 관련 리스크를 정리해 드립니다.\",\"recommendation\":\"placeholder",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\": [{\"id\": \"unsupported_claim\", \"probability\": 0.15}, {\"id\": \"policy_conflict\", \"probability\": 0.75}, {\"id\": \"prediction_as_fact\", \"probability\": 0.05}, {\"id\": \"missing_material_risk\", \"probability\": 0.25}, {\"id\": \"stale_evidence\", \"probability\": 0.85}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 1001,
+        "noCache": 1001,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 98
+      },
+      "raw": {
+        "input_tokens": 1001,
+        "output_tokens": 98,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 1001,
+          "output_tokens": 98,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

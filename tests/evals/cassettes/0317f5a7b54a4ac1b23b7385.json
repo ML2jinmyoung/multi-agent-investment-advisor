@@ -1,0 +1,70 @@
+{
+  "key": "0317f5a7b54a4ac1b23b7385",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T13:44:07.810Z",
+  "preview": "RECENT CONVERSATION:\nuser: 삼성전자 최근 공시 있어?\nassistant: 삼성전자(005930) 관련 최근 공시 정보는 현재 시스템에서 조회되지 않습니다. 공시(DART), 재무제표, 가격 이력 조회 도구가 모두 '데이터 없음' 오류를 반환했습니다. 시세 데이터는 실거래가 아닌 모의(mock) 픽스처 데이터이며, 조회 시점(2026-0",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"evidence\":[{\"kind\":\"market\",\"claim\":\"삼성전자(005930) 현재가 87,000원(전일대비 +0.8%). 단, 이 데이터는 실거래가 아닌 모의(mock) 픽스처 데이터이며 조회 시점(2026-09-27) 기준 약 5일 지난(2026-09-22) 값임\",\"source\":\"Mock market data (fixture)\",\"asOf\":\"2026-09-22T15:30:00+09:00\",\"isMock\":true},{\"kind\":\"warning\",\"claim\":\"거래소 매수 유의사항(투자경고/단기과열 등) 조회 결과 해당 종목에 대한 항목 없음(빈 배열 반환)\",\"source\":\"getStockWarnings\",\"asOf\":\"2026-09-27\"}],\"risks\":[\"가격 데이터가 mock이며 5일 이상 지연된 값이라 실제 매수 시점의 실거래가와 다를 수 있음\",\"공시·재무·가격이력 데이터 부재로 500만원 투입이 적정한지 판단할 근거(실적, 밸류에이션, 최근 이벤트)가 전혀 확인되지 않음\",\"이전 대화에서 확인된 바, 포트폴리오 Technology 섹터 비중이 37%로 투자원칙 한도(35%) 초과 상태이며, 500만원 추가 매수 시 집중도가 더 높아질 가능성이 있음(정확한 매수 후 비중은 재계산 필요)\"],\"limitations\":[\"getRecentFilings: '데이터 없음' 오류로 최근 공시 확인 불가\",\"getFinancialStatements: '데이터 없음' 오류로 매출/영업이익/순이익 등 재무 지표 확인 불가\",\"getPriceHistory(1개월): '데이터 없음' 오류로 최근 가격 추세 확인 불가\",\"해당 종목은 ETF가 아니므로 getEtfHoldings 호출 대상 아님\",\"현재가 데이터는 mock이며 기준시각이 조회 시점 대비 약 5일 전으로 최신성 신뢰 불가\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3717,
+        "noCache": 3717,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 718,
+        "text": 718,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 3717,
+        "output_tokens": 718,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3717,
+          "output_tokens": 718,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

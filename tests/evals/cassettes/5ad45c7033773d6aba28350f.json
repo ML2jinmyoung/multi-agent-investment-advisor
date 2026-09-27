@@ -1,0 +1,62 @@
+{
+  "key": "5ad45c7033773d6aba28350f",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T12:38:38.281Z",
+  "preview": "STATE:\n{\"question\":\"삼성전자 이번 분기 공시 뭐 나왔어?\",\"summary\":\"삼성전자(005930)의 이번 분기 공시 원문은 현재 사용 가능한 도구로 조회되지 않아 확인할 수 없습니다. 공시·재무·가격 이력 조회 모두 '데이터 없음'으로 반환되었습니다. 대신 현재 포트폴리오 내 삼성전자 보유 현황과 참고할 수 있는 대안을 안내드립니다.\",",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"unsupported_claim\",\"probability\":0.15},{\"id\":\"policy_conflict\",\"probability\":0.05},{\"id\":\"prediction_as_fact\",\"probability\":0.1},{\"id\":\"missing_material_risk\",\"probability\":0.25},{\"id\":\"stale_evidence\",\"probability\":0.85}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 1486,
+        "noCache": 1486,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 80
+      },
+      "raw": {
+        "input_tokens": 1486,
+        "output_tokens": 80,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 1486,
+          "output_tokens": 80,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

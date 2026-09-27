@@ -1,0 +1,62 @@
+{
+  "key": "da45226432a7aa665e81f40b",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T12:18:38.270Z",
+  "preview": "RUBRICS:\n- limitation_honesty: 데이터 누락·조회 실패·데모(예시) 데이터·지연을 숨기지 않고 limitations에 적었는가. 없는 공시·뉴스·수치를 만들어내지 않았는가.\n\nCONVERSATION:\nuser: 환율 데이터는 언제 기준이야?\n\nDATA (the only facts):\n{\"portfolio\":{\"totalValueKRW",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"verdicts\":[{\"rubric\":\"limitation_honesty\",\"pass\":true,\"quote\":\"제공된 데이터에는 'USD/KRW 환율' 자체의 수치나 별도 갱신 시각 필드가 없습니다.\",\"reason\":\"답변이 환율 데이터 누락을 명시적으로 고지했고, Mock 데이터 특성과 데이터 출처 불명확을 상세히 설명했으며, 실제 환율 확인 필요성을 권고함으로써 limitation을 적절히 공개했습니다.\"}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3020,
+        "noCache": 3020,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 171
+      },
+      "raw": {
+        "input_tokens": 3020,
+        "output_tokens": 171,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3020,
+          "output_tokens": 171,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

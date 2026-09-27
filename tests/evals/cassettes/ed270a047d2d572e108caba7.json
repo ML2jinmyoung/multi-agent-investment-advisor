@@ -1,0 +1,62 @@
+{
+  "key": "ed270a047d2d572e108caba7",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T12:31:54.268Z",
+  "preview": "STATE:\n{\"question\":\"마이크로소프트 실적 어땠어?\",\"summary\":\"마이크로소프트(MSFT)의 최근 실적(매출/영업이익/순이익)이나 공시 내용을 확인할 수 있는 데이터를 가져오지 못했습니다. 현재 도구 결과로는 실적이 좋았는지 나빴는지에 대한 사실 확인이 불가능합니다.\",\"recommendation\":\"현재로서는 MSFT 실적에 대해 사실",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"unsupported_claim\",\"probability\":0.05},{\"id\":\"policy_conflict\",\"probability\":0.05},{\"id\":\"prediction_as_fact\",\"probability\":0.02},{\"id\":\"missing_material_risk\",\"probability\":0.15},{\"id\":\"stale_evidence\",\"probability\":0.92}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 1309,
+        "noCache": 1309,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 80
+      },
+      "raw": {
+        "input_tokens": 1309,
+        "output_tokens": 80,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 1309,
+          "output_tokens": 80,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

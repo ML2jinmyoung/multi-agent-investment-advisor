@@ -1,0 +1,79 @@
+{
+  "key": "5614662260a20b68763227d9",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T13:16:24.899Z",
+  "preview": "USER: SK하이닉스 300만원 사도 괜찮아?\n\nPORTFOLIO (as of 2026-09-27T13:13:46.315Z): {\"asOf\":\"2026-09-27T13:13:46.315Z\",\"totalValueKRW\":25642272,\"buyingPowerKRW\":3690000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"type\":\"brok",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "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"
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"summary\":\"SK하이닉스 매수 여부에 대해 예측이 아닌 현재 확인 가능한 사실만 정리합니다. 이번 요청에서는 SK하이닉스에 대한 실제 시세 조회와 매수 시뮬레이션이 수행되지 않았고(SIMULATION: none, EVIDENCE AGENT: skipped), 포트폴리오에도 SK하이닉스 보유 내역이 전혀 없어 '현재 비중 1.3%' 같은 수치는 근거가 없습니다. 대신 확인된 사실은: 현재 포트폴리오가 이미 단일 종목 한도(NVDA 41.7%, 한도 15%)와 Technology 섹터 한도(61.1%, 한도 35%)를 위반한 상태이며, Technology 섹터는 한도를 26%p 이상 초과하고 있습니다. 이런 상태에서 SK하이닉스(반도체/Technology) 같은 종목을 추가 매수하면 섹터 집중도가 더 높아지는 방향으로 작용할 것이라는 점은 정성적으로 말할 수 있지만, 정확한 매수 후 비중 수치는 시뮬레이션이 수행되지 않아 제시할 수 없습니다. 또한 오늘 포트폴리오 핵심 보유 종목인 NVDA가 -7%, QQQ가 -2.4% 하락한 것으로 나타나 있어 변동성이 큰 시점입니다.\",\"evidence\":[{\"kind\":\"portfolio\",\"claim\":\"현재 포트폴리오: NVDA 39.2%(정책점검 기준 41.7%로 표기), Technology 섹터 61.1%, 현금성 자산(원화+달러) 14.4%, 해외자산 69.9%, 총평가액 25,642,272원, 매수가능금액 3,690,000원\",\"source\":\"방문자 직접 입력 (미검증) / 포트폴리오 해석 에이전트\",\"asOf\":\"2026-09-27T13:13:46.315Z\"},{\"kind\":\"portfolio\",\"claim\":\"당일 변동률: NVDA -7%, QQQ -2.4%, 삼성전자 +0.8%, KODEX 200 +0.3%\",\"source\":\"포트폴리오 데이터\",\"asOf\":\"2026-09-27T13:13:46.315Z\"},{\"kind\":\"policy\",\"claim\":\"단일 종목 최대 비중(15%) 위반: NVDA 41.7%(현재 상태 기준, SK하이닉스 매수와 무관)\",\"source\":\"정책 점검 결과\"},{\"kind\":\"policy\",\"claim\":\"단일 섹터 최대 비중(35%) 위반: Technology 61.1%(현재 상태 기준)\",\"source\":\"정책 점검 결과\"},{\"kind\":\"policy\",\"claim\":\"해외자산 최대 비중(70%) 경고: 69.9%(현재 상태 기준)\",\"source\":\"정책 점검 결과\"},{\"kind\":\"policy\",\"claim\":\"최소 유동성(10%) 충족: 14.4%(현재 상태 기준)\",\"source\":\"정책 점검 결과\"},{\"kind\":\"warning\",\"claim\":\"이번 요청에서는 SK하이닉스 시세 조회 및 매수 시뮬레이션이 수행되지 않아(SIMULATION: none, EVIDENCE AGENT: skipped) 매수 후 예상 비중, 현재가, 수수료 등 구체적 수치를 제시할 근거 데이터가 없음\",\"source\":\"시스템 로그\"}],\"alternatives\":[{\"title\":\"아무것도 하지 않음(매수 보류)\",\"description\":\"이미 단일 종목·섹터 한도가 위반된 상태이므로, 추가 매수 없이 현재 상태를 유지하는 것도 합리적인 선택입니다.\"},{\"title\":\"매수 전 시세·재무 데이터 확인 후 재검토\",\"description\":\"현재 SK하이닉스의 실제 시세, 최근 공시, 재무 지표가 확인되지 않았으므로, 이를 먼저 확인한 뒤 매수 여부를 다시 검토하는 방안입니다.\"},{\"title\":\"기존 기술주 비중 정리 후 매수 검토\",\"description\":\"NVDA·QQQ 비중 일부를 줄여 단일 종목(15%)·섹터(35%) 한도 위반을 먼저 해소한 뒤, 필요시 SK하이닉스 매수를 검토합니다.\"},{\"title\":\"비기술 섹터·현금성 자산으로 분산\",\"description\":\"금융, 헬스케어 등 비기술 섹터나 현금성 자산 비중을 늘려 섹터 집중도와 유동성 균형을 개선하는 방안입니다.\"}],\"risks\":[{\"title\":\"당일 큰 폭의 가격 변동\",\"description\":\"포트폴리오 핵심 보유 종목인 NVDA가 당일 -7%, QQQ가 -2.4% 하락한 것으로 나타나 있어, 현재 변동성이 큰 시점입니다. 이런 시점에 추가 매수를 결정하는 것은 신중한 검토가 필요합니다.\",\"severity\":\"high\"},{\"title\":\"이미 위반된 집중도 한도\",\"description\":\"단일 종목(NVDA 41.7%, 한도 15%)과 Technology 섹터(61.1%, 한도 35%) 한도가 이미 위반된 상태로, 같은 섹터의 종목을 추가 매수하면 집중도가 더 커지는 방향으로 작용할 수 있습니다(정확한 수치는 시뮬레이션 미수행으로 제시 불가).\",\"severity\":\"high\"},{\"title\":\"SK하이닉스 시세·재무 데이터 부재\",\"description\":\"이번 요청에서는 SK하이닉스의 현재가, 최근 공시, 재무 지표, 가격 추세가 전혀 조회되지 않아 밸류에이션이나 매수 근거를 판단할 데이터가 없습니다.\",\"severity\":\"medium\"},{\"title\":\"금리/환율 등 거시 변수\",\"description\":\"제공된 데이터에 금리·환율 변동 정보가 없어 별도로 평가하지 못했습니다.\",\"severity\":\"low\"}],\"costs\":[{\"label\":\"매수 수수료/세금\",\"note\":\"이번 요청에 대해 제공된 수수료·세금 데이터가 없어 금액을 산출할 수 없습니다.\"}],\"policyChecks\":[{\"rule\":\"singleStockPct\",\"label\":\"단일 종목 최대 비중\",\"status\":\"violation\",\"limit\":15,\"before\":41.7,\"after\":41.7,\"subject\":\"NVDA\"},{\"rule\":\"sectorPct\",\"label\":\"단일 섹터 최대 비중\",\"status\":\"violation\",\"limit\":35,\"before\":61.1,\"after\":61.1,\"subject\":\"Technology\"},{\"rule\":\"overseasPct\",\"label\":\"해외자산 최대 비중\",\"status\":\"warning\",\"limit\":70,\"before\":69.9,\"after\":69.9},{\"rule\":\"minLiquidityPct\",\"label\":\"최소 유동성\",\"status\":\"ok\",\"limit\":10,\"before\":14.4,\"after\":14.4}],\"recommendation\":\"\",\"limitations\":[]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 6598,
+        "noCache": 6598,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 4166,
+        "text": 2467,
+        "reasoning": 1699
+      },
+      "raw": {
+        "input_tokens": 6598,
+        "output_tokens": 4166,
+        "output_tokens_details": {
+          "thinking_tokens": 1699
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 6598,
+          "output_tokens": 4166,
+          "output_tokens_details": {
+            "thinking_tokens": 1699
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

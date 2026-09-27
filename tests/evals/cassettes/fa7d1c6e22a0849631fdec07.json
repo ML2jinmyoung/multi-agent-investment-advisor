@@ -1,0 +1,62 @@
+{
+  "key": "fa7d1c6e22a0849631fdec07",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T13:43:54.308Z",
+  "preview": "STATE:\n{\"message\":\"그거 500만원 사면?\",\"hasPortfolio\":true,\"hasInvestmentPolicy\":true,\"symbolsMentioned\":[\"005930\"],\"heldSymbolsMentioned\":[\"005930\"],\"tradeDetected\":{\"symbol\":\"005930\",\"action\":\"buy\",\"amoun",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.92},{\"id\":\"needs_simulation\",\"probability\":0.88},{\"id\":\"needs_external_evidence\",\"probability\":0.75},{\"id\":\"needs_policy_check\",\"probability\":0.95},{\"id\":\"needs_risk_review\",\"probability\":0.93},{\"id\":\"is_prediction_request\",\"probability\":0.05}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 1457,
+        "noCache": 1457,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 96
+      },
+      "raw": {
+        "input_tokens": 1457,
+        "output_tokens": 96,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 1457,
+          "output_tokens": 96,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

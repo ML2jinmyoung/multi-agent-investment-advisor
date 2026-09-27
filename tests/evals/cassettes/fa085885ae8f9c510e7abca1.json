@@ -1,0 +1,79 @@
+{
+  "key": "fa085885ae8f9c510e7abca1",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T13:22:48.825Z",
+  "preview": "USER: 삼성전자 더 사고 싶은데\n\nVERIFICATION FLAGS: {\"unsupported_claim\":0.15,\"policy_conflict\":0.92,\"prediction_as_fact\":0.05,\"missing_material_risk\":0.25,\"stale_evidence\":0.7}\n\nDATA (as of 2026-09-27T13:21:20.",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "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"
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"problems\":[{\"kind\":\"contradictory_evidence\",\"detail\":\"포트폴리오 스냅샷에는 삼성전자(005930) weightPct가 8.9%(345.8만원)로 나와있으나, policyChecks의 singleStockPct 항목에는 동일 종목 비중이 11.7%로 기재되어 있습니다. 두 수치가 서로 다른데 draft는 이를 'ETF look-through 포함 정책 계산상 11.7%'라고 임의로 설명했으나, 제공된 데이터 어디에도 ETF look-through 계산 근거(어떤 ETF에 삼성전자가 몇 % 편입되어 있는지)가 없습니다. 근거 없는 설명을 사실처럼 제시한 unsupported_claim이자 두 데이터 간 모순입니다. 두 수치를 있는 그대로 병기하고 '데이터 출처 간 불일치가 있어 확인이 필요하다'고 밝혀야 합니다.\"},{\"kind\":\"missing_risk\",\"detail\":\"오늘 데이터 기준 NVDA -7%, TIGER 미국S&P500 -3.2%, VOO -1.5% 등 포트폴리오 내 주요 자산의 일일 변동성이 매우 큰데, risks 목록에는 이 시장 변동성 위험이 전혀 언급되지 않았습니다. 특히 이미 Technology 섹터가 한도를 초과한 상태에서 추가 매수를 고려 중이므로, 최근 급락한 기술주들과의 상관관계·동반 하락 위험을 명시해야 합니다. 또한 investmentPolicy의 maxDrawdownPct(20%) 한도도 언급되지 않아, 섹터 집중 심화가 이 한도에 미치는 영향을 언급할 필요가 있습니다.\"},{\"kind\":\"policy_inconsistency\",\"detail\":\"recommendation 필드와 limitations 필드에 'placeholder' 문자열이 그대로 남아있어 실제 결론이 제공되지 않았습니다. VERIFICATION FLAGS의 policy_conflict가 0.92로 매우 높게 표시되어 있는데도, 섹터 한도 위반(37%>35%)에 대한 명확한 결론(예: '섹터 한도를 이미 초과했으므로 추가 매수는 권장하지 않으며, 원한다면 소액으로 진행 여부를 시뮬레이션할 수 있다')을 제공하지 않은 것은 정책 위반 상태에 대한 실질적 답변 누락입니다.\"},{\"kind\":\"stale_data\",\"detail\":\"시세 데이터(asOf 2026-09-22)가 포트폴리오 스냅샷(asOf 2026-09-27)보다 5일 이상 오래되었다는 점은 draft에 이미 명시되어 있어 좋으나, evidence 항목에서도 asOf를 재확인하고 summary에서 '가격 정보가 5일 전 목업 데이터로 실제와 다를 수 있다'는 점을 한 번 더 강조할 필요가 있습니다.\"},{\"kind\":\"missing_evidence\",\"detail\":\"[수정된 답변] summary: 삼성전자 추가 매수와 관련해 두 가지를 확인했습니다. 첫째, 포트폴리오 데이터상 삼성전자 직접 보유 비중은 8.9%(345.8만원)이나, 정책 점검 결과(policyChecks)에는 11.7%로 계산되어 있어 두 수치가 일치하지 않습니다(근거 불충분, 확인 필요). 어느 쪽이든 단일 종목 한도(15%)는 아직 초과하지 않았습니다. 둘째, 포트폴리오 전체 Technology 섹터 비중은 37%로 정책 한도(35%)를 이미 초과한 상태(violation)이며, 삼성전자 추가 매수는 이 위반을 심화시킵니다. 시세(87,000원, +0.8%)는 실제 시세가 아닌 목업(fixture) 데이터이며 기준 시점도 포트폴리오보다 5일 이상 이전입니다. 최근 공시·재무·가격이력 데이터는 확인되지 않았습니다. evidence/policyChecks/costs 항목은 원본과 동일하게 유지하되 단일종목 비중 불일치 사실을 evidence에 명시적으로 추가합니다. risks에는 기존 항목에 더해 '시장 변동성 위험'(NVDA -7%, TIGER -3.2%, VOO -1.5% 등 포트폴리오 내 자산들의 큰 일일 변동, severity: medium~high)과 '최대낙폭 한도(20%) 대비 섹터 집중 심화 위험'을 추가합니다. alternatives는 원본 4개 항목을 유지합니다. recommendation: '현재 섹터 한도를 이미 초과한 상태이므로 삼성전자 추가 매수는 권장하지 않습니다. 다만 최종 결정은 본인 판단이며, 매수를 원하실 경우 구체적 금액을 알려주시면 매수 후 단일종목·섹터 비중 변화를 시뮬레이션해드릴 수 있습니다.' limitations: ['단일 종목 비중 수치(8.9% vs 11.7%)가 데이터 소스 간 불일치하여 정확한 값을 확정할 수 없습니다.', '최근 공시·재무·3개월 가격 이력 데이터 없음.', '시세는 목업(fixture) 데이터이며 5일 이상 지난 시점 기준입니다.', '거래 금액이나 수량을 알려주시면 시뮬레이션합니다.']\"}],\"verdict\":\"revise\"}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4450,
+        "noCache": 4450,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 3925,
+        "text": 2002,
+        "reasoning": 1923
+      },
+      "raw": {
+        "input_tokens": 4450,
+        "output_tokens": 3925,
+        "output_tokens_details": {
+          "thinking_tokens": 1923
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4450,
+          "output_tokens": 3925,
+          "output_tokens_details": {
+            "thinking_tokens": 1923
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

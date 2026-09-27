@@ -1,0 +1,101 @@
+{
+  "key": "61570c24566825cae6849e0d",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:34:37.906Z",
+  "preview": "USER: 내 ETF들 중 NVDA 담고 있는 게 뭐야?\n\nPORTFOLIO (deterministic, as of 2026-09-27T12:34:24.057Z):\n{\"asOf\":\"2026-09-27T12:34:24.057Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "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"
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01PXWzXZfmrcNXsNP7B32XoX",
+        "toolName": "getPosition",
+        "input": "{\"symbol\":\"VOO\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01LuHXyh7p352a1i5honXrgM",
+        "toolName": "getPosition",
+        "input": "{\"symbol\":\"360750\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4311,
+        "noCache": 4311,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 740,
+        "text": 102,
+        "reasoning": 638
+      },
+      "raw": {
+        "input_tokens": 4311,
+        "output_tokens": 740,
+        "output_tokens_details": {
+          "thinking_tokens": 638
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4311,
+          "output_tokens": 740,
+          "output_tokens_details": {
+            "thinking_tokens": 638
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

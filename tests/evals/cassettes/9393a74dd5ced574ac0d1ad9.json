@@ -1,0 +1,70 @@
+{
+  "key": "9393a74dd5ced574ac0d1ad9",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T13:27:42.431Z",
+  "preview": "USER: 삼성전자 20주 매도하면 세금 얼마야?\n\nPORTFOLIO (deterministic, as of 2026-09-27T13:27:31.950Z):\n{\"asOf\":\"2026-09-27T13:27:31.950Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"meaning\":\"삼성전자 20주 전량 매도 시뮬레이션 기준으로, 거래세와 수수료를 합쳐 총 2,871원의 비용이 발생합니다. 매도 후 삼성전자 비중은 사라지고 투자 가능 금액이 늘어나며, Technology 섹터 비중 경고가 다소 완화됩니다.\", \"keyFacts\":[\"시뮬레이션 기준 비용: 수수료 261원 + 거래세 2,610원 = 총 2,871원(수수료율 0.015%, 거래세율 0.15%)\",\"매도 후 삼성전자(005930) 실질 비중은 11.7%→7.3%로 감소\",\"매도 후 Technology 섹터 비중은 37%→32.5%로 낮아져 기존 경고(35% 한도 초과) 상태가 완화됨\",\"매도 후 투자 가능 금액은 10,760,000원→12,497,129원으로 증가\",\"매도 후 유동성 비중은 27.6%→32%로 상승해 최소 유동성 기준(10%) 대비 여유 확대\",\"기타 정책 체크(단일종목, 해외비중, 환위험, 투자기간)는 매도 전후 동일하게 'ok' 상태\"], \"alternatives\":[\"삼성전자 20주 전량 매도로 세금·수수료 2,871원을 부담하고 Technology 섹터 비중을 낮추는 방향으로 리밸런싱\",\"일부 수량만 매도해 세금 부담을 줄이면서 섹터 비중을 점진적으로 조정\",\"매도 대신 다른 Technology 비중 종목(NVDA, AAPL 등) 비중 조정으로 섹터 경고 대응\",\"매도하지 않고 현재 비중을 유지하며 Technology 35% 한도 초과 상태를 계속 모니터링\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4688,
+        "noCache": 4688,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 642,
+        "text": 642,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 4688,
+        "output_tokens": 642,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4688,
+          "output_tokens": 642,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

@@ -8,7 +8,7 @@
  *
  * Options: --suite regression|capability|all|holdout|golden (default golden) or --cases <file|dir>
  *          --profile <name|demo> (overrides each case's profile) --trials <k> --filter <text> --limit <n>
- *          --no-judge (skip the LLM judge) --variant full|single-agent|no-critic (baseline comparison)
+ *          --ids a,b,c (exact case ids) --no-judge (skip the LLM judge) --variant full|single-agent|no-critic
  *          --out <dir> (default evals/reports)
  * Exit code 1 when a regression/golden trial fails (status not ok, or a code grader / must-mention rule fails).
  *
@@ -125,6 +125,10 @@ async function main() {
     : suite === "golden" ? goldenToCases("tests/evals/golden.json")
       : loadSuite(suite as "regression" | "capability" | "all" | "holdout");
   if (args.filter) cases = cases.filter((c) => c.id.includes(args.filter!) || c.turns.some((t) => t.content.includes(args.filter!)));
+  if (args.ids) {
+    const ids = new Set(args.ids.split(",").map((s) => s.trim()).filter(Boolean));
+    cases = cases.filter((c) => ids.has(c.id));
+  }
   if (args.limit) cases = cases.slice(0, Number(args.limit));
   if (!cases.length) fail("no cases selected");
 

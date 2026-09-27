@@ -1,0 +1,101 @@
+{
+  "key": "848401277966af4daa36e40f",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:06:03.475Z",
+  "preview": "USER: MSFT 얼마나 가지고 있어?\n\nPORTFOLIO (deterministic, as of 2026-09-27T12:05:58.185Z):\n{\"asOf\":\"2026-09-27T12:05:58.185Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EqIECpABCBIYAipAtuOsTz2UOxL+sUVSIf2aEAN3a1J6ol3JEFprXXlndGZ1shM/QR4hDrNAytSW+pz5QZsVPIi7PMF3dtEh3/nKjTIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAaqN5NUGEgwF7AtoXww89ee2IREaDNVM16496KyafCOw7iIwyQ7Kg5FkfgpuZlY6yR64kf7FGOBSuMMF+lrg8QJVagzuwMDmY986ZGVGlhuOgIjfKr4Cz6/QyEvo2lgVSXe1L0AxAZBUZN3wuZS6yAxpnsaJ23xKwS6SX9rgTbOWP2rd8i8zdnEmeA3lp5N+0H/dmZ7bb8J3WmySE9+b+4ERPMFUZY5OYSgbMiutD/jsDndoFflaKKsgIsoXsjGSIQCYRCVO3y4TZMwzMYytRepP9Lg0pSMm+Ju9sKvrGR8DUwZIRgLXDLXDbfit2DJWg8nohnVTMWH/bQslMvig4mPnOUHNMUazc/rPwjF21weFr0LSxf8PPcnOgom2PkRzOQndYQnEEvYYKLi7WNIHYElZ2avwtLE5xItQpbDwETFlIZkrYERLHlE66EUZpZz67BSLTnRx5iFCHEqni3CmthV97h2lUm47A8smpnUwbwNes7tIlUlJtvPs/ByuiMlgmqkCU0o/9jWunnYbT+fpd0a7SWn7GAE="
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01JMFUygCnFp2sNhvCYTdFFs",
+        "toolName": "getPosition",
+        "input": "{\"symbol\":\"MSFT\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01Hfvfq4o4voBAW9j4XqpxzX",
+        "toolName": "getExposure",
+        "input": "{\"symbol\":\"MSFT\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4013,
+        "noCache": 4013,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 252,
+        "text": 104,
+        "reasoning": 148
+      },
+      "raw": {
+        "input_tokens": 4013,
+        "output_tokens": 252,
+        "output_tokens_details": {
+          "thinking_tokens": 148
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4013,
+          "output_tokens": 252,
+          "output_tokens_details": {
+            "thinking_tokens": 148
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "key": "3c5fee8efc5f0fc9719bbea5",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T13:42:28.920Z",
+  "preview": "USER: 삼성전자 최근 공시 있어?\n\nPORTFOLIO (as of 2026-09-27T13:41:56.534Z): {\"asOf\":\"2026-09-27T13:41:56.534Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"type\":\"brokerage",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EvMHCpABCBIYAipAVUZN15we9k8Om7HTZJ4xzAHneeTzVNHOTFpoR3iveTHfX5eAh/YTN1wD8h3i9vvfw8tC5MXsdo5vGBuIW1PJ8DIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAba65NUGEgwIpM7yH0J2XXIeM60aDII5bIzipFK5yOS2pSIwLUUvcuWcGmVtoc0GP4Yq9invelLbn1Ois7QHBW4evVpdYZHK3hTGJCkK5q0ZorNQKo8GHARI8W9aroFcRhZBZp8x1jdEqHPyuin/DVnnLPEG4B+FEZ61Oy3lhVvKeJgVc0un+arQZIk0VmGtcOS57nk79GR6Jmq4Gw7g+NmKIXzAexf+76ttu4wfi1hxqhX70qw8Kd0RLnNjnZ8LLFWw8RdLjpg9JFCjUZLZuDGJ0wIkcdID1KkRskuq1dr3PIwhOUyQo06x10L8Hc21IJZkiF3tD9RRbWoxS+TexrWaj6JMaFSNqfE2wtP8hgVcCYxQYILA3fEOM3CXpmJhK7j4j5ttk9jU1avNbRPogb85IF/Ep0YwdpKm+Ptzao9LIS9fKIN7jBuVm3bD2LwQmeyY3NGHifA9lmNwGrpj4LoaU8NSwg0qUmnqJ12PZ4ev6ojZ7F1coR2Tbt8ISm3bxT8il7OfEVWsx7rZCM8B0BhwtFoyfrgt8VL88m2tIIWl5PsFbgUF5QEHCxQMiEwknOu2njBpRnusew9RnYav7RzpRrnF1kdUWahq9/9NKOKqP3jz/mjh5vtmBoQrs1LiJ9cMmhZQ20675qVBhZFsOBPNB4REDywlsF5+vpLOAPRtBJA8IuGoe7JmoCWJB5Y6VLfp6qgAu83RccZBKgcBx0GevhNySpqYn+k/FVSZzax+vIIbGsJrdmOWkg35iR9khNzmyH/pKFcWozFwStGc9N0i5LuBqKVB3CHjLUYNLqSMDoR+v/CIiaEHxgxMJ7YuCBCmu6ESx0YokDL40sofokhJpU3J0/IHZHMoDE6WQmOuib829VH0WKdJ36hSgS8avNe1DGwP56NsoH428qhP45I38hBQ+Zy4g1ZxI/RAHuQVzsOTWCljsoP+lWGgBasg7vc+8uYLyeKdhUvxecr3At8fLawnvFyfa3OCSZt5P3bL1+8C0HocwloJ3yjOOENWgTqTKCjbQ6n1STQGVtGz8i3d59CwbiVvnnk5MmLNaRf/6Wj5t5/xlGh+5mdxPNO67X/z2ngNCZ3KDTFUbMzo58SLx5uZE44tzYwn5VG5ALYhwM/RPJMRBwJQGGvOiaqk/LwAKsn8GAE="
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"summary\":\"삼성전자(005930) 관련 최근 공시 정보는 현재 시스템에서 조회되지 않습니다. 공시(DART), 재무제표, 가격 이력 조회 도구가 모두 '데이터 없음' 오류를 반환했고, 시세 정보도 실거래가 아닌 모의(mock) 픽스처 데이터입니다. 포트폴리오 관점에서는 삼성전자가 전체 자산의 8.9%를 차지하며 원칙상 한도(15%) 내에 있습니다.\",\"evidence\":[{\"kind\":\"portfolio\",\"claim\":\"삼성전자(005930) 보유: 40주, 평균단가 70,000원, 현재가 87,000원, 평가금액 3,480,000원, 전체 대비 비중 8.9%, 당일 변동률 +0.8%\",\"source\":\"입력한 보유자산 (방문자 직접 입력, 미검증)\",\"asOf\":\"2026-09-27T13:41:56.534Z\"},{\"kind\":\"market\",\"claim\":\"현재가 87,000원, 전일 대비 +0.8% (모의/픽스처 데이터로 실거래 반영 아님)\",\"source\":\"Mock market data (fixture)\",\"asOf\":\"2026-09-22T15:30:00+09:00\",\"isMock\":true},{\"kind\":\"warning\",\"claim\":\"거래소 매수 유의사항(투자경고·단기과열 등) 해당 없음 — 단, 조회 시점 기준이며 이후 변경 가능\",\"source\":\"거래소 유의사항 조회\",\"asOf\":\"조회 시점 기준\"},{\"kind\":\"filing\",\"claim\":\"최근 공시 내역 조회 실패: '데이터 없음' 오류\",\"source\":\"getRecentFilings (연결된 공시 조회 도구 없음)\"}],\"alternatives\":[{\"title\":\"아무것도 하지 않음\",\"description\":\"공시 확인 전까지 삼성전자 포지션(비중 8.9%, 원칙 한도 내)을 그대로 유지합니다. 추가 거래 없이 대기하는 것도 합리적인 선택입니다.\"},{\"title\":\"전자공시시스템(DART) 또는 증권사 HTS/MTS 직접 확인\",\"description\":\"본 시스템은 공시 조회 기능이 연결되어 있지 않으므로, 최근 공시 유무는 DART나 증권사 앱에서 직접 확인하는 것이 정확합니다.\"},{\"title\":\"비중·원칙 점검 요청\",\"description\":\"공시 정보 대신, 현재 보유 비중(8.9%)이나 투자 원칙 준수 여부(checkInvestmentPolicy)를 추가로 확인해볼 수 있습니다.\"}],\"risks\":[{\"title\":\"공시·재무 데이터 부재\",\"description\":\"getRecentFilings, getFinancialStatements, getPriceHistory 모두 데이터 없음 오류로 실적 추세나 최근 이슈를 확인할 수 없습니다.\",\"severity\":\"medium\"},{\"title\":\"시세 데이터가 모의(mock) 데이터\",\"description\":\"getQuotes 결과는 실제 시세가 아닌 픽스처 데이터이므로 현재가로 사용할 수 없으며, 실제 의사결정에 활용해서는 안 됩니다.\",\"severity\":\"high\"},{\"title\":\"유의사항 조회의 시점 제한\",\"description\":\"거래소 유의사항이 현재 비어 있다는 것은 조회 시점 기준이며 이후 변경될 수 있습니다.\",\"severity\":\"low\"}],\"costs\":[],\"policyChecks\":[],\"recommendation\":\"현재 시스템으로는 삼성전자의 '최근 공시 여부'를 사실로 확인해드릴 수 없습니다(공시 조회 도구 미연결, 데이터 없음 오류). 정확한 확인을 원하시면 DART나 증권사 앱을 직접 이용하시길 권합니다. 포트폴리오 관점에서는 삼성전자 비중이 8.9%로 투자 원칙상 단일종목 한도(15%) 내에 있어, 공시를 확인하기 전까지 추가 매매 없이 현재 포지션을 유지하는 것도 합리적인 선택입니다.\",\"limitations\":[\"getRecentFilings: '데이터 없음' 오류로 최근 공시 내역을 확인하지 못함\",\"getFinancialStatements: '데이터 없음' 오류로 재무 지표를 확인하지 못함\",\"getPriceHistory: '데이터 없음' 오류로 최근 가격 흐름을 확인하지 못함\",\"getQuotes 결과는 실제 시세가 아닌 모의(mock) 픽스처 데이터\",\"포트폴리오 보유 데이터는 방문자 직접 입력으로 미검증 상태\",\"정책 점검(policyChecks) 결과가 제공되지 않아 별도 반영 불가\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4120,
+        "noCache": 4120,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 1978,
+        "text": 1682,
+        "reasoning": 296
+      },
+      "raw": {
+        "input_tokens": 4120,
+        "output_tokens": 1978,
+        "output_tokens_details": {
+          "thinking_tokens": 296
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4120,
+          "output_tokens": 1978,
+          "output_tokens_details": {
+            "thinking_tokens": 296
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

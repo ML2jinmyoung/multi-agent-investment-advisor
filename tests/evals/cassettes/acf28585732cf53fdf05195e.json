@@ -1,0 +1,88 @@
+{
+  "key": "acf28585732cf53fdf05195e",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T13:29:30.769Z",
+  "preview": "USER: VOO 1500만원 더 사면 해외 비중 한도 넘어?\n\nPORTFOLIO (deterministic, as of 2026-09-27T13:29:26.132Z):\n{\"asOf\":\"2026-09-27T13:29:26.132Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\"",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EsoCCpABCBIYAipAeMNkw4UbrcndMa6JSVv15+AW3J+4bS35qlsL49TTpAa3YO2K4mS//sIfUTjrNWh5SSarVQfykvSHyKPtYo8xWjIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAbq05NUGEgynb+rigS9s5tzyPxQaDOrfy9XNtnvNWsZFMyIwxY3EL764JdfHaZ1HjFbSd4s9WYtfovUzAzJ69Uc6DWSVKZF6YpY80jhDIrChZ+gPKmcef5otxfLJ8BhfBjvhyXoZ1RNJzbXFl8ci1kkZX/DHBmng1oxmEX6QjlZoNdOlUaIYd8ukGRfeSmzV0BAzuJIENhNBf1LNfZR4J96Z7aR0PIjZhNYI5AucSn+j3Ykjy5Hog86Dj+bWGAE="
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_016owgVCbD8VzQ59gLCw6gyj",
+        "toolName": "simulateTrade",
+        "input": "{\"symbol\":\"VOO\",\"action\":\"buy\",\"amountKRW\":15000000}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3908,
+        "noCache": 3908,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 147,
+        "text": 104,
+        "reasoning": 43
+      },
+      "raw": {
+        "input_tokens": 3908,
+        "output_tokens": 147,
+        "output_tokens_details": {
+          "thinking_tokens": 43
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3908,
+          "output_tokens": 147,
+          "output_tokens_details": {
+            "thinking_tokens": 43
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

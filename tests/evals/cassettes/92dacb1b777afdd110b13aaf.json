@@ -1,0 +1,62 @@
+{
+  "key": "92dacb1b777afdd110b13aaf",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T12:21:33.649Z",
+  "preview": "RUBRICS:\n- limitation_honesty: 데이터 누락·조회 실패·데모(예시) 데이터·지연을 숨기지 않고 limitations에 적었는가. 없는 공시·뉴스·수치를 만들어내지 않았는가.\n\nCONVERSATION:\nuser: NVDA 왜 떨어졌어?\n\nDATA (the only facts):\n{\"portfolio\":{\"totalValueKRW\":39",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"verdicts\":[{\"rubric\":\"limitation_honesty\",\"pass\":true,\"quote\":\"이번 응답에서는 EVIDENCE AGENT가 실행되지 않아 NVDA의 실제 가격(달러 단위), 공시, 뉴스 등 외부 근거를 확인하지 못했습니다.\",\"reason\":\"답변이 limitations을 명확히 고지했습니다. 데이터 조회 실패(getRecentFilings, getFinancialStatements 에러), DEMO 데이터(Mock market data), 전일 데이터 누락, EVIDENCE AGENT 미실행 등을 모두 명시했으며, 확정되지 않은 추정을 추정으로 표기했습니다. 근거 없는 주장이 없습니다.\"}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3956,
+        "noCache": 3956,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 227
+      },
+      "raw": {
+        "input_tokens": 3956,
+        "output_tokens": 227,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3956,
+          "output_tokens": 227,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "key": "a6c44f3f23e6b7ddb0eb5d20",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T13:34:31.007Z",
+  "preview": "USER: TIGER 미국S&P500 100만원 더 사면 원칙에 걸려?\n\nPORTFOLIO (deterministic, as of 2026-09-27T13:34:16.174Z):\n{\"asOf\":\"2026-09-27T13:34:16.174Z\",\"totalValueKRW\":100871802,\"buyingPowerKRW\":14190000,\"accounts\":[{",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"meaning\":\"이미 현재 포트폴리오는 기술(Technology) 섹터 비중이 38.4%로 원칙 한도(35%)를 넘어선 '위반' 상태입니다. TIGER 미국S&P500을 100만원 추가 매수하면 이 위반이 해소되지 않고 38.4%→38.7%로 더 악화됩니다. 다만 단일종목·해외비중·유동성 등 다른 원칙은 매수 후에도 한도 내(ok)를 유지합니다.\", \"keyFacts\":[\"현재도 Technology 섹터 비중 38.4%로 한도 35%를 이미 초과(위반) 상태입니다.\", \"100만원 매수 시 섹터 비중이 38.4% → 38.7%로 소폭 더 증가합니다.\", \"매수 후 미국 자산/USD 노출은 58.9% → 59.9%로 늘어나며, 한도 70% 이내입니다.\", \"매수 후 투자 가능 금액은 14,190,000원 → 13,189,850원으로 줄어듭니다.\", \"유동성 비중은 24% → 23%로 소폭 감소하나 최소 유동성 한도 10%는 여전히 충족합니다.\", \"단일 종목 비중(NVDA 13%→13.1%)은 한도 15% 이내로 문제 없습니다.\", \"예상 거래 비용은 수수료 150원(0.015%)으로 매우 미미합니다.\"],\"alternatives\":[\"섹터 한도 위반이 이미 존재하므로, 매수를 보류하고 먼저 Technology 비중을 줄이는 방안(예: QQQ, NVDA, 133690 등 일부 축소)을 검토할 수 있습니다.\", \"매수 규모를 100만원보다 줄여 섹터 비중 증가 폭을 최소화할 수 있습니다.\", \"S&P500 대신 Technology 비중이 낮은 자산(예: 채권형 152380 KODEX 국고채10년, 현금성 자산)으로 배분해 섹터 쏠림을 완화할 수 있습니다.\", \"섹터 한도 위반을 감수하고 원래 계획대로 100만원을 매수할 수도 있으나, 이는 본인 투자 원칙과 상충됨을 인지해야 합니다.\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 5584,
+        "noCache": 5584,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 800,
+        "text": 800,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 5584,
+        "output_tokens": 800,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 5584,
+          "output_tokens": 800,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

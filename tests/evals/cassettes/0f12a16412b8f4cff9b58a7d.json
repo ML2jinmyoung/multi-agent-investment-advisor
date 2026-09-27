@@ -1,0 +1,70 @@
+{
+  "key": "0f12a16412b8f4cff9b58a7d",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:13:40.471Z",
+  "preview": "USER: AAPL 최근 1년 주가 흐름 어때?\n\nPORTFOLIO (deterministic, as of 2026-09-27T12:13:22.349Z):\n{\"asOf\":\"2026-09-27T12:13:22.349Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"meaning\":\"저는 주가 예측이나 차트 분석을 제공하지 않으며, AAPL의 '최근 1년 주가 흐름'에 대한 히스토리컬 가격 데이터를 조회하는 툴도 없습니다. 대신 이 질문이 회원님 포트폴리오 관점에서 어떤 의미인지 알려드릴 수 있습니다: AAPL은 직접 보유 외에 VOO·360750 같은 ETF 내부에도 편입돼 있어, 실질 노출이 표면 비중보다 큽니다.\",\"keyFacts\":[\"AAPL 직접 보유 평가액은 3,244,380원(전체 자산의 8.3%)이며 오늘 일간 변동은 -1.2%입니다.\",\"ETF(VOO, 360750 등) 내부 보유분을 합친 look-through 실질 노출은 3,867,788원으로, 포트폴리오 전체 비중 기준 9.9%입니다.\",\"투자 원칙상 단일 종목 한도는 15%이며, AAPL 실질 비중 9.9%는 이 한도 내에 있습니다.\",\"다만 Technology 섹터 비중은 37%로 정책 한도 35%를 초과한 상태(violation)이며, AAPL도 이 섹터 비중에 포함됩니다.\",\"AAPL의 지난 1년 가격 추이 데이터는 보유하고 있지 않으므로 별도 시세 데이터 확인이 필요합니다.\"],\"alternatives\":[\"실제 AAPL 및 애플 관련 ETF 편입 시세/차트가 필요하면 증권사 앱이나 시세 데이터 제공처를 통해 별도로 확인하는 것을 권장합니다.\",\"Technology 섹터 비중 초과(37%>35%) 해소를 원하면 AAPL/NVDA/VOO 등 기술주 비중 축소를 simulateTrade로 시뮬레이션해볼 수 있습니다.\",\"AAPL 비중을 늘리거나 줄이는 것을 검토하려면 simulateTrade로 가상 매매 후 정책 위반 여부를 먼저 점검할 수 있습니다.\",\"현재 상태를 유지하며 추가 정보 없이 판단을 보류할 수도 있습니다.\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4468,
+        "noCache": 4468,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 795,
+        "text": 795,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 4468,
+        "output_tokens": 795,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4468,
+          "output_tokens": 795,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

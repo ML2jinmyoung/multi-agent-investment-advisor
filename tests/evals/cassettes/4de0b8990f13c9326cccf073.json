@@ -1,0 +1,88 @@
+{
+  "key": "4de0b8990f13c9326cccf073",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T13:09:51.953Z",
+  "preview": "USER: 삼성전자 1000만원 매수하면 원칙 위반이야?\n\nPORTFOLIO (deterministic, as of 2026-09-27T13:09:27.703Z):\n{\"asOf\":\"2026-09-27T13:09:27.703Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "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"
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01NmpUVXnKF6JFp7pybaGNPB",
+        "toolName": "getExposure",
+        "input": "{\"symbol\":\"005930\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4831,
+        "noCache": 4831,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 930,
+        "text": 52,
+        "reasoning": 878
+      },
+      "raw": {
+        "input_tokens": 4831,
+        "output_tokens": 930,
+        "output_tokens_details": {
+          "thinking_tokens": 878
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4831,
+          "output_tokens": 930,
+          "output_tokens_details": {
+            "thinking_tokens": 878
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

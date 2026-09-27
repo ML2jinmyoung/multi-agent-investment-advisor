@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-09-27T10:57:08.358Z",
+  "recordedAt": "2026-09-27T12:02:06.904Z",
   "provider": "anthropic",
   "models": {
     "orchestratorFallback": {
@@ -23,6 +23,6 @@
       "model": "claude-sonnet-5"
     }
   },
-  "cases": "tests/evals/golden.json",
-  "profile": "balanced"
+  "cases": "suite:regression",
+  "profile": "per-case"
 }

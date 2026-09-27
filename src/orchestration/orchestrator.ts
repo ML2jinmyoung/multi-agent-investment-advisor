@@ -30,7 +30,7 @@ export interface AgentRunResult {
   verification: VerificationResult;
   /** the deterministic inputs the models saw; evals grade the answer against these, never against the answer itself */
   context: { snapshot: SnapshotView; policy: InvestmentPolicy; policyChecks: PolicyCheck[]; simulationView?: SimulationView; limitations: string[] };
-  trace: { steps: Pick<StepRecord, "name" | "kind" | "status" | "latencyMs" | "model">[]; toolCalls: Pick<ToolCallRecord, "tool" | "status" | "stepId" | "input" | "output">[] };
+  trace: { steps: Pick<StepRecord, "name" | "kind" | "status" | "latencyMs" | "model">[]; toolCalls: Pick<ToolCallRecord, "tool" | "status" | "stepId" | "input" | "output" | "rawOutput">[] };
 }
 type SnapshotView = RunContext["snapshot"];
 
@@ -135,6 +135,8 @@ export async function runAgent(
       if (critique.verdict === "revise" && critique.problems.length) {
         answer = await runSynthesizer(ctx, { critique: critique.problems.map((p) => `${p.kind}: ${p.detail}`).join("\n"), previous: answer });
         answer.limitations = [...new Set([...answer.limitations, ...limitations])];
+        // F-013: the revision may drop the code-owned disclaimer; put it back
+        if (routing.isPredictionRequest && !answer.limitations.includes(NO_PREDICTION)) answer.limitations.unshift(NO_PREDICTION);
       } else tracer.skip("synthesizer-revision", "critic passed the draft");
     } else tracer.skip("llm-critic", agentVariant() === "no-critic" ? "variant no-critic" : verification.needsCritic ? "no LLM provider configured" : "verification passed");
 
@@ -149,7 +151,7 @@ export async function runAgent(
       context: { snapshot: ctx.snapshot, policy, policyChecks, simulationView: ctx.simulationView, limitations },
       trace: {
         steps: tracer.steps.map((s) => ({ name: s.name, kind: s.kind, status: s.status, latencyMs: s.latencyMs, model: s.model })),
-        toolCalls: tracer.toolCalls.map((t) => ({ tool: t.tool, status: t.status, stepId: t.stepId, input: t.input, output: t.output })),
+        toolCalls: tracer.toolCalls.map((t) => ({ tool: t.tool, status: t.status, stepId: t.stepId, input: t.input, output: t.output, rawOutput: t.rawOutput })),
       },
     };
   } catch (e) {

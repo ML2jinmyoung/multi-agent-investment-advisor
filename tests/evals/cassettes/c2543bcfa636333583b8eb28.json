@@ -1,0 +1,140 @@
+{
+  "key": "c2543bcfa636333583b8eb28",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T13:48:55.581Z",
+  "preview": "RECENT CONVERSATION:\nuser: 환율이 10% 떨어지면?\nassistant: 이 시나리오는 '원/달러 환율이 10% 하락(원화 강세)'했다고 가정했을 때의 가상 충격 테스트이며 예측이 아닙니다. 달러 표시 자산(VOO, 360750, AAPL, NVDA, USD 현금)의 원화 환산 가치가 줄어들어 총 평가액은 39,040,386원→37,14",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "Es8CCpABCBIYAipAQDR8fThjZpk0Bf0AFaO8KZZKZT1Kfxa4SXl9TXuru9Tj7Go+my7mwd9kfwHQZsb/fEYc5PUHUiZZIOyjyq2UtTIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAcW95NUGEgziZQmIdV5ce6zecSoaDBlnsc2su5Bk40PW4SIwHvexXeIOi2si9JVyPt3nblJHxw/6FenXbpvQcTptmdLFQNuP5D5XOUUb4t2+8/E5Kmw4iuuax03kV6HSpxGMxFgdjPkFJ8Y/u2xOReVobaJzzrsvZ3vDf2gz5bsCYZBe102DiJOL3wHIBOCmHep9xMO2qtLYLt2LSpSvh/CvtNH/q6gYB+rdolDTmD1/wwYoJtAqUptnRNKs1Wf8870YAQ=="
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_011fJbib5Y1UWfQTcgRChhCX",
+        "toolName": "getRecentFilings",
+        "input": "{\"symbol\":\"NVDA\",\"days\":90}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01CyyiBbDJDP4TDp9X7pb8u8",
+        "toolName": "getFinancialStatements",
+        "input": "{\"symbol\":\"NVDA\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01L6qCrZNcbKzDBSbbiPg7S3",
+        "toolName": "getPriceHistory",
+        "input": "{\"symbol\":\"NVDA\",\"period\":\"3m\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01KCBm9UQVs1sq8tX2UboqYT",
+        "toolName": "getStockWarnings",
+        "input": "{\"symbol\":\"NVDA\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01WpaJ4bVbspyAhEgnkqmm5H",
+        "toolName": "getQuotes",
+        "input": "{\"symbols\":[\"NVDA\"]}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3548,
+        "noCache": 3548,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 348,
+        "text": 315,
+        "reasoning": 33
+      },
+      "raw": {
+        "input_tokens": 3548,
+        "output_tokens": 348,
+        "output_tokens_details": {
+          "thinking_tokens": 33
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3548,
+          "output_tokens": 348,
+          "output_tokens_details": {
+            "thinking_tokens": 33
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

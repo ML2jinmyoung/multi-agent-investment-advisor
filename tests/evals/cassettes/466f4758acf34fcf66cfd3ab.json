@@ -1,0 +1,62 @@
+{
+  "key": "466f4758acf34fcf66cfd3ab",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T12:57:41.944Z",
+  "preview": "STATE:\n{\"message\":\"NVDA 지금 안 사면 후회할까?\",\"hasPortfolio\":true,\"hasInvestmentPolicy\":true,\"symbolsMentioned\":[\"NVDA\"],\"heldSymbolsMentioned\":[\"NVDA\"],\"tradeDetected\":{\"symbol\":\"NVDA\",\"action\":\"buy\"},\"scen",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.92},{\"id\":\"needs_simulation\",\"probability\":0.15},{\"id\":\"needs_external_evidence\",\"probability\":0.78},{\"id\":\"needs_policy_check\",\"probability\":0.85},{\"id\":\"needs_risk_review\",\"probability\":0.88},{\"id\":\"is_prediction_request\",\"probability\":0.72}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 774,
+        "noCache": 774,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 96
+      },
+      "raw": {
+        "input_tokens": 774,
+        "output_tokens": 96,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 774,
+          "output_tokens": 96,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

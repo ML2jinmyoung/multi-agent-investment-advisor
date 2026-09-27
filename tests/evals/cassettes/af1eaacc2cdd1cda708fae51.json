@@ -1,0 +1,88 @@
+{
+  "key": "af1eaacc2cdd1cda708fae51",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T13:41:43.627Z",
+  "preview": "RECENT CONVERSATION:\nuser: NVDA 500만원 더 살까?\nassistant: NVDA 500만원 추가 매수 시나리오를 시뮬레이션한 결과, 정책 점검 엔진은 단일종목 비중이 8.3%→21.1%(한도 15% 위반), 기술 섹터 비중이 37%→49.8%(한도 35% 위반)로 커진다고 계산했습니다. 다만 포트폴리오 스냅샷에는 NVDA 비중이 ",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EsEDCpABCBIYAipAhSS5OiFFQ1OatBQhTZTeVJUT2TvEPej5TH1sNwfO2vLlEpqBFOWmmPLtXzlHhIogrEfL4j9fuo5gVxAi+dhgPjIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAZe65NUGEgzJgAwmhBz5q1Hyc/caDBO/JLUD24rCgb7h8yIwxj9q39BeIKNswR0oX9R6Dd09mI8sZc9wUSIJbZ1Z0WhhMfM+CY0IPxoo5ZyFjAFYKt0B9NTtmITDOHL1+PcOS2u5Xqlx7fbXkzQSoYq/if0vk2YjVYG4IXT0nw94BUNTP+vL549M3l7WtQb8ePAPJReh/iMLN8xjwTRjpM1LSpi0raW1qRK7JlvMb8E5KZ5B4+roHCYfsV4kBe5jhTpBd2j7foLQe8mo0bAkmtTA9YVOKLvYaN6OMH858u5+P0JuksNUtLCaMFuoQo5Zh60FPvl0qBdxQYXpKR8XoU5SWM9cpzA9SxZkbMO22yRm11akvB2KGWXGhBvnPkNWjQNHsuODEDtZBRYByJG9HtUZIi0YAQ=="
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_012yhBTubhTSEHH17nT1egg7",
+        "toolName": "getBuyingPower",
+        "input": "{}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4945,
+        "noCache": 4945,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 139,
+        "text": 30,
+        "reasoning": 109
+      },
+      "raw": {
+        "input_tokens": 4945,
+        "output_tokens": 139,
+        "output_tokens_details": {
+          "thinking_tokens": 109
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4945,
+          "output_tokens": 139,
+          "output_tokens_details": {
+            "thinking_tokens": 109
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

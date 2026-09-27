@@ -1,0 +1,153 @@
+{
+  "key": "110d0df255928f3f94c757ab",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T13:18:55.155Z",
+  "preview": "USER: KODEX 200 200만원 더 사면?\nSYMBOLS: 069500\n\n관련 종목의 최근 공시, 재무 지표, 최근 가격 흐름, 유의사항, (ETF면) 구성 종목을 tool로 확인하고 근거 목록을 만드세요. tool이 error를 반환하면 그 사실을 limitations에 적습니다.",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "ErIDCpABCBIYAipAcbS6sE41VUxVv+mvXa4J6RxxOA5iwbkF6bPiQRhGIZPjtgBX5Fo8LfbvxhI/mSSHsWprzUp/NHG01X+9A+9YhjIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAb2v5NUGEgxkmMNzqf6skHDgWZ8aDGAby1MsLC9E6I7MRyIwj2pcQytTa9w3lwDJPWmVfOnRihYLk/wjwpFjq2GbqzVPLLDdUl6DfgKfq0vBCtMoKs4B+DEd2Bdo0IA7hgrjqlBoYtySXpO5/yZB3xPEe9WvmyahXU3nDur5An6tBkMCT1w5yz/qN4fKyZIYl//x3h0McCOuGuIIZCRiJ46BfKcs5+SKo6tbKTQFc0vMg5a8ISdZRJJuEWwUuLsRhqcyiVqfU7SEU1yeAfCTLuAazhQL27HXVAzWsTZkpRH0XCpp3TBFtSeNQerlwVKaQEIcfFgCKm/NP34OLY4/X8TIlBOO3m5VLKKT5yFfdCKh4ffJmET7xSZif5xKoK+VKRkzfhIYAQ=="
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01C61C6SWxevWyTUbF6GmVHm",
+        "toolName": "getEtfHoldings",
+        "input": "{\"symbol\":\"069500\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_015g1qHef5gLYQovf9EW6h5s",
+        "toolName": "getPriceHistory",
+        "input": "{\"symbol\":\"069500\",\"period\":\"1m\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01TnmfiHohRCZFKr123Q2nUc",
+        "toolName": "getStockWarnings",
+        "input": "{\"symbol\":\"069500\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_012QYZgHWu9dgwjhvNf3EY8o",
+        "toolName": "getRecentFilings",
+        "input": "{\"symbol\":\"069500\",\"days\":30}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01Ain64EALRwgzEuTa1CUEfD",
+        "toolName": "getFinancialStatements",
+        "input": "{\"symbol\":\"069500\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_018jqHNfXarYGuck277zxcry",
+        "toolName": "getQuotes",
+        "input": "{\"symbols\":[\"069500\"]}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 2371,
+        "noCache": 2371,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 441,
+        "text": 356,
+        "reasoning": 85
+      },
+      "raw": {
+        "input_tokens": 2371,
+        "output_tokens": 441,
+        "output_tokens_details": {
+          "thinking_tokens": 85
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 2371,
+          "output_tokens": 441,
+          "output_tokens_details": {
+            "thinking_tokens": 85
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

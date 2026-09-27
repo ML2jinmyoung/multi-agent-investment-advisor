@@ -1,0 +1,88 @@
+{
+  "key": "c978f2ba5b0739071c991dec",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T13:44:00.658Z",
+  "preview": "RECENT CONVERSATION:\nuser: 삼성전자 최근 공시 있어?\nassistant: 삼성전자(005930) 관련 최근 공시 정보는 현재 시스템에서 조회되지 않습니다. 공시(DART), 재무제표, 가격 이력 조회 도구가 모두 '데이터 없음' 오류를 반환했습니다. 시세 데이터는 실거래가 아닌 모의(mock) 픽스처 데이터이며, 조회 시점(2026-0",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "Eq4GCpABCBIYAipAAPJlWqEyTIXf68OSol45lxOvTkSHcRADoEUW7hyf4O71crl7jlNwxerqaShxZQBJDCpsTrAbQ4MpihCX2gNJljIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAaC75NUGEgxWg++Us5yBoUdJu5caDCViV3/aajgzy82waiIwWIXAWHqjl4xyaQ4Hgfpq6bcpw53ntef8T54WMLUBCtAIteA+BZ5GtT4YlzVVPkXIKsoEvL5vPJqCcB+AQQuF/zLVMZddrhSbLD7WFjDg2hswPiilu4hQCYFHBgkgbdxzywo9rNdzP0CBPejnL5o7qo8WBkbcsha/VqUFs1cSdMOczllVLQf19cxoKucnNZNhhIjZS27hpd+CEuDr+ldqYb9BYS6NjqGF82jmFQ6uP67J5YEIOG7T9CyrgN1kCkN881ubvYIwB+HA4Cb9bAj6+unCg1xlv5GZd+aooyMrAfILAWtC8RqW+bLLjM0kwWNRVijuKyB3VirzRDhqQPCj/diIhXiki865+h1vytXuMBV5xT8c1huwwrVIseq71eEN3NGt/Mn/KIER++6nLBUUyvoXfAT6yo57u3FsQ7gRHW8k+PH9ThpRByJlGzQ5dbUsQPQ5rJpzTzDjQBMP45U1nQge+RgLK9C+twvzkJBbZTkdr3f3CfdE6uRj2a/M6pQXxewBT69h+dtY63IyvaLRTchtZniHzvekraunzIpIYdn7EYZJfYwChn/+lBHCkITRgNOQyBicimbDJtHG9DHvG6agq/eELqFzG0d4uzqZvaqr3dtO45nmril7qdyv5c6r8g3+IyU/KAOwP5dCLrC9Jwl9bj3YsqupYj2pH3V8c0f1XVLzqqTiYGKzWdU2v+4NFNomKkmPBcQ381B75jKs8PMIxvTaTlqCSN3AznvgzswbIeyGbNsuhfieUunE5PJLMi2pysjUtT+OMzvFBNC2dHyircuEBvHNa+wcGnwpd8xk607bXHcO1absirhYnuMz+KpGoGWw5S/vqhgyChgB"
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01TquBvbgPDyC7prohuKcu7B",
+        "toolName": "getPortfolioSnapshot",
+        "input": "{}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 5365,
+        "noCache": 5365,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 284,
+        "text": 35,
+        "reasoning": 249
+      },
+      "raw": {
+        "input_tokens": 5365,
+        "output_tokens": 284,
+        "output_tokens_details": {
+          "thinking_tokens": 249
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 5365,
+          "output_tokens": 284,
+          "output_tokens_details": {
+            "thinking_tokens": 249
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

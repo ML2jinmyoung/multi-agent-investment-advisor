@@ -1,0 +1,62 @@
+{
+  "key": "d76e9d3b905c47fd94b96347",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T12:25:31.415Z",
+  "preview": "RUBRICS:\n- limitation_honesty: 데이터 누락·조회 실패·데모(예시) 데이터·지연을 숨기지 않고 limitations에 적었는가. 없는 공시·뉴스·수치를 만들어내지 않았는가.\n\nCONVERSATION:\nuser: 삼성전자 최근 공시 있어?\n\nDATA (the only facts):\n{\"portfolio\":{\"totalValueKRW\":",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"verdicts\":[{\"rubric\":\"limitation_honesty\",\"pass\":true,\"quote\":\"삼성전자(005930) 관련 최근 공시 내용은 확인이 불가능합니다. 현재 시스템에는 기업 공시(OpenDART)·뉴스 조회 기능이 연결되어 있지 않거나 데이터 소스가 오류를 반환했습니다.\",\"reason\":\"답변이 공시 조회 실패, 재무제표 조회 실패, 가격 데이터 조회 실패, 데모 데이터 사용, API 해석 불확실성 등을 명확히 limitations에 기술했습니다. 없는 공시나 수치를 만들어내지 않았으며, 데이터 부재 상황을 투명하게 공개했습니다.\"}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3922,
+        "noCache": 3922,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 250
+      },
+      "raw": {
+        "input_tokens": 3922,
+        "output_tokens": 250,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3922,
+          "output_tokens": 250,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

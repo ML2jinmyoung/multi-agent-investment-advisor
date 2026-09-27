@@ -1,7 +1,7 @@
 {
   "key": "589ef8e09c0d8776a8acd17d",
   "modelId": "claude-sonnet-5",
-  "recordedAt": "2026-09-27T11:07:00.198Z",
+  "recordedAt": "2026-09-27T12:19:30.161Z",
   "preview": "USER: NVDA 왜 떨어졌어?\nSYMBOLS: NVDA\n\n관련 종목의 최근 공시, 재무 지표, 최근 가격 흐름, 유의사항, (ETF면) 구성 종목을 tool로 확인하고 근거 목록을 만드세요. tool이 error를 반환하면 그 사실을 limitations에 적습니다.",
   "result": {
     "content": [
@@ -10,13 +10,13 @@
         "text": "",
         "providerMetadata": {
           "anthropic": {
-            "signature": "EuQDCpABCBIYAipAS3h/XKH4MmAq8aUrvOIIHtw1I93c6+OD+Y7Ln7Sr7tLN6E2FBpi+99r2E8VTz1tJmWUn4kQdoff6C9ttPDeiJzIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAdLx49UGEgwpxU53JQWqoU+1RtoaDCiw5tzTL+a54AiAAiIwGDYQMavUUquo2mFNNvHF1CFuTveHYQMGZivA2IE7snGZ8FHryKgrlIYpCp9UPfv8KoACEFiC9XWd8FAe1NUtOP4p7yLz6SwoAHNkdsswwrXlzzBLERA4+BLK4OCRDXtd+sO8taqp4CPvgkZ75IE3Rvl+2XeaCzn+c0TlX8aPBkNzZHSNHQvPODezi4HQLa5y7WYvLCbq5e/HdT1IpNkshoTEB9Mimo4KFUtudOzfnfGrz8QGqZB3ZHk4V/4Igsc46Jx2m5T/0OrnIxi0dWqqWfxyBouZZRT3rtOzUErC8nXo5dWXP4ff1xavr+vC3HoAHOCuzDrXgV6TOw97v58du6Cw4pkGrr/l5K1FVoTwTv0VvUOnuG3WBG/L8Zsqa04/+i5MOfLPbTK8UzTBxwEPWrMPuRgB"
+            "signature": "EusDCpABCBIYAipAetEb1Wo1F1eT4ZgHr+sHjZp7hTJeazBRDT1lXdblTxEwSm7c3UadMFThqIsH6twqURxOLnL7tUrDfIJkZjjcRDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAdCT5NUGEgxzYh35T62EMxZVvUoaDJvEnB1FPOfLpmeIciIwXQ+i8zO+32xq8jrNdnJOBUjgWhH7c+8awJ52wEjFz5SlUat9VipmORgVFlQl4S0UKocC5DbWyzqUgJEKL0NnGasbp1KpnSwcL26FGYwlyvthaAfQvko4ftiVKsVbfFE7Fr9n5jgK9D7lHDoRVyHwBFSWuhBnAhpXVRyVFPZctLTLXDEorGJcmcSGuvIZJLxPzL/rrO/hjSVlMM30/gsGxhXl+RyiyD//QLQxyFLOsz7aKLGlukYGPLMu1IFALQdNDXWmMymMYlIbBS1Y6M3KytautT4WVJmgcS+AWSfAGsQFrOXM4xrO5CcBe5VOamkVRyZ7IOeRySMc1R0Gd9YsY9IzsQGR2elyuiJYV2C9D86842JN0+GRuH0QVgeMgMolI/R3sPj9KN7v0I1WGOw0ymmlN1ae9adgpDoYAQ=="
           }
         }
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01M18xhqk5Qx4oxLkHLTEL38",
+        "toolCallId": "toolu_019rPtYC2jCE4bnrujCSecxE",
         "toolName": "getRecentFilings",
         "input": "{\"symbol\":\"NVDA\",\"days\":30}",
         "providerMetadata": {
@@ -29,7 +29,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_015Rhv4DmN7qfACQvjjGanes",
+        "toolCallId": "toolu_01S4kApQxiAEbWmRiLFyWFmm",
         "toolName": "getFinancialStatements",
         "input": "{\"symbol\":\"NVDA\"}",
         "providerMetadata": {
@@ -42,7 +42,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01D1btqFnpRmT4SfpkNKVZzH",
+        "toolCallId": "toolu_017BieY9cmL9wfjteQmmT1YE",
         "toolName": "getPriceHistory",
         "input": "{\"symbol\":\"NVDA\",\"period\":\"1m\"}",
         "providerMetadata": {
@@ -55,9 +55,22 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_018ecEJuzg1jF9E2veeeQJzU",
+        "toolCallId": "toolu_016RmKjGmTSnA59nZMgDyApp",
         "toolName": "getStockWarnings",
         "input": "{\"symbol\":\"NVDA\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01FHYbt341Ub6XnU2GLgC6hH",
+        "toolName": "getQuotes",
+        "input": "{\"symbols\":[\"NVDA\"]}",
         "providerMetadata": {
           "anthropic": {
             "caller": {
@@ -79,15 +92,15 @@
         "cacheWrite": 0
       },
       "outputTokens": {
-        "total": 356,
-        "text": 261,
-        "reasoning": 95
+        "total": 415,
+        "text": 315,
+        "reasoning": 100
       },
       "raw": {
         "input_tokens": 2371,
-        "output_tokens": 356,
+        "output_tokens": 415,
         "output_tokens_details": {
-          "thinking_tokens": 95
+          "thinking_tokens": 100
         },
         "cache_creation_input_tokens": 0,
         "cache_read_input_tokens": 0,
@@ -104,9 +117,9 @@
       "anthropic": {
         "usage": {
           "input_tokens": 2371,
-          "output_tokens": 356,
+          "output_tokens": 415,
           "output_tokens_details": {
-            "thinking_tokens": 95
+            "thinking_tokens": 100
           },
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,

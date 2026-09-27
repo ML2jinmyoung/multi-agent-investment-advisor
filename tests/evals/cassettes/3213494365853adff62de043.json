@@ -1,0 +1,79 @@
+{
+  "key": "3213494365853adff62de043",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T13:34:20.604Z",
+  "preview": "USER: TIGER 미국S&P500 100만원 더 사면 원칙에 걸려?\n\nPORTFOLIO (deterministic, as of 2026-09-27T13:34:16.174Z):\n{\"asOf\":\"2026-09-27T13:34:16.174Z\",\"totalValueKRW\":100871802,\"buyingPowerKRW\":14190000,\"accounts\":[{",
+  "result": {
+    "content": [
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01ShmUAFxmiXLkUDokw4wtRy",
+        "toolName": "checkInvestmentPolicy",
+        "input": "{}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 5323,
+        "noCache": 5323,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 34,
+        "text": 34,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 5323,
+        "output_tokens": 34,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 5323,
+          "output_tokens": 34,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

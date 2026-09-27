@@ -1,0 +1,79 @@
+{
+  "key": "26aa978e1d7168c4816f8d8a",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:24:55.548Z",
+  "preview": "USER: 삼성전자 최근 공시 있어?\n\nVERIFICATION FLAGS: {\"unsupported_claim\":0.15,\"policy_conflict\":0.05,\"prediction_as_fact\":0.1,\"missing_material_risk\":0.25,\"stale_evidence\":0.85}\n\nDATA (as of 2026-09-27T12:24:02",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "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"
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"problems\":[{\"kind\":\"unsupported_claim\",\"detail\":\"초안이 '40주, 평균단가 70,000원, 현재가 87,000원'이라는 수치를 제시했으나, 제공된 DATA에는 해당 수량·평균단가·현재가 정보가 없습니다. DATA에는 marketValueKRW(3,480,000)와 weightPct(8.9%)만 존재하므로 이 세부 수치는 근거 없이 생성된 값입니다.\"},{\"kind\":\"policy_inconsistency\",\"detail\":\"investmentPolicy.limits.sectorPct는 35%이나 bySectorPct.Technology는 37%로 이미 섹터 한도를 초과한 상태입니다. 초안은 '단일 종목 한도(15%) 내'만 언급하고 이 섹터 집중 위반 사실을 전혀 다루지 않았습니다.\"},{\"kind\":\"missing_risk\",\"detail\":\"섹터 집중도(Technology 37% > 한도 35%) 및 포트폴리오 내 다른 기술주(NVDA -7%, TIGER 미국S&P500 -3.2% 등) 동반 하락 위험이 삼성전자 비중 평가와 함께 다뤄지지 않아 중요한 리스크가 누락되었습니다.\"}],\"verdict\":\"revise\"}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3951,
+        "noCache": 3951,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 1262,
+        "text": 458,
+        "reasoning": 804
+      },
+      "raw": {
+        "input_tokens": 3951,
+        "output_tokens": 1262,
+        "output_tokens_details": {
+          "thinking_tokens": 804
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3951,
+          "output_tokens": 1262,
+          "output_tokens_details": {
+            "thinking_tokens": 804
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

@@ -1,13 +1,13 @@
 {
   "key": "bb66c37162bdd7bd058eab3d",
   "modelId": "claude-haiku-4-5-20251001",
-  "recordedAt": "2026-09-27T11:03:45.210Z",
+  "recordedAt": "2026-09-27T13:09:28.958Z",
   "preview": "STATE:\n{\"message\":\"삼성전자 1000만원 매수하면 원칙 위반이야?\",\"hasPortfolio\":true,\"hasInvestmentPolicy\":true,\"symbolsMentioned\":[\"005930\"],\"heldSymbolsMentioned\":[\"005930\"],\"tradeDetected\":{\"symbol\":\"005930\",\"action\"",
   "result": {
     "content": [
       {
         "type": "text",
-        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":1},{\"id\":\"needs_simulation\",\"probability\":0.9},{\"id\":\"needs_external_evidence\",\"probability\":0},{\"id\":\"needs_policy_check\",\"probability\":1},{\"id\":\"needs_risk_review\",\"probability\":0.3},{\"id\":\"is_prediction_request\",\"probability\":0}]}"
+        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.95},{\"id\":\"needs_simulation\",\"probability\":0.85},{\"id\":\"needs_external_evidence\",\"probability\":0.3},{\"id\":\"needs_policy_check\",\"probability\":0.92},{\"id\":\"needs_risk_review\",\"probability\":0.75},{\"id\":\"is_prediction_request\",\"probability\":0.05}]}"
       }
     ],
     "finishReason": {
@@ -22,11 +22,11 @@
         "cacheWrite": 0
       },
       "outputTokens": {
-        "total": 88
+        "total": 96
       },
       "raw": {
         "input_tokens": 789,
-        "output_tokens": 88,
+        "output_tokens": 96,
         "cache_creation_input_tokens": 0,
         "cache_read_input_tokens": 0,
         "cache_creation": {
@@ -42,7 +42,7 @@
       "anthropic": {
         "usage": {
           "input_tokens": 789,
-          "output_tokens": 88,
+          "output_tokens": 96,
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,
           "cache_creation": {

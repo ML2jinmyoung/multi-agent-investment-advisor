@@ -1,0 +1,140 @@
+{
+  "key": "081dca7a10a7c504d9383c4a",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T13:56:22.069Z",
+  "preview": "RECENT CONVERSATION:\nuser: NVDA가 30% 빠지면 손실이 얼마야?\nassistant: NVDA가 30% 하락한다는 가정 시나리오를 적용한 시뮬레이션 결과, 포트폴리오 총 평가액이 39,040,386원에서 38,067,430원으로, 즉 약 972,956원(총자산의 2.5%) 감소합니다. 이는 정책상 최대 허용 손실 한도(20%) 대비 ",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EvQCCpABCBIYAipABaWBmDBveIJsGDoAcBjRqksSrAiv8epNTPsLZqjO2oQhYzI0Z1r+rS8G3mADt65fqby5Yw1snIt9MEU5NHVfgjIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAYTB5NUGEgwv4NxgU9p1FwtZeagaDBhUfUBjD0jwkIhDYCIwpvzZIoHq/g61EUCMkOEqrkzz3JeSOALl4TNgu6spOEGwt9IU6Gmq0VadClP+v4eKKpABgQ4mULC3idqGTITu4VNWF9t83TqLz2HBqNYdHBevl9BZdXxwQod89jpzfxGn7sDDqHN1HfhIbiWmM9NB1or9b7bz9b+dEepvG6GRJD0wvMnUwxCKMdeEG3DuIc9XqFynER7YhKc3yn+LpMTx0vU47CLMw0nL9NKY2oDnx/tgLQhuvrw7BsiYwxq5k5BkNqmJGAE="
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_018iUL5R2RveftNHwbEe22xR",
+        "toolName": "getRecentFilings",
+        "input": "{\"symbol\":\"NVDA\",\"days\":90}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_018cVsEeAXFgoGhye4nFyvUw",
+        "toolName": "getFinancialStatements",
+        "input": "{\"symbol\":\"NVDA\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01316SLdTzUpKbZtYNtfP4YN",
+        "toolName": "getPriceHistory",
+        "input": "{\"symbol\":\"NVDA\",\"period\":\"3m\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_0141bMKgFXDt9Xtye8F586hq",
+        "toolName": "getStockWarnings",
+        "input": "{\"symbol\":\"NVDA\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01AwhznTQZit69RCCNxUYXfa",
+        "toolName": "getQuotes",
+        "input": "{\"symbols\":[\"NVDA\"]}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3042,
+        "noCache": 3042,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 363,
+        "text": 315,
+        "reasoning": 48
+      },
+      "raw": {
+        "input_tokens": 3042,
+        "output_tokens": 363,
+        "output_tokens_details": {
+          "thinking_tokens": 48
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3042,
+          "output_tokens": 363,
+          "output_tokens_details": {
+            "thinking_tokens": 48
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

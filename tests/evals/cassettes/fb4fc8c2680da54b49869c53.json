@@ -1,0 +1,79 @@
+{
+  "key": "fb4fc8c2680da54b49869c53",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T13:33:42.100Z",
+  "preview": "USER: 미국 주식 매수 수수료가 얼마야?\n\nVERIFICATION FLAGS: {\"unsupported_claim\":0.15,\"policy_conflict\":0.05,\"prediction_as_fact\":0.02,\"missing_material_risk\":0.25,\"stale_evidence\":0.75}\n\nDATA (as of 2026-09-27T13:",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "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"
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"problems\":[{\"kind\":\"unsupported_claim\",\"detail\":\"recommendation에서 '정책 점검 결과가 없으므로(policyChecks 없음) 별도의 한도 위반 사항은 없다'고 단정했으나, policyChecks 배열이 비어있다는 것은 '검사를 수행하지 않았다'는 의미이지 '위반이 없다'는 근거가 아닙니다. 실제 데이터를 보면 bySectorPct의 Technology 비중이 37%로 investmentPolicy.limits.sectorPct 한도 35%를 이미 초과하고 있어, 이 주장은 데이터와 모순되는 근거 없는 결론입니다.\"},{\"kind\":\"missing_risk\",\"detail\":\"질문은 수수료에 관한 것이지만, 답변이 포트폴리오 전반의 위험(리스크 섹션)을 다루면서도 정책 한도상 가장 명확히 확인 가능한 위험인 '섹터 집중도 초과(Technology 37% > 한도 35%)'를 전혀 언급하지 않았습니다. 데이터에 이미 존재하는 위반 신호이므로 누락되어서는 안 됩니다.\"},{\"kind\":\"stale_data\",\"detail\":\"verification flag의 stale_evidence 값이 0.75로 높고, sources에 'Mock market data (fixture) (DEMO)'가 포함되어 있음에도 요약(summary)이나 recommendation 본문에는 이 점이 강조되지 않고 limitations 맨 끝에만 짧게 언급됩니다. 포트폴리오 시가 데이터가 실거래 기준이 아닌 데모 데이터일 수 있음을 답변 앞부분에서 더 명확히 알려야 합니다.\"}],\"verdict\":\"revise\"}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3565,
+        "noCache": 3565,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 2203,
+        "text": 622,
+        "reasoning": 1581
+      },
+      "raw": {
+        "input_tokens": 3565,
+        "output_tokens": 2203,
+        "output_tokens_details": {
+          "thinking_tokens": 1581
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3565,
+          "output_tokens": 2203,
+          "output_tokens_details": {
+            "thinking_tokens": 1581
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

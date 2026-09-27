@@ -1,7 +1,7 @@
 {
   "key": "342fd2842e5f352c56788235",
   "modelId": "claude-sonnet-5",
-  "recordedAt": "2026-09-27T11:39:00.974Z",
+  "recordedAt": "2026-09-27T13:13:51.727Z",
   "preview": "USER: SK하이닉스 300만원 사도 괜찮아?\nSYMBOLS: 000660\n\n관련 종목의 최근 공시, 재무 지표, 최근 가격 흐름, 유의사항, (ETF면) 구성 종목을 tool로 확인하고 근거 목록을 만드세요. tool이 error를 반환하면 그 사실을 limitations에 적습니다.",
   "result": {
     "content": [
@@ -10,13 +10,13 @@
         "text": "",
         "providerMetadata": {
           "anthropic": {
-            "signature": "EvICCpABCBIYAipAbqNm5YRN8WHxeOAxCcXVm/+vENJhkfhltSpxXvM4PetqVFXzHg7rxkBw6ROp8joUovZ9f5wCBXYB7O3rLIBVIDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAdOA5NUGEgzE/P8quBJ7h/HPJKUaDN0AvFPs6vB1V69OdSIwqefVObGErbztO5ncO/WamY2eUnHrG3IjA75DhtqDDDIpmtcld3q/2yNh9EtM1OdwKo4BipZVqun9BBYzsejsj8GaovDPZMp3Zqm9svZGx9VemIjaASvKu0479JHy7jB5JiNgJyizAWwaTiWi4YXtfTjsbbRfVapZAEzQuw802JNRPrXi84BjTsxpEkE+TaT2FytENh0prwUnsy2i32Uj3TcDDwHbpnRTtVea5gUNxW3Pk5ydpswloUi8HYlk2zlBnRgB"
+            "signature": "EqgCCpABCBIYAipAyDxDFHlpO4iINhawL+Jf14L8THzcd7VFIyxshLnB+CFjIvprYG+RXmjHbcrOGcsoSO0V3RzCgEsI/ie2nJFw1DIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAY6t5NUGEgz+2jU7w5hSSaHC0EwaDOA9woFiP3518FgKhiIw3Pvv5MR/DqTByTpsLyvcpLmvxWOH3mUTU55G3If+7tNjWrwcWnSoChteoWXPtRKdKkWfLd0Y8wepzC6VeGjLEGxlr5D2sr48ARsJrKHqagZ/oqgFpHbN26Grm5AGALYgCo1o8ueQv0MKIYf6t9Su367XpWRAf2kYAQ=="
           }
         }
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01XhH6qnurL9sA6AVgkwHLB8",
+        "toolCallId": "toolu_013kZXcnmtPQX3Su6YGmEKuf",
         "toolName": "getRecentFilings",
         "input": "{\"symbol\":\"000660\",\"days\":30}",
         "providerMetadata": {
@@ -29,7 +29,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01SfG4EfFTBVQgjJXHTMPpVM",
+        "toolCallId": "toolu_018VcxkThgQSZcnM5QqF6hYg",
         "toolName": "getFinancialStatements",
         "input": "{\"symbol\":\"000660\"}",
         "providerMetadata": {
@@ -42,7 +42,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01J3b7oaMf4YJeuBZmscfY1g",
+        "toolCallId": "toolu_01Scc1rJxes5q4sPEdnXFtvx",
         "toolName": "getPriceHistory",
         "input": "{\"symbol\":\"000660\",\"period\":\"3m\"}",
         "providerMetadata": {
@@ -55,7 +55,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_011Gi6SSLcczRnMRJyqfPwAm",
+        "toolCallId": "toolu_015FRVrud41z6e4iSzLgtDE8",
         "toolName": "getStockWarnings",
         "input": "{\"symbol\":\"000660\"}",
         "providerMetadata": {
@@ -68,7 +68,7 @@
       },
       {
         "type": "tool-call",
-        "toolCallId": "toolu_01Pebmtrv2BBgaadis8GFTq7",
+        "toolCallId": "toolu_012RGiVLc62MqkV6QmW45dV9",
         "toolName": "getQuotes",
         "input": "{\"symbols\":[\"000660\"]}",
         "providerMetadata": {
@@ -92,15 +92,15 @@
         "cacheWrite": 0
       },
       "outputTokens": {
-        "total": 348,
+        "total": 329,
         "text": 304,
-        "reasoning": 44
+        "reasoning": 25
       },
       "raw": {
         "input_tokens": 2376,
-        "output_tokens": 348,
+        "output_tokens": 329,
         "output_tokens_details": {
-          "thinking_tokens": 44
+          "thinking_tokens": 25
         },
         "cache_creation_input_tokens": 0,
         "cache_read_input_tokens": 0,
@@ -117,9 +117,9 @@
       "anthropic": {
         "usage": {
           "input_tokens": 2376,
-          "output_tokens": 348,
+          "output_tokens": 329,
           "output_tokens_details": {
-            "thinking_tokens": 44
+            "thinking_tokens": 25
           },
           "cache_creation_input_tokens": 0,
           "cache_read_input_tokens": 0,

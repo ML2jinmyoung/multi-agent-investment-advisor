@@ -28,6 +28,8 @@ export interface ToolCallRecord {
   tool: string;
   input: unknown;
   output: unknown;
+  /** untruncated result, in memory only (graders need every number the model saw); never persisted */
+  rawOutput?: unknown;
   latencyMs: number;
   status: "ok" | "error";
   createdAt: string;
@@ -106,6 +108,7 @@ export class Tracer {
           try {
             const result = await original.execute!(input, options);
             rec.output = summarize(result);
+            rec.rawOutput = result;
             if (result && typeof result === "object" && "error" in result) rec.status = "error";
             return result;
           } catch (e) {

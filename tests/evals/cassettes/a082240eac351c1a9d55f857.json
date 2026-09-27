@@ -1,0 +1,140 @@
+{
+  "key": "a082240eac351c1a9d55f857",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:57:46.323Z",
+  "preview": "USER: NVDA 지금 안 사면 후회할까?\nSYMBOLS: NVDA\n\n관련 종목의 최근 공시, 재무 지표, 최근 가격 흐름, 유의사항, (ETF면) 구성 종목을 tool로 확인하고 근거 목록을 만드세요. tool이 error를 반환하면 그 사실을 limitations에 적습니다.",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EuwDCpABCBIYAipAFbMttLsDbNbXX+ranREnBkiPSzjN7hUx8ivBoGFh52hMrILgaAOA7qpyaBhkgVhYz/PvKhAaE+xzsP7XyRcyYDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAcil5NUGEgwJ7/71emxZMivPhAkaDAGU+G5w36u7y8PEvCIw/9nYD5+9Csj/iSaNybJ+bKGTWhWNpHx42PJgjAhPixYmWqET3bHlpuJE/XUAj2H/KogC0cJ39hWCMw+tQZPaJ5ezRvS9FH1csQ4DnwNkVALIBenhMWD+aRN2s5jfD1UGzRskFUAHzeHNrCWxzM8Ca9M1ufLFU/ySyXFlZVlgy+WFsEWCwM3lri7nlJdS1MQT9kLy3jv1PtMzCO5VkIAJLsuGYQ1Hd4x8+irR0TSs93NgFH4ZaiLu4JZGemBb71p2Jqfae9Um8m08mdb5OzmUC0zifWw8RUrz7Fdut9kiaHjUFMUgk0+4WNo0tXAS3adpJ/2Lj8wTHvsVGGsOgGRFFejslU3h4LPmolPZSn5RSbxx2YZOWUYRW/KjzBMGtwp118xVVtyOAAaObs0Y4jOIW6OHetsnnNNlL1lQGAE="
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01Ak9efv8rLnejqxX4mKCowt",
+        "toolName": "getRecentFilings",
+        "input": "{\"symbol\":\"NVDA\",\"days\":90}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01BmBj3UfnkH6VvRt1c6wMTV",
+        "toolName": "getFinancialStatements",
+        "input": "{\"symbol\":\"NVDA\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01HFghUnetPZGJdxXTpgbhj1",
+        "toolName": "getPriceHistory",
+        "input": "{\"symbol\":\"NVDA\",\"period\":\"6m\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01Enpw4d6B2Ubz7bUchCMaKY",
+        "toolName": "getStockWarnings",
+        "input": "{\"symbol\":\"NVDA\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01EHcRLGP5AntjSWnV9DQwr6",
+        "toolName": "getQuotes",
+        "input": "{\"symbols\":[\"NVDA\"]}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 2374,
+        "noCache": 2374,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 406,
+        "text": 314,
+        "reasoning": 92
+      },
+      "raw": {
+        "input_tokens": 2374,
+        "output_tokens": 406,
+        "output_tokens_details": {
+          "thinking_tokens": 92
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 2374,
+          "output_tokens": 406,
+          "output_tokens_details": {
+            "thinking_tokens": 92
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

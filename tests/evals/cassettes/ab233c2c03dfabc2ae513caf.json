@@ -1,0 +1,70 @@
+{
+  "key": "ab233c2c03dfabc2ae513caf",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T13:44:10.577Z",
+  "preview": "RECENT CONVERSATION:\nuser: 삼성전자 최근 공시 있어?\nassistant: 삼성전자(005930) 관련 최근 공시 정보는 현재 시스템에서 조회되지 않습니다. 공시(DART), 재무제표, 가격 이력 조회 도구가 모두 '데이터 없음' 오류를 반환했습니다. 시세 데이터는 실거래가 아닌 모의(mock) 픽스처 데이터이며, 조회 시점(2026-0",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"meaning\":\"이미 제공된 시뮬레이션 결과 기준으로, 삼성전자를 500만원 추가 매수하면 투자원칙상 두 가지 한도를 동시에 위반하게 됩니다. 단일 종목 비중이 15% 한도를 크게 넘고, Technology 섹터 비중도 35% 한도를 크게 초과합니다. 즉 이번 매수는 '공시 확인'과 무관하게 원칙적으로 원칙 위반 거래입니다.\",\"keyFacts\":[\"삼성전자 실질 비중이 11.7%→24.5%로 상승, 정책 한도(15%)를 초과(violation)\",\"Technology 섹터 비중이 37%→49.8%로 상승, 정책 한도(35%)를 초과(violation, 매수 전에도 이미 초과 상태였음)\",\"현재 투자 가능 금액 10,760,000원 중 500만원 매수 시 5,759,250원으로 감소\",\"유동성 비중은 27.6%→14.8%로 최소 한도(10%) 이상은 유지(ok)\",\"해외자산 비중은 48.4%로 변동 없음(한도 70% 이내, ok)\",\"매매 비용은 수수료 750원(0.015%)으로 추정\"],\"alternatives\":[\"500만원 매수를 하지 않고 현재 비중을 유지한다\",\"매수 금액을 줄여 단일종목 15%·섹터 35% 한도 이내로 맞춘다(현재도 이미 섹터 한도 초과 상태라 신규 매수 자체가 부담)\",\"삼성전자 대신 비Technology 섹터(예: Financials, Health Care 등) 비중을 늘려 섹터 집중도를 낮춘다\",\"기존 Technology 비중 종목(NVDA, AAPL, 000660 등) 일부를 매도해 섹터 비중을 35% 이하로 낮춘 뒤 재검토한다\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 6694,
+        "noCache": 6694,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 670,
+        "text": 670,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 6694,
+        "output_tokens": 670,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 6694,
+          "output_tokens": 670,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

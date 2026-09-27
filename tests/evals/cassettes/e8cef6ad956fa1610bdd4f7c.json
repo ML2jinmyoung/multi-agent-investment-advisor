@@ -1,0 +1,88 @@
+{
+  "key": "e8cef6ad956fa1610bdd4f7c",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:34:28.798Z",
+  "preview": "USER: 내 ETF들 중 NVDA 담고 있는 게 뭐야?\n\nPORTFOLIO (deterministic, as of 2026-09-27T12:34:24.057Z):\n{\"asOf\":\"2026-09-27T12:34:24.057Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EsMECpABCBIYAipAow3x2+NfySwCPMoSbUfZWdX5P2Q5gDa5UfzoNO2AKxFRgGwyJ7xZfJLWcTG761Hno8k9CDW4d1PP3rQCrDq/0jIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAdSa5NUGEgwQMLPGpDFqfUWQ4/gaDOcrJM5lTGp3p4MB2iIwifttFqzzbEx214uTDqmJtDCdC1qQQQ9qrCYSQqwSbAAFMxHsIUX0F6n6R7iBiIRrKt8C+jeTD+sGLPD7+dAGS6DnqPbyNGmNqlk/xPPqv7seluGNLcijJkuyEngtHqaholcQXGh8dBtNcrz9C5zxunK7AqfDEMyhO0zmth/5jbL0vyYi2AZl1WvJB1kFriuZXG7HERy6fCjUWa45qjvF2+goZRHhRXRTCCEndN5jy4Ja3TKwTpUOMucUww5L6N8DSZhSa9CdU1DQ3RScGcLAf6OvrPpi0eyRDNPL1ojdxT+yA4g/UDOuxwuStw28uQixsMrXbLwhoc3jFCBVM16IywH/rL4307492LfHKRlQmj+rlO5qxC4z6CFkOJNSCjqSFDO+mVA/LcbJpDyv+9SvxkG9BDr5R4Lm4/FCHRd/q+FCtu5jEyv7sQgqbJw1szBLJPdmmwRGPdmAADuCg9CSUeHVn19ckrUPCCmJsg/eAlK9ZKlT5Ey0SZb5nca21neoDxXz7Q2yFs5805rsd5dEASeIGAE="
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_014iDx61kw1utJAaGU98RcLn",
+        "toolName": "getExposure",
+        "input": "{\"symbol\":\"NVDA\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4024,
+        "noCache": 4024,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 193,
+        "text": 55,
+        "reasoning": 138
+      },
+      "raw": {
+        "input_tokens": 4024,
+        "output_tokens": 193,
+        "output_tokens_details": {
+          "thinking_tokens": 138
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4024,
+          "output_tokens": 193,
+          "output_tokens_details": {
+            "thinking_tokens": 138
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

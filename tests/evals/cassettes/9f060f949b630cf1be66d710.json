@@ -1,0 +1,88 @@
+{
+  "key": "9f060f949b630cf1be66d710",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:57:49.376Z",
+  "preview": "USER: NVDA 지금 안 사면 후회할까?\n\nPORTFOLIO (deterministic, as of 2026-09-27T12:57:40.267Z):\n{\"asOf\":\"2026-09-27T12:57:40.267Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "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"
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01LjtTjeVoxzkNPYfanjLx4v",
+        "toolName": "getExposure",
+        "input": "{\"symbol\":\"NVDA\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3899,
+        "noCache": 3899,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 541,
+        "text": 55,
+        "reasoning": 486
+      },
+      "raw": {
+        "input_tokens": 3899,
+        "output_tokens": 541,
+        "output_tokens_details": {
+          "thinking_tokens": 486
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3899,
+          "output_tokens": 541,
+          "output_tokens_details": {
+            "thinking_tokens": 486
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

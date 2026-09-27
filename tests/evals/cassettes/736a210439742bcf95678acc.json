@@ -1,0 +1,88 @@
+{
+  "key": "736a210439742bcf95678acc",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:29:50.696Z",
+  "preview": "USER: 애플 관련 뉴스 있어?\n\nPORTFOLIO (deterministic, as of 2026-09-27T12:29:40.508Z):\n{\"asOf\":\"2026-09-27T12:29:40.508Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"typ",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "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"
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01XzKZniXgPchW5yWcZvzsiS",
+        "toolName": "getExposure",
+        "input": "{\"symbol\":\"AAPL\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3673,
+        "noCache": 3673,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 557,
+        "text": 55,
+        "reasoning": 502
+      },
+      "raw": {
+        "input_tokens": 3673,
+        "output_tokens": 557,
+        "output_tokens_details": {
+          "thinking_tokens": 502
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3673,
+          "output_tokens": 557,
+          "output_tokens_details": {
+            "thinking_tokens": 502
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

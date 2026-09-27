@@ -1,0 +1,79 @@
+{
+  "key": "7a47a727daa93496902e3066",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:34:20.249Z",
+  "preview": "USER: 삼성전자 공시 원문 요약해줘\n\nPORTFOLIO (as of 2026-09-27T12:32:23.025Z): {\"asOf\":\"2026-09-27T12:32:23.025Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"type\":\"brokerag",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "ErELCpABCBIYAipAkF7nCfVsLjI9P4lg8HRg98KxSNMG2qqKNEO8vOrQksf6O6gOAtFQPKJXJmJjJGucCiSzm6PEVvIWlvREPM7l8jIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAbua5NUGEgyEQosIllk+qRRJJJUaDKS/d9x4mBjl0la2GCIwVnXAU+9CDXTva8VlZYHLSsgpOtltCBfVfDEJpozGroySosd6f6Q1aTUMAOA2TTKiKs0J6j1JDTGr444iDe9MM4aotUnVTCRDkVUUzdYxvGZ5jcwzrMHHLT/M/pbPz3KbvMlgUhd5u2MGAiepUvcU2Byp63b64FfOrFKCO2R+C7QV2bkUTaAUw+y+k9BWzVB3B6kf9SkOA8nOaRMeqyy2zyCGrMD98ex3JXRaokavnoB0Ozx3qtYAvMEHg9Agk3M5Ha6Hgjrkg1pPZUZqx8X6/BSqU4bGU8xWHfy3giCL3KJu6hqSSzS3Ij19aGwoygSUz2PDqrzMTGVpjoXws2ZY43zv7MCzYFufZpKN5VwB2SKXd+wcHQ46eTidpT7y+yROvzohFcr49uXb59aug7N/qvJ8bO9QSetphaC8ixJWYZOA5RqaCVHrCZWpFxnYNtUuSipuJQW9rsm4+g+ybQi8pOTbnGjIi+7S0G9DkYJV6SieKzSc1q5uLlqh7+qWzNWtx0pLc7G7RAJLZOY07H5F6yEUnmXzCwD+gi/aIoqa9X5YYZYUq970/0d2NSrJkClLn/cEKNoVTFlWpM4emlbXvuHOZJnJL8pNqKJBm5t5INs4YvgrOAfcjjKa3X2ze0kzJRGh3X4B/WMIqd7VurVNJ15E9Cn2k1xhRJLOzG8ExAc1xpsoCTWkYTY5p8H2LIPqC9kNCCQ27GIQJXidZhH0gMoNqMBFtimoii7TgXD73XVffuReeZ3Ltc8voyOWUgd/XQPUYfyQ+mzQ4T8w5B8inj6o43OiKIzxPjrWotNBBjseCKJXGh0fmm4yncbLBXx8OjmA8arq7AclHlWrZZL0J6YGZAz5JlfKMKjchQaKsypXSo55m4FO/nQ6IkEpi0kERoCvasP5q0vm8eO3RGn00r5YA4Idnf4N3Og+deTyr000pK0zSl67wI/mN5r8UUlq/PI2YqMDPnL95TlM2GHImutIHsxxJsRqgJmQREkJ0alQg4nhRY9FvX65cgbOwDhXU+Ke+nqJzqh7zchGhUe0RSZjL7d2T8slorZ0L3LIIkBoSu9j1LU2SBN1DT5UrsRQGF1ZkW87vLjgGexFaGygncDF2uAjL/0E+R8N7y6IJyK0busR29io+aQ35tVYlhCDm8b1RqlYJimyAcQEbmD14P6vT6cva3nuL9U+xqwkBZc8emPkUbijKgThhDFrTvhnL35ZwI6IDGLL8F36JBFMNwtZ6ynIW8HCdpHiORZAGa2It6Guk1YrKrRNkvcfEjEgqVxCws3uccC5Hs03LFzkUPoVOB7EpPnWoraVq0XCBbCQSUjzEZSaQNJ6jyZX4BRVY76muFENkM6VD4zTFPEMDjF0b6Ylc5lNcN8j8iU2CdHDCJPS/oXLihoucR7DQBNIDI7d89jxN3oHDQ5NQXPe7NWxNkSNfJ3Lyx+iHhyvI/2uV5jI0U9i8ejphRmAGozrJMwEuc7OgITjGeKVbpdqum+mzmVQH1tkO9G/tbtXYeVYcnxoGm9pwYF0bWYigm84SWPucRt18kOqcCKewKXyO+N1levCo/9AZhlzzPZap12y/IM/moY1MvvDIyRNhuGllKmGfT7y64yzhE+C7TDTanCtyv5myGeC1nDM39DLATzOVAOlPpHE8oHhWeAJ23aPT72Dn7desBQvVLondjxIcbfqNC3fcH+X1k0xGtd6M8YYAQ=="
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"summary\":\"삼성전자(005930) 공시 원문을 직접 조회·요약하는 기능은 이번 요청에서 실행되지 않았습니다. DART 공시 원문, 최근 재무제표, 최근 1개월 가격 이력 모두 '데이터 없음'으로 반환되어 근거 있는 요약을 제공할 수 없습니다. 대신 제공된 포트폴리오 데이터를 근거로 삼성전자 비중, 섹터 한도 초과 여부, 당일 주요 변동성을 정리해 드립니다.\",\"evidence\":[{\"kind\":\"portfolio\",\"claim\":\"삼성전자(005930) 평가액 3,480,000원, 전체 포트폴리오의 8.9% 비중, 당일 등락률 +0.8%\",\"source\":\"보유 포트폴리오 데이터\",\"asOf\":\"2026-09-27T12:32:23.025Z\"},{\"kind\":\"portfolio\",\"claim\":\"포트폴리오 내 Technology 섹터 비중 37% (bySectorPct 필드 기준)\",\"source\":\"보유 포트폴리오 데이터\",\"asOf\":\"2026-09-27T12:32:23.025Z\"},{\"kind\":\"portfolio\",\"claim\":\"당일 등락률: NVDA -7%, TIGER 미국S&P500(360750) -3.2%, VOO -1.5%, AAPL -1.2%, SK하이닉스(000660) -1%\",\"source\":\"보유 포트폴리오 데이터\",\"asOf\":\"2026-09-27T12:32:23.025Z\"},{\"kind\":\"filing\",\"claim\":\"getRecentFilings(005930) 호출 결과 데이터 없음 - 최근 30일 공시 원문 확인 불가\",\"source\":\"공시 조회 도구 (에러 응답)\"},{\"kind\":\"financials\",\"claim\":\"getFinancialStatements(005930) 호출 결과 데이터 없음\",\"source\":\"재무제표 조회 도구 (에러 응답)\"},{\"kind\":\"market\",\"claim\":\"getPriceHistory(005930, 1m) 호출 결과 데이터 없음\",\"source\":\"가격 이력 조회 도구 (에러 응답)\"}],\"alternatives\":[{\"title\":\"아무것도 하지 않음\",\"description\":\"공시 원문 없이 현재 보유 상태(삼성전자 비중 8.9%)를 유지합니다. 다만 섹터 한도 초과는 별도로 점검이 필요합니다.\"},{\"title\":\"DART 전자공시시스템 직접 확인\",\"description\":\"금융감독원 전자공시시스템(dart.fss.or.kr)에서 삼성전자 최신 공시 원문을 직접 열람합니다.\"},{\"title\":\"섹터 집중도 조정 검토\",\"description\":\"Technology 섹터 비중이 37%로 정책 한도(35%)를 2%p 초과한 상태이므로, 비중 축소 또는 타 섹터 자산 확대를 검토할 수 있습니다.\"},{\"title\":\"특정 공시 항목 지정 후 영향 분석 요청\",\"description\":\"배당, 자사주 매입 등 확인하고 싶은 구체적 공시 항목을 알려주시면 보유 비중에 대한 영향을 시뮬레이션으로 도와드릴 수 있습니다.\"}],\"risks\":[{\"title\":\"공시·재무 데이터 부재\",\"description\":\"공시 원문, 재무제표, 최근 가격 이력 모두 조회되지 않아 회사 관련 이슈를 근거 있게 판단할 자료가 없습니다.\",\"severity\":\"medium\"},{\"title\":\"섹터 집중도 한도 초과\",\"description\":\"Technology 섹터 비중이 37%로, 투자정책상 섹터 한도(35%)를 2%p 초과한 상태로 확인됩니다. 정책 점검(policyChecks) API 결과 자체는 이번 요청에 포함되지 않았으나, 제공된 포트폴리오 데이터만으로도 초과 여부는 명확히 계산 가능합니다.\",\"severity\":\"medium\"},{\"title\":\"당일 변동성 확대\",\"description\":\"NVDA -7%, TIGER 미국S&P500(360750) -3.2%, VOO -1.5%, AAPL -1.2%, SK하이닉스 -1% 등 포트폴리오 내 다수 자산이 당일 큰 폭으로 하락했습니다. 단기 변동성이 확대된 상태입니다.\",\"severity\":\"medium\"}],\"costs\":[],\"policyChecks\":[{\"rule\":\"sectorPct\",\"label\":\"섹터 집중도 한도(Technology)\",\"status\":\"violation\",\"limit\":35,\"after\":37,\"subject\":\"Technology\",\"note\":\"제공된 포트폴리오 bySectorPct 데이터로 계산한 값이며, 별도 policyChecks API 결과는 이번 요청에 제공되지 않음\"}],\"recommendation\":\"삼성전자 공시 원문에 대한 근거 데이터가 없어 요약이나 판단을 제공할 수 없습니다. 다만 제공된 데이터로 볼 때 Technology 섹터 비중(37%)이 정책 한도(35%)를 이미 2%p 초과한 상태이며, NVDA 등 일부 종목의 당일 급락(-7%)도 확인되므로 이 두 가지는 우선 점검하시길 권장합니다. 추가 근거 없이 매매 판단이나 예측을 내리지 않는 것, 즉 지금 당장 추가 거래를 하지 않는 선택도 합리적입니다.\",\"limitations\":[\"getRecentFilings(005930): 데이터 없음\",\"getFinancialStatements(005930): 데이터 없음\",\"getPriceHistory(005930, 1m): 데이터 없음\",\"섹터 한도 초과 판단은 policyChecks API 결과가 아니라 제공된 포트폴리오 bySectorPct 데이터를 기반으로 직접 계산한 것임\",\"포트폴리오 데이터 소스 중 '방문자 직접 입력(미검증)' 및 'Mock market data (fixture) (DEMO)' 포함 - 실거래 데이터가 아닐 수 있음\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 7260,
+        "noCache": 7260,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 2554,
+        "text": 2112,
+        "reasoning": 442
+      },
+      "raw": {
+        "input_tokens": 7260,
+        "output_tokens": 2554,
+        "output_tokens_details": {
+          "thinking_tokens": 442
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 7260,
+          "output_tokens": 2554,
+          "output_tokens_details": {
+            "thinking_tokens": 442
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

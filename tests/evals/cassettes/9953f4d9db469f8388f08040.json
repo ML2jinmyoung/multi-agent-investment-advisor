@@ -1,0 +1,79 @@
+{
+  "key": "9953f4d9db469f8388f08040",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:19:19.892Z",
+  "preview": "USER: 이 보유 데이터는 검증된 거야?\n\nPORTFOLIO (deterministic, as of 2026-09-27T12:18:58.369Z):\n{\"asOf\":\"2026-09-27T12:18:58.369Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\"",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EoMLCpABCBIYAipAuNzP3l0gNkjoQoRpHS9UCl3ReCDKanfmJmpnVOdc6xwE3ztZfaaLkiGcJeSZUMH7dkDd42QHgrKNoTxJcfpYnTIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAbmT5NUGEgz0ZmRMalD7LOTfHMEaDOcl4oxLa1thdAhP/iIwZ9rr/n+cOIuUeca5tK4mXOclh84gMF6wgyOeUne+N2FoS10e1+xdNx0dgB8e0uY7Kp8JSCKV0zcaDRKj5pfgN85W9FcHCg+iLwGFN/51OvpN4XURi8MUbtPpQBgZR2aOX4Sya2A6IpJbdSbMDZp2jhDMEe/FRbzbu3r1elg+io60xKWpgeVkxthgIZCFSFzMKFOlCIbtOoJOl0MuyaS6FgEnOIynKZ9N1Kcig1aExLZRwuEdsyT7rDbuPhGe2jCFCWrzjSGS0fPgB3M1o82euanMWfTbzVGOtubuR5rKCG09EzwQssgDwNRhifJB9WhnY5vMmDzFsH98BpJWsCuMIK8DRFeBlrX46C7uYWKx/goLLnGFLhOu0AtNnw38C6WE/oaZ5aV0G9rU31NORIqxV1sMwNJ7NoEe++tcscZO4jL70oW11fvMHJj+tcBNpXzVGrSxJV7YQ/xZYmQcQcYnCExeCp9b1K4G8peWKImstlNzEOXdkWOeqJ6NAkFezmbzY1Hv9Z2fAaNXuMJ0JhyxEUqobg4Dib7lP2XRm9XMQEHAM/8bgJjWZZt+67kikYenP9X0MCO92ufMEYdEShpLy+1vG10zBFiZUYNrMkD+hBjBvezXD8ClSsuc5NtfIIBUvMx7a6lc2W7fLHuoBPBkdBdyZZZFe7oPVadK0jlPjF98taenmPclJgV7xzEQhLjekmOhpa5XNOj7IZABWHirsbFI5kqAJ90zAIQWUCoVVMaFYpeN/kHxxa4H/KjawPE27dLbs5DpS8ew+TMO5Eo//CNU3Yp4AKhFMRxUvUXd0uRGC0w+xnNRBn0Xmc5jjTk9HXszPHREGd7TtMEQJfO88aWebucPaO9OiYS2lpf/pxtsJoAs7YlG7k2y3lcZ/+NiMUGOgZd+FCWoz80icO5TaOU6N7Jgf0fgXWmZoxmrX7uumtxCB5J4DzBTlI1WgY8p0zJVNKWVcpCjo6CnGdvPRifrQYJksWeHAC128rOhRTFb5iaa8/jJsa/kXsWtKyMb8r1eA5/PeH/GsJ1BNYdAIZ/dKg3MnaQsGiUDJK7jfLWbJRqfGP8/5SjAqKjmnFoX+wozAmxiHRTZJ0iFTacqR3y0VubEA8WDjegeEKNqtRe0H3KuvpPW5ZTJ/xcVOZyGe3Yg0ioS7OOtVQSyoHJiRRU1mAlgjXTId6lUrK6ySUJS7zy7vL2XsIAZlVMFxmYeYsETePMaxViPTWzj3r64ATWWd1O+ftTCRqXiGa3Ve8H3s7kCinYL/zfFzhhk4ihaKMcEQlQBRbpxcIiSecpXIL4bwRIwX1xCh0C8FBuHhUExPttJbjW6LTBKzRUICIZTu99qUwo1AQKiqfNvfJRV47/Tgjec3PQv0+j/iX1mClnud34pXV2WF08x7Fn2QtNR7lBvZg3P8RFUfR1tY6MD1+dzg4R19TR+Ks14YaIReYnPBLSZw8HQ6MHuHca3dAT7ZQbkJguQOQKVM2rUUe52KM7zSK6o1mBs8e0UNf8CX3qUes76wSEr5FnryFo0eNqo5qk3buNVkTuh1JwldSRrFT8aOuXNFnsvzsz8G0NFLz6uzS8BqnYW86Kiu2G8JVhEy5RdQs925RxuhYBT5LYAhFWLPm6Unjjw1Zjf2c6Yllq2rxgB"
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"summary\":\"아니요, 검증되지 않았습니다. 현재 포트폴리오 스냅샷의 출처(sources)를 보면 보유내역은 '방문자 직접 입력 (미검증)'이고, 종목별 시세·평가금액 산출에는 'Mock market data (fixture) (DEMO)'가 두 건 사용됐습니다. 즉 보유 종목·수량은 사용자가 수기로 입력한 값이며, 가격/평가액은 실거래 시세가 아닌 테스트용 목업 데이터입니다.\",\"evidence\":[{\"kind\":\"portfolio\",\"claim\":\"보유 계좌가 'MANUAL' 상태(입력한 보유자산)이며 정산·증빙된 브로커리지 연동이 아님\",\"source\":\"방문자 직접 입력 (미검증)\",\"asOf\":\"2026-09-27T12:18:58.369Z\",\"isMock\":false},{\"kind\":\"portfolio\",\"claim\":\"시세/평가금액 데이터가 실거래 피드가 아닌 fixture(모의) 데이터임\",\"source\":\"Mock market data (fixture) (DEMO)\",\"asOf\":\"2026-09-27T12:18:58.369Z\",\"isMock\":true}],\"alternatives\":[{\"title\":\"증권사 계좌 실연동\",\"description\":\"보유내역과 시세를 실제 브로커리지 API로 연동하면 잔고·평가금액이 자동 검증되어 신뢰도가 올라갑니다.\"},{\"title\":\"잔고증명서 대조\",\"description\":\"수기 입력값을 최근 잔고증명서/거래내역과 대조해 수량·평단가 오류를 확인할 수 있습니다.\"}],\"risks\":[{\"title\":\"데이터 미검증 위험\",\"description\":\"수기 입력 오류(수량, 평단가, 계좌 누락 등) 가능성이 있어 자산배분·비중 계산이 실제와 다를 수 있습니다.\",\"severity\":\"medium\"},{\"title\":\"시세 데이터가 모의(mock)임\",\"description\":\"일부 시세는 실시간 시장 데이터가 아닌 fixture이므로 dailyChangePct 등 수치는 실제 시장 움직임을 반영하지 않을 수 있습니다.\",\"severity\":\"medium\"}],\"costs\":[],\"policyChecks\":[{\"rule\":\"singleStockPct\",\"label\":\"단일 종목 최대 비중\",\"status\":\"ok\",\"limit\":15,\"before\":11.7,\"after\":11.7,\"subject\":\"005930\"},{\"rule\":\"sectorPct\",\"label\":\"단일 섹터 최대 비중\",\"status\":\"violation\",\"limit\":35,\"before\":37,\"after\":37,\"subject\":\"Technology\"},{\"rule\":\"overseasPct\",\"label\":\"해외자산 최대 비중\",\"status\":\"ok\",\"limit\":70,\"before\":48.4,\"after\":48.4},{\"rule\":\"minLiquidityPct\",\"label\":\"최소 유동성\",\"status\":\"ok\",\"limit\":10,\"before\":27.6,\"after\":27.6}],\"recommendation\":\"의사결정(리밸런싱, 매매)을 하기 전에 실제 계좌 연동 또는 최근 잔고증명서로 수량·금액을 재확인하시길 권합니다. 특히 섹터 비중(Technology 37%, 한도 35% 초과) 판단은 정확한 데이터 기준으로 다시 점검해야 합니다.\",\"limitations\":[\"보유 수량·평단가는 사용자가 직접 입력한 값으로 시스템이 별도 검증하지 않음\",\"시세 데이터 중 일부는 실시간이 아닌 fixture(mock) 데이터\",\"따라서 총평가액(39,040,386원) 및 비중(%)은 참고용이며 실제와 차이가 있을 수 있음\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4237,
+        "noCache": 4237,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 1720,
+        "text": 1277,
+        "reasoning": 443
+      },
+      "raw": {
+        "input_tokens": 4237,
+        "output_tokens": 1720,
+        "output_tokens_details": {
+          "thinking_tokens": 443
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4237,
+          "output_tokens": 1720,
+          "output_tokens_details": {
+            "thinking_tokens": 443
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

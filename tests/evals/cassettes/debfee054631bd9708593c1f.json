@@ -1,0 +1,70 @@
+{
+  "key": "debfee054631bd9708593c1f",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T13:21:33.113Z",
+  "preview": "USER: 삼성전자 더 사고 싶은데\nSYMBOLS: 005930\n\n관련 종목의 최근 공시, 재무 지표, 최근 가격 흐름, 유의사항, (ETF면) 구성 종목을 tool로 확인하고 근거 목록을 만드세요. tool이 error를 반환하면 그 사실을 limitations에 적습니다.",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"evidence\":[{\"kind\":\"market\",\"claim\":\"삼성전자(005930) 현재가는 87,000원(KRW), 전일대비 +0.8%. 이 데이터는 실제 시세가 아닌 목업(fixture) 데이터임.\",\"source\":\"Mock market data (fixture)\",\"asOf\":\"2026-09-22T15:30:00+09:00\",\"isMock\":true},{\"kind\":\"warning\",\"claim\":\"거래소 매수 유의사항(투자경고, 단기과열 등) 조회 결과 해당 사항 없음(빈 목록).\",\"source\":\"거래소 유의사항 API\",\"asOf\":\"조회 시점 기준\"}],\"risks\":[\"최근 공시, 재무 지표, 가격 이력(3개월) 데이터가 모두 확인되지 않아 실적 추세나 공시 이슈를 근거로 판단할 수 없음.\",\"시세 데이터는 목업(mock)으로 표시되어 있어 실제 시장가와 다를 수 있음.\",\"유의사항이 현재 없다는 것이 향후에도 없다는 보장은 아님.\"],\"limitations\":[\"getRecentFilings: '데이터 없음' 오류로 최근 공시 확인 불가.\",\"getFinancialStatements: '데이터 없음' 오류로 매출/영업이익/순이익 등 재무 지표 확인 불가.\",\"getPriceHistory(3개월): '데이터 없음' 오류로 최근 가격 흐름 확인 불가.\",\"해당 종목은 ETF가 아니므로 getEtfHoldings는 조회하지 않음.\",\"제공된 현재가는 isMock=true로 표시되어 실거래 가격이 아닐 수 있음.\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3036,
+        "noCache": 3036,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 580,
+        "text": 580,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 3036,
+        "output_tokens": 580,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3036,
+          "output_tokens": 580,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

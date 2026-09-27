@@ -1,0 +1,88 @@
+{
+  "key": "f1a1e12e5d5f88f7c9a27f1b",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T13:13:56.056Z",
+  "preview": "USER: SK하이닉스 300만원 사도 괜찮아?\n\nPORTFOLIO (deterministic, as of 2026-09-27T13:13:46.315Z):\n{\"asOf\":\"2026-09-27T13:13:46.315Z\",\"totalValueKRW\":25642272,\"buyingPowerKRW\":3690000,\"accounts\":[{\"name\":\"입력한 보유자",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "Eo4HCpABCBIYAipAhDNW8Y/nMEsd3Ydqboy/A6IeivUvT5jDkVh4qxnE2k9Cm4naePKm5WNMxylxPUcrUt3wsZ0ovnGpEpNJHK/t1jIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAZOt5NUGEgyo/aKG73gydKlhmFUaDJ0f+hKFbm0cNp3BOSIwGtBv2U6A1mUyGR8Hi3kOeNhjNu91/FBGdk270LgbsAWA+7A+GTufVmjldSAwvzVyKqoFy+/UBgM1owQ9UfAto8a3GTgxMFhEO1456ZZVq6yva+aXhXy5TmbOPT6d33vK164rV0MaiydtWP0TGCO7OmJrUUlRtLt/frl7rESR7zjUlhVUag5+rBRj6c7D0AQHuwvde25pw4iZGPVYQHCkbmza7y1bfmsB+JdS3Pry7DjjJ/hvvnTwbYhyDkEpS0Mt+uh5wFXQF6RIpb0RRWAZG7JqoLmtR1kpJ2oKq3n+CjK6vDU2IISTAt/2rKiuOGqalUlw82kUS/PAFfkeIVfBGnjafwb0LMgU+Iu64dHxRFborZCk2Im7qa7NAOvDdJ9Grbe82YPRla1Ik50P0c2N5s4UtNydusmPC9EyGEX0YCDO0f7vgPZs+sIjJLscldVkwDB5DL3Oy3V4cd0CnMWdDCN6qKGYv0I4w4JWItNwpAei9mZEPmtlAiVaIn+Mr0jrpVhseriDYQ7k5keAgli+J95EpjUjJZ/CjSGiSiZAXwWB4+oTOVntkE20XXkh0a2+SNejkv/PrTxGMumO8qicVAM0eabDgQaYm2B+GNwQPJWvENoIueRcH6C1U0lTb+8LCve5pJ6ftXBNRFA0/27eb8MJp2mtEf1y1JBiHf1+B8p8j6hqH5c+0sxunvgPpmXPMytAkvF6qujdYaOKAVYdoA0FksDDyevZsMppIFy2cFBnXsWAbfMMO1nmu/IKcY5Zjl/GdpOtKfZahtj9GQyvtkxlSU88O5I9XqAk1IMGmA0NsCABZJYDjz5wfxTYn4pMPx512KBwLYt2F1hJ7/Xysx0jFlwqxupXiELTaU6pikTCk4qR/soCBxTSFdhMcuP0UWUMXj7KPzFpS5VVlUcOgjlfjHLmJQLtV+1LK5YaSgIhTB9brp6rBajddBmiXYeTHz4zXCSFPLWA6hJkSBgB"
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01XQMRYWz8cNNUeDwfwFn4dt",
+        "toolName": "simulateTrade",
+        "input": "{\"symbol\":\"000660\",\"action\":\"buy\",\"amountKRW\":2900000}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3795,
+        "noCache": 3795,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 326,
+        "text": 103,
+        "reasoning": 223
+      },
+      "raw": {
+        "input_tokens": 3795,
+        "output_tokens": 326,
+        "output_tokens_details": {
+          "thinking_tokens": 223
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3795,
+          "output_tokens": 326,
+          "output_tokens_details": {
+            "thinking_tokens": 223
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

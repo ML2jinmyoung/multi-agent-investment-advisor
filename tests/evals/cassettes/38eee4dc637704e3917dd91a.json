@@ -1,0 +1,79 @@
+{
+  "key": "38eee4dc637704e3917dd91a",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:02:30.875Z",
+  "preview": "USER: 내 자산 얼마야?\n\nPORTFOLIO (deterministic, as of 2026-09-27T12:02:06.917Z):\n{\"asOf\":\"2026-09-27T12:02:06.917Z\",\"totalValueKRW\":6983939,\"buyingPowerKRW\":2000000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"type\":\"b",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "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"
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"summary\":\"현재 총자산은 약 6,983,939원(KRW)입니다. 이 중 AVGO(브로드컴) 3,726,000원(53.4%), 현금 2,000,000원(28.6%), NVDA(엔비디아) 1,257,939원(18%)으로 구성되어 있습니다. 투자 가능 금액(매수 여력)은 2,000,000원입니다.\",\"evidence\":[{\"kind\":\"portfolio\",\"claim\":\"총자산 6,983,939원, AVGO 53.4%·현금 28.6%·NVDA 18% 비중\",\"source\":\"getPortfolioSnapshot\",\"asOf\":\"2026-09-27T12:02:06.917Z\"},{\"kind\":\"portfolio\",\"claim\":\"투자 가능 금액 2,000,000원\",\"source\":\"getPortfolioSnapshot\",\"asOf\":\"2026-09-27T12:02:06.917Z\"},{\"kind\":\"warning\",\"claim\":\"AVGO(브로드컴) 최신 시세를 확인하지 못함 - 평가금액이 지연된 값일 수 있음\",\"source\":\"getPortfolioSnapshot 경고 메시지\",\"asOf\":\"2026-09-27T12:02:06.917Z\"},{\"kind\":\"portfolio\",\"claim\":\"통화 비중 USD 71.4% / KRW 28.6%, 섹터 비중 Technology 71.4%\",\"source\":\"getPortfolioSnapshot\",\"asOf\":\"2026-09-27T12:02:06.917Z\"}],\"alternatives\":[],\"risks\":[{\"title\":\"단일종목 집중\",\"description\":\"AVGO 한 종목이 전체 자산의 53.4%를 차지해 개별 종목 리스크가 큽니다.\",\"severity\":\"high\"},{\"title\":\"섹터 집중\",\"description\":\"보유 종목 전체가 Technology 섹터(71.4%)에 몰려 있어 업황 변동에 취약합니다.\",\"severity\":\"high\"},{\"title\":\"시세 데이터 지연\",\"description\":\"AVGO의 최신 시세를 확인하지 못했다는 경고가 있어 실제 평가금액과 차이가 있을 수 있습니다.\",\"severity\":\"medium\"},{\"title\":\"환노출\",\"description\":\"자산의 71.4%가 USD 표시 자산으로 환율 변동에 노출되어 있습니다.\",\"severity\":\"medium\"}],\"costs\":[],\"policyChecks\":[{\"rule\":\"singleStockPct\",\"label\":\"단일종목 비중 한도\",\"status\":\"violation\",\"limit\":15,\"after\":53.4,\"subject\":\"AVGO\"},{\"rule\":\"sectorPct\",\"label\":\"섹터 집중도 한도\",\"status\":\"violation\",\"limit\":35,\"after\":71.4,\"subject\":\"Technology\"},{\"rule\":\"overseasPct\",\"label\":\"해외자산 비중 한도\",\"status\":\"violation\",\"limit\":70,\"after\":71.4,\"subject\":\"USD\"},{\"rule\":\"minLiquidityPct\",\"label\":\"최소 유동성 비중\",\"status\":\"ok\",\"limit\":10,\"after\":28.6,\"subject\":\"KRW 현금\"}],\"recommendation\":\"현재 자산 규모와 구성 자체를 알려드리는 답변이며, 종목 매수/매도를 권하지는 않습니다. 다만 투자 원칙(단일종목 15%, 섹터 35%, 해외비중 70% 한도)과 비교하면 AVGO 비중과 Technology 섹터 집중도가 한도를 초과한 상태이므로, 리밸런싱 필요 여부를 원칙 관점에서 점검해 보시길 권합니다.\",\"limitations\":[\"AVGO 시세가 최신이 아닐 수 있다는 경고가 있어 정확한 현재가치와 차이가 있을 수 있습니다.\",\"제공된 POLICY CHECKS(코드) 결과는 빈 배열이었으며, 위 policyChecks 항목은 스냅숏 수치와 정책 한도를 단순 비교하여 계산한 것입니다.\",\"시세 데이터 일부는 Mock/DEMO 데이터 소스에 기반합니다.\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3427,
+        "noCache": 3427,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 2050,
+        "text": 1387,
+        "reasoning": 663
+      },
+      "raw": {
+        "input_tokens": 3427,
+        "output_tokens": 2050,
+        "output_tokens_details": {
+          "thinking_tokens": 663
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3427,
+          "output_tokens": 2050,
+          "output_tokens_details": {
+            "thinking_tokens": 663
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

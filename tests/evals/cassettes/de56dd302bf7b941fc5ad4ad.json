@@ -1,0 +1,79 @@
+{
+  "key": "de56dd302bf7b941fc5ad4ad",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:14:36.426Z",
+  "preview": "USER: AAPL 최근 1년 주가 흐름 어때?\n\nVERIFICATION FLAGS: {\"unsupported_claim\":0.15,\"policy_conflict\":0.72,\"prediction_as_fact\":0.05,\"missing_material_risk\":0.35,\"stale_evidence\":0.85}\n\nDATA (as of 2026-09-27T1",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "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"
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"problems\":[{\"kind\":\"unsupported_claim\",\"detail\":\"'AAPL look-through 실질 노출 3,867,788원(9.9%)'라는 수치는 제공된 DATA(portfolio positions, policyChecks)에 존재하지 않습니다. VOO·360750 등 ETF의 AAPL 편입 비중을 계산한 근거 데이터가 없으므로 이 숫자는 근거 없이 생성된 값입니다.\"},{\"kind\":\"policy_inconsistency\",\"detail\":\"DATA의 policyChecks 중 singleStockPct 항목은 subject가 '005930'(삼성전자)이며 AAPL에 대한 항목이 아닙니다. 그런데 초안은 이를 'AAPL 실질 비중 9.9%는 한도 내'라는 결론에 그대로 갖다 붙여, 실제로는 존재하지 않는 AAPL 전용 정책 점검 결과인 것처럼 서술했습니다.\"},{\"kind\":\"missing_evidence\",\"detail\":\"'거래소 매수 유의사항 없음 (getStockWarnings)' 항목은 제공된 DATA에 해당 tool 결과가 전혀 없습니다(portfolio.warnings는 빈 배열이며 종목별 유의사항 조회 결과는 주어지지 않음). 근거 없이 '없음'으로 단정한 것은 위험합니다.\"},{\"kind\":\"stale_data\",\"detail\":\"현재가 데이터의 asOf가 2026-09-22이고 오늘(요청 시점)은 2026-09-27로 약 5일 차이가 있습니다. VERIFICATION FLAGS의 stale_evidence 점수(0.85)도 높게 나타났는데, 초안은 'Mock 데이터'라는 점만 언급하고 며칠 지난 시세라는 사실은 명시적으로 경고하지 않았습니다.\"},{\"kind\":\"unsupported_claim\",\"detail\":\"'AAPL 실질 비중 9.9%는 한도 내'라는 결론은 위 두 문제(가짜 look-through 수치, 잘못 매칭된 정책 항목)에 기반하고 있어 결론 자체가 근거 없는 주장이 됩니다. 실제로 DATA에서 확인 가능한 것은 AAPL 직접 보유 비중 8.3%(weightPct)뿐입니다.\"}],\"verdict\":\"revise\"}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4086,
+        "noCache": 4086,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 3205,
+        "text": 832,
+        "reasoning": 2373
+      },
+      "raw": {
+        "input_tokens": 4086,
+        "output_tokens": 3205,
+        "output_tokens_details": {
+          "thinking_tokens": 2373
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4086,
+          "output_tokens": 3205,
+          "output_tokens_details": {
+            "thinking_tokens": 2373
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

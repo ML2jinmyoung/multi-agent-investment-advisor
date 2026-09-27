@@ -1,0 +1,88 @@
+{
+  "key": "01adf60df16d127bc6af3002",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:11:03.633Z",
+  "preview": "USER: TIGER 미국S&P500 안에 NVDA 얼마나 있어?\n\nPORTFOLIO (deterministic, as of 2026-09-27T12:10:59.383Z):\n{\"asOf\":\"2026-09-27T12:10:59.383Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"nam",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "Et8DCpABCBIYAipAYo8Be2XINj/odMUORp+SvgO82MM9DCkbhQ/DylqZL0ru0PAZaW+Ey41yO4K+izSFuyKVNQ52ofce9UvQCfUn+TIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAdeP5NUGEgwnuw2Hk+kkl/981U4aDEOvAaLLVU68rnT4NCIwF0LMbjUAa0QKJWNZKq6isa3pIUPuQ+ZejapZoDmnw7zMICiuQ7Qe96fCELjm0f5iKvsBA1pudIOVpg/1EgsPObM2QUZYlY1umW5g5oCE763ssOKvKq86ZMQ+5wLOlNBGYhQPGu/l+cR4xghbOnuMQFSUf0AaLW/llKqURHYMaMo/zJYa569biS3v0zbD26AV/vv5jpjX2bHVdDbBqJXLg7hCvEYBq9Z3IRMGmcFwHmgIUKL+Qjkbhw/PsGnLH9oehX1SmGj65+CsZxDGU/DjH4k1rJzgdf9P62cAgiHl77RrHt845ClpC+q1klSmjFpdnpdrfplN6jArWNF+N1WJwMsxzmFEjbYcIgQwbI5X/P73LP9fYj6EwObh3IPeu4Z+0gkuMw46ce/18GqfhIcYAQ=="
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01Q59M3P1A2n4nnR5gN81Zca",
+        "toolName": "getExposure",
+        "input": "{\"symbol\":\"NVDA\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3686,
+        "noCache": 3686,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 156,
+        "text": 55,
+        "reasoning": 101
+      },
+      "raw": {
+        "input_tokens": 3686,
+        "output_tokens": 156,
+        "output_tokens_details": {
+          "thinking_tokens": 101
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3686,
+          "output_tokens": 156,
+          "output_tokens_details": {
+            "thinking_tokens": 101
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

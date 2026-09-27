@@ -1,0 +1,79 @@
+{
+  "key": "f7878747b0cc9e56b2ffa0d8",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T12:25:47.757Z",
+  "preview": "USER: VOO 구성 종목 알려줘\nSYMBOLS: VOO\n\n관련 종목의 최근 공시, 재무 지표, 최근 가격 흐름, 유의사항, (ETF면) 구성 종목을 tool로 확인하고 근거 목록을 만드세요. tool이 error를 반환하면 그 사실을 limitations에 적습니다.",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EpQCCpABCBIYAipAah7eVIQthufqxGcr1Itk4UCKVbWExpUSebLeJeALeN8Jq5fES+HvUq14lEkMvq7aCCoIHS3EmbRnYQWLrm92bDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAcWW5NUGEgzkR1WkJcu8mfmTDgwaDGAmzg7GWCSadX08gyIwMtj9qOBDLY0O6M3UTsNlMb77XOmo1+jaDFurRfPsg1XPxjf5tDBi5IJy2dsiwwq9KjHqQzcXT6dYRh4Sdsh9HB4/2EW7Q3dkVEKF+8qPWA2TpTAVQZdhZhcpdAClK9I8ngedGAE="
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"evidence\":[{\"kind\":\"etf\",\"claim\":\"VOO(Vanguard S&P 500 ETF) 상위 구성 종목: NVDA 7%, MSFT 6.5%, AAPL 6%, AMZN 4%, META 2.8%, AVGO 2.5%, GOOGL 2%, TSLA 1.8%, GOOG 1.7%, BRK.B 1.6%, JPM 1.5%, LLY 1.3% (스냅샷 상위 12종목)\",\"source\":\"Vanguard holdings (static POC snapshot)\",\"asOf\":\"2026-08-31\"},{\"kind\":\"market\",\"claim\":\"VOO 현재가 560.70 USD, 전일 대비 -1.5%\",\"source\":\"Mock market data (fixture)\",\"asOf\":\"2026-09-22T15:30:00+09:00\",\"isMock\":true},{\"kind\":\"warning\",\"claim\":\"거래소 매수 유의사항 없음(빈 목록 반환)\",\"source\":\"거래소 유의사항 조회\"}],\"risks\":[\"ETF는 상위 종목 편중도가 있어 특정 종목(예: NVDA, MSFT, AAPL 등 빅테크) 비중이 높아 해당 종목군 변동성에 영향을 받을 수 있음\"],\"limitations\":[\"구성 종목 데이터는 'static POC snapshot'으로 명시되어 있어 실제 최신 비중과 다를 수 있음(기준일 2026-08-31)\",\"가격 이력(getPriceHistory) 조회 시 '데이터 없음' 오류 반환 - 최근 추세 확인 불가\",\"getRecentFilings 조회 시 '데이터 없음' 오류 반환 - ETF 특성상 개별 공시 데이터 미제공\",\"getFinancialStatements 조회 시 '데이터 없음' 오류 반환 - ETF는 개별 재무제표가 없어 확인 불가\",\"현재가는 Mock 데이터(fixture)로 표시되어 실거래가와 다를 수 있음\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3795,
+        "noCache": 3795,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 705,
+        "text": 692,
+        "reasoning": 13
+      },
+      "raw": {
+        "input_tokens": 3795,
+        "output_tokens": 705,
+        "output_tokens_details": {
+          "thinking_tokens": 13
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3795,
+          "output_tokens": 705,
+          "output_tokens_details": {
+            "thinking_tokens": 13
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}
