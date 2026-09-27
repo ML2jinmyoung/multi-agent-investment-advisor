@@ -1,0 +1,79 @@
+{
+  "key": "a9f997db1a1475fc5dc3e992",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T10:38:17.334Z",
+  "preview": "USER: 데이터 언제 기준이야?\n\nPORTFOLIO (as of 2026-09-27T10:37:23.334Z): {\"asOf\":\"2026-09-27T10:37:23.334Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"type\":\"brokerage\",",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EqgECpABCBIYAipAMTE3RRsFqEceBMsRT1qVIxlU4uCnr8WtzPoaMMeX3y+DptefMJhCWBQaqKPJvSvdAlNhB5kLGPvUGrHYah5aUDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAY7k49UGEgzaCVb6m8SUiaygee4aDB4EWZsTHv2AVDUZTCIwfwD0W9/qSNOKgnzR7TEysbtHSSsrrO85kWhCxE+FqwihZa+hh9kzHMnHc1CRqeiuKsQCq/Z/C2EsDDChVjAc2b7FORH0VrcN0KJhaZaD0LDvpO+ZFxdDc+L14i6/QpDXCbf7B+1gBr9pQpIEwAZbkX7+XN8Lqb3FjSvVWhStq9uDaCKEGTl1I78Wk84o9L4XxP3f9a+YfRhJsURsv/goRnGXW/x39VZs6DdT122i8NLy19IBC7/+J04bWfCWEipykb+/6lfTIbMqT9LJw0LOX1fLjfmDuQIPffDT0JFmj+tU6lQHX9d9YJnvLde7ghwJxGLgMsZfyMRYVeOF+7HLK2McQVlDpDo5J0BvJcyXn4M9tQUVJMrwSo6ve66q350w4kHsC9vBG3jKk88WOyezTBz0iMd6JrmehR3+VwwhHPwkZ9Vp5ss1erJqJzQpGqGN0wN5NLqbJM3QTtMQn5MERKgAKLDCgJZz755/bSoJQ1iVeIT28iOEGAE="
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"summary\":\"현재 제공된 포트폴리오 데이터의 기준 시각은 2026-09-27 10:37:23 (UTC)입니다. 이 데이터는 방문자가 직접 입력한 값(미검증)과 일부 목업(fixture) 시세를 섞어 사용한 것이라 실시간 시세와는 차이가 있을 수 있습니다.\",\"evidence\":[{\"kind\":\"portfolio\",\"claim\":\"포트폴리오 스냅샷 기준 시각: 2026-09-27T10:37:23.334Z, 총자산 39,040,386원, 투자가능금액 10,760,000원\",\"source\":\"방문자 직접 입력 (미검증)\",\"asOf\":\"2026-09-27T10:37:23.334Z\"},{\"kind\":\"market\",\"claim\":\"개별 종목의 일일 변동률(dailyChangePct) 등 시세 항목은 목업(fixture) 데이터를 사용\",\"source\":\"Mock market data (fixture) (DEMO)\",\"asOf\":\"2026-09-27T10:37:23.334Z\",\"isMock\":true}],\"alternatives\":[{\"title\":\"아무것도 하지 않음\",\"description\":\"현재 데이터 기준 시각과 신뢰도 한계만 확인하고 별도의 매매나 리밸런싱 조치를 취하지 않습니다.\"},{\"title\":\"실계좌 연동으로 데이터 갱신\",\"description\":\"증권사 API 연동 등을 통해 실시간·검증된 시세와 잔고로 스냅샷을 업데이트한 뒤 다시 확인합니다.\"},{\"title\":\"수동 재확인\",\"description\":\"현재 값(특히 dailyChangePct 등 목업 표시 항목)을 증권사 앱/HTS에서 직접 대조해 정확도를 점검합니다.\"}],\"risks\":[{\"title\":\"데이터 신뢰도 한계\",\"description\":\"보유자산 내역은 사용자가 직접 입력한 값으로 계좌 연동 검증이 되지 않았고, 일부 가격 정보는 실제 시세가 아닌 목업(fixture) 데이터입니다. 실제 자산가치·비중과 차이가 있을 수 있습니다.\",\"severity\":\"medium\"}],\"costs\":[],\"policyChecks\":[],\"recommendation\":\"현재 스냅샷은 2026-09-27 10:37(UTC) 기준이며, 정확한 의사결정을 위해서는 실계좌 연동을 통한 검증된 데이터로 갱신하는 것을 권장합니다. 정책(투자 원칙) 점검 결과는 이번 요청에서 빈 배열([])로 반환되어 실제 한도 수치(단일종목/섹터/해외비중 등)를 확인할 수 없으므로, 이번 답변에서는 어떠한 정책 한도 수치도 제시하지 않습니다. 추가 거래 없이 데이터 검증만 먼저 진행하는 선택도 합리적입니다.\",\"limitations\":[\"보유자산 데이터는 방문자 직접 입력값으로 미검증 상태입니다.\",\"일부 시세(dailyChangePct 등)는 실제 마켓 데이터가 아닌 목업(fixture)입니다.\",\"정책 점검(policyChecks) 결과가 빈 배열([])로 반환되어 투자 원칙(단일종목/섹터/해외비중 한도 등)의 구체적 수치나 위반 여부를 확인할 근거 데이터가 없습니다. 이전 답변에서 언급된 구체적 한도 수치는 실제 데이터에 근거하지 않은 값이었으므로 이번 답변에서 제외했습니다.\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4375,
+        "noCache": 4375,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 1357,
+        "text": 1258,
+        "reasoning": 99
+      },
+      "raw": {
+        "input_tokens": 4375,
+        "output_tokens": 1357,
+        "output_tokens_details": {
+          "thinking_tokens": 99
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4375,
+          "output_tokens": 1357,
+          "output_tokens_details": {
+            "thinking_tokens": 99
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

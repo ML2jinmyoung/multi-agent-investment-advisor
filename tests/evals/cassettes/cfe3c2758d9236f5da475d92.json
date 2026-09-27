@@ -1,0 +1,88 @@
+{
+  "key": "cfe3c2758d9236f5da475d92",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T10:37:29.107Z",
+  "preview": "USER: 데이터 언제 기준이야?\n\nPORTFOLIO (deterministic, as of 2026-09-27T10:37:23.334Z):\n{\"asOf\":\"2026-09-27T10:37:23.334Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"typ",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EugCCpABCBIYAipALeUKV32baDULgkQpqKgZVlGrTkS1WqxPKCbkkw23P4963/Ilk8YEgbCf7WNjDhvyJwPGMeazrXGKQ4bB2ycxfzIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAejj49UGEgx4OEu47da1QqFFKHkaDCn/VbmxHjKM19sIzCIwlzIde2eZNVM2oxQd/HqKXN3FjgUCLmPhaA7Dyj9Ic8LtzJhPnr7iijJ4I44bubh+KoQB+UqEorV62GvbckaKo9goaACnmjximUVXVRVfLhSbK+/e3i4YQy/AQK7nl4yDlByApCqaEUGyICLQNSE6zQOySDJaTBCdStg4f60KEYmAC31DxIFHHOcUBpd8Vex5X02+j1sknaW+MRS7t6bxGwDZJuyxNP7bsSyFtdGnycvHU4216zhgGAE="
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01FZwgdY8Q1cGDGxAqeFqbQS",
+        "toolName": "getInvestmentPolicy",
+        "input": "{}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4009,
+        "noCache": 4009,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 69,
+        "text": 35,
+        "reasoning": 34
+      },
+      "raw": {
+        "input_tokens": 4009,
+        "output_tokens": 69,
+        "output_tokens_details": {
+          "thinking_tokens": 34
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4009,
+          "output_tokens": 69,
+          "output_tokens_details": {
+            "thinking_tokens": 34
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

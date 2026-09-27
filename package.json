@@ -12,6 +12,11 @@
     "db:studio": "drizzle-kit studio",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
+    "eval": "tsx evals/run.ts",
+    "eval:case": "tsx scripts/eval/trace-to-case.ts",
+    "eval:queue": "tsx scripts/eval/label-queue.ts",
+    "eval:calibrate": "tsx scripts/eval/calibrate.ts",
+    "eval:compare": "tsx evals/compare.ts",
     "jeff": "bash scripts/jeff.sh"
   },
   "dependencies": {
@@ -40,6 +45,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.5",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5",
     "vitest": "^5.0.1"
   }

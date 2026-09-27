@@ -1,0 +1,70 @@
+{
+  "key": "10bf583a215851ce6e7a257b",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T09:33:07.789Z",
+  "preview": "USER: 삼성전자 1000만원 매수하면 원칙 위반이야?\n\nPORTFOLIO (deterministic, as of 2026-09-27T09:32:40.154Z):\n{\"asOf\":\"2026-09-27T09:32:40.154Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"meaning\":\"삼성전자를 1,000만원어치 추가 매수하는 것은 현재 상태에서 실행 자체가 불가능하고, 만약 자금이 충분했다 하더라도 단일 종목 비중 한도를 크게 초과하게 되어 투자 원칙 위반에 해당합니다.\",\"keyFacts\":[\"시뮬레이션 결과 KRW 매수 가능 금액은 8,000,000원인데 1,000만원 매수 시 2,001,500원이 부족해 주문이 실행되지 않습니다.\",\"현재 삼성전자 평가금액은 3,480,000원(비중 8.9%)이며, 1,000만원을 추가하면 평가금액이 13,480,000원이 되어 총자산 39,040,386원 대비 약 34.5%까지 상승합니다.\",\"투자 원칙상 단일 종목 최대 비중 한도는 15%이며, 34.5%는 이를 크게 초과하는 수준입니다.\",\"현재 코드 점검(POLICY CHECKS) 기준으로 삼성전자 단일 종목 비중(11.7%)은 'ok' 상태이지만, 이는 1,000만원 매수 전 시나리오이며 해당 매수를 반영한 수치가 아닙니다.\",\"별개로 Technology 섹터 비중이 이미 37%로 한도 35%를 초과한 'violation' 상태이며, 삼성전자(Technology)를 추가 매수하면 이 위반이 더 심화됩니다.\",\"현재 KRW 현금은 8,000,000원(총자산 대비 20.5%)으로 최소 유동성 한도(10%)는 충족하고 있으나, 1,000만원을 모두 주식으로 옮기면 유동성 여유가 줄어듭니다.\"],\"alternatives\":[\"매수 가능 금액(8,000,000원) 이내로 매수 규모를 줄여 단일 종목·섹터 한도 위반 폭을 검토한 뒤 진행\",\"삼성전자 대신 Technology 비중을 늘리지 않는 다른 섹터/자산으로 자금을 배분\",\"단일 종목 15% 한도를 지키는 선에서 목표 매수금액을 재계산(현재 비중 8.9% 기준으로 여유 비중 확인 후 결정)\",\"현재 이미 존재하는 Technology 섹터 초과(37%>35%) 문제를 먼저 해소한 뒤 추가 매수 여부를 재검토\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 5086,
+        "noCache": 5086,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 860,
+        "text": 860,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 5086,
+        "output_tokens": 860,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 5086,
+          "output_tokens": 860,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

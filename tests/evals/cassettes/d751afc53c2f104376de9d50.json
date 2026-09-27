@@ -1,0 +1,79 @@
+{
+  "key": "d751afc53c2f104376de9d50",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T10:05:05.835Z",
+  "preview": "USER: 데이터 언제 기준이야?\n\nPORTFOLIO (as of 2026-09-27T10:04:49.572Z): {\"asOf\":\"2026-09-27T10:04:49.572Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"type\":\"brokerage\",",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EqwFCpABCBIYAipAjACTa1YP/RcoZAKqyqiLLIS0RT90I/mHZtBLhH6hc7h4YIXGo4IS/rqSId8ekCCrLV4IfxUMW/GcaTs8+g4P3zIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAcXU49UGEgxn4UQWqzMn4YJUk7AaDLKWKkY/sFZbiAupxiIwM2XNkgnPf09xNRhYvw5E2vwhIwI4udQWjdqNf/xphYdfeTAcjPSsW3RCU6uRMFR5KsgDjVLlPDXx3+f6rUAy5NF9dxkjDVQCtTBQeIEjC2K8K8FqOTwCvX9vlBFKe+ty3Akx5yUR0/bU5qMlRzYvuVz28E2lF2vdv+38vKmQAe2asuQVKNjYo3VKIbw162EIxbrOSeG+mbq+O/l2YX/pmNgcq4Ab5w5rxlgHecMssZ1+yrpdQaj426Eh98onY8Bky+BlV0pX207lCDWhIA+XP/pyX1wBQ/gAqU9mkhEpqSB0JzVrNT+eZpV2pk6Eis0qPoP1X7hAF76Oi0eCUPTeinKAqneX+ESgtYmh7TioErS60BG+g78Qp1vQ7ex5wTcvYMrs9F7YNrMAsx+c8U7TVrJeQtRDH1diDiiqanzcNmw3FNUOFbg7NRhr1Y38bz8LI+AaHHw3dUJceapkrOhcG1R23MC7rNteRJHXCqYwAqV2T2t6WLS46v/8vkF20bUQfJEEmXq08JQNHpUfasa1q7qcgU4d95Xd9mfac5GiK7RvjXaLNZehzcjU9SbAPCRhvxtTPuVWBz8W7iM61BRMbM4T+KZgyuxyfxVD90FFRkSoSv0Iv/NDq+DzqtoMJ3Ohv3EhouIYg/d8ypQdoS73tLlq7EVoZnzYxswbGAE="
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"summary\":\"포트폴리오 데이터는 2026-09-27 10:04:49 (UTC) 기준입니다. 다만 이 안에는 방문자가 직접 입력한 값(미검증)과 Mock market data(DEMO, 가상의 임시 데이터)가 섞여 있어 실제 실시간 시세와 다를 수 있습니다.\",\"evidence\":[{\"kind\":\"portfolio\",\"claim\":\"포트폴리오 스냅샷 기준 시각은 2026-09-27T10:04:49.572Z 입니다.\",\"source\":\"포트폴리오 데이터\",\"asOf\":\"2026-09-27T10:04:49.572Z\"},{\"kind\":\"portfolio\",\"claim\":\"보유자산 항목은 방문자가 직접 입력한 값으로, 검증되지 않았습니다.\",\"source\":\"방문자 직접 입력 (미검증)\"},{\"kind\":\"market\",\"claim\":\"가격/일간등락률 데이터는 Mock market data (fixture)로, DEMO(가상) 데이터입니다.\",\"source\":\"Mock market data (fixture) (DEMO)\",\"isMock\":true}],\"alternatives\":[{\"title\":\"아무것도 하지 않음\",\"description\":\"현재 데이터 기준 시각을 확인만 하고 별도 매매나 조정을 하지 않습니다.\"},{\"title\":\"실시간 시세로 재확인\",\"description\":\"실제 거래 전에는 증권사 앱 등에서 최신 실시간 가격을 다시 확인합니다.\"},{\"title\":\"데이터 소스 갱신 요청\",\"description\":\"Mock 데이터가 아닌 실계좌 연동 또는 실시간 시세 연동을 요청해 최신성을 높입니다.\"}],\"risks\":[{\"title\":\"데이터 최신성 불확실\",\"description\":\"Mock market data와 미검증 입력값이 혼합되어 있어, 표시된 평가금액·등락률이 실제와 다를 수 있습니다.\",\"severity\":\"medium\"},{\"title\":\"시장 변동성\",\"description\":\"NVDA -7%, TIGER 미국S&P500 -3.2% 등 일부 종목의 일간 변동폭이 커서, 스냅샷 이후 추가 변동 가능성이 있습니다.\",\"severity\":\"medium\"}],\"costs\":[],\"policyChecks\":[],\"recommendation\":\"현재 제공된 데이터는 2026-09-27 10:04:49(UTC) 시점의 스냅샷이며, 그중 시세 정보는 Mock(DEMO) 데이터, 보유내역은 미검증 입력값입니다. 정책 점검 항목은 없어(policyChecks 없음) 별도 위반 사항은 없지만, 실제 매매 판단 전에는 반드시 최신 실시간 시세로 재확인하는 것이 합리적입니다. 지금 당장 조치가 필요한 상황은 아니므로 '아무것도 하지 않음'도 유효한 선택입니다.\",\"limitations\":[\"시세 및 등락률 데이터는 Mock(fixture) 데이터로 실제 시장 데이터가 아닙니다.\",\"포트폴리오 보유내역은 방문자가 직접 입력한 값으로 검증되지 않았습니다.\",\"정책 점검(policyChecks) 결과가 비어 있어 규정 위반 여부를 평가하지 못했습니다.\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3074,
+        "noCache": 3074,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 1298,
+        "text": 1149,
+        "reasoning": 149
+      },
+      "raw": {
+        "input_tokens": 3074,
+        "output_tokens": 1298,
+        "output_tokens_details": {
+          "thinking_tokens": 149
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3074,
+          "output_tokens": 1298,
+          "output_tokens_details": {
+            "thinking_tokens": 149
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

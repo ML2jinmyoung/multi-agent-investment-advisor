@@ -1,0 +1,70 @@
+{
+  "key": "035a6a0624382f3601a16b1f",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T10:37:41.099Z",
+  "preview": "USER: 데이터 언제 기준이야?\n\nPORTFOLIO (deterministic, as of 2026-09-27T10:37:23.334Z):\n{\"asOf\":\"2026-09-27T10:37:23.334Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"typ",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"summary\":\"현재 제공된 포트폴리오 데이터의 기준 시각은 2026-09-27 10:37:23 (UTC)입니다. 단, 이 데이터는 방문자가 직접 입력한 값(미검증)과 일부 목업(fixture) 시세를 섞어 사용한 것이라 실시간 시세와는 차이가 있을 수 있습니다.\",\"evidence\":[{\"kind\":\"portfolio\",\"claim\":\"포트폴리오 스냅샷 기준 시각: 2026-09-27T10:37:23.334Z, 총자산 39,040,386원, 투자가능금액 10,760,000원\",\"source\":\"방문자 직접 입력 (미검증)\",\"asOf\":\"2026-09-27T10:37:23.334Z\"},{\"kind\":\"market\",\"claim\":\"개별 종목의 일일 변동률(dailyChangePct)은 목업 시세 데이터를 사용\",\"source\":\"Mock market data (fixture) (DEMO)\",\"asOf\":\"2026-09-27T10:37:23.334Z\",\"isMock\":true},{\"kind\":\"policy\",\"claim\":\"투자 원칙: 목표 자산성장, 투자기간 10년, 최대손실 20%, 단일종목 15%/섹터 35%/해외비중 70%/최소유동성 10% 한도\",\"source\":\"getInvestmentPolicy\"}],\"alternatives\":[],\"risks\":[{\"title\":\"데이터 신뢰도 한계\",\"description\":\"보유자산 내역은 사용자가 직접 입력한 값으로 계좌 연동 검증이 되지 않았고, 일부 가격 정보는 실제 시세가 아닌 목업(fixture) 데이터입니다. 실제 자산가치·비중과 차이가 있을 수 있습니다.\",\"severity\":\"medium\"}],\"costs\":[],\"policyChecks\":[],\"recommendation\":\"현재 스냅샷은 2026-09-27 10:37(UTC) 기준이며, 정확한 의사결정을 위해서는 실계좌 연동을 통한 검증된 데이터로 갱신하는 것을 권장합니다. 목업 데이터가 포함되어 있으니 실시간 시세와 대조해 확인하세요.\",\"limitations\":[\"보유자산 데이터는 방문자 직접 입력값으로 미검증 상태입니다.\",\"일부 시세(dailyChangePct 등)는 실제 마켓 데이터가 아닌 목업(fixture)입니다.\",\"policy check 코드 결과가 빈 배열([])로 반환되어 위반 여부를 판단할 근거가 없습니다.\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4187,
+        "noCache": 4187,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 886,
+        "text": 886,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 4187,
+        "output_tokens": 886,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4187,
+          "output_tokens": 886,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

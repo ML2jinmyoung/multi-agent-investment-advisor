@@ -1,0 +1,28 @@
+{
+  "recordedAt": "2026-09-27T10:49:46.416Z",
+  "provider": "anthropic",
+  "models": {
+    "orchestratorFallback": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "portfolio": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-5"
+    },
+    "evidence": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-5"
+    },
+    "critic": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-5"
+    },
+    "synthesizer": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-5"
+    }
+  },
+  "cases": "tests/evals/golden.json",
+  "profile": "balanced"
+}

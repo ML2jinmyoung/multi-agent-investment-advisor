@@ -1,0 +1,35 @@
+name: tests-and-evals
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      # LLM path replayed from recorded cassettes: no API keys, no network. Fails on any cassette miss,
+      # routing plan mismatch, or code-grader failure (docs/eval-loop-plan.md §4-3).
+      - name: eval · golden (replay)
+        run: npm run eval -- --mode replay --suite golden --no-judge
+      - name: eval · regression (replay)
+        if: hashFiles('tests/evals/cassettes/manifest.json') != ''
+        run: npm run eval -- --mode replay --suite regression --no-judge
+        continue-on-error: ${{ !contains(github.event.head_commit.message, '[gate-regression]') }}
+      - name: eval · rules baseline (no LLM, report only)
+        run: npm run eval -- --mode rules --suite all
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-reports
+          path: evals/reports/*.md

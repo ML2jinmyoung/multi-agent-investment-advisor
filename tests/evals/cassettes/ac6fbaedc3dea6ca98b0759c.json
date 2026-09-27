@@ -1,0 +1,62 @@
+{
+  "key": "ac6fbaedc3dea6ca98b0759c",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T09:46:05.370Z",
+  "preview": "STATE:\n{\"question\":\"삼성전자 오를까?\",\"summary\":\"'삼성전자 오를까?'는 가격을 예측해 드릴 수 있는 질문이 아닙니다. 대신 현재 포트폴리오 관점에서 삼성전자 노출을 늘리거나 유지하는 것이 투자 원칙에 부합하는지를 점검했습니다. 결론적으로 삼성전자 단일 종목 비중 자체는 한도 내이지만, 기술(Technology) 섹터 전체 비중이 ",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"unsupported_claim\",\"probability\":0.15},{\"id\":\"policy_conflict\",\"probability\":0.85},{\"id\":\"prediction_as_fact\",\"probability\":0.05},{\"id\":\"missing_material_risk\",\"probability\":0.25},{\"id\":\"stale_evidence\",\"probability\":0.2}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 1235,
+        "noCache": 1235,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 80
+      },
+      "raw": {
+        "input_tokens": 1235,
+        "output_tokens": 80,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 1235,
+          "output_tokens": 80,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "diversified",
+  "description": "원칙 위반이 전혀 없는 분산 포트폴리오(기술 섹터 약 23%, 해외 약 42%, 현금 약 38%). NVDA 6.4%라서 500만원 추가 매수는 단일 종목 한도(15%)를 넘기고 100만원은 넘기지 않는다. '위반 없음' 대조 케이스용.",
+  "input": {
+    "holdings": [
+      { "symbol": "NVDA", "quantity": 10, "averagePrice": 120 },
+      { "symbol": "AAPL", "quantity": 5, "averagePrice": 190 },
+      { "symbol": "VOO", "quantity": 8, "averagePrice": 480 },
+      { "symbol": "TSLA", "quantity": 10, "averagePrice": 210 },
+      { "symbol": "005930", "quantity": 20, "averagePrice": 70000 },
+      { "symbol": "069500", "quantity": 100, "averagePrice": 38000 },
+      { "symbol": "152380", "quantity": 600, "averagePrice": 10800 }
+    ],
+    "cashKRW": 12000000,
+    "cashUSD": 3000
+  },
+  "policy": {
+    "objective": "wealth_growth",
+    "horizonYears": 10,
+    "maxDrawdownPct": 20,
+    "limits": { "singleStockPct": 15, "sectorPct": 35, "overseasPct": 70, "minLiquidityPct": 10 },
+    "preferences": { "turnover": "low", "fxRisk": "medium" }
+  }
+}

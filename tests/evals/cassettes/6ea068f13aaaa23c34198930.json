@@ -1,0 +1,62 @@
+{
+  "key": "6ea068f13aaaa23c34198930",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T09:28:32.988Z",
+  "preview": "STATE:\n{\"question\":\"내가 제일 많이 가진 종목은?\",\"summary\":\"현금을 제외하면 보유 종목 중 비중이 가장 큰 것은 VOO(Vanguard S&P 500 ETF)로, 전체 자산의 15.9%(약 619만원)를 차지합니다. 현금(KRW)까지 포함하면 KRW 현금이 20.5%로 가장 크지만 이는 투자 종목이 아닙니다.\",\"recommend",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"unsupported_claim\",\"probability\":0.15},{\"id\":\"policy_conflict\",\"probability\":0.25},{\"id\":\"prediction_as_fact\",\"probability\":0.05},{\"id\":\"missing_material_risk\",\"probability\":0.35},{\"id\":\"stale_evidence\",\"probability\":0.3}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 1119,
+        "noCache": 1119,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 80
+      },
+      "raw": {
+        "input_tokens": 1119,
+        "output_tokens": 80,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 1119,
+          "output_tokens": 80,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

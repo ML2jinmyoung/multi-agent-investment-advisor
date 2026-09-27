@@ -1,0 +1,62 @@
+{
+  "key": "5c2da869c137fb8219a87275",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T09:39:29.961Z",
+  "preview": "STATE:\n{\"question\":\"엔비디아 최근 실적 어때?\",\"summary\":\"엔비디아(NVDA)의 실제 '실적'(매출·영업이익·EPS 등) 관련 데이터는 현재 연결된 도구로 확인되지 않습니다(공시·재무제표 조회 모두 '데이터 없음'). 확인 가능한 것은 가격 흐름과 유의종목 여부, 그리고 이것이 회원님 포트폴리오에 미치는 의미뿐입니다. 최근 3개월 ",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"unsupported_claim\",\"probability\":0.15},{\"id\":\"policy_conflict\",\"probability\":0.05},{\"id\":\"prediction_as_fact\",\"probability\":0.1},{\"id\":\"missing_material_risk\",\"probability\":0.25},{\"id\":\"stale_evidence\",\"probability\":0.85}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 1765,
+        "noCache": 1765,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 80
+      },
+      "raw": {
+        "input_tokens": 1765,
+        "output_tokens": 80,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 1765,
+          "output_tokens": 80,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

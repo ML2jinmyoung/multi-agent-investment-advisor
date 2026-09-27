@@ -22,6 +22,13 @@
       "when": 1790068956355,
       "tag": "0002_portfolio_inputs",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1790068956356,
+      "tag": "0003_run_labels",
+      "breakpoints": true
     }
   ]
 }

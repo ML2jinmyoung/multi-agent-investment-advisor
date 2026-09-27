@@ -1,0 +1,62 @@
+{
+  "key": "d1ee93ad3e08ee0653b8d8d8",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T10:43:18.975Z",
+  "preview": "STATE:\n{\"question\":\"오늘 내 자산에 무슨 일 있었어?\",\"summary\":\"오늘(2026-09-27) 스냅샷 기준, 총자산은 39,040,386원입니다. 미국·기술주 비중 자산이 두드러지게 하락했고, 국내 자산은 대체로 안정적이었습니다. 특히 NVDA -7%, TIGER 미국S&P500 -3.2%, VOO -1.5%, AAPL -1.2%, ",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"unsupported_claim\",\"probability\":0.25},{\"id\":\"policy_conflict\",\"probability\":0.15},{\"id\":\"prediction_as_fact\",\"probability\":0.1},{\"id\":\"missing_material_risk\",\"probability\":0.35},{\"id\":\"stale_evidence\",\"probability\":0.05}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 1449,
+        "noCache": 1449,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 80
+      },
+      "raw": {
+        "input_tokens": 1449,
+        "output_tokens": 80,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 1449,
+          "output_tokens": 80,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

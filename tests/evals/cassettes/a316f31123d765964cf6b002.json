@@ -1,0 +1,62 @@
+{
+  "key": "a316f31123d765964cf6b002",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T09:53:54.441Z",
+  "preview": "STATE:\n{\"question\":\"환율이 10% 떨어지면?\",\"summary\":\"원/달러 환율이 10% 하락(원화 강세)하는 가정 시나리오를 적용하면, 해외자산(USD 현금·VOO·AAPL·NVDA 등)의 원화 환산 가치가 줄어들어 총 평가액이 약 4.8% 감소하는 것으로 계산됩니다. 이는 실제 환율 예측이 아니라 '만약 10% 하락한다면'이라는 가정 기",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"unsupported_claim\",\"probability\":0.15},{\"id\":\"policy_conflict\",\"probability\":0.72},{\"id\":\"prediction_as_fact\",\"probability\":0.25},{\"id\":\"missing_material_risk\",\"probability\":0.35},{\"id\":\"stale_evidence\",\"probability\":0.18}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 1692,
+        "noCache": 1692,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 80
+      },
+      "raw": {
+        "input_tokens": 1692,
+        "output_tokens": 80,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 1692,
+          "output_tokens": 80,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

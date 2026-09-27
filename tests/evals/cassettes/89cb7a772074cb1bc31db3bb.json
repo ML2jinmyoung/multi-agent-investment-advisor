@@ -1,0 +1,79 @@
+{
+  "key": "89cb7a772074cb1bc31db3bb",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T09:41:47.971Z",
+  "preview": "USER: 삼성전자 최근 공시 있어?\n\nPORTFOLIO (as of 2026-09-27T09:41:10.406Z): {\"asOf\":\"2026-09-27T09:41:10.406Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"type\":\"brokerage",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "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"
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"summary\":\"삼성전자(005930)의 최근 공시 여부를 확인하려 했으나, OpenDART 공시 조회 및 최근 재무제표·가격 이력 조회에서 '데이터 없음' 오류가 발생해 실제 공시 유무를 확인하지 못했습니다. 다만 거래소 매수 유의사항(투자경고·단기과열 등)은 현재 없는 것으로 조회되었습니다.\",\"evidence\":[{\"kind\":\"warning\",\"claim\":\"삼성전자(005930)에 대한 거래소 매수 유의사항(투자경고, 단기과열 등)이 현재 없음\",\"source\":\"거래소 유의사항 조회\",\"asOf\":\"조회 시점 기준\"},{\"kind\":\"filing\",\"claim\":\"최근 30일 OpenDART 공시 데이터 조회 시 '데이터 없음' 오류가 반환되어 공시 여부를 확인하지 못함\",\"source\":\"OpenDART 공시 조회\",\"asOf\":\"조회 시점 기준\"},{\"kind\":\"financials\",\"claim\":\"최근 재무제표(매출/영업이익/순이익) 조회 시 '데이터 없음' 오류로 확인하지 못함\",\"source\":\"재무데이터 조회\",\"asOf\":\"조회 시점 기준\"},{\"kind\":\"market\",\"claim\":\"최근 1개월 가격 이력 조회 시 '데이터 없음' 오류로 가격 흐름을 확인하지 못함\",\"source\":\"시세 조회\",\"asOf\":\"조회 시점 기준\"},{\"kind\":\"portfolio\",\"claim\":\"보유 포트폴리오 내 삼성전자(005930) 평가액 3,480,000원, 비중 8.9%, 당일 변동률 +0.8%\",\"source\":\"방문자 직접 입력 (미검증) / Mock market data (fixture) (DEMO)\",\"asOf\":\"2026-09-27T09:41:10.406Z\",\"isMock\":true}],\"alternatives\":[{\"title\":\"아무것도 하지 않음\",\"description\":\"공시·재무·가격 데이터를 확인하지 못한 상태이므로, 신뢰할 수 있는 정보가 확보될 때까지 삼성전자 관련 추가 매매를 보류하는 선택.\"},{\"title\":\"DART 전자공시시스템 직접 확인\",\"description\":\"OpenDART API 오류와 별개로, dart.fss.or.kr에서 삼성전자 공시를 직접 검색해 최신 공시 유무를 확인.\"},{\"title\":\"증권사 HTS/MTS 또는 뉴스 확인\",\"description\":\"거래소 유의사항 조회 결과 외에, 증권사 앱이나 언론 공시 요약을 통해 교차 확인.\"},{\"title\":\"데이터 재조회 후 재요청\",\"description\":\"시스템 오류가 일시적일 수 있으므로, 잠시 후 다시 조회를 요청해 공시/재무/가격 데이터를 재확인.\"}],\"risks\":[{\"title\":\"공시 확인 불가에 따른 정보 공백\",\"description\":\"실제로 공시가 없는 것인지, 조회 시스템 오류로 못 본 것인지 구분할 수 없어 판단 근거가 불완전함.\",\"severity\":\"medium\"},{\"title\":\"재무·가격 데이터 부재\",\"description\":\"최근 실적 및 가격 흐름 데이터가 없어 현재 포지션(비중 8.9%)에 대한 추가 판단이 어려움.\",\"severity\":\"medium\"},{\"title\":\"시장 변동성/거시 변수\",\"description\":\"금리, 환율, 반도체 업황 등 거시 변수는 본 조회 범위에 포함되지 않았으며 별도 확인이 필요함.\",\"severity\":\"low\"}],\"costs\":[],\"policyChecks\":[],\"recommendation\":\"현재 시점에서는 삼성전자에 대한 최신 공시, 재무제표, 가격 이력을 모두 확인하지 못했습니다(툴 오류로 인한 정보 공백이며, 실제 공시 부재를 의미하지 않을 수 있음). 다만 거래소 매수 유의사항은 없는 것으로 확인됩니다. 정책 점검 항목은 제공되지 않았으므로(policyChecks 없음) 위반 여부를 판단할 근거가 없습니다. 이런 정보 공백 상태에서 매수/매도 등 추가 거래를 하지 않는 것도 합리적인 선택입니다. 확실한 판단을 위해서는 DART 직접 확인 또는 데이터 재조회가 필요합니다.\",\"limitations\":[\"최근 30일 공시(OpenDART) 데이터를 조회했으나 '데이터 없음' 오류가 반환되어 공시 여부를 확인하지 못함\",\"최근 재무제표(매출/영업이익/순이익) 조회 시 '데이터 없음' 오류로 확인하지 못함\",\"최근 1개월 가격 이력 조회 시 '데이터 없음' 오류로 가격 흐름을 확인하지 못함\",\"위 세 항목은 tool 오류로 인해 사실 확인이 불가능하며, 실제로 공시나 데이터가 없다는 의미가 아닐 수 있음\",\"포트폴리오 내 시세 데이터 일부는 Mock(DEMO) 데이터이며 실시간 데이터가 아님\",\"정책 점검(policyChecks) 결과가 제공되지 않아 원칙 위반 여부를 판단할 수 없음\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3394,
+        "noCache": 3394,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 2699,
+        "text": 1880,
+        "reasoning": 819
+      },
+      "raw": {
+        "input_tokens": 3394,
+        "output_tokens": 2699,
+        "output_tokens_details": {
+          "thinking_tokens": 819
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3394,
+          "output_tokens": 2699,
+          "output_tokens_details": {
+            "thinking_tokens": 819
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

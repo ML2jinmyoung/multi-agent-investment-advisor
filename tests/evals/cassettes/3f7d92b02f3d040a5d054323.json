@@ -1,0 +1,62 @@
+{
+  "key": "3f7d92b02f3d040a5d054323",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T10:39:21.426Z",
+  "preview": "STATE:\n{\"question\":\"단일 종목 한도 넘은 거 있어?\",\"summary\":\"단일 종목 비중 한도(15%)를 넘는 종목은 없습니다. 코드 점검 결과 가장 비중이 높은 단일 종목은 삼성전자(005930)로 11.7%(한도 15% 이내, 상태 ok)입니다. 다만 이는 개별 종목 이슈는 아니지만, 기술 섹터 비중이 37%로 섹터 한도 35%를 초과(",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"unsupported_claim\",\"probability\":0.15},{\"id\":\"policy_conflict\",\"probability\":0.05},{\"id\":\"prediction_as_fact\",\"probability\":0.08},{\"id\":\"missing_material_risk\",\"probability\":0.25},{\"id\":\"stale_evidence\",\"probability\":0.12}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 1269,
+        "noCache": 1269,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 80
+      },
+      "raw": {
+        "input_tokens": 1269,
+        "output_tokens": 80,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 1269,
+          "output_tokens": 80,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "key": "427253821923b706e0fbb06e",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T09:47:51.632Z",
+  "preview": "USER: NVDA 얼마까지 갈까?\nSYMBOLS: NVDA\n\n관련 종목의 최근 공시, 재무 지표, 최근 가격 흐름, 유의사항, (ETF면) 구성 종목을 tool로 확인하고 근거 목록을 만드세요. tool이 error를 반환하면 그 사실을 limitations에 적습니다.",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "ErsCCpABCBIYAipAqlgavImSAgXPpmbBzFobs7BT0qObrnhilL/rSGwkpHDiiDwjOzF5iLruIai3NLF3rjuyceLoGMH8xdkDnhFNBDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAcXM49UGEgxmeQozoH62yyNqI9MaDMbto1zNLvniFZOZ3yIwN3MfszyVhXZ/DIWg846rAHAfmYzvf9EDH3j3LFyUreNskr/AgPBhhQudpq0v74/aKlhZR4le/uX3yMyRqi/kVo+7EmE25kjUu/hMmW7uygO97wALegNT7QMogidxQVRX4OjOCzcp0oilOqI99ce2TU/L7tuHLPL3kzxrbBosEzIa2HcxpusGW8pWGAE="
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01KdpPVAWNoHMeiQ2Wfns8ks",
+        "toolName": "getRecentFilings",
+        "input": "{\"symbol\":\"NVDA\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01RptSfmJGYFAr8ZZm155pYK",
+        "toolName": "getFinancialStatements",
+        "input": "{\"symbol\":\"NVDA\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01SYMDXxSfrwFGovpKPXqBx1",
+        "toolName": "getPriceHistory",
+        "input": "{\"symbol\":\"NVDA\",\"period\":\"3m\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01PfvYMwC2FCTpS6KKA9x5Q7",
+        "toolName": "getStockWarnings",
+        "input": "{\"symbol\":\"NVDA\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01K28frVk6KfyYEVVQfGyUhk",
+        "toolName": "getQuotes",
+        "input": "{\"symbols\":[\"NVDA\"]}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 2371,
+        "noCache": 2371,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 320,
+        "text": 294,
+        "reasoning": 26
+      },
+      "raw": {
+        "input_tokens": 2371,
+        "output_tokens": 320,
+        "output_tokens_details": {
+          "thinking_tokens": 26
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 2371,
+          "output_tokens": 320,
+          "output_tokens_details": {
+            "thinking_tokens": 26
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

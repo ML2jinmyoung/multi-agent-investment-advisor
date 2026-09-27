@@ -1,0 +1,140 @@
+{
+  "key": "8421e1460d22cc014fe5a718",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T09:45:21.797Z",
+  "preview": "USER: 삼성전자 오를까?\nSYMBOLS: 005930\n\n관련 종목의 최근 공시, 재무 지표, 최근 가격 흐름, 유의사항, (ETF면) 구성 종목을 tool로 확인하고 근거 목록을 만드세요. tool이 error를 반환하면 그 사실을 limitations에 적습니다.",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EsECCpABCBIYAipA4NdOB2b74QKihYUFiI7JaJVu0coBkvIm9IZcLJpPccoxCBBzYnmdbbTicmA0gW9PXvZRyzYDaPQ/w9MIIuX0XzIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAbDL49UGEgx3t0VvSFoR9kv+X7gaDGErKgrUx+00KoQWlSIwgwKfiLmutdP4TJvD6uklJ/HDz55rfmP0SMNhx6i7TakbJyEyRQ0/Wzn5eEj5+V6HKl5972UpZiY0v0kSN6xSKMzvn+RFvHZ1dibyL3NnZlgrRiY6KewKKhJ8xAXD5DUL4OjhHLmSeueSpd0IoSDyWqUfslS5JtjDYKFOKwWP64UszNYjw2HUOxha5v7FzGC1GAE="
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_017z7VTtBjvxjcHcbYjBhTtK",
+        "toolName": "getRecentFilings",
+        "input": "{\"symbol\":\"005930\",\"days\":30}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01J8QwR9ECAcznN9YPCsv9dN",
+        "toolName": "getFinancialStatements",
+        "input": "{\"symbol\":\"005930\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01292R6Td2EmgDgKK6vWmzWc",
+        "toolName": "getPriceHistory",
+        "input": "{\"symbol\":\"005930\",\"period\":\"1m\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_013Rm5boMpjnvcNu2PXg6iwG",
+        "toolName": "getStockWarnings",
+        "input": "{\"symbol\":\"005930\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_016zd5s2yEXoBMajiXtVJeG1",
+        "toolName": "getQuotes",
+        "input": "{\"symbols\":[\"005930\"]}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 2366,
+        "noCache": 2366,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 331,
+        "text": 304,
+        "reasoning": 27
+      },
+      "raw": {
+        "input_tokens": 2366,
+        "output_tokens": 331,
+        "output_tokens_details": {
+          "thinking_tokens": 27
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 2366,
+          "output_tokens": 331,
+          "output_tokens_details": {
+            "thinking_tokens": 27
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

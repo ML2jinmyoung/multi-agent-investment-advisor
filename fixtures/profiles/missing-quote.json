@@ -1,0 +1,19 @@
+{
+  "name": "missing-quote",
+  "description": "fixture 시세가 없는 종목(AVGO)을 보유. fixture(DEMO) 시장 모드에서는 매입가로 대체 평가하되 '최신 시세를 확인하지 못했습니다' 경고가 붙어야 하고, 실시간 모드에서는 분석을 보류해야 한다.",
+  "input": {
+    "holdings": [
+      { "symbol": "NVDA", "quantity": 5, "averagePrice": 120 },
+      { "symbol": "AVGO", "quantity": 3, "averagePrice": 900 }
+    ],
+    "cashKRW": 2000000,
+    "cashUSD": 0
+  },
+  "policy": {
+    "objective": "wealth_growth",
+    "horizonYears": 10,
+    "maxDrawdownPct": 20,
+    "limits": { "singleStockPct": 15, "sectorPct": 35, "overseasPct": 70, "minLiquidityPct": 10 },
+    "preferences": { "turnover": "low", "fxRisk": "medium" }
+  }
+}

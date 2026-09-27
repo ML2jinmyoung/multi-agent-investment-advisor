@@ -1,0 +1,62 @@
+{
+  "key": "9f6f8a1e60be427eb20fd6a9",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T09:29:45.597Z",
+  "preview": "STATE:\n{\"question\":\"내 포트폴리오에서 미국 주식 비중이 얼마야?\",\"summary\":\"제공된 스냅샷 기준으로 미국(달러 표시) 자산 비중은 총 48.4%입니다. 이는 미국 상장 ETF·개별주뿐 아니라 국내 상장 미국 추종 ETF, USD 현금까지 포함한 수치입니다.\",\"recommendation\":\"현재 미국 관련 비중(현금 포함 48.4%",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"unsupported_claim\",\"probability\":0.15},{\"id\":\"policy_conflict\",\"probability\":0.05},{\"id\":\"prediction_as_fact\",\"probability\":0.1},{\"id\":\"missing_material_risk\",\"probability\":0.25},{\"id\":\"stale_evidence\",\"probability\":0.2}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 1166,
+        "noCache": 1166,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 80
+      },
+      "raw": {
+        "input_tokens": 1166,
+        "output_tokens": 80,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 1166,
+          "output_tokens": 80,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

@@ -43,3 +43,6 @@ next-env.d.ts
 # local
 data/
 .env
+
+# eval reports: keep the markdown summaries, not the raw json
+evals/reports/*.json

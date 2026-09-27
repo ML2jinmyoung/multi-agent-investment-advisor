@@ -1,0 +1,62 @@
+{
+  "key": "34986c1ce300f7feafe33fa5",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T10:00:21.405Z",
+  "preview": "STATE:\n{\"question\":\"기술주가 20% 빠지는 경우 손실은?\",\"summary\":\"‘기술주 20% 하락’은 예측이 아니라 가정 시나리오입니다. 이 가정을 현재 보유 포트폴리오에 적용한 결정론적 시뮬레이션 결과, 총 평가액이 39,040,386원 → 36,152,369원으로 약 2,888,017원(약 7.4%) 감소하는 것으로 계산됩니다. 이는 ",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"unsupported_claim\",\"probability\":0.15},{\"id\":\"policy_conflict\",\"probability\":0.25},{\"id\":\"prediction_as_fact\",\"probability\":0.1},{\"id\":\"missing_material_risk\",\"probability\":0.35},{\"id\":\"stale_evidence\",\"probability\":0.05}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 1657,
+        "noCache": 1657,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 80
+      },
+      "raw": {
+        "input_tokens": 1657,
+        "output_tokens": 80,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 1657,
+          "output_tokens": 80,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

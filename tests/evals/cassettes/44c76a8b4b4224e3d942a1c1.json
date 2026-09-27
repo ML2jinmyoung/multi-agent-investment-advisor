@@ -1,0 +1,79 @@
+{
+  "key": "44c76a8b4b4224e3d942a1c1",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T09:41:19.831Z",
+  "preview": "USER: 삼성전자 최근 공시 있어?\nSYMBOLS: 005930\n\n관련 종목의 최근 공시, 재무 지표, 최근 가격 흐름, 유의사항, (ETF면) 구성 종목을 tool로 확인하고 근거 목록을 만드세요. tool이 error를 반환하면 그 사실을 limitations에 적습니다.",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "Es4CCpABCBIYAipAEdZEYK3YhLyMeporH2PjJ4gE2GnATxCDj+MKI9Zpfqi0sHULHZTTuq2Own3mCDmrYfuwDvaGa+/ud1FUTIIFKjIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAbzJ49UGEgylYCuNpIpEb/UwHAIaDLz/Reil/9eZz/EXiyIwshhhgtGYpc6Dw6/zqSBe5n+qptcW6DtGPwpolWFHQXVzw/7Sz4FnXs/ByR+Ah99LKmuTRwq71xhHbT4eCLrM7XOpiwpOIqGwKLnc35UrHfU29jPPIx0PRX2jFPDd0EFL+/ixha4V1EMECmWDJz4mv1i9DPXN8xed16X8EyR5VPiGBPxu6mjhjlcdEP72VN2zY9RcVDbwdIDIhPSw8RgB"
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"evidence\":[{\"kind\":\"warning\",\"claim\":\"삼성전자(005930)에 대한 거래소 매수 유의사항(투자경고, 단기과열 등)이 현재 없음\",\"source\":\"거래소 유의사항 조회\",\"asOf\":\"조회 시점 기준\"}],\"risks\":[],\"limitations\":[\"최근 30일 공시(OpenDART) 데이터를 조회했으나 '데이터 없음' 오류가 반환되어 공시 여부를 확인하지 못함\",\"최근 재무제표(매출/영업이익/순이익) 조회 시 '데이터 없음' 오류로 확인하지 못함\",\"최근 1개월 가격 이력 조회 시 '데이터 없음' 오류로 가격 흐름을 확인하지 못함\",\"위 세 항목은 tool 오류로 인해 사실 확인이 불가능하며, 실제로 공시나 데이터가 없다는 의미가 아닐 수 있음\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 2845,
+        "noCache": 2845,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 360,
+        "text": 331,
+        "reasoning": 29
+      },
+      "raw": {
+        "input_tokens": 2845,
+        "output_tokens": 360,
+        "output_tokens_details": {
+          "thinking_tokens": 29
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 2845,
+          "output_tokens": 360,
+          "output_tokens_details": {
+            "thinking_tokens": 29
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

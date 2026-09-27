@@ -2,6 +2,7 @@ import { anthropic } from "@ai-sdk/anthropic";
 import { createOpenAI, openai } from "@ai-sdk/openai";
 import { z } from "zod";
 import { getDb, schema } from "@/db";
+import { cassetteMode, recordingModel, replayModel } from "./cassette";
 import { demoFreeModel, isDemo, llmAllowedHere, OPENROUTER_BASE_URL } from "./demo";
 
 export const AGENT_NAMES = ["orchestratorFallback", "portfolio", "evidence", "critic", "synthesizer"] as const;
@@ -28,6 +29,8 @@ const KEY_ENV: Record<Provider, string> = { openai: "OPENAI_API_KEY", anthropic:
 
 /** In the public demo only the free OpenRouter model counts as configured; the owner's other keys are ignored. */
 export function hasProviderKey(provider: Provider): boolean {
+  // eval replay answers from recorded cassettes: no key is needed and none is read
+  if (cassetteMode() === "replay") return true;
   if (isDemo()) return provider === "openrouter" && Boolean(demoFreeModel());
   return Boolean(process.env[KEY_ENV[provider]]);
 }
@@ -56,7 +59,14 @@ export class ModelNotConfiguredError extends Error {}
 
 export function getModel(config: ModelConfig) {
   if (!config.model) throw new ModelNotConfiguredError(`model name not configured for ${config.provider}`);
+  const mode = cassetteMode();
+  if (mode === "replay") return replayModel(config.provider, config.model);
   if (!hasProviderKey(config.provider)) throw new ModelNotConfiguredError(`${config.provider} API key missing`);
+  const live = liveModel(config);
+  return mode === "record" ? recordingModel(live, config.model) : live;
+}
+
+function liveModel(config: ModelConfig) {
   if (config.provider === "openai") return openai(config.model);
   if (config.provider === "anthropic") return anthropic(config.model);
   if (config.provider === "openrouter") return createOpenAI({ baseURL: OPENROUTER_BASE_URL, apiKey: process.env.OPENROUTER_API_KEY, headers: { "X-Title": "My AI PB" } }).chat(config.model);

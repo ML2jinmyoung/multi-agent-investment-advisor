@@ -1,0 +1,62 @@
+{
+  "key": "ffb1b9087774f8716a9d91dc",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T09:30:35.194Z",
+  "preview": "STATE:\n{\"question\":\"NVDA 500만원 더 사면?\",\"summary\":\"NVDA를 500만원 추가 매수하면 단일 종목 비중이 8.3%→21.1%, 기술 섹터 비중이 37%→49.8%로 각각 투자 원칙 한도(15%, 35%)를 초과하는 위반이 발생합니다. 미국·달러 노출도 48.4%→54.2%로 늘어 환위험 선호(medium)에 경고가 뜨며,",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"unsupported_claim\",\"probability\":0.1},{\"id\":\"policy_conflict\",\"probability\":0.05},{\"id\":\"prediction_as_fact\",\"probability\":0.15},{\"id\":\"missing_material_risk\",\"probability\":0.25},{\"id\":\"stale_evidence\",\"probability\":0.2}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 1734,
+        "noCache": 1734,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 80
+      },
+      "raw": {
+        "input_tokens": 1734,
+        "output_tokens": 80,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 1734,
+          "output_tokens": 80,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

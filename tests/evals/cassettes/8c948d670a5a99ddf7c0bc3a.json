@@ -1,0 +1,62 @@
+{
+  "key": "8c948d670a5a99ddf7c0bc3a",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T09:45:18.101Z",
+  "preview": "STATE:\n{\"message\":\"삼성전자 오를까?\",\"hasPortfolio\":true,\"hasInvestmentPolicy\":true,\"symbolsMentioned\":[\"005930\"],\"heldSymbolsMentioned\":[\"005930\"],\"tradeDetected\":null,\"scenarioDetected\":null,\"recentConvers",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.75},{\"id\":\"needs_simulation\",\"probability\":0.05},{\"id\":\"needs_external_evidence\",\"probability\":0.85},{\"id\":\"needs_policy_check\",\"probability\":0.65},{\"id\":\"needs_risk_review\",\"probability\":0.70},{\"id\":\"is_prediction_request\",\"probability\":0.95}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 755,
+        "noCache": 755,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 96
+      },
+      "raw": {
+        "input_tokens": 755,
+        "output_tokens": 96,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 755,
+          "output_tokens": 96,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

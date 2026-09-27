@@ -1,0 +1,62 @@
+{
+  "key": "7eb0398d56c6a6760ad8eb3e",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T10:39:34.071Z",
+  "preview": "STATE:\n{\"question\":\"투자 가능 금액 얼마야?\",\"summary\":\"현재 투자 가능 금액(위탁계좌 기준, KRW 환산)은 10,760,000원입니다.\",\"recommendation\":\"투자 가능 금액은 10,760,000원입니다. 신규 매수 전에는 최신 계좌 잔고를 다시 확인하시길 권합니다.\",\"evidence\":[\"투자 가능 금액 10,76",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"unsupported_claim\",\"probability\":0.15},{\"id\":\"policy_conflict\",\"probability\":0.05},{\"id\":\"prediction_as_fact\",\"probability\":0.02},{\"id\":\"missing_material_risk\",\"probability\":0.25},{\"id\":\"stale_evidence\",\"probability\":0.08}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 790,
+        "noCache": 790,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 80
+      },
+      "raw": {
+        "input_tokens": 790,
+        "output_tokens": 80,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 790,
+          "output_tokens": 80,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

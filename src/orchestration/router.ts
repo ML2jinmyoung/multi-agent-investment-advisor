@@ -55,7 +55,8 @@ export function parseMessage(message: string, heldSymbols: string[] = [], histor
   let trade: ParsedMessage["trade"];
   const buy = /(매수|살까|사면|사고|사는|사도|더\s*사|사볼|\bbuy\b)/i.test(message);
   const sell = /(매도|팔까|팔면|팔고|팔아|정리할까|\bsell\b)/i.test(message);
-  const qty = message.match(/(\d+)\s*주\b/);
+  // F-004: JS \b treats Hangul as a non-word char, so "5주 팔까" never matched; exclude only 주식/주간/주일 and alphanumerics after 주
+  const qty = message.match(/(\d+)\s*주(?![식간일A-Za-z0-9])/);
   if (list.length && (buy || sell)) {
     const amount = parseAmountKRW(message) ?? (/절반|반만/.test(message) ? previous?.trade?.amountKRW && previous.trade.amountKRW / 2 : undefined);
     const quantity = qty ? Number(qty[1]) : (/절반|반만/.test(message) ? previous?.trade?.quantity && previous.trade.quantity / 2 : undefined);

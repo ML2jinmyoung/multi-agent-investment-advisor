@@ -1,0 +1,21 @@
+{
+  "name": "concentrated-nvda",
+  "description": "NVDA 단일 종목 비중 약 39%로 이미 한도를 넘긴 상태. 추가 매수·기술주 섹터·해외 비중 위반이 동시에 나온다.",
+  "input": {
+    "holdings": [
+      { "symbol": "NVDA", "quantity": 40, "averagePrice": 120 },
+      { "symbol": "QQQ", "quantity": 10, "averagePrice": 450 },
+      { "symbol": "005930", "quantity": 30, "averagePrice": 70000 },
+      { "symbol": "069500", "quantity": 50, "averagePrice": 38000 }
+    ],
+    "cashKRW": 3000000,
+    "cashUSD": 500
+  },
+  "policy": {
+    "objective": "wealth_growth",
+    "horizonYears": 10,
+    "maxDrawdownPct": 20,
+    "limits": { "singleStockPct": 15, "sectorPct": 35, "overseasPct": 70, "minLiquidityPct": 10 },
+    "preferences": { "turnover": "low", "fxRisk": "medium" }
+  }
+}

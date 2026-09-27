@@ -1,0 +1,79 @@
+{
+  "key": "ee6a0dec5b00945e8506fcc8",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T09:49:13.260Z",
+  "preview": "USER: NVDA 얼마까지 갈까?\n\nVERIFICATION FLAGS: {\"unsupported_claim\":0.15,\"policy_conflict\":0.05,\"prediction_as_fact\":0.1,\"missing_material_risk\":0.35,\"stale_evidence\":0.7}\n\nDATA (as of 2026-09-27T09:47:46.4",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "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"
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"problems\":[{\"kind\":\"stale_data\",\"detail\":\"시세/가격이력 근거(evidence)의 asOf가 2026-09-22인데 포트폴리오 및 오늘자 dailyChangePct(-7%)는 2026-09-27 기준입니다. 5일의 시차가 있음에도 두 시점의 -7% 수치를 같은 사건처럼 병기해 마치 최신 확인된 사실처럼 보이게 합니다. '최근 시세는 5일 전 기준(2026-09-22)이며 오늘(2026-09-27) 포트폴리오상 -7% 변동은 별도로 재확인이 필요하다'는 점을 명시해야 합니다.\"},{\"kind\":\"unsupported_claim\",\"detail\":\"'ETF look-through 포함 실질 노출 3,243,187원(8.3%)'이라는 수치는 VOO/360750 ETF 내부의 NVDA 편입비중 데이터가 DATA에 전혀 없는데도 제시되었습니다. 근거 없는 계산이므로 삭제하거나 'ETF 내 NVDA 편입비중 데이터 미제공으로 look-through 노출은 계산할 수 없음'으로 수정해야 합니다.\"},{\"kind\":\"unsupported_claim\",\"detail\":\"'단일종목 한도(15%)', '섹터 한도(35%)'라는 구체적 정책 수치가 제공된 policyChecks(빈 배열)나 DATA 어디에도 없습니다. 정책 임계값을 임의로 만들어낸 것이므로, 실제 정책 데이터가 없다는 사실을 그대로 밝히고 임의 수치는 제거해야 합니다.\"},{\"kind\":\"policy_inconsistency\",\"detail\":\"policyChecks가 빈 배열([])인데 '정책상 섹터 한도(35%)에 근접·초과 가능성' 및 '단일종목 한도(15%) 이내'라는 정책 판단을 내리고 있습니다. 정책 체크가 실행되지 않은 상태에서 정책 준수 여부를 단정하는 것은 모순입니다. 'checkInvestmentPolicy 결과가 없어 정책 준수 여부는 확인되지 않았다'로 정정해야 합니다.\"},{\"kind\":\"missing_risk\",\"detail\":\"NVDA(-7%)뿐 아니라 VOO(-1.5%), 360750(-3.2%), AAPL(-1.2%), 000660(-1%) 등 미국/기술 관련 자산이 동시에 하락 중입니다. 이는 개별 종목 이슈가 아니라 시장 전반 조정 가능성을 시사하는 중요한 맥락인데 초안에 언급이 없습니다.\"}],\"verdict\":\"revise\"}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4293,
+        "noCache": 4293,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 3389,
+        "text": 958,
+        "reasoning": 2431
+      },
+      "raw": {
+        "input_tokens": 4293,
+        "output_tokens": 3389,
+        "output_tokens_details": {
+          "thinking_tokens": 2431
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4293,
+          "output_tokens": 3389,
+          "output_tokens_details": {
+            "thinking_tokens": 2431
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

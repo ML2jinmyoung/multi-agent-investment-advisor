@@ -1,0 +1,88 @@
+{
+  "key": "966a1f43aad23c2d488c12dc",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T09:32:56.895Z",
+  "preview": "USER: 삼성전자 1000만원 매수하면 원칙 위반이야?\n\nPORTFOLIO (deterministic, as of 2026-09-27T09:32:40.154Z):\n{\"asOf\":\"2026-09-27T09:32:40.154Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "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"
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_015q5Nrb5k7bsTZDEPP7hNqT",
+        "toolName": "getInvestmentPolicy",
+        "input": "{}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4280,
+        "noCache": 4280,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 696,
+        "text": 34,
+        "reasoning": 662
+      },
+      "raw": {
+        "input_tokens": 4280,
+        "output_tokens": 696,
+        "output_tokens_details": {
+          "thinking_tokens": 662
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4280,
+          "output_tokens": 696,
+          "output_tokens_details": {
+            "thinking_tokens": 662
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

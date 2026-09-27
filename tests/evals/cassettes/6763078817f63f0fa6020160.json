@@ -1,0 +1,70 @@
+{
+  "key": "6763078817f63f0fa6020160",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T10:39:32.851Z",
+  "preview": "USER: 투자 가능 금액 얼마야?\n\nPORTFOLIO (deterministic, as of 2026-09-27T10:39:21.449Z):\n{\"asOf\":\"2026-09-27T10:39:21.449Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"ty",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"summary\":\"현재 투자 가능 금액(위탁계좌 기준, KRW 환산)은 10,760,000원입니다.\",\"evidence\":[{\"kind\":\"portfolio\",\"claim\":\"투자 가능 금액 10,760,000원 (KRW 현금 8,000,000원 + USD 현금 2,760,000원 환산 포함)\",\"source\":\"getBuyingPower / getPortfolioSnapshot\",\"asOf\":\"2026-09-27T10:39:21.449Z\",\"isMock\":false}],\"alternatives\":[],\"risks\":[{\"title\":\"데이터 출처 미검증\",\"description\":\"포트폴리오 데이터가 '방문자 직접 입력(미검증)' 및 Mock market data(fixture) 소스를 포함하고 있어 실제 잔고와 차이가 있을 수 있습니다.\",\"severity\":\"low\"}],\"costs\":[],\"policyChecks\":[],\"recommendation\":\"투자 가능 금액은 10,760,000원입니다. 신규 매수 전에는 최신 계좌 잔고를 다시 확인하시길 권합니다.\",\"limitations\":[\"일부 시장 데이터는 Mock(fixture) 데이터이며, 보유자산 입력값은 방문자 직접 입력으로 미검증 상태입니다.\",\"환율 변동에 따라 USD 현금의 KRW 환산액은 달라질 수 있습니다.\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4182,
+        "noCache": 4182,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 475,
+        "text": 475,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 4182,
+        "output_tokens": 475,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4182,
+          "output_tokens": 475,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

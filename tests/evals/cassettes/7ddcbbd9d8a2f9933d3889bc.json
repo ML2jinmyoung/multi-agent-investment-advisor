@@ -1,0 +1,88 @@
+{
+  "key": "7ddcbbd9d8a2f9933d3889bc",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T09:59:43.241Z",
+  "preview": "USER: 기술주가 20% 빠지는 경우 손실은?\n\nPORTFOLIO (deterministic, as of 2026-09-27T09:59:36.526Z):\n{\"asOf\":\"2026-09-27T09:59:36.526Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EoYICpABCBIYAipA2IZ0mj8toVWbazUXLOH17Fseg6gP2KSZXB16Kq8IcO9ZGtUFbFsWcNTIpFiKsdWenx/du4W+px4BnX0DakZ84TIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAY/S49UGEgwqqApmYhF+DqQmWIwaDEEbQj9d0k+p1H0w4iIweAzeMeBnWLHewRZmw6NpLS4oJms4SaY1f9O/a2YLY1M+J5McmIg+lfS0jpxdZS8wKqIGLS7ybDaSL0E+YuXuLgkSZ9WKuQGMxsSH5BhW5BDX6coaUg1JmrK+ge6mtugeVYJTCbSN2kRNBJPVWGVJWe3YNuUxBDBQ2ybPz7A7tmd9UORR5QqcWfGryen9G57KpL27PLGnrAhNG+57t0xD3QSh0+yh3I/v//85YJ/8ySh9y0y06AnpjMxA1iy4/i7KFgN+ReCCrP/hUM3YJFV+JF297WcYUGQZK5SvrOYN6Voer3s1rLxvF4MAPZsaSIXN+WHtUxQUYimOkLm0Jh2YbPNdEznh0dWt0T6tiF/oa2VQCDbLUsZbkBlP0wHMh+GCFd/X85gOsv9AfYfFHb2LH7y2M96FKQcWE+FxFGq92bEM0zTeV3/oGLqeo6iCHhIrSAlnGFefo+6ogOOO/ww+PHTV5S8szagJhf6XG6HaXtHWhd2ihArCPJI/jUQz35fahO0UzbrguIl2G7jH4n7POBtuucwC0He8iKIMLT/NCUj0okj9eWEsTHByWfhpcnqdryGrfWjvuyqhzEAh1jCOiufblEAxESsqN6BqhOWUBoJBCyXxqCYyvDp+tsVPIURUHiKDCledNgrcp+dlVvc9N3HjTgUGStP1ltOvj1ZYbB7sUe4hd3HBucQ57zEwKIgrWmZcdzS1cz1y9VtJOjzZJ7RbfUdGaz2dKOjtz6NX3nyzU8N+cf1XV5jqREBctsj1tipGWobHD99QyFNUuhfb6+o7W1xzWys222bVH+Cv3diBkXFhCg9cHFftkxbha876neYObtJhS8UFbbKCSiIfZU7bEP6m0TahpQOVBmmQfIdW4Md2WsJg+rphNRGQl8OzA2F31reM022D0nyCpMteFCEaX+Z8VBAUPKNnqM2gyg749vck8v3iJnX3BxUYkmyf/6ogxUcxeoZZR7rn4s78ucOfPZmHQT8LBoKUgkWwGOkx9KZdPSc/wS4nM4RbkhFAHOh2UGIUwVkCwoI6DlNKqioIHT4UtGJM8bTh8ofzL0ctkOZoR+so4gpuGENWrOchiIIvBpaKfn1nG64MfS39NC71JjNAw2/711yZRrDx0Lo8jlMnihgB"
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01KqP76TR2U3XPzgpuDGRejE",
+        "toolName": "getInvestmentPolicy",
+        "input": "{}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4402,
+        "noCache": 4402,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 325,
+        "text": 35,
+        "reasoning": 290
+      },
+      "raw": {
+        "input_tokens": 4402,
+        "output_tokens": 325,
+        "output_tokens_details": {
+          "thinking_tokens": 290
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4402,
+          "output_tokens": 325,
+          "output_tokens_details": {
+            "thinking_tokens": 290
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

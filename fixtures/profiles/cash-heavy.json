@@ -1,0 +1,19 @@
+{
+  "name": "cash-heavy",
+  "description": "현금 약 90%, 자본 보존 목적. 위험자산 한도 30%. 매수 여력이 크고 원칙상 보수적이어야 하는 사용자.",
+  "input": {
+    "holdings": [
+      { "symbol": "069500", "quantity": 20, "averagePrice": 38000 },
+      { "symbol": "152380", "quantity": 100, "averagePrice": 10800 }
+    ],
+    "cashKRW": 20000000,
+    "cashUSD": 0
+  },
+  "policy": {
+    "objective": "capital_preservation",
+    "horizonYears": 3,
+    "maxDrawdownPct": 10,
+    "limits": { "singleStockPct": 10, "sectorPct": 30, "overseasPct": 40, "riskyAssetPct": 30, "minLiquidityPct": 30 },
+    "preferences": { "turnover": "low", "fxRisk": "low" }
+  }
+}

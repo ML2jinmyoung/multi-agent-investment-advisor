@@ -1,0 +1,88 @@
+{
+  "key": "221a501304f130762be79e21",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T09:47:54.330Z",
+  "preview": "USER: NVDA 얼마까지 갈까?\n\nPORTFOLIO (deterministic, as of 2026-09-27T09:47:46.451Z):\n{\"asOf\":\"2026-09-27T09:47:46.451Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"ty",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EuwGCpABCBIYAipA9oybhpP7PdWgfssZmIMN143kWZmNJ4nA3iblDOAD1llkTa4wBZi1EPbYoMRVuLUR7yJ7Rabsc6v75ye+2ScXVDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAcnM49UGEgx57+mwZn0th93S6oUaDIiVEQPsysJdEee00iIwKj0924L0MXTD5t8prca7iixktfCF7FFXLAoAWnMolqeOYbLHrhjltfkOxZnKqwDbKogF9MC1nfOv7nAAbVOSaRdvgTlbGm9e/LjRA4LjE/bx+EuACBHqgw+PEdKgSXSm+X+fCf2RsLXptNudgDVJ21zr9yb17O3yJG6ntkDVogD+OAgJlvDI8OZ5kNTSmJ2KZotKoTtDb08jdP2GZ0evDTMmZsR23xJdoQufYn8myy2drJTGQCAdAFDkHoJPcJdZ/zsUxRbKz2uPYnIPpv84wAcl82C3KIUFI56l8XXuOnyNZqv0rOiPg7GcK63EnIlPXfkco1KqVKaF5pAqRQiOSzYp4BlL43j2DIwe3ljgM5Dt92+AycD5sPJgQlz7ZLomlHsqyWR7SBVNh6zaFFWDfofphDqpt1ztzkqlGd4VxwAWLtDVmrUn0XeIDCr88R7OslzAs8/1lV+7DxlbJ8YSGnjq8cfAsxjUEssSZOwGvoJjPBia8HKUgCR4ViPh4ZnI8qWAT96blsc8jPLvNFq3l2EyIiurIXHHgjKvB4LxI2cuhHUmRnDEfvdUJvAwukIrh5JksGGmW8Zk9Lljhoe+TaMyiZdEGE6/IDGtmrkC6/ctOusvMzjoqxd45WM+kHfui8Hnalu5JpabVF6W+COLALJgta/StSYH8cy7s0hDHeD9hs9dRyQ9M3o6P9CrwMnx1GGwN2UbXC9JsTgsrBVqJyAzqcc44jcit5/LnqnuaVHy/9DgtqWj27ayEKwkDDY6dcClmnK4l1/5IakrK457AxAs3NCpe7mY+CfX0gsu5LG86jWkPN/zJMVmJ8aSfyYctVwHwuFJlf15YJCsKJb8fInyBCzJpVo6ucruh2kPhKrIZfZn901wSKIXmlD5U55z7OkB5yNj6QMzeQZeei7D3SuVtXczNeia5zWCGAE="
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01WjsFdwgW2uu7sr3XPM5pzZ",
+        "toolName": "getExposure",
+        "input": "{\"symbol\":\"NVDA\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3673,
+        "noCache": 3673,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 355,
+        "text": 54,
+        "reasoning": 301
+      },
+      "raw": {
+        "input_tokens": 3673,
+        "output_tokens": 355,
+        "output_tokens_details": {
+          "thinking_tokens": 301
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3673,
+          "output_tokens": 355,
+          "output_tokens_details": {
+            "thinking_tokens": 301
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

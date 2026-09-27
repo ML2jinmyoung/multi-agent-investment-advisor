@@ -1,0 +1,70 @@
+{
+  "key": "9ce0a376a8cb9c32af297c20",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T10:46:26.890Z",
+  "preview": "USER: 내 USD 노출이 얼마나 돼?\n\nPORTFOLIO (deterministic, as of 2026-09-27T10:45:54.053Z):\n{\"asOf\":\"2026-09-27T10:45:54.053Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"summary\":\"현재 포트폴리오에서 통화 기준 USD 노출은 총자산 39,040,386원 중 48.4%(약 1,889만~1,891만원 수준)입니다. 국가 기준으로도 US 비중이 48.4%로 동일하게 잡혀 있습니다.\",\"evidence\":[{\"kind\":\"portfolio\",\"claim\":\"byCurrencyPct 기준 USD 노출 48.4%, KRW 51.6%\",\"source\":\"방문자 직접 입력 (미검증)\",\"asOf\":\"2026-09-27T10:45:54.053Z\"},{\"kind\":\"portfolio\",\"claim\":\"USD 노출을 구성하는 주요 포지션: VOO 6,190,128원(15.9%), TIGER 미국S&P500(360750) 4,200,000원(10.8%), AAPL 3,244,380원(8.3%), USD 현금 2,760,000원(7.1%), NVDA 2,515,878원(6.4%) → 합계 약 18,910,386원\",\"source\":\"방문자 직접 입력 (미검증)\",\"asOf\":\"2026-09-27T10:45:54.053Z\"},{\"kind\":\"portfolio\",\"claim\":\"byCountryPct 기준 US 48.4%, KR 51.6%\",\"source\":\"방문자 직접 입력 (미검증)\",\"asOf\":\"2026-09-27T10:45:54.053Z\"},{\"kind\":\"etf\",\"claim\":\"ETF look-through 결과, VOO·360750·KODEX200 등 ETF 내부에도 AAPL·NVDA 등 미국 기업이 포함되어 있어 개별종목 실질 노출(예: AAPL 9.9%, NVDA 8.3%)에는 ETF 내 간접 노출이 더해짐. 다만 이는 '종목' 관점이며 위 USD 통화 비중과는 별개 지표\",\"source\":\"Mock market data (fixture) (DEMO)\"}],\"alternatives\":[{\"title\":\"환노출 축소 옵션\",\"description\":\"USD 현금 일부를 KRW로 환전하거나, 미국 ETF 비중을 국내 원화자산으로 일부 재배분하면 통화 노출을 낮출 수 있습니다. 다만 이는 실행 여부를 판단하는 것이지 매수/매도 종목 추천은 아닙니다.\"},{\"title\":\"현 상태 유지\",\"description\":\"해외(US) 비중 48.4%는 정책상 해외한도 70% 이내이므로, 현재 수준을 유지하며 다른 지표(단일종목·섹터)를 우선 점검하는 방법도 있습니다.\"}],\"risks\":[{\"title\":\"환율 변동 리스크\",\"description\":\"USD 노출이 총자산의 48.4%에 달해, 원/달러 환율 변동이 포트폴리오 평가액에 미치는 영향이 큽니다. 투자성향(fxRisk: medium)과 비교해 노출 수준이 다소 높은 편인지 점검이 필요합니다.\",\"severity\":\"medium\"},{\"title\":\"통화-종목 노출 혼동 주의\",\"description\":\"360750(TIGER 미국S&P500)은 원화로 거래되지만 기초자산이 달러 표시 자산이라 환노출이 발생합니다. 통화 비중(48.4%)과 개별 종목 비중은 다른 개념이므로 혼동하지 않아야 합니다.\",\"severity\":\"low\"}],\"costs\":[],\"policyChecks\":[],\"recommendation\":\"USD(달러) 노출은 48.4%로 정책상 해외자산 한도(70%) 이내이지만, 투자자님의 환리스크 선호(medium)를 고려할 때 이 수치가 본인의 감내 수준과 맞는지 스스로 점검해보시길 권합니다. 특정 종목 매매를 추천하기보다는, 노출 축소가 필요하다고 판단되면 USD 현금 환전 또는 해외 ETF 비중 조정 등을 고려해볼 수 있습니다.\",\"limitations\":[\"policyChecks(코드 점검) 결과가 빈 배열로 반환되어 현재 정책 위반 여부를 코드 기준으로 확인할 수 없었습니다.\",\"포트폴리오 데이터 출처가 '방문자 직접 입력 (미검증)'으로, 실제 계좌 데이터와 다를 수 있습니다.\",\"ETF 내부 구성 데이터는 일부 'Mock(DEMO)' 데이터이며 실제 구성과 다를 수 있습니다.\",\"환율 자체의 향후 방향에 대한 예측은 포함하지 않았습니다.\"]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 5630,
+        "noCache": 5630,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 1588,
+        "text": 1588,
+        "reasoning": 0
+      },
+      "raw": {
+        "input_tokens": 5630,
+        "output_tokens": 1588,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 5630,
+          "output_tokens": 1588,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

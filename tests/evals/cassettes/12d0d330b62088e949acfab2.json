@@ -1,0 +1,88 @@
+{
+  "key": "12d0d330b62088e949acfab2",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T09:51:59.410Z",
+  "preview": "USER: 내 ETF 안에 엔비디아가 얼마나 들어있어?\n\nPORTFOLIO (deterministic, as of 2026-09-27T09:51:45.582Z):\n{\"asOf\":\"2026-09-27T09:51:45.582Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "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"
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01FTwNWYPhJCDYhzJUk9j15A",
+        "toolName": "getInvestmentPolicy",
+        "input": "{}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4243,
+        "noCache": 4243,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 708,
+        "text": 34,
+        "reasoning": 674
+      },
+      "raw": {
+        "input_tokens": 4243,
+        "output_tokens": 708,
+        "output_tokens_details": {
+          "thinking_tokens": 674
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4243,
+          "output_tokens": 708,
+          "output_tokens_details": {
+            "thinking_tokens": 674
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

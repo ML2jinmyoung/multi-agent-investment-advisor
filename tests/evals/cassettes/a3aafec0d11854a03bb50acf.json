@@ -1,0 +1,88 @@
+{
+  "key": "a3aafec0d11854a03bb50acf",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T09:38:31.476Z",
+  "preview": "USER: 엔비디아 최근 실적 어때?\n\nPORTFOLIO (deterministic, as of 2026-09-27T09:38:25.145Z):\n{\"asOf\":\"2026-09-27T09:38:25.145Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"t",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EvwGCpABCBIYAipAU0tEluAAQjFs1JJYdiWkl05PpZyutC2IYCU4GuHP+7dSX+S0+mvLMnF4C9eyuym3hxijx0skq1AG++0UGelfKDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAZfI49UGEgx7CDkbpTa9WQpHyngaDL6yPdzr9O42a4d4lSIwiFyp0Eg10BMoETDcTeaKtjSpCOqsjRIznrtSnwNNQiJW5j+1f8gQWJ0iNg9ozktgKpgFxYPSsZHKFHrMMpUJlyJjci9HiSieUPbvSu+diLd44iWLgbpYZblu3MD9pn3n4iqDI0wwMBW6gi2Cp6etBVgO+uFFFm1jYJqYo7OHkK5uD7D4fCF+eIlaKsbqK1u0CYrLrIvGGFuburQrYD8pXmHcSO2hcm8EK0Dd2bmlIR9wRHGSz4APYWIuxcPs7nyQsZvatXYG/JGDvSFa82K7T+9gqaH0jYD7AZvEIMDWXz1GZVlslhXdPNczAEKC9ZHdE++wlo1c97RGaGWvJbEOtGUWx+QYuXH0pIC8xoGmCH7GthQs7svi8YIzMoc80d99n8MO8I/bd4GrgM4cAI0QCNCp4j5bir8IsqpcRDcjiCT5IoKPkdgd6+fiQ8xyDyp0g/5RWvLcAfpJ5WqJ8o1yugd8VlIJflD4g5Yepo1DvzZmUIOZ0sRSUChEuZRbL6/WC6EcekW3McRPO6PHfNDVoFD54QbGm2/jdZziRma6Xs+MfMtAu0/wB5DoUrH7q1NofRMf/95K0VHnD1EiqOvBWbSjjQLFWfE/wjyfuwXcrimOfA2uuSKT4Eeku+lGp6uBdWpcC0qBjqRiq2e4AX+cqBQUyT449ahbJxLBlLico3+LiKCJE0wme2GNeG6dnVihrebUL41tK8HyR3Td7iOxaYLzT1EgPZnQun1hbJWl6NDCzUDMbWcH0eQ0jvv4pXbEa2NzBH9Vdaqrh4kxGG9PyMJM4x+sGUQ8IkYfhZvMAzyR5yn74WE4yyo1XfRSCbWZqvlQuJ+EKGcRFB7SPear/dDwVAlbeEtbxjq0wfOEEK4jrAfSNAt6kPxqwvbtNvV6X+D26su8m8eW1WQle6vtDxsjXbamgkIi/mNH5avn4Y3Q48oft3wveErA2RgB"
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01HmAw9eBHsuNECS9wU2wGJ4",
+        "toolName": "getExposure",
+        "input": "{\"symbol\":\"NVDA\"}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 3674,
+        "noCache": 3674,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 297,
+        "text": 55,
+        "reasoning": 242
+      },
+      "raw": {
+        "input_tokens": 3674,
+        "output_tokens": 297,
+        "output_tokens_details": {
+          "thinking_tokens": 242
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 3674,
+          "output_tokens": 297,
+          "output_tokens_details": {
+            "thinking_tokens": 242
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

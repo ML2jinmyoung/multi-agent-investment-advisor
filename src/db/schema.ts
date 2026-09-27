@@ -87,3 +87,17 @@ export const portfolioInputs = sqliteTable("portfolio_inputs", {
   json: text("json").notNull(),
   updatedAt: text("updated_at").notNull(),
 });
+
+/** Human / judge / code verdicts on a run, per rubric key. `labeler` is `human:<name>`, `judge:<model>` or `code`. */
+export const runLabels = sqliteTable("run_labels", {
+  id: text("id").primaryKey(),
+  runId: text("run_id")
+    .notNull()
+    .references(() => agentRuns.id),
+  caseId: text("case_id"),
+  rubricKey: text("rubric_key").notNull(),
+  pass: integer("pass", { mode: "boolean" }).notNull(),
+  labeler: text("labeler").notNull(),
+  note: text("note"),
+  createdAt: text("created_at").notNull(),
+});

@@ -1,0 +1,62 @@
+{
+  "key": "78315cab8c2f2919530ce141",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T10:37:42.620Z",
+  "preview": "STATE:\n{\"question\":\"데이터 언제 기준이야?\",\"summary\":\"현재 제공된 포트폴리오 데이터의 기준 시각은 2026-09-27 10:37:23 (UTC)입니다. 단, 이 데이터는 방문자가 직접 입력한 값(미검증)과 일부 목업(fixture) 시세를 섞어 사용한 것이라 실시간 시세와는 차이가 있을 수 있습니다.\",\"recommendation",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"unsupported_claim\",\"probability\":0.15},{\"id\":\"policy_conflict\",\"probability\":0.25},{\"id\":\"prediction_as_fact\",\"probability\":0.05},{\"id\":\"missing_material_risk\",\"probability\":0.35},{\"id\":\"stale_evidence\",\"probability\":0.75}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 1103,
+        "noCache": 1103,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 80
+      },
+      "raw": {
+        "input_tokens": 1103,
+        "output_tokens": 80,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 1103,
+          "output_tokens": 80,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

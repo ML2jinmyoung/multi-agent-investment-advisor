@@ -1,0 +1,79 @@
+{
+  "key": "56456b27ac565f492293498d",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T10:38:03.332Z",
+  "preview": "USER: 데이터 언제 기준이야?\n\nVERIFICATION FLAGS: {\"unsupported_claim\":0.15,\"policy_conflict\":0.25,\"prediction_as_fact\":0.05,\"missing_material_risk\":0.35,\"stale_evidence\":0.75}\n\nDATA (as of 2026-09-27T10:37:23.",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "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"
+          }
+        }
+      },
+      {
+        "type": "text",
+        "text": "{\"problems\":[{\"kind\":\"unsupported_claim\",\"detail\":\"evidence 항목에 제시된 투자 원칙 수치(단일종목 15%/섹터 35%/해외비중 70%/최소유동성 10%/최대손실 20%)는 제공된 DATA에 존재하지 않습니다. DATA의 policyChecks는 빈 배열([])이고 별도의 정책 파라미터 데이터가 없으므로 이 숫자는 근거 없이 생성된 값입니다.\"},{\"kind\":\"missing_evidence\",\"detail\":\"'getInvestmentPolicy' 소스로 표기된 정책 evidence 항목은 실제 tool 결과가 DATA에 포함되어 있지 않아 검증할 수 없습니다. 사용자가 데이터 기준 시각만 물었는데도 근거 없는 정책 수치를 답변에 포함시킨 것은 부적절합니다.\"},{\"kind\":\"policy_inconsistency\",\"detail\":\"limitations에는 'policy check 결과가 빈 배열이라 위반 여부 판단 불가'라고 명시했으나, evidence에는 구체적 정책 한도 수치를 사실처럼 제시하여 서로 모순됩니다.\"}],\"verdict\":\"revise\"}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 2900,
+        "noCache": 2900,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 1573,
+        "text": 435,
+        "reasoning": 1138
+      },
+      "raw": {
+        "input_tokens": 2900,
+        "output_tokens": 1573,
+        "output_tokens_details": {
+          "thinking_tokens": 1138
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 2900,
+          "output_tokens": 1573,
+          "output_tokens_details": {
+            "thinking_tokens": 1138
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "key": "796baf5a42c9d234a81939b9",
+  "modelId": "claude-sonnet-5",
+  "recordedAt": "2026-09-27T10:39:26.335Z",
+  "preview": "USER: 투자 가능 금액 얼마야?\n\nPORTFOLIO (deterministic, as of 2026-09-27T10:39:21.449Z):\n{\"asOf\":\"2026-09-27T10:39:21.449Z\",\"totalValueKRW\":39040386,\"buyingPowerKRW\":10760000,\"accounts\":[{\"name\":\"입력한 보유자산\",\"ty",
+  "result": {
+    "content": [
+      {
+        "type": "reasoning",
+        "text": "",
+        "providerMetadata": {
+          "anthropic": {
+            "signature": "EpQECpABCBIYAipAFA+zEvnJ2LSxGi/HOW06OAaB1053BAPhz6uwX1haG/RpI16iSBBgSUoLSSz4EH/3pY4vDkZpbldADuyLRSGFfDIPY2xhdWRlLXNvbm5ldC01OABCCHRoaW5raW5nWiRjOTMwMDgyNS0wNTJlLTRhMWEtODFjNC1lMTMxZGY5MjAzZTKoAd7k49UGEgwnXXgMeo/x9IFuiboaDN3n8NvrboQEjP32zSIwD322rNK0evVRCMdalxaSyh4l2MrDI/T6JbdGm0/+h5hODLtAuA5J1U4vhYf1nTuEKrACzRU8cyGHTdUQHSPc7PeH5GKF0hnri6JsmNaxcoHHghUMWV792A61e4rUzcrE6gtnsKflARi0movSjYq5X5BDxXrHJpIAzT32ThexxeTx773U2/iqOY26emZd+yTGpX5VOtw/zrHSBwBnxQjD172LbBq5cdZvGyEtttVH0VRRtZH/e97BemQAGFkTdz5GvPaFqya+kYpHjX8lszqUZk05uX6KLoajAlxJlLcE7kA2pbYOHN9BDWlK/uFIHvh4fws5DvGdGaZ6YNuVeULh31bOuiVmX1heAEfEam7WsNgAm/O+RHZO3AOhHKgvfZavsYMNsy9OzV+sm2LNknuEpccopz6g1uScZfYisNaVglpmSAmFMuVMGBxdSiZsC2VAQ6UmDZmPgKovcCaediO6/LsvHxgB"
+          }
+        }
+      },
+      {
+        "type": "tool-call",
+        "toolCallId": "toolu_01QR7egZX1N6QjNzmkMYs7k6",
+        "toolName": "getBuyingPower",
+        "input": "{}",
+        "providerMetadata": {
+          "anthropic": {
+            "caller": {
+              "type": "direct"
+            }
+          }
+        }
+      }
+    ],
+    "finishReason": {
+      "unified": "tool-calls",
+      "raw": "tool_use"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 4011,
+        "noCache": 4011,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 151,
+        "text": 32,
+        "reasoning": 119
+      },
+      "raw": {
+        "input_tokens": 4011,
+        "output_tokens": 151,
+        "output_tokens_details": {
+          "thinking_tokens": 119
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 4011,
+          "output_tokens": 151,
+          "output_tokens_details": {
+            "thinking_tokens": 119
+          },
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "global"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

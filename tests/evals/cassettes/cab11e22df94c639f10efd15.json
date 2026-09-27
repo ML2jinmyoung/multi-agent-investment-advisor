@@ -1,0 +1,62 @@
+{
+  "key": "cab11e22df94c639f10efd15",
+  "modelId": "claude-haiku-4-5-20251001",
+  "recordedAt": "2026-09-27T10:45:55.949Z",
+  "preview": "STATE:\n{\"message\":\"내 USD 노출이 얼마나 돼?\",\"hasPortfolio\":true,\"hasInvestmentPolicy\":true,\"symbolsMentioned\":[\"USD\"],\"heldSymbolsMentioned\":[],\"tradeDetected\":null,\"scenarioDetected\":null,\"recentConversatio",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"answers\":[{\"id\":\"needs_portfolio_data\",\"probability\":0.95},{\"id\":\"needs_simulation\",\"probability\":0.05},{\"id\":\"needs_external_evidence\",\"probability\":0.1},{\"id\":\"needs_policy_check\",\"probability\":0.15},{\"id\":\"needs_risk_review\",\"probability\":0.1},{\"id\":\"is_prediction_request\",\"probability\":0.05}]}"
+      }
+    ],
+    "finishReason": {
+      "unified": "stop",
+      "raw": "end_turn"
+    },
+    "usage": {
+      "inputTokens": {
+        "total": 757,
+        "noCache": 757,
+        "cacheRead": 0,
+        "cacheWrite": 0
+      },
+      "outputTokens": {
+        "total": 96
+      },
+      "raw": {
+        "input_tokens": 757,
+        "output_tokens": 96,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      }
+    },
+    "warnings": [],
+    "providerMetadata": {
+      "anthropic": {
+        "usage": {
+          "input_tokens": 757,
+          "output_tokens": 96,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "service_tier": "standard",
+          "inference_geo": "not_available"
+        },
+        "stopSequence": null,
+        "iterations": null,
+        "container": null,
+        "contextManagement": null
+      }
+    }
+  }
+}

@@ -48,7 +48,7 @@ fly secrets set DEMO_QUESTIONS_PER_DAY=5            # 선택, 세션(브라우�
 - 가격 변동 영향은 현재 보유 수량 × 이전 거래일 종가 대비 변동을 현재 환율로 환산한 값입니다. 실제 계좌의 일간 실현/미실현 손익과 다릅니다. 환율 영향은 24시간 전 대비 별도 추정합니다.
 - 공시 인증정보가 없으면 예시 공시를 사용하지 않습니다. 실시간 ETF 구성정보는 아직 없으므로 live 모드에서 예시 구성 비중을 제외합니다. 섹터·ETF 경제적 노출 분류와 수수료·세금 계산은 정적 참고값/가정이며 체결 견적이 아닙니다.
 
-시장 조회용 키는 로컬 `.env.local`에서 Fly secrets로 분리 등록했습니다. 토스 허용 IP에는 Fly 출발 IPv4 `209.71.107.69`를 등록해야 합니다. 등록 후 실제 응답의 `marketProvenance.isMock=false`, 시세 기준 시각 및 원화 평가액을 확인해야 연결 검증이 완료됩니다.
+시장 조회용 키는 로컬 `.env.local`에서 Fly secrets로 분리 등록했습니다. 토스 허용 IP에 Fly 출발 IPv4 `209.71.107.69`를 등록했습니다. 2026-09-27 공개 서버에서 11개 보유 포지션의 실제 시세 provenance와 USD/KRW 환율, 완전한 원화 평가액 응답을 확인했습니다. 이후 조회 상태는 API와 화면에 표시됩니다.
 
 ## LLM 경로 실행
 
@@ -76,3 +76,5 @@ fly secrets set DEMO_QUESTIONS_PER_DAY=5            # 선택, 세션(브라우�
 `DART_API_KEY`, `SEC_USER_AGENT`는 외부 공시·재무 데이터 연동에 사용합니다. `DATABASE_URL` 기본값은 `file:./data/app.db`이며 첫 DB 접근 시 migration이 적용됩니다. 모델이나 공시 API가 없을 때 실행되는 경로와 누락 데이터는 UI·Trace에 표시됩니다.
 
 기존 VM 배포는 `docker-compose.prod.yml`과 Caddy HTTPS 구성을 사용합니다. 로컬 JEFF를 사용할 경우 `scripts/jeff.sh`의 설치 경로를 확인하고 `JEV_BASE_URL`을 해당 서버 주소로 설정합니다.
+
+최종 배포 검증: `b53e14f`를 별도 작업 폴더에서 빌드했고 55개 테스트와 lint를 통과했습니다. 공개 서버에서 직접 입력 저장·삭제, 브라우저 세션 분리, 입력 수량 × 실제 시세 × 환율 계산, Today 응답과 에이전트 SSE 응답을 확인했습니다.

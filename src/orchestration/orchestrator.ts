@@ -4,7 +4,8 @@ import { runCritic } from "@/agents/llm-critic";
 import { answerDirectly, runPortfolioAgent } from "@/agents/portfolio-agent";
 import { runSynthesizer } from "@/agents/synthesizer";
 import { decisionModel } from "@/decision";
-import type { AgentAnswer, AgentStreamEvent, RoutingDecision } from "@/domain/agent";
+import type { AgentAnswer, AgentStreamEvent, RoutingDecision, VerificationResult } from "@/domain/agent";
+import type { InvestmentPolicy, PolicyCheck } from "@/domain/policy";
 import type { SimulationRequest, SimulationResult } from "@/domain/simulation";
 import { krw } from "@/lib/format";
 import { llmAvailable } from "@/providers/llm/registry";
@@ -14,21 +15,37 @@ import { getPolicy } from "@/services/policy-store";
 import { getPortfolioSnapshot } from "@/services/portfolio-aggregator";
 import { runSimulation, SimulationError } from "@/services/simulation-engine";
 import { snapshotView } from "@/tools/portfolio-tools";
-import { simulationView } from "@/tools/simulation-tools";
+import { simulationView, type SimulationView } from "@/tools/simulation-tools";
 import { verifyAnswer } from "./escalation";
 import { buildPlan } from "./graph";
 import { route } from "./router";
 import { runParallel } from "./runner";
-import { Tracer } from "./tracer";
+import { type StepRecord, type ToolCallRecord, Tracer } from "./tracer";
 
 export interface AgentRunResult {
   runId: string;
   routing: RoutingDecision;
   answer: AgentAnswer;
   summary: ReturnType<Tracer["summary"]>;
+  verification: VerificationResult;
+  /** the deterministic inputs the models saw; evals grade the answer against these, never against the answer itself */
+  context: { snapshot: SnapshotView; policy: InvestmentPolicy; policyChecks: PolicyCheck[]; simulationView?: SimulationView; limitations: string[] };
+  trace: { steps: Pick<StepRecord, "name" | "kind" | "status" | "latencyMs" | "model">[]; toolCalls: Pick<ToolCallRecord, "tool" | "status" | "stepId" | "input" | "output">[] };
 }
+type SnapshotView = RunContext["snapshot"];
 
 const NO_PREDICTION = "미래 가격은 예측하지 않습니다. 위 내용은 현재 보유 자산 기준의 계산과 확인된 근거이며, 가정 시나리오는 예측이 아닙니다.";
+
+/**
+ * Eval-only system variants for baseline comparison (docs/eval-loop-plan.md §4-2). `full` is production behaviour.
+ * single-agent: no Portfolio/Evidence specialists, the Synthesizer works from deterministic inputs alone.
+ * no-critic: verification runs but never escalates to the Critic.
+ */
+export type AgentVariant = "full" | "single-agent" | "no-critic";
+export const agentVariant = (): AgentVariant => {
+  const v = process.env.AGENT_VARIANT;
+  return v === "single-agent" || v === "no-critic" ? v : "full";
+};
 
 /**
  * Router -> deterministic engines -> (Portfolio Agent ∥ Evidence Agent) -> Synthesizer -> Jev verification -> optional Critic.
@@ -86,7 +103,10 @@ export async function runAgent(
       answer = await tracer.step("template-synthesizer", "deterministic", async () => deterministicAnswer(ctx, limitations));
     } else {
       try {
-        if (plan.simple) {
+        if (agentVariant() === "single-agent") {
+          for (const n of ["portfolio-agent", "evidence-agent"]) tracer.skip(n, "variant single-agent");
+          answer = await runSynthesizer(ctx, {});
+        } else if (plan.simple) {
           for (const n of ["evidence-agent", "synthesizer"]) tracer.skip(n, "simple portfolio query");
           answer = await answerDirectly(ctx);
         } else {
@@ -110,17 +130,28 @@ export async function runAgent(
 
     const verification = await verifyAnswer({ message, answer, policyChecks, dataAsOf: snapshot.asOf, warnings: limitations }, dm, tracer);
     emit({ type: "verification", verification });
-    if (verification.needsCritic && llmAvailable()) {
+    if (verification.needsCritic && llmAvailable() && agentVariant() !== "no-critic") {
       const critique = await runCritic(ctx, answer, verification);
       if (critique.verdict === "revise" && critique.problems.length) {
         answer = await runSynthesizer(ctx, { critique: critique.problems.map((p) => `${p.kind}: ${p.detail}`).join("\n"), previous: answer });
         answer.limitations = [...new Set([...answer.limitations, ...limitations])];
       } else tracer.skip("synthesizer-revision", "critic passed the draft");
-    } else tracer.skip("llm-critic", verification.needsCritic ? "no LLM provider configured" : "verification passed");
+    } else tracer.skip("llm-critic", agentVariant() === "no-critic" ? "variant no-critic" : verification.needsCritic ? "no LLM provider configured" : "verification passed");
 
     emit({ type: "answer", answer });
     await tracer.persist({ answer, routing });
-    return { runId: tracer.runId, routing, answer, summary: tracer.summary() };
+    return {
+      runId: tracer.runId,
+      routing,
+      answer,
+      summary: tracer.summary(),
+      verification,
+      context: { snapshot: ctx.snapshot, policy, policyChecks, simulationView: ctx.simulationView, limitations },
+      trace: {
+        steps: tracer.steps.map((s) => ({ name: s.name, kind: s.kind, status: s.status, latencyMs: s.latencyMs, model: s.model })),
+        toolCalls: tracer.toolCalls.map((t) => ({ tool: t.tool, status: t.status, stepId: t.stepId, input: t.input, output: t.output })),
+      },
+    };
   } catch (e) {
     await tracer.persist({ routing, error: (e as Error).message }).catch(() => {});
     throw e;

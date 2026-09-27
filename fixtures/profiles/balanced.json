@@ -1,0 +1,25 @@
+{
+  "name": "balanced",
+  "description": "겉보기에 분산된 포트폴리오지만 ETF look-through를 포함한 기술 섹터 비중이 37%로 섹터 한도(35%)를 이미 넘긴 상태. NVDA 비중 약 6%라서 500만원 추가 매수 시 단일 종목 한도(15%)도 넘긴다. 위반 없음 대조는 diversified 프로필을 쓴다.",
+  "input": {
+    "holdings": [
+      { "symbol": "NVDA", "quantity": 10, "averagePrice": 120 },
+      { "symbol": "AAPL", "quantity": 10, "averagePrice": 190 },
+      { "symbol": "VOO", "quantity": 8, "averagePrice": 480 },
+      { "symbol": "005930", "quantity": 40, "averagePrice": 70000 },
+      { "symbol": "000660", "quantity": 5, "averagePrice": 180000 },
+      { "symbol": "069500", "quantity": 100, "averagePrice": 38000 },
+      { "symbol": "360750", "quantity": 200, "averagePrice": 17500 },
+      { "symbol": "152380", "quantity": 300, "averagePrice": 10800 }
+    ],
+    "cashKRW": 8000000,
+    "cashUSD": 2000
+  },
+  "policy": {
+    "objective": "wealth_growth",
+    "horizonYears": 10,
+    "maxDrawdownPct": 20,
+    "limits": { "singleStockPct": 15, "sectorPct": 35, "overseasPct": 70, "minLiquidityPct": 10 },
+    "preferences": { "turnover": "low", "fxRisk": "medium" }
+  }
+}

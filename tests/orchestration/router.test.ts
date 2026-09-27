@@ -5,6 +5,20 @@ import { parseAmountKRW, parseMessage, route } from "@/orchestration/router";
 import { Tracer } from "@/orchestration/tracer";
 
 const held = ["NVDA", "QQQ", "VOO", "AAPL", "005930", "000660", "069500", "TSLA", "360750", "152380", "133690"];
+
+describe("quantity parsing (F-004)", () => {
+  it("reads share counts followed by Hangul, particles or punctuation", () => {
+    expect(parseMessage("애플 5주 팔까?", held).trade?.quantity).toBe(5);
+    expect(parseMessage("삼성전자 20주 매도하면 세금 얼마야?", held).trade?.quantity).toBe(20);
+    expect(parseMessage("VOO 3주만 팔면?", held).trade?.quantity).toBe(3);
+    expect(parseMessage("KODEX 200 50주를 팔면 어때?", held).trade?.quantity).toBe(50);
+  });
+  it("does not read weeks or 주식 as a share count", () => {
+    expect(parseMessage("NVDA 2주일 뒤에 살까?", held).trade?.quantity).toBeUndefined();
+    expect(parseMessage("NVDA 1주간 지켜보고 살까?", held).trade?.quantity).toBeUndefined();
+    expect(parseMessage("삼성전자 주식 100만원 사면?", held).trade?.quantity).toBeUndefined();
+  });
+});
 const input = (message: string) => ({ message, hasPortfolio: true, hasPolicy: true, heldSymbols: held });
 
 function fakeModel(p: number): DecisionModel {

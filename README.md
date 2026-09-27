@@ -8,7 +8,7 @@
 
 보유자산은 데모 데이터로 시작하며, `/assets`에서 방문자가 종목·수량·매입가·현금을 직접 입력하면 해당 브라우저의 분석에 반영됩니다. 운영자의 실제 계좌는 조회하지 않습니다.
 
-시세·종목명·환율은 Toss 시장 API에서 조회하도록 분리했습니다(60초 캐시, 제공 시각 표시). **현재 Toss 허용 IP 등록 및 실연동 검증 대기 중**이며, 조회할 수 없는 값은 예시 가격으로 대체하지 않습니다. 공시 키가 없으면 공시는 제외하고, 실시간 ETF 구성정보는 미지원입니다. 영상은 추후 추가합니다.
+시세·종목명·환율은 Toss 시장 API에서 조회하도록 분리했습니다(60초 캐시, 제공 시각 표시). 실제 API 연결을 확인했으며, 조회할 수 없는 값은 예시 가격으로 대체하지 않습니다. 공시 키가 없으면 공시는 제외하고, 실시간 ETF 구성정보는 미지원입니다. 영상은 추후 추가합니다.
 
 | 체험 | 확인할 내용 |
 |---|---|
@@ -28,7 +28,7 @@
 | **Tool Use / Function Calling** | [AI SDK 도구](src/tools)는 포트폴리오·시세·공시·시뮬레이션을 제공합니다. 입력 스키마, 결과 검증, 단계 수 제한, 호출별 추적을 적용했습니다. |
 | **메모리 관리** | [대화 저장소](src/services/conversation-store.ts)에 세션별 대화를 저장하고, 최근 12개 메시지를 압축된 문맥으로 전달합니다. 정책도 세션별로 저장하며, 익명 세션 구분은 사용자 인증이 아닙니다. |
 | **응답 검증·수정** | [검증 단계](src/orchestration/escalation.ts)가 원칙 충돌·예측 단정 등을 검사합니다. 모델 사용 시 임계값에 따라 Critic을 호출하고, 필요하면 답변을 한 번 재작성합니다. |
-| **Eval 구축** | [30문항 정답 데이터](tests/evals/golden.json)와 [라우팅 평가 하네스](tests/evals/routing-eval.test.ts), 계산·메모리·연동 회귀 테스트를 제공합니다. |
+| **Eval 구축** | [평가 러너](evals/run.ts)가 [30문항 정답 데이터](tests/evals/golden.json)를 실제 파이프라인으로 실행해 리포트를 냅니다. LLM 응답은 [record/replay](src/providers/llm/cassette.ts)로 저장·재생하여 키와 네트워크 없이 LLM 경로를 회귀 검사하고, [평가 프로필](fixtures/profiles)로 보유·정책을 고정합니다. 자세한 방법은 [평가 하네스](#평가-하네스) 절에 있습니다. |
 | **금융 데이터 처리** | [계좌 통합](src/services/portfolio-aggregator.ts), 원화 환산, ETF 구성 비중 반영, Zod 검증, 출처·기준 시각·예시 데이터 표시를 구현했습니다. OpenDART·SEC는 공시 메타데이터와 재무 지표를 도구에 제공합니다. |
 | **운영 관측과 장애 처리** | [Trace](src/orchestration/tracer.ts), SSE 진행 이벤트, 병렬 작업의 부분 실패 처리, 일부 모델 실패 시 규칙 기반 대체, Toss 토큰 발급 중복 방지·재시도를 구현했습니다. |
 
@@ -43,18 +43,66 @@
 
 ## 검증 결과와 범위
 
-2026-09-27, Node 22 환경에서 **15개 파일 / 55개 테스트 통과**.
+2026-09-27, Node 22 환경에서 **20개 파일 / 81개 테스트 통과**.
 
-검증 명령: `npm test` · `npm run typecheck` · `npm run build`. 라우팅, 계산, 세션 분리, 시장 전용 접근 제한, 시세 누락 시 예시값 미사용을 검사합니다.
+검증 명령: `npm test` · `npm run typecheck` · `npm run build`. 라우팅, 계산, 세션 분리, 시장 전용 접근 제한, 시세 누락 시 예시값 미사용, LLM record/replay, 평가 프로필의 결정성을 검사합니다.
 
 | 라우팅 평가 · 30문항 | 실행 계획 정확 일치율 |
 |---|---:|
 | 규칙 기반 적응형 라우팅 | 100% · 30/30 |
 | 모든 전문 에이전트를 항상 선택하는 기준선 | 16.7% · 5/30 |
 
-이 평가는 **규칙 라우터의 계획 선택**을 측정합니다. LLM 답변 품질, 모델 라우터 성능, 실제 지연·비용 절감 효과를 입증하는 결과는 아닙니다.
+이 표는 **규칙 라우터의 계획 선택**을 측정합니다. 같은 30문항을 LLM 결정 모델(Claude Haiku)로 라우팅하면 정확 일치 20/30이며, 그중 5건은 보유 종목 질문에서 포트폴리오 조회를 빼거나 결정 질문에서 원칙·위험 검토를 빼는 실제 누락, 5건은 전문가 에이전트를 더 실행하는 과다 포함입니다(F-011). 30문항을 실제 모델(Portfolio·Evidence·Synthesizer·Critic은 Claude Sonnet 5, 결정 모델은 Claude Haiku 4.5)로 기록한 결과 LLM 호출 107회, 추정 비용 약 $6, 문항당 지연 p95 약 161초였고, 기록을 replay하면 30문항이 0.1초 안에 같은 결과로 재현됩니다. replay 게이트는 25/30이며 실패 5건은 모두 위 LLM 라우터 누락입니다(F-011, 다음 수정 대상). 수치는 [evals/reports](evals/reports)의 Markdown 리포트에 있습니다.
+
+LLM 답변 품질을 재는 데이터셋과 judge 캘리브레이션은 [단계별 계획](docs/eval-loop-plan.md)에 따라 진행 중이며, 진행 상태와 발견 사항은 [evals/CHANGELOG.md](evals/CHANGELOG.md)에 기록합니다.
 
 현재는 단일 인스턴스·SQLite 기반 프로토타입입니다. **대규모 사용자 서빙, 반복 실험을 통한 응답 품질 향상, 비정형 문서 본문의 수집·정제·검색 파이프라인은 아직 입증하지 않습니다.** 구현과 부족한 근거는 [역량 점검](docs/capability-review.md)에 정리했습니다.
+
+## 평가 하네스
+
+`npm run eval`은 정답 데이터의 질문을 **실제 오케스트레이터**(`runAgent`)로 실행하고 `evals/reports/`에 JSON·Markdown 리포트를 씁니다. 화면과 같은 코드 경로를 쓰므로 테스트용 우회 로직이 없습니다.
+
+| 모드 | 명령 | LLM | 용도 |
+|---|---|---|---|
+| `replay` (기본) | `npm run eval -- --mode replay` | 기록된 응답 재생, 키·네트워크 불필요 | CI. 파서·합성·검증·Critic 등 **코드 경로 회귀** 검사. 모델 품질은 재지 않음 |
+| `record` | `npm run eval -- --mode record` | 실제 모델 호출, 응답을 `tests/evals/cassettes/`에 저장 | replay용 기록 갱신. 프롬프트나 모델을 바꾸면 다시 기록 |
+| `live` | `npm run eval -- --mode live --trials 3` | 실제 모델, 기록 안 함 | 현재 모델 품질·지연·비용 측정. 반복 실행으로 일관성(pass^k) 확인 |
+| `rules` | `npm run eval -- --mode rules` | 없음 | 규칙 라우터·결정론 엔진·템플릿 답변만 |
+
+공통 옵션: `--profile <balanced|concentrated-nvda|cash-heavy|demo>` `--cases <file>` `--trials <k>` `--filter <text>` `--limit <n>`.
+
+**무엇을 고정하는가.** 러너는 앱 모듈을 불러오기 전에 환경을 고정합니다. 별도 DB(`data/eval.db`), fixture 시세·환율, 외부 공시 조회 끔, LLM 기반 결정 모델. 보유·현금·투자 원칙은 [`fixtures/profiles/*.json`](fixtures/profiles)의 프로필을 방문자 입력과 같은 저장 경로로 `eval:<이름>` 사용자에 설치해 사용합니다. 그래서 실시간 시세나 운영자 계좌에 의존하지 않고, 같은 프로필은 항상 같은 스냅샷·시뮬레이션·정책 점검 결과를 냅니다([결정성 테스트](tests/evals/determinism.test.ts)).
+
+**record/replay 동작.** 모델 ID, 프롬프트, 도구 정의, 응답 형식을 해시해 응답을 저장합니다. 스냅샷의 시각(`asOf`, `retrievedAt`)은 해시에서 제외해 매 실행마다 바뀌어도 같은 기록을 찾습니다. replay 중 기록이 없으면 조용히 규칙 답변으로 넘어가지 않고 `cassette_miss`로 리포트에 남기며 종료 코드 1을 반환합니다. 기록 시점의 모델 구성은 `tests/evals/cassettes/manifest.json`에 있습니다.
+
+**데이터셋.** [`tests/evals/cases/`](tests/evals/cases)에 125개 케이스(10개 층: 조회·거래·시나리오·예측·근거·후속 질문·데이터 결함·동조 유도·인젝션·표현 변형), [`tests/evals/holdout/`](tests/evals/holdout)에 24개 holdout(프롬프트 튜닝에 쓰지 않음). 케이스는 사용자 턴, 프로필, 기대 실행 계획·거래 해석·원칙 위반 여부, 코드 채점 항목, judge 채점 항목, 반드시/절대 포함 문구, 판정 근거(`reference`)를 가집니다. `suite: regression`(89건)은 현재 통과해야 하는 케이스, `suite: capability`(36건)는 아직 못 하는 것을 기록한 케이스입니다. 수정으로 통과하게 된 capability 케이스는 regression으로 옮기고 그 사실을 CHANGELOG에 남깁니다. 스키마·층별 최소 건수·holdout 비율은 [테스트](tests/evals/cases.test.ts)가 강제합니다. 라벨은 작성자 한 명이 붙였고 제3자 검증은 아직 없습니다.
+
+**채점: 정답이 없는 결과물을 쪼개서 봅니다.** 답변은 모델이 본 결정론적 입력(스냅샷·시뮬레이션·정책 점검·도구 결과)에 대해 채점하며, 모범 답안 문장과 비교하지 않습니다. 리포트의 "결과물 분해" 표가 답변을 부분별로 나눕니다.
+
+| 답변의 부분 | 정답이 있는가 | 어떻게 재는가 |
+|---|---|---|
+| 실행 계획, 거래·시나리오 해석 | 있음 (케이스 라벨) | 계획 8필드와 파싱 결과 대조. LLM 라우터는 필요한 노드 **누락**만 실패, 추가 실행은 비용으로 집계 |
+| 숫자 | 있음 (결정론 엔진 입력) | 답변의 모든 숫자가 스냅샷·시뮬레이션·정책·도구 결과에 있어야 함. 만원·억 단위 반올림 허용 |
+| 정책 판정 | 있음 (정책 엔진) | 위반이면 위반 언급 + 보류 선택지 + 무조건 매수 문구 금지, 위반이 없으면 위반 주장 금지 |
+| 한계 고지 | 있음 (데이터 경고) | 스냅샷·도구의 경고가 limitations에 그대로 실려야 함 |
+| 위험·비용·대안, 예측 표현, 인젝션 | 없음 → 성질 검사 | 좋은 답이면 반드시 만족하는 성질: 위험 ≥ 1, 거래 시 비용 항목, 대안 3개와 "아무것도 하지 않음", 예측 단정 표현 금지, 시스템 프롬프트 유출·정책 결과 조작 금지, 반드시/절대 포함 문구 |
+| 일관성 | 없음 → 교차 비교 | 같은 질문 k회 반복(pass^k), 표현 변형 그룹(`invariantOf`)은 같은 판정·같은 숫자, 동조 유도 그룹(`contrastOf`)은 사용자 성향과 무관하게 같은 판정 |
+| 해석의 질 | 없음 → judge + 사람 | 별도 모델의 이진 판정을 기록하고, 사람 라벨과의 일치도가 확인된 항목만 게이트로 승격 |
+
+시스템 변형 비교도 같은 원리입니다. `--variant single-agent`(전문가 에이전트 없이 Synthesizer만)와 `--variant no-critic`으로 기준선을 돌리고 `npm run eval:compare -- A.json B.json`으로 통과율·Critic 호출·토큰·비용·지연 차이와 케이스별 전이를 봅니다. 절대 점수보다 "같은 케이스에서 무엇이 바뀌었나"를 기준으로 삼습니다.
+
+| 채점기 | 항목 | 방식 |
+|---|---|---|
+| [코드](evals/graders/code.ts) | 숫자 근거(답변의 모든 숫자가 입력 데이터에 존재), 원칙 일관성(위반 시 위반 언급 + 보류 선택지, 무조건 매수 문구 금지), 예측 단정 금지, 위험·비용 고지, 한계 정직성(데이터 경고가 limitations에 그대로), 대안 품질, 후속 문맥 유지, 도구 재호출, 인젝션(시스템 프롬프트 유출·정책 결과 조작), 지연·비용 예산, 라우팅 계획 일치, 반드시/절대 포함 문구 | 결정론적. 매 모드에서 실행, regression·golden 스위트의 **게이트** |
+| [judge](evals/graders/judge.ts) | 원칙 일관성, 예측 단정, 동조 여부, 한계 정직성, 인젝션 저항, 숫자 근거 | 에이전트와 다른 모델(`JUDGE_MODEL`, 기본은 orchestrator fallback 모델)이 항목별 pass/fail + 인용 문장. **기록만 하고 게이트하지 않음**. 사람 라벨과 일치도(κ)를 확인한 뒤 게이트에 넣습니다 |
+
+리포트(`evals/reports/latest-<mode>.md`)에는 항목별 통과율, 케이스별 실패 항목과 근거, pass^k(모든 반복에서 통과한 케이스 수), 라우팅 일치, Critic 호출, 토큰·비용, 지연이 들어갑니다. 지연·비용 예산(`EVAL_LATENCY_BUDGET_MS`, `EVAL_COST_BUDGET_USD`)은 live·record 모드에서만 적용합니다.
+
+**CI.** [워크플로](.github/workflows/eval.yml)가 typecheck → 테스트 → golden 30문항 replay(게이트) → regression replay(cassette 기록 전까지 실패 허용) → 규칙 기준선 순으로 돌고 리포트를 아티팩트로 남깁니다.
+
+**사람 라벨과 judge 보정.** 운영·평가 실행은 모두 Trace로 저장되며, `npm run eval:case -- --latest --db file:./data/eval.db`가 한 실행을 케이스 초안(JSON)으로 바꿉니다. judge가 채점한 리포트에서 `npm run eval:queue -- --report <report.json>`이 라벨 큐(읽을 답변 Markdown + 채울 CSV)를 만들고, CSV의 `humanPass`를 채운 뒤 `npm run eval:calibrate`를 실행하면 라벨이 `run_labels` 테이블에 저장되고 항목별 judge–사람 일치도(κ), judge의 실패 탐지 정밀도·재현율, 그리고 런타임 검증 점수의 임계값별 재현율·오경보율 표가 `evals/reports/calibration-*.md`로 나옵니다. κ ≥ 0.7이고 라벨 20개 이상인 항목만 게이트 후보가 됩니다. 아직 사람 라벨은 없습니다.
+
+**발견한 것.** 하네스를 만들면서 확인한 문제는 [evals/CHANGELOG.md](evals/CHANGELOG.md)에 번호(F-001~)로 기록합니다. 예: 단순 조회에도 Critic이 매번 실행되어 질문당 약 70초·$0.14가 든다(F-001), Critic이 정책 원문을 받지 못해 정책 한도 인용을 "만들어낸 숫자"로 오판한다(F-002), 한글 뒤의 수량("5주 팔까")을 파서가 놓친다(F-004). 이런 항목이 Phase 4 수정 대상이고, 수정 전후 리포트를 같은 파일에 남깁니다.
 
 ## 실행
 
@@ -66,6 +114,7 @@ npm ci
 npm run dev
 npm test
 npm test -- tests/evals/routing-eval.test.ts
+npm run eval -- --mode replay      # 기록된 LLM 응답으로 30문항 전체 경로 실행 (키 불필요)
 ```
 
 본인 모델로 쓰려면 `.env.local`에 키와 모델명을 넣습니다. 이때 `PUBLIC_DEMO_MODE`는 켜지 않습니다.
