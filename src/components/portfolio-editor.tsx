@@ -20,9 +20,9 @@ export function PortfolioEditor({ initial, custom }: { initial: PortfolioInput; 
     } catch (e) { setMessage(e instanceof Error ? e.message : "저장하지 못했습니다."); }
     finally { setBusy(false); }
   }
-  return <details className="rounded-lg border p-4">
-    <summary className="cursor-pointer font-medium">내 보유자산으로 바꿔보기{custom ? " · 직접 입력 사용 중" : ""}</summary>
-    <p className="my-3 text-sm text-muted-foreground">토스 앱에 표시된 종목 코드·수량·평균 매입가를 입력하세요. 계좌 연결 없이 이 브라우저에만 적용됩니다. 저장하면 기본 데모 계좌 전체가 입력한 자산으로 대체됩니다.</p>
+  return <details className="rounded-2xl bg-card p-4 shadow-sm ring-1 ring-border">
+    <summary className="cursor-pointer font-medium">내 보유자산으로 분석하기{custom ? " · 직접 입력 사용 중" : ""}</summary>
+    <p className="my-3 text-sm text-muted-foreground">종목 코드·수량·평균 매입가만 입력하세요. 계좌 연결 없이 이 브라우저에만 적용돼요.</p>
     <form onSubmit={(e) => { e.preventDefault(); void save(); }} className="space-y-3">
       <fieldset disabled={busy} className="space-y-2">
         <div className="grid grid-cols-[2fr_1fr_1fr_auto] gap-2 text-xs"><span>종목 코드 (NVDA, 005930)</span><span>수량</span><span>평균 매입가 · 종목 통화</span><span>삭제</span></div>
@@ -37,10 +37,10 @@ export function PortfolioEditor({ initial, custom }: { initial: PortfolioInput; 
           <label className="text-sm">원화 현금 (KRW)<input className={field} required type="number" min="0" max="10000000000000" step="any" value={input.cashKRW} onChange={(e) => setInput({ ...input, cashKRW: Number(e.target.value) })} /></label>
           <label className="text-sm">달러 현금 (USD)<input className={field} required type="number" min="0" max="10000000000" step="any" value={input.cashUSD} onChange={(e) => setInput({ ...input, cashUSD: Number(e.target.value) })} /></label>
         </div>
-        <div className="flex gap-3"><button className="rounded bg-primary px-3 py-2 text-sm text-primary-foreground">{busy ? "반영 중…" : "분석에 반영"}</button><button type="button" className="text-sm underline" onClick={() => void save(true)}>입력 삭제 · 데모 복원</button></div>
+        <div className="flex gap-3"><button className="h-11 rounded-full bg-primary px-5 text-sm font-medium text-primary-foreground">{busy ? "반영 중…" : "분석에 반영"}</button><button type="button" className="text-sm underline" onClick={() => void save(true)}>입력 삭제 · 데모 복원</button></div>
       </fieldset>
       <p role="status" className="text-sm">{message}</p>
-      <p className="text-xs text-muted-foreground">입력값은 익명 브라우저 세션별로 서버에 저장됩니다. 계좌번호·인증정보는 입력하지 않습니다. 이전 분석 대화는 자산을 바꿔도 그대로 남습니다.</p>
+      <p className="text-xs text-muted-foreground">계좌번호·인증정보는 받지 않아요.</p>
     </form>
   </details>;
 }

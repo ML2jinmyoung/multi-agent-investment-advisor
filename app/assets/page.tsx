@@ -19,16 +19,19 @@ export default async function AssetsPage() {
 
   return (
     <div className="space-y-4">
-      <header>
-        <h1 className="text-xl font-semibold">분석 대상 자산</h1>
-        <p className="mt-1 text-3xl font-semibold tabular-nums">{snap.valuationComplete === false ? `확인된 평가액 ${krw(total)}` : krw(total)}</p>
-        <p className="text-xs text-muted-foreground">
-          {snap.accounts.length}개 계좌 · 기준 {new Date(snap.asOf).toLocaleString("ko-KR")}
+      <h1 className="text-xl font-semibold">자산</h1>
+      <section aria-label="총 평가액" className="rounded-3xl bg-primary p-5 text-primary-foreground shadow-lg shadow-primary/20">
+        <p className="text-sm text-primary-foreground/75">{snap.valuationComplete === false ? "확인된 평가액" : "총 평가액"}</p>
+        <p className="text-3xl font-semibold tracking-tight tabular-nums">{krw(total)}</p>
+        <p className="mt-1 text-xs text-primary-foreground/75">
+          {snap.accounts.length}개 계좌 · {new Date(snap.asOf).toLocaleString("ko-KR", { timeZone: "Asia/Seoul", month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit" })} 기준
         </p>
-      </header>
-
-      <p className="text-sm">{snap.marketMode === "live" ? "시장 정보: 실제 API 조회" : "시장 정보: 예시 데이터"} · 보유자산: {input ? "직접 입력" : "데모"}</p>
-      <p className="text-sm tabular-nums">USD/KRW {snap.fxRates.USD ? `1달러 = ${snap.fxRates.USD.toLocaleString("ko-KR", { maximumFractionDigits: 2 })}원` : "조회 대기"}</p>
+        <ul className="mt-4 flex flex-wrap gap-1.5 text-xs tabular-nums">
+          <li className="rounded-full bg-white/12 px-2.5 py-1">{snap.marketMode === "live" ? "실제 시세" : "예시 시세"}</li>
+          <li className="rounded-full bg-white/12 px-2.5 py-1">{input ? "직접 입력 자산" : "데모 자산"}</li>
+          <li className="rounded-full bg-white/12 px-2.5 py-1">USD/KRW {snap.fxRates.USD ? snap.fxRates.USD.toLocaleString("ko-KR", { maximumFractionDigits: 2 }) : "조회 대기"}</li>
+        </ul>
+      </section>
       <MarketRefresh />
       <PortfolioEditor key={JSON.stringify(input)} initial={input ?? defaults} custom={!!input} />
       {snap.accounts.map((acct) => {
@@ -37,7 +40,7 @@ export default async function AssetsPage() {
           .sort((a, b) => b.marketValueKRW - a.marketValueKRW);
         const acctTotal = positions.reduce((s, p) => s + p.marketValueKRW, 0);
         return (
-          <Card key={acct.id}>
+          <Card key={acct.id} className="rounded-2xl shadow-sm">
             <CardHeader>
               <CardTitle className="flex items-center justify-between text-base">
                 <span>{acct.name}</span>
@@ -64,12 +67,11 @@ export default async function AssetsPage() {
                       <p className="text-xs text-muted-foreground">
                         {snap.valuationComplete === false ? "비중 확인 필요" : pct(total ? (p.marketValueKRW / total) * 100 : 0)}
                         {p.dailyChangePct !== undefined && p.assetType !== "cash" && (
-                          <span className={cn("ml-1", p.dailyChangePct < 0 ? "text-blue-600" : p.dailyChangePct > 0 ? "text-red-600" : "")}>
+                          <span className={cn("ml-1", p.dailyChangePct < 0 ? "text-down" : p.dailyChangePct > 0 ? "text-up" : "")}>
                             {signedPct(p.dailyChangePct)}
                           </span>
                         )}
                       </p>
-                      {p.marketProvenance && <p className="text-xs text-muted-foreground">시세 기준 {p.marketProvenance.asOf ? new Date(p.marketProvenance.asOf).toLocaleString("ko-KR") : "제공 시각 미확인"}</p>}
                     </div>
                   </li>
                 ))}
@@ -80,19 +82,19 @@ export default async function AssetsPage() {
       })}
 
       {snap.warnings.length > 0 && (
-        <section className="rounded-md border border-amber-300 bg-amber-50 p-3 text-xs text-amber-900">
-          <p className="font-medium">데이터 안내</p>
+        <details className="rounded-xl border border-amber-300 bg-amber-50 px-3 py-2 text-xs text-amber-900">
+          <summary className="cursor-pointer font-medium">데이터 안내 {snap.warnings.length}건</summary>
           <ul className="mt-1 list-disc pl-4">
             {snap.warnings.map((w) => (
               <li key={w}>{w}</li>
             ))}
           </ul>
-        </section>
+        </details>
       )}
 
-      <footer className="text-xs text-muted-foreground">
-        <p className="font-medium">데이터 출처</p>
-        <ul>
+      <details className="text-xs text-muted-foreground">
+        <summary className="cursor-pointer font-medium">데이터 출처</summary>
+        <ul className="mt-1">
           {snap.sources.map((s) => (
             <li key={`${s.source}:${s.asOf}:${s.isMock}`}>
               {s.source}
@@ -101,7 +103,7 @@ export default async function AssetsPage() {
             </li>
           ))}
         </ul>
-      </footer>
+      </details>
     </div>
   );
 }

@@ -6,8 +6,12 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-brand: var(--brand);
+  --color-gold: var(--gold);
+  --color-up: var(--up);
+  --color-down: var(--down);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-plex), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -49,24 +53,29 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  /* Banking palette (ui-ux-pro-max colors.csv): trust navy + premium gold */
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #0f1e45;            /* deep navy · 16:1 on white */
+  --primary-foreground: #ffffff;
+  --secondary: #eef2f7;
+  --secondary-foreground: #0f172a;
+  --muted: #eef2f6;
+  --muted-foreground: #475569;   /* 7.2:1 on #f8fafc */
+  --accent: #eef2f7;
+  --accent-foreground: #0f172a;
+  --destructive: #dc2626;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #1e3a8a;
+  --brand: #1e3a8a;              /* trust navy-blue */
+  --gold: #a16207;               /* premium accent · 4.9:1 on white, used sparingly */
+  --up: #dc2626;                 /* KR market convention: rise = red */
+  --down: #1d4ed8;               /* fall = blue */
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -84,6 +93,10 @@
 }
 
 .dark {
+  --brand: #93b4ff;
+  --gold: #e2b24a;
+  --up: #f87171;
+  --down: #7aa2ff;
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -135,8 +148,8 @@
   border-radius: 9999px;
   overflow: hidden;
   isolation: isolate;
-  background: radial-gradient(circle at 50% 60%, oklch(0.36 0.12 285), oklch(0.17 0.05 270));
-  box-shadow: inset 0 0 0 1px oklch(1 0 0 / 0.08), 0 10px 36px -10px oklch(0.62 0.22 295 / 0.6);
+  background: radial-gradient(circle at 50% 60%, #1e3a8a, #0b1633);
+  box-shadow: inset 0 0 0 1px oklch(1 0 0 / 0.1), 0 10px 32px -12px rgb(30 58 138 / 0.55);
   transition: width 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), height 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .pb-orb-blob {
@@ -147,9 +160,9 @@
   mix-blend-mode: screen;
   animation: pb-orb-spin var(--d) linear infinite;
 }
-.pb-orb-a { --d: 5s; background: radial-gradient(circle at 30% 35%, oklch(0.8 0.15 215) 0 22%, transparent 50%); }
-.pb-orb-b { --d: 7s; animation-direction: reverse; background: radial-gradient(circle at 70% 40%, oklch(0.7 0.24 345) 0 20%, transparent 48%); }
-.pb-orb-c { --d: 9s; background: radial-gradient(circle at 50% 75%, oklch(0.72 0.2 290) 0 24%, transparent 52%); }
+.pb-orb-a { --d: 5s; background: radial-gradient(circle at 30% 35%, #60a5fa 0 22%, transparent 50%); }
+.pb-orb-b { --d: 7s; animation-direction: reverse; background: radial-gradient(circle at 70% 40%, #e2b24a 0 16%, transparent 44%); }
+.pb-orb-c { --d: 9s; background: radial-gradient(circle at 50% 75%, #38bdf8 0 22%, transparent 50%); }
 .pb-orb-core {
   position: absolute;
   inset: 24%;
@@ -194,11 +207,11 @@
 
 /* ── AI PB chat: status tokens (one color = one meaning) ────── */
 :root {
-  --pb-live: oklch(0.54 0.23 292);   /* PB is working on this now (orb hue) · ≈6.5:1 on white */
+  --pb-live: #1d4ed8;               /* PB is working on this now · 6.7:1 on white */
   --pb-fail: oklch(0.55 0.22 27);
 }
 .dark {
-  --pb-live: oklch(0.74 0.16 292);
+  --pb-live: #7aa2ff;
   --pb-fail: oklch(0.7 0.19 25);
 }
 
@@ -292,7 +305,7 @@
 /* live run card + progress */
 .pb-run { background: linear-gradient(180deg, color-mix(in oklch, var(--pb-live) 6%, var(--card)), var(--card) 40%); }
 .pb-progress-fill {
-  background: linear-gradient(90deg, var(--pb-live), oklch(0.72 0.19 330), var(--pb-live)) 0 0 / 200% 100%;
+  background: linear-gradient(90deg, var(--pb-live), #38bdf8, var(--pb-live)) 0 0 / 200% 100%;
   transition: width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
   animation: pb-sheen 2s linear infinite;
 }
@@ -314,14 +327,14 @@
   inset: -2px;
   z-index: -1;
   border-radius: inherit;
-  background: conic-gradient(from var(--pb-angle, 0deg), oklch(0.8 0.15 215), oklch(0.7 0.24 345), oklch(0.72 0.2 290), oklch(0.8 0.15 215));
+  background: conic-gradient(from var(--pb-angle, 0deg), #60a5fa, #1e3a8a, #e2b24a, #38bdf8, #60a5fa);
   filter: blur(10px);
   opacity: 0;
   transition: opacity 0.5s;
 }
 .pb-composer[data-active="true"] .pb-composer-shell { border-color: transparent; }
-.pb-composer[data-active="true"] .pb-composer-shell::before { opacity: 0.7; animation: pb-aura 4s linear infinite; }
-.pb-send { background: var(--pb-live); color: white; box-shadow: 0 4px 14px -4px var(--pb-live); }
+.pb-composer[data-active="true"] .pb-composer-shell::before { opacity: 0.45; animation: pb-aura 4s linear infinite; }
+.pb-send { background: var(--primary); color: var(--primary-foreground); box-shadow: 0 4px 14px -6px var(--primary); }
 @property --pb-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
 
 @keyframes flow-glow { 50% { box-shadow: 0 0 0 5px color-mix(in oklch, var(--pb-live) 14%, transparent), 0 6px 24px -8px color-mix(in oklch, var(--pb-live) 80%, transparent); } }
@@ -343,3 +356,9 @@
 @media (prefers-reduced-transparency: reduce) {
   .pb-composer-shell { background: var(--background); backdrop-filter: none; -webkit-backdrop-filter: none; }
 }
+
+/* "PB is watching" live dot */
+.pb-live-dot { position: relative; display: inline-block; width: 0.5rem; height: 0.5rem; border-radius: 9999px; background: #16a34a; }
+.pb-live-dot::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: inherit; animation: pb-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite; }
+@keyframes pb-ping { 75%, 100% { transform: scale(2.4); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .pb-live-dot::after { animation: none; } }

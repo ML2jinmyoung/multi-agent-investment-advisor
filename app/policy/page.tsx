@@ -18,7 +18,7 @@ export default async function PolicyPage() {
     <div className="space-y-6">
       <header>
         <h1 className="text-xl font-semibold">투자 원칙</h1>
-        <p className="text-sm text-muted-foreground">프로필이 아니라 AI PB의 판단 기준(decision constraint)으로 사용됩니다.</p>
+        <p className="text-sm text-muted-foreground">PB가 모든 분석에서 지키는 기준이에요</p>
       </header>
       <section className="space-y-2">
         <h2 className="font-medium">현재 포트폴리오 점검</h2>

@@ -62,7 +62,7 @@ function LiveRun({ progress }: { progress: Progress }) {
   );
 }
 
-export function AgentChat({ initialMessages, initialQuestion, showTrace }: { initialMessages: ChatMessage[]; initialQuestion?: string; showTrace: boolean }) {
+export function AgentChat({ initialMessages, initialQuestion, autoSend, showTrace }: { initialMessages: ChatMessage[]; initialQuestion?: string; autoSend?: boolean; showTrace: boolean }) {
   const [messages, setMessages] = useState(initialMessages);
   const [input, setInput] = useState(initialQuestion ?? "");
   const [progress, setProgress] = useState<Progress | null>(null);
@@ -75,6 +75,17 @@ export function AgentChat({ initialMessages, initialQuestion, showTrace }: { ini
   useEffect(() => {
     bottom.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, progress]);
+
+  // proactive questions from home arrive with auto=1: the PB starts answering right away
+  const autoSent = useRef(false);
+  useEffect(() => {
+    if (!autoSend || !initialQuestion || autoSent.current) return;
+    autoSent.current = true;
+    window.history.replaceState(null, "", "/agent"); // a reload must not ask again
+    send(initialQuestion);
+    // send is stable enough for a one-shot mount effect
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   async function send(text: string) {
     const message = text.trim();
