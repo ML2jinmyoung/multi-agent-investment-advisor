@@ -63,6 +63,20 @@ if (mode === "replay") {
   const m = JSON.parse(readFileSync(MANIFEST, "utf8")) as Manifest;
   process.env.LLM_PROVIDER = m.provider;
   for (const [agent, cfg] of Object.entries(m.models)) process.env[AGENT_ENV[agent]] = cfg.model;
+  // Prompts carry the calendar date (evidence freshness, "today"), so replaying on a later day misses every
+  // cassette. Replay runs on the recording day's clock; time still advances, so latencies stay real.
+  const offset = Date.parse(m.recordedAt) - Date.now();
+  const RealDate = Date;
+  class RecordingDayDate extends RealDate {
+    constructor(...args: [] | [string | number | Date]) {
+      if (args.length === 0) super(RealDate.now() + offset);
+      else super(args[0]);
+    }
+    static now() {
+      return RealDate.now() + offset;
+    }
+  }
+  globalThis.Date = RecordingDayDate as DateConstructor;
 }
 
 // ---- types ----
