@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { EvidenceItem } from "./evidence";
+import type { TradeDraft } from "./ledger-parse";
 import { PolicyCheck } from "./policy";
 
 export const Alternative = z.object({
@@ -92,4 +93,6 @@ export type AgentStreamEvent =
   | { type: "error"; message: string }
   /** UI-only notice (e.g. demo AI quota used up); not part of the answer */
   | { type: "notice"; message: string }
+  /** a trade the user says they already made; the chat shows it for confirmation before the ledger changes */
+  | { type: "trade_draft"; draft: TradeDraft; accounts: { id: string; label: string }[] }
   | { type: "done" };

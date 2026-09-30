@@ -1,7 +1,8 @@
 import { tool } from "ai";
 import { z } from "zod";
 import { PolicyCheck } from "@/domain/policy";
-import type { PortfolioSnapshot } from "@/domain/portfolio";
+import type { PortfolioSnapshot, Position } from "@/domain/portfolio";
+import { LEDGER_SOURCE } from "@/providers/finance/ledger";
 import { getMetrics } from "@/services/exposure-engine";
 import { checkPolicy } from "@/services/policy-engine";
 import { getPolicy } from "@/services/policy-store";
@@ -14,7 +15,9 @@ const SnapshotView = z.object({
   totalValueKRW: z.number(),
   buyingPowerKRW: z.number(),
   accounts: z.array(z.object({ name: z.string(), type: z.string(), status: z.enum(["LIVE", "DEMO", "MANUAL"]) })),
-  positions: z.array(z.object({ symbol: z.string(), name: z.string(), account: z.string(), assetType: z.string(), marketValueKRW: z.number(), weightPct: z.number(), dailyChangePct: z.number().optional() })),
+  positions: z.array(z.object({ symbol: z.string(), name: z.string(), account: z.string(), assetType: z.string(), marketValueKRW: z.number(), weightPct: z.number(), dailyChangePct: z.number().optional(),
+    // ledger positions only: what the user bought at, in the trading currency, and the unrealized return against it
+    quantity: z.number().optional(), averagePrice: z.number().optional(), currency: z.string().optional(), returnPct: z.number().optional() })),
   byCurrencyPct: z.record(z.string(), z.number()),
   byCountryPct: z.record(z.string(), z.number()),
   bySectorPct: z.record(z.string(), z.number()),
@@ -35,13 +38,20 @@ export async function snapshotView(userId = "demo", existing?: PortfolioSnapshot
     accounts: snap.accounts.map((a) => ({ name: a.name, type: a.type, status: a.channel === "manual" ? "MANUAL" : a.isLive ? "LIVE" : "DEMO" })),
     positions: snap.positions
       .sort((a, b) => b.marketValueKRW - a.marketValueKRW)
-      .map((p) => ({ symbol: p.symbol, name: p.name, account: byId.get(p.accountId)?.name ?? "", assetType: p.assetType, marketValueKRW: Math.round(p.marketValueKRW), weightPct: r1((p.marketValueKRW / total) * 100), dailyChangePct: p.dailyChangePct })),
+      .map((p) => ({ symbol: p.symbol, name: p.name, account: byId.get(p.accountId)?.name ?? "", assetType: p.assetType, marketValueKRW: Math.round(p.marketValueKRW), weightPct: r1((p.marketValueKRW / total) * 100), dailyChangePct: p.dailyChangePct, ...costView(p) })),
     byCurrencyPct: Object.fromEntries(Object.entries(metrics.weights.byCurrency).map(([k, v]) => [k, r1(v)])),
     byCountryPct: Object.fromEntries(Object.entries(metrics.weights.byCountry).map(([k, v]) => [k, r1(v)])),
     bySectorPct: Object.fromEntries(Object.entries(metrics.weights.bySector).map(([k, v]) => [k, r1(v)])),
     warnings: [...snap.warnings, ...warnings],
     sources: snap.sources.map((s) => `${s.source}${s.isMock ? " (DEMO)" : ""}`),
   });
+}
+
+/** Average cost and unrealized return for ledger holdings. Other sources keep their earlier view so recorded eval prompts stay stable. */
+function costView(p: Position) {
+  if (p.provenance.source !== LEDGER_SOURCE || p.assetType === "cash") return {};
+  const returnPct = p.averagePrice && p.currentPrice !== undefined ? r1(((p.currentPrice - p.averagePrice) / p.averagePrice) * 100) : undefined;
+  return { quantity: p.quantity, averagePrice: p.averagePrice, currency: p.currency, returnPct };
 }
 
 const ExposureView = z.object({

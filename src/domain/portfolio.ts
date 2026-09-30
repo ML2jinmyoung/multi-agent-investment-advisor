@@ -8,7 +8,7 @@ export const Provenance = z.object({
 });
 export type Provenance = z.infer<typeof Provenance>;
 
-export const AccountType = z.enum(["brokerage", "irp", "dc", "pension", "other"]);
+export const AccountType = z.enum(["brokerage", "isa", "irp", "dc", "pension", "other"]);
 export type AccountType = z.infer<typeof AccountType>;
 
 export const Account = z.object({

@@ -5,9 +5,11 @@ import { AnswerCard } from "@/components/answer-card";
 import { PbComposer } from "@/components/pb-composer";
 import { PbOrb } from "@/components/pb-orb";
 import { RunFlow, activityOf, flowProgress, type StepState } from "@/components/run-flow";
+import { TradeCard } from "@/components/trade-card";
 import type { AgentAnswer, AgentStreamEvent, RoutingDecision } from "@/domain/agent";
 import type { ChatMessage } from "@/services/conversation-store";
 
+type Message = ChatMessage & { trade?: Extract<AgentStreamEvent, { type: "trade_draft" }> };
 type Progress = { runId?: string; routing?: RoutingDecision; steps: StepState[]; done?: boolean; startedAt: number; finishedAt?: number };
 
 const EXAMPLES = ["NVDA 500만원 더 살까?", "내가 가장 많이 가진 종목은?", "환율이 10% 떨어지면?"];
@@ -63,7 +65,7 @@ function LiveRun({ progress }: { progress: Progress }) {
 }
 
 export function AgentChat({ initialMessages, initialQuestion, autoSend, showTrace }: { initialMessages: ChatMessage[]; initialQuestion?: string; autoSend?: boolean; showTrace: boolean }) {
-  const [messages, setMessages] = useState(initialMessages);
+  const [messages, setMessages] = useState<Message[]>(initialMessages);
   const [input, setInput] = useState(initialQuestion ?? "");
   const [progress, setProgress] = useState<Progress | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -106,6 +108,7 @@ export function AgentChat({ initialMessages, initialQuestion, autoSend, showTrac
     let buffer = "";
     let runId: string | undefined;
     let answer: AgentAnswer | undefined;
+    let trade: Message["trade"];
     while (true) {
       const { value, done } = await reader.read();
       if (done) break;
@@ -121,9 +124,15 @@ export function AgentChat({ initialMessages, initialQuestion, autoSend, showTrac
         if (ev.type === "answer") answer = ev.answer;
         if (ev.type === "error") setError(ev.message);
         if (ev.type === "notice") setNotice(ev.message);
+        if (ev.type === "trade_draft") trade = ev;
       }
     }
     if (answer) setMessages((m) => [...m, { id: crypto.randomUUID(), role: "assistant", answer, runId, createdAt: new Date().toISOString() }]);
+    if (trade) {
+      setMessages((m) => [...m, { id: crypto.randomUUID(), role: "assistant", trade, createdAt: new Date().toISOString() }]);
+      setProgress(null); // a trade report skips the agent run, so there is no run path to show
+      return;
+    }
     setProgress((p) => (p ? { ...p, done: true, finishedAt: Date.now() } : null));
   }
 
@@ -164,6 +173,11 @@ export function AgentChat({ initialMessages, initialQuestion, autoSend, showTrac
               <p key={m.id} className="pb-rise ml-auto w-fit max-w-[85%] rounded-3xl rounded-br-md bg-primary px-4 py-2.5 text-sm text-primary-foreground">
                 {m.text}
               </p>
+            ) : m.trade ? (
+              <div key={m.id} className="pb-rise">
+                <PbLabel />
+                <TradeCard draft={m.trade.draft} accounts={m.trade.accounts} />
+              </div>
             ) : m.answer ? (
               <div key={m.id} className="pb-rise">
                 <PbLabel />

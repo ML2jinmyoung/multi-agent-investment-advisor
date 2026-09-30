@@ -101,3 +101,34 @@ export const runLabels = sqliteTable("run_labels", {
   note: text("note"),
   createdAt: text("created_at").notNull(),
 });
+
+/** Holdings ledger: one row per brokerage account a user keeps by hand. Never a real account number. */
+export const ledgerAccounts = sqliteTable("ledger_accounts", {
+  id: text("id").primaryKey(),
+  userId: text("user_id").notNull(),
+  broker: text("broker").notNull(),
+  name: text("name").notNull().default(""),
+  type: text("type").notNull().default("brokerage"),
+  cashKRW: real("cash_krw").notNull().default(0),
+  cashUSD: real("cash_usd").notNull().default(0),
+  sortOrder: integer("sort_order").notNull().default(0),
+  createdAt: text("created_at").notNull(),
+});
+
+/** Append-only ledger entries (set | buy | sell). Positions are folded from these; undo sets `voidedAt`. */
+export const ledgerEntries = sqliteTable("ledger_entries", {
+  id: text("id").primaryKey(),
+  userId: text("user_id").notNull(),
+  accountId: text("account_id")
+    .notNull()
+    .references(() => ledgerAccounts.id),
+  kind: text("kind").notNull(),
+  symbol: text("symbol").notNull(),
+  quantity: real("quantity").notNull(),
+  price: real("price"),
+  fee: real("fee"),
+  tradedAt: text("traded_at").notNull(), // YYYY-MM-DD
+  source: text("source").notNull(), // manual | paste | chat
+  createdAt: text("created_at").notNull(),
+  voidedAt: text("voided_at"),
+});

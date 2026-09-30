@@ -5,6 +5,10 @@ import { userIdFromRequest } from "@/lib/user-session";
 import { demoQuestionsPerDay, isDemo, takeDemoQuestion, withoutLlm } from "@/providers/llm/demo";
 import { llmAvailable } from "@/providers/llm/registry";
 import { addMessage, DEFAULT_CONVERSATION, listMessages, memoryTurns } from "@/services/conversation-store";
+import { accountLabel } from "@/domain/ledger";
+import { isTradeReport, parseTradeReport } from "@/domain/ledger-parse";
+import { getSecurityMeta } from "@/providers/market/securities";
+import { getLedger } from "@/services/ledger-store";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 120;
@@ -25,6 +29,15 @@ export async function POST(req: Request) {
       const send = (e: AgentStreamEvent) => controller.enqueue(encoder.encode(`data: ${JSON.stringify(e)}\n\n`));
       try {
         await addMessage(userId, conversationId, "user", message);
+        // "엔비디아 5주 샀어": a finished trade goes to a confirmation card, never straight into the ledger
+        if (userId !== "demo" && isTradeReport(message)) {
+          const ledger = await getLedger(userId);
+          const draft = parseTradeReport(message, { accounts: ledger.map((a) => ({ id: a.id, broker: a.broker, name: a.name, symbols: a.holdings.map((h) => h.symbol) })), knownSymbol: (s) => !!getSecurityMeta(s) });
+          send({ type: "trade_draft", draft, accounts: ledger.map((a) => ({ id: a.id, label: accountLabel(a) })) });
+          await addMessage(userId, conversationId, "assistant", ledger.length ? "말씀하신 거래를 장부에 반영할지 확인을 요청했어요." : "거래를 기록하려면 먼저 자산 화면에서 증권사 계좌를 등록해 주세요.");
+          send({ type: "done" });
+          return;
+        }
         // public demo: each session gets a few free-model questions a day, then deterministic answers
         const outOfQuota = isDemo() && llmAvailable() && !takeDemoQuestion(userId);
         if (outOfQuota) send({ type: "notice", message: `데모에서는 AI 질문을 하루 ${demoQuestionsPerDay()}개까지 할 수 있어요. 오늘은 규칙 기반으로 답해 드릴게요.` });
