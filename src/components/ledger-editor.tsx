@@ -25,8 +25,12 @@ export function LedgerEditor({ initial, custom }: { initial: Omit<Account, "key"
   function importPaste() {
     const { rows, errors } = parsePastedHoldings(paste);
     const next = accounts.map((a) => ({ ...a, holdings: [...a.holdings] }));
+    const target = next[pasteTarget]?.broker.trim() ? next[pasteTarget] : undefined;
+    let loaded = 0;
     for (const r of rows) {
-      let acct = r.broker ? next.find((a) => normalizeBroker(a.broker) === r.broker) : next[pasteTarget];
+      // every holding belongs to a broker: a row without one goes to the chosen account, or is refused
+      if (!r.broker && !target) { errors.push(`${r.symbol}: 증권사가 없어요. 줄 앞에 증권사를 적거나 넣을 계좌를 고르세요.`); continue; }
+      let acct = r.broker ? next.find((a) => normalizeBroker(a.broker) === r.broker) : target;
       if (!acct) {
         const empty = next.find((a) => !a.broker && !a.holdings.length);
         acct = empty ?? blank();
@@ -37,11 +41,12 @@ export function LedgerEditor({ initial, custom }: { initial: Omit<Account, "key"
       const at = acct.holdings.findIndex((x) => x.symbol === r.symbol);
       if (at >= 0) acct.holdings[at] = h;
       else acct.holdings.push(h);
+      loaded++;
     }
     setAccounts(next);
-    setPasted(pasted || rows.length > 0);
+    setPasted(pasted || loaded > 0);
     setPaste(errors.length ? paste : "");
-    setMessage(`${rows.length}줄을 불러왔어요. 확인 후 저장하세요.${errors.length ? ` 읽지 못한 줄: ${errors.join(" / ")}` : ""}`);
+    setMessage(`${loaded}줄을 불러왔어요. 확인 후 저장하세요.${errors.length ? ` 읽지 못한 줄: ${errors.join(" / ")}` : ""}`);
   }
 
   async function save() {
@@ -83,7 +88,7 @@ export function LedgerEditor({ initial, custom }: { initial: Omit<Account, "key"
           {accounts.map((a, i) => (
             <section key={a.key} aria-label={`계좌 ${i + 1}`} className="space-y-2 rounded-xl border p-3">
               <div className="grid grid-cols-[2fr_2fr_1fr_auto] gap-2">
-                <label className="text-xs">증권사<input className={field} required maxLength={30} list="broker-names" value={a.broker} onChange={(e) => update(i, { broker: e.target.value })} /></label>
+                <label className="text-xs">증권사<input className={field} required maxLength={30} list="broker-names" placeholder="예: 삼성증권" value={a.broker} onChange={(e) => update(i, { broker: e.target.value })} /></label>
                 <label className="text-xs">별칭 (선택)<input className={field} maxLength={30} placeholder="ISA, 연금 등" value={a.name} onChange={(e) => update(i, { name: e.target.value })} /></label>
                 <label className="text-xs">유형
                   <select className={field} value={a.type} onChange={(e) => update(i, { type: e.target.value as AccountType })}>
@@ -112,7 +117,7 @@ export function LedgerEditor({ initial, custom }: { initial: Omit<Account, "key"
 
           <details className="rounded-xl border p-3">
             <summary className="cursor-pointer text-sm font-medium">표로 한꺼번에 붙여넣기</summary>
-            <p className="my-2 text-xs text-muted-foreground">한 줄에 <code>증권사, 종목, 수량, 평단</code> 순서로 적거나 엑셀·구글시트에서 복사해 붙여넣으세요. 증권사 칸이 없으면 아래에서 고른 계좌로 들어가요.</p>
+            <p className="my-2 text-xs text-muted-foreground">한 줄에 <code>증권사, 종목, 수량, 평단</code> 순서로 적거나 엑셀·구글시트에서 복사해 붙여넣으세요. 증권사 칸이 없는 줄은 아래에서 고른 계좌(증권사를 적어 둔 계좌)로 들어가요.</p>
             <textarea aria-label="보유 종목 붙여넣기" className={`${field} h-28 font-mono`} placeholder={"삼성증권, 005930, 10, 71000\n키움증권, NVDA, 5, 120.5"} value={paste} onChange={(e) => setPaste(e.target.value)} />
             <div className="mt-2 flex items-center gap-2">
               <select aria-label="증권사 칸이 없는 줄을 넣을 계좌" className={field} value={pasteTarget} onChange={(e) => setPasteTarget(Number(e.target.value))}>

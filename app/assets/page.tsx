@@ -17,10 +17,10 @@ export const dynamic = "force-dynamic";
 export default async function AssetsPage() {
   const userId = await currentUserId();
   const [snap, input, ledger, trades] = await Promise.all([getPortfolioSnapshot(userId), getPortfolioInput(userId), getLedger(userId), listEntries(userId)]);
-  // an earlier single-list input opens in the editor as one account, and moves into the ledger on first save
+  // an earlier single-list input opens in the editor as one account whose broker the user must fill before saving
   const initial = ledger.length
     ? ledger.map((a) => ({ ...a, holdings: a.holdings.map(({ symbol, quantity, averagePrice }) => ({ symbol, quantity, averagePrice })) }))
-    : input ? [{ broker: "기존 입력", name: "", type: "brokerage" as const, cashKRW: input.cashKRW, cashUSD: input.cashUSD, holdings: input.holdings }] : [];
+    : input ? [{ broker: "", name: "", type: "brokerage" as const, cashKRW: input.cashKRW, cashUSD: input.cashUSD, holdings: input.holdings }] : [];
   const total = snap.totals.marketValueKRW;
 
   return (
