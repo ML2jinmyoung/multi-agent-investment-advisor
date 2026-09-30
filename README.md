@@ -80,6 +80,19 @@ fly deploy
 - 홈 화면의 오늘 브리핑은 1분마다 새로고침되므로 공개 데모에서는 소유자도 규칙 기반으로 둡니다. 키 비용은 대화에서만 나갑니다.
 - 실제 토스 계좌 조회는 공개 데모에서 소유자에게도 꺼져 있습니다.
 
+### Claude 앱에서 내 장부로 상담하기 (MCP 커넥터)
+
+이 앱은 소유자의 장부를 MCP 서버로도 내놓습니다. Claude 앱(Pro·Max 플랜)의 커스텀 커넥터로 연결하면, Claude가 장부·시세·오늘의 변화·투자 원칙·시뮬레이션 도구를 직접 불러 답하고, 체결한 매매를 장부에 기록할 수도 있습니다. 모델 비용은 구독에 포함되고 이 서버에서는 LLM을 부르지 않습니다. 앱 안의 대화(에이전트 5개와 실행 그래프)는 그대로 남아 있으니, 둘을 같이 씁니다.
+
+1. `OWNER_PASSCODE`를 설정하고 배포한 뒤 `/assets`에서 소유자로 로그인합니다.
+2. **Claude 앱에서 내 장부로 상담하기** 카드의 주소(`https://<앱 주소>/api/mcp/<비밀 토큰>`)를 복사합니다.
+3. claude.ai 또는 Claude 데스크톱 앱에서 설정 → 커넥터 → 커스텀 커넥터 추가에 이름과 그 주소를 넣습니다. OAuth 항목은 비워 둡니다.
+4. 대화에서 커넥터를 켜고 "오늘 내 자산 변화는?", "삼성에서 엔비디아 5주 120달러에 샀어"처럼 묻습니다.
+
+- 인증은 주소 안의 토큰 하나입니다. 토큰은 비밀번호에서 파생되며(쿠키 값과 다름) 틀리면 404입니다. 비밀번호를 바꾸면 주소도 바뀝니다. 주소를 남에게 보내지 마세요.
+- 도구: `get_ledger`, `get_portfolio`, `get_position`, `get_exposure`, `get_quotes`, `get_price_history`, `get_stock_warnings`, `get_today`, `get_investment_policy`, `check_investment_policy`, `simulate_trade`, `simulate_scenario`, `record_trade`(먼저 미리보기, `confirm: true`로 저장), `list_trades`, `undo_trade`.
+- 전송은 MCP Streamable HTTP(무상태, JSON 응답)이며 엔드포인트는 `app/api/mcp/[token]/route.ts`, 도구 정의는 `src/mcp/server.ts`에 있습니다.
+
 ## 평가 하네스
 
 `npm run eval`은 정답 데이터의 질문을 **실제 오케스트레이터**(`runAgent`)로 실행하고 `evals/reports/`에 JSON·Markdown 리포트를 저장합니다.
