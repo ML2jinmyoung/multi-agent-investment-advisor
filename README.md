@@ -67,7 +67,9 @@ fly secrets set OWNER_PASSCODE='8자 이상의 긴 비밀번호'   # 로컬은 .
 
 #### 소유자는 본인 AI 키로 (공개 데모와 함께)
 
-`PUBLIC_DEMO_MODE=true`로 공개해 둔 배포에서도, 소유자로 로그인한 기기의 AI 대화는 데모 규칙(무료 모델, 하루 질문 수 제한)을 받지 않고 서버에 넣어 둔 Claude·OpenAI 키로 답합니다. 방문자는 계속 OpenRouter 무료 모델과 하루 질문 제한을 받고, 소유자 키는 쓰지 못합니다.
+`PUBLIC_DEMO_MODE=true`로 공개해 둔 배포에서도, 소유자로 로그인한 기기의 AI 대화는 데모 규칙(무료 모델, 하루 질문 수 제한)을 받지 않습니다. 서버에 Claude·OpenAI 키를 넣어 두면 그 키로 답하고, 키가 없으면 데모와 같은 OpenRouter 무료 모델을 질문 수 제한 없이 씁니다. 방문자는 계속 OpenRouter 무료 모델과 하루 질문 제한을 받고, 소유자 키는 쓰지 못합니다.
+
+키 없이 쓰려면 `OWNER_PASSCODE`만 설정하면 됩니다. 더 좋은 모델을 쓰려면 키를 추가합니다.
 
 ```bash
 fly secrets set ANTHROPIC_API_KEY=sk-ant-...     # OpenAI를 쓰면 OPENAI_API_KEY, fly.toml의 LLM_PROVIDER와 모델명도 바꿉니다
