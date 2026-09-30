@@ -1,7 +1,10 @@
-import { PortfolioEditor } from "@/components/portfolio-editor";
+import { LedgerEditor } from "@/components/ledger-editor";
+import { LedgerHistory } from "@/components/ledger-history";
+import { OwnerLogin } from "@/components/owner-login";
+import { OWNER_USER_ID, ownerEnabled } from "@/lib/owner-auth";
 import { MarketRefresh } from "@/components/market-refresh";
 import { getPortfolioInput } from "@/services/portfolio-input-store";
-import type { PortfolioInput } from "@/domain/portfolio-input";
+import { getLedger, listEntries } from "@/services/ledger-store";
 import { SourceBadge } from "@/components/source-badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
@@ -13,8 +16,11 @@ export const dynamic = "force-dynamic";
 
 export default async function AssetsPage() {
   const userId = await currentUserId();
-  const [snap, input] = await Promise.all([getPortfolioSnapshot(userId), getPortfolioInput(userId)]);
-  const defaults: PortfolioInput = { holdings: [{ symbol: "NVDA", quantity: 10 }, { symbol: "005930", quantity: 20 }], cashKRW: 1000000, cashUSD: 100 };
+  const [snap, input, ledger, trades] = await Promise.all([getPortfolioSnapshot(userId), getPortfolioInput(userId), getLedger(userId), listEntries(userId)]);
+  // an earlier single-list input opens in the editor as one account whose broker the user must fill before saving
+  const initial = ledger.length
+    ? ledger.map((a) => ({ ...a, holdings: a.holdings.map(({ symbol, quantity, averagePrice }) => ({ symbol, quantity, averagePrice })) }))
+    : input ? [{ broker: "", name: "", type: "brokerage" as const, cashKRW: input.cashKRW, cashUSD: input.cashUSD, holdings: input.holdings }] : [];
   const total = snap.totals.marketValueKRW;
 
   return (
@@ -28,12 +34,14 @@ export default async function AssetsPage() {
         </p>
         <ul className="mt-4 flex flex-wrap gap-1.5 text-xs tabular-nums">
           <li className="rounded-full bg-white/12 px-2.5 py-1">{snap.marketMode === "live" ? "실제 시세" : "예시 시세"}</li>
-          <li className="rounded-full bg-white/12 px-2.5 py-1">{input ? "직접 입력 자산" : "데모 자산"}</li>
+          <li className="rounded-full bg-white/12 px-2.5 py-1">{ledger.length ? "증권사별 장부" : input ? "직접 입력 자산" : "데모 자산"}</li>
           <li className="rounded-full bg-white/12 px-2.5 py-1">USD/KRW {snap.fxRates.USD ? snap.fxRates.USD.toLocaleString("ko-KR", { maximumFractionDigits: 2 }) : "조회 대기"}</li>
         </ul>
       </section>
       <MarketRefresh />
-      <PortfolioEditor key={JSON.stringify(input)} initial={input ?? defaults} custom={!!input} />
+      {ownerEnabled() && <OwnerLogin owner={userId === OWNER_USER_ID} />}
+      <LedgerEditor key={JSON.stringify(initial)} initial={initial} custom={ledger.length > 0 || !!input} />
+      <LedgerHistory trades={trades} />
       {snap.accounts.map((acct) => {
         const positions = snap.positions
           .filter((p) => p.accountId === acct.id)
@@ -60,6 +68,16 @@ export default async function AssetsPage() {
                         {p.symbol}
                         {p.assetType !== "cash" && ` · ${p.quantity.toLocaleString()}주`}
                       </p>
+                      {p.averagePrice !== undefined && p.assetType !== "cash" && (
+                        <p className="text-xs text-muted-foreground tabular-nums">
+                          평단 {new Intl.NumberFormat("ko-KR", { style: "currency", currency: p.currency, maximumFractionDigits: 2 }).format(p.averagePrice)}
+                          {p.averagePrice > 0 && p.currentPrice !== undefined && (
+                            <span className={cn("ml-1", p.currentPrice < p.averagePrice ? "text-down" : p.currentPrice > p.averagePrice ? "text-up" : "")}>
+                              {signedPct(((p.currentPrice - p.averagePrice) / p.averagePrice) * 100)}
+                            </span>
+                          )}
+                        </p>
+                      )}
                     </div>
                     <div className="text-right tabular-nums">
                       {p.currentPrice !== undefined && ["stock", "etf", "bond", "fund"].includes(p.assetType) && <p className="text-xs text-muted-foreground">시세 {new Intl.NumberFormat("ko-KR", { style: "currency", currency: p.currency, maximumFractionDigits: 2 }).format(p.currentPrice)}</p>}

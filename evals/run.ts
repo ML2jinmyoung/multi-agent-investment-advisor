@@ -3,6 +3,7 @@
  *
  *   npm run eval -- --mode replay            # cassettes, no network, no keys (CI)
  *   npm run eval -- --mode record            # live models, writes cassettes + manifest
+ *   npm run eval -- --mode record --ids a,b  # records only those cases into the existing recording (same models, same day)
  *   npm run eval -- --mode live --trials 3   # live models, no recording
  *   npm run eval -- --mode rules             # no LLM at all: deterministic template path
  *
@@ -58,11 +59,34 @@ Object.assign(process.env, {
 });
 delete process.env.TYPESAFE_API_KEY;
 if (mode === "rules") for (const k of ["ANTHROPIC_API_KEY", "OPENAI_API_KEY", "OPENROUTER_API_KEY"]) delete process.env[k];
-if (mode === "replay") {
+// Topping up an existing recording (`--mode record --ids ...`) keeps its models and its day, so old and new
+// cassettes replay together.
+const topUp = mode === "record" && args.ids !== undefined && existsSync(MANIFEST);
+if (mode === "replay" || topUp) {
   if (!existsSync(MANIFEST)) fail(`no cassette manifest at ${MANIFEST}; run with --mode record first`);
   const m = JSON.parse(readFileSync(MANIFEST, "utf8")) as Manifest;
   process.env.LLM_PROVIDER = m.provider;
   for (const [agent, cfg] of Object.entries(m.models)) process.env[AGENT_ENV[agent]] = cfg.model;
+  runOnRecordingDay(m.recordedAt);
+}
+
+/**
+ * Prompts carry the calendar date (evidence freshness, "today"), so replaying on a later day would miss every
+ * cassette. Replay and top-up recording run on the recording day's clock; time still advances, so latencies stay real.
+ */
+function runOnRecordingDay(recordedAt: string) {
+  const offset = Date.parse(recordedAt) - Date.now();
+  const RealDate = Date;
+  class RecordingDayDate extends RealDate {
+    constructor(...args: [] | [string | number | Date]) {
+      if (args.length === 0) super(RealDate.now() + offset);
+      else super(args[0]);
+    }
+    static now() {
+      return RealDate.now() + offset;
+    }
+  }
+  globalThis.Date = RecordingDayDate as DateConstructor;
 }
 
 // ---- types ----
@@ -255,7 +279,7 @@ async function main() {
     }
   }
 
-  if (mode === "record") {
+  if (mode === "record" && !topUp) {
     mkdirSync(CASSETTE_DIR, { recursive: true });
     const manifest: Manifest = { recordedAt: startedAt.toISOString(), provider: process.env.LLM_PROVIDER ?? "anthropic", models, cases: casesPath, profile: profileName };
     writeFileSync(MANIFEST, JSON.stringify(manifest, null, 2));

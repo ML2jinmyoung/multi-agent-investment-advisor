@@ -5,14 +5,10 @@ import { confidenceOf, type DecisionModel, ROUTING_THRESHOLD } from "@/decision"
 import { ROUTING_KEYS, type RoutingDecision, type RoutingKey } from "@/domain/agent";
 import { llmAvailable, modelFor } from "@/providers/llm/registry";
 import { getSecurityMeta } from "@/providers/market/securities";
+import { SYMBOL_ALIASES as ALIASES } from "@/domain/symbol-aliases";
 import type { Tracer } from "./tracer";
 
 // ---- deterministic parsing (symbols, trade, scenario, prediction) ----
-const ALIASES: Record<string, string> = {
-  엔비디아: "NVDA", nvidia: "NVDA", 삼성전자: "005930", 삼전: "005930", 하이닉스: "000660", sk하이닉스: "000660",
-  애플: "AAPL", 테슬라: "TSLA", 마이크로소프트: "MSFT", 아마존: "AMZN", "kodex 200": "069500", 코덱스200: "069500",
-  "tiger 미국s&p500": "360750", "tiger 미국나스닥100": "133690",
-};
 const UNIT: Record<string, number> = { 억: 1e8, 천만: 1e7, 백만: 1e6, 만: 1e4, 천: 1e3 };
 const SECTOR_WORDS: [RegExp, string][] = [[/기술주|테크|반도체|it주/i, "Technology"], [/금융주|은행주/, "Financials"], [/헬스케어|바이오/, "Health Care"]];
 

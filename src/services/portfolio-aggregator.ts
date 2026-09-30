@@ -1,6 +1,8 @@
 import { LiveMarketProvider } from "@/providers/market/live-toss";
 import { ManualPortfolioProvider } from "@/providers/finance/manual";
 import { getPortfolioInput } from "./portfolio-input-store";
+import { getLedger } from "./ledger-store";
+import { LedgerPortfolioProvider } from "@/providers/finance/ledger";
 import { describeError, PortfolioSnapshot, type Position, type Provenance, type Quote, valueKRW } from "@/domain/portfolio";
 import { flag } from "@/lib/env";
 import type { PortfolioProvider } from "@/providers/finance/interface";
@@ -39,6 +41,9 @@ export function marketDataProvider(): MarketDataProvider {
 export async function getPortfolioSnapshot(userId = "demo", opts: { fresh?: boolean } = {}): Promise<PortfolioSnapshot> {
   // Holdings are always read fresh; shared market requests retain their 60s rate-limit cache.
   void opts;
+  // the brokerage ledger wins over the older single-list input, which wins over the demo accounts
+  const ledger = userId === "demo" ? [] : await getLedger(userId);
+  if (ledger.length) return buildSnapshot([new LedgerPortfolioProvider(ledger)], marketDataProvider());
   const input = await getPortfolioInput(userId);
   return buildSnapshot(input ? [new ManualPortfolioProvider(input)] : portfolioProviders(), marketDataProvider());
 }
