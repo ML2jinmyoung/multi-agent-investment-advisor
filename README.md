@@ -19,7 +19,7 @@
 
 - 시세·종목명·환율은 [Toss Open API](https://corp.tossinvest.com/ko/open-api)에서 조회합니다.
 
-- 데모는 OpenRouter 무료 모델로 답변을 제공하며, 직접 설치하시면 본인의 Claude·OpenAI·OpenRouter 키로 실행할 수 있습니다.
+- 데모는 OpenRouter 무료 모델로 답변을 제공하며, 직접 설치하시면 본인의 Claude·OpenAI·OpenRouter 키로 실행할 수 있습니다. 공개 데모에서도 소유자 비밀번호로 로그인한 사람은 본인 키로 제한 없이 씁니다(아래 참고).
 
 모델 사용 시 실행 흐름:
 
@@ -64,6 +64,19 @@ fly secrets set OWNER_PASSCODE='8자 이상의 긴 비밀번호'   # 로컬은 .
 - 쿠키에는 비밀번호가 아니라 비밀번호로 서명한 값만 들어갑니다. 비밀번호를 바꾸면 모든 기기가 로그아웃되고, 장부 데이터는 그대로 남습니다.
 - 틀린 비밀번호는 접속지별 15분에 5번, 전체 15분에 20번까지만 받습니다.
 - 비밀번호를 모르는 방문자는 지금처럼 데모 자산이나 각자의 임시 장부를 씁니다. `OWNER_PASSCODE`가 없으면 이 기능은 꺼져 있습니다.
+
+#### 소유자는 본인 AI 키로 (공개 데모와 함께)
+
+`PUBLIC_DEMO_MODE=true`로 공개해 둔 배포에서도, 소유자로 로그인한 기기의 AI 대화는 데모 규칙(무료 모델, 하루 질문 수 제한)을 받지 않고 서버에 넣어 둔 Claude·OpenAI 키로 답합니다. 방문자는 계속 OpenRouter 무료 모델과 하루 질문 제한을 받고, 소유자 키는 쓰지 못합니다.
+
+```bash
+fly secrets set ANTHROPIC_API_KEY=sk-ant-...     # OpenAI를 쓰면 OPENAI_API_KEY, fly.toml의 LLM_PROVIDER와 모델명도 바꿉니다
+fly deploy
+```
+
+- 모델명은 `fly.toml`의 `[env]`(`LLM_PROVIDER`, `ORCHESTRATOR_MODEL` 등)에서 정합니다. 이 값은 소유자에게만 쓰입니다.
+- 홈 화면의 오늘 브리핑은 1분마다 새로고침되므로 공개 데모에서는 소유자도 규칙 기반으로 둡니다. 키 비용은 대화에서만 나갑니다.
+- 실제 토스 계좌 조회는 공개 데모에서 소유자에게도 꺼져 있습니다.
 
 ## 평가 하네스
 

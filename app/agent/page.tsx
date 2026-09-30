@@ -6,7 +6,7 @@ import { flag } from "@/lib/env";
 import { listMessages } from "@/services/conversation-store";
 import { getPortfolioSnapshot } from "@/services/portfolio-aggregator";
 import { currentUserId } from "@/lib/user-session";
-import { demoFreeModel, demoQuota, isDemo } from "@/providers/llm/demo";
+import { demoFor, demoFreeModel, demoQuota } from "@/providers/llm/demo";
 
 export const dynamic = "force-dynamic";
 
@@ -14,7 +14,7 @@ export default async function AgentPage({ searchParams }: PageProps<"/agent">) {
   const { q, auto } = await searchParams;
   const userId = await currentUserId();
   const [messages, snapshot] = await Promise.all([listMessages(userId), getPortfolioSnapshot(userId)]);
-  const demoModel = isDemo() ? demoFreeModel() : undefined;
+  const demoModel = demoFor(userId) ? demoFreeModel() : undefined;
   const quota = demoModel ? demoQuota(userId) : undefined;
   const held = [...new Set(snapshot.positions.filter((p) => p.assetType !== "cash").map((p) => p.symbol))];
   return (

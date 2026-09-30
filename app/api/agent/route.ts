@@ -2,7 +2,7 @@ import { z } from "zod";
 import type { AgentStreamEvent } from "@/domain/agent";
 import { runAgent } from "@/orchestration/orchestrator";
 import { userIdFromRequest } from "@/lib/user-session";
-import { demoQuestionsPerDay, isDemo, takeDemoQuestion, withoutLlm } from "@/providers/llm/demo";
+import { demoFor, demoQuestionsPerDay, forUser, takeDemoQuestion, withoutLlm } from "@/providers/llm/demo";
 import { llmAvailable } from "@/providers/llm/registry";
 import { addMessage, DEFAULT_CONVERSATION, listMessages, memoryTurns } from "@/services/conversation-store";
 import { accountLabel } from "@/domain/ledger";
@@ -38,11 +38,12 @@ export async function POST(req: Request) {
           send({ type: "done" });
           return;
         }
-        // public demo: each session gets a few free-model questions a day, then deterministic answers
-        const outOfQuota = isDemo() && llmAvailable() && !takeDemoQuestion(userId);
+        // public demo: each session gets a few free-model questions a day, then deterministic answers;
+        // the signed-in owner is not a visitor and runs on their own keys with no quota
+        const outOfQuota = demoFor(userId) && llmAvailable() && !takeDemoQuestion(userId);
         if (outOfQuota) send({ type: "notice", message: `데모에서는 AI 질문을 하루 ${demoQuestionsPerDay()}개까지 할 수 있어요. 오늘은 규칙 기반으로 답해 드릴게요.` });
         const run = () => runAgent(message, send, { userId, history });
-        const { answer, runId } = await (outOfQuota ? withoutLlm(run) : run());
+        const { answer, runId } = await forUser(userId, () => (outOfQuota ? withoutLlm(run) : run()));
         await addMessage(userId, conversationId, "assistant", answer, runId);
         send({ type: "done" });
       } catch (e) {
