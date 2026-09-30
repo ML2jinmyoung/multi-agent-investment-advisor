@@ -13,6 +13,13 @@ primary_region = "nrt"
   MARKET_DATA_PROVIDER = "toss"
   ENABLE_MOCK_MYDATA = "true"
   ENABLE_AGENT_TRACE = "true"
+  # models for the signed-in owner (visitors always get the free demo model); keys go in fly secrets
+  LLM_PROVIDER = "anthropic"
+  ORCHESTRATOR_MODEL = "claude-haiku-4-5"
+  PORTFOLIO_MODEL = "claude-sonnet-5"
+  EVIDENCE_MODEL = "claude-sonnet-5"
+  SYNTHESIZER_MODEL = "claude-sonnet-5"
+  CRITIC_MODEL = "claude-haiku-4-5"
 
 [http_service]
   internal_port = 3000
