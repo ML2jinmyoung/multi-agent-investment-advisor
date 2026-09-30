@@ -73,6 +73,7 @@ fly secrets set OWNER_PASSCODE='8자 이상의 긴 비밀번호'   # 로컬은 .
 | --------------- | ---------------------------------------- | ------------------------------------------------------ | --------------------------------------------------------------------------- |
 | `replay` (기본) | `npm run eval -- --mode replay`          | 기록된 응답 재생, 키·네트워크 불필요                   | CI. 파서·합성·검증·Critic 등 **코드 경로 회귀** 검사. 모델 품질은 재지 않음 |
 | `record`        | `npm run eval -- --mode record`          | 실제 모델 호출, 응답을 `tests/evals/cassettes/`에 저장 | replay용 기록 갱신. 프롬프트나 모델을 바꾸면 다시 기록                      |
+| `record` (추가) | `npm run eval -- --mode record --suite golden --ids golden-25` | 기존 기록과 같은 모델·같은 날짜로 해당 케이스만 기록 | 빠진 케이스만 채울 때. manifest는 바꾸지 않음                                |
 | `live`          | `npm run eval -- --mode live --trials 3` | 실제 모델, 기록 안 함                                  | 현재 모델 품질·지연·비용 측정. 반복 실행으로 일관성(pass^k) 확인            |
 | `rules`         | `npm run eval -- --mode rules`           | 없음                                                   | 규칙 라우터·결정론 엔진·템플릿 답변만                                       |
 
@@ -122,7 +123,7 @@ npm test -- tests/evals/routing-eval.test.ts
 npm run eval -- --mode replay      # 기록된 LLM 응답으로 30문항 전체 경로 실행 (키 불필요)
 ```
 
-본인 모델로 쓰려면 `.env.local`에 키와 모델명을 넣습니다. 이때 `PUBLIC_DEMO_MODE`는 켜지 않습니다.
+본인 모델로 쓰려면 `cp .env.sample .env.local`로 복사한 뒤 키와 모델명을 넣습니다. 쓸 수 있는 환경변수는 모두 [`.env.sample`](.env.sample)에 설명이 있습니다. 이때 `PUBLIC_DEMO_MODE`는 켜지 않습니다.
 
 ```bash
 # Claude
