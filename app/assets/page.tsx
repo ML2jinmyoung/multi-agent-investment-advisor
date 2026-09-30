@@ -1,5 +1,7 @@
 import { LedgerEditor } from "@/components/ledger-editor";
 import { LedgerHistory } from "@/components/ledger-history";
+import { OwnerLogin } from "@/components/owner-login";
+import { OWNER_USER_ID, ownerEnabled } from "@/lib/owner-auth";
 import { MarketRefresh } from "@/components/market-refresh";
 import { getPortfolioInput } from "@/services/portfolio-input-store";
 import { getLedger, listEntries } from "@/services/ledger-store";
@@ -37,6 +39,7 @@ export default async function AssetsPage() {
         </ul>
       </section>
       <MarketRefresh />
+      {ownerEnabled() && <OwnerLogin owner={userId === OWNER_USER_ID} />}
       <LedgerEditor key={JSON.stringify(initial)} initial={initial} custom={ledger.length > 0 || !!input} />
       <LedgerHistory trades={trades} />
       {snap.accounts.map((acct) => {

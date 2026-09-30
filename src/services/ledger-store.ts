@@ -157,3 +157,28 @@ export async function resetLedger(userId: string) {
   await db.delete(schema.ledgerEntries).where(eq(schema.ledgerEntries.userId, userId));
   await db.delete(schema.ledgerAccounts).where(eq(schema.ledgerAccounts.userId, userId));
 }
+
+/**
+ * On first owner login, carries over what this browser entered anonymously (ledger, older single-list input and
+ * investment policy), each only when the owner has none yet, so nothing of the owner's is ever overwritten.
+ */
+export async function adoptLedger(fromUserId: string, toUserId: string): Promise<boolean> {
+  if (fromUserId === "demo" || fromUserId === toUserId || (await hasLedger(toUserId))) return false;
+  const db = await getDb();
+  let moved = false;
+  if (await hasLedger(fromUserId)) {
+    await db.transaction(async (tx) => {
+      await tx.update(schema.ledgerAccounts).set({ userId: toUserId }).where(eq(schema.ledgerAccounts.userId, fromUserId));
+      await tx.update(schema.ledgerEntries).set({ userId: toUserId }).where(eq(schema.ledgerEntries.userId, fromUserId));
+    });
+    moved = true;
+  }
+  const [owner] = await db.select({ id: schema.portfolioInputs.userId }).from(schema.portfolioInputs).where(eq(schema.portfolioInputs.userId, toUserId));
+  if (!owner && !moved) {
+    const res = await db.update(schema.portfolioInputs).set({ userId: toUserId }).where(eq(schema.portfolioInputs.userId, fromUserId));
+    moved = res.rowsAffected > 0;
+  }
+  const [policy] = await db.select({ id: schema.investmentPolicies.id }).from(schema.investmentPolicies).where(eq(schema.investmentPolicies.id, `${toUserId}:default`));
+  if (!policy) await db.update(schema.investmentPolicies).set({ id: `${toUserId}:default` }).where(eq(schema.investmentPolicies.id, `${fromUserId}:default`));
+  return moved;
+}

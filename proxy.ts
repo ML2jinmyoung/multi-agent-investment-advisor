@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { USER_SESSION_COOKIE, VALID_ID } from "@/lib/user-session";
+import { USER_SESSION_COOKIE, VALID_ID } from "@/lib/session-cookie";
 
 /** Anonymous POC tenant boundary. Replace the cookie value with the authenticated subject in production. */
 export function proxy(req: NextRequest) {
