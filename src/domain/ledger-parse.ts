@@ -155,7 +155,11 @@ export function parseTradeReport(
   const action = DONE_SELL.test(message) && !DONE_BUY.test(message) ? "sell" : "buy";
 
   const held = new Set(ctx.accounts.flatMap((a) => a.symbols));
-  let symbol = Object.entries(SYMBOL_ALIASES).find(([alias]) => lower.includes(alias))?.[1];
+  // the broker phrase is set aside first ("카카오페이증권" is not the stock 카카오), then the longest alias wins ("삼성전자우" over 삼성전자)
+  const brokerFree = lower.replace(/\S*(?:증권|금융투자)\S*/g, " ");
+  const compact = brokerFree.replace(/\s+/g, "");
+  const hit = Object.entries(SYMBOL_ALIASES).sort((a, b) => b[0].length - a[0].length).find(([alias]) => brokerFree.includes(alias) || compact.includes(alias.replace(/\s+/g, "")));
+  let symbol = hit?.[1];
   symbol ??= (message.match(/\b[A-Za-z]{1,5}(?:\.[A-Za-z])?\b/g) ?? []).map((t) => t.toUpperCase()).find((t) => held.has(t) || ctx.knownSymbol?.(t));
   // a 6-character KRX code, but not a price or quantity ("120000원", "100000주")
   symbol ??= message.match(/(?<![\d.,])(\d{5}[0-9A-Z])(?![\d.,])(?!\s*(?:원|주|달러|불|억|천|만))/)?.[1];
@@ -179,8 +183,8 @@ export function parseTradeReport(
     else if (quantity) price = Math.round((amount / quantity) * 1e4) / 1e4;
   }
 
-  // "삼성전자" must not read as the broker "삼성"
-  const mentioned = brokersIn(Object.keys(SYMBOL_ALIASES).reduce((t, alias) => t.split(alias).join(" "), lower));
+  // "삼성전자" must not read as the broker "삼성": the matched stock name is removed before brokers are looked for
+  const mentioned = brokersIn(hit ? [hit[0], hit[0].replace(/\s+/g, "")].reduce((t, alias) => t.split(alias).join(" "), lower) : lower);
   const byBroker = ctx.accounts.filter((a) => mentioned.includes(normalizeBroker(a.broker)) || (a.name && message.includes(a.name)));
   const bySymbol = action === "sell" && symbol ? ctx.accounts.filter((a) => a.symbols.includes(symbol)) : [];
   const accountId = ctx.accounts.length === 1 ? ctx.accounts[0].id : byBroker.length === 1 ? byBroker[0].id : !mentioned.length && bySymbol.length === 1 ? bySymbol[0].id : undefined;

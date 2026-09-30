@@ -29,6 +29,26 @@ export type LedgerAccountInput = z.infer<typeof LedgerAccountInput>;
 export const LedgerInput = z.object({ accounts: z.array(LedgerAccountInput).max(20) }).strict();
 export type LedgerInput = z.infer<typeof LedgerInput>;
 
+/** Points at the field the user must fix: "계좌 2 · 3번째 종목: 종목 코드 형식이 아니에요 (예: NVDA, 005930)". */
+export function ledgerIssueMessage(issues: { path: PropertyKey[]; message: string }[]): string {
+  const issue = issues[0];
+  if (!issue) return "입력을 확인하세요.";
+  const [, acct, field, row, sub] = issue.path;
+  const where = typeof acct === "number" ? `계좌 ${acct + 1}${typeof row === "number" ? ` · ${row + 1}번째 종목` : ""}: ` : "";
+  const key = field === "holdings" ? sub : field;
+  const what: Record<string, string> = {
+    broker: "증권사 이름을 1~30자로 적어 주세요.",
+    name: "별칭은 30자까지예요.",
+    symbol: "종목 코드 형식이 아니에요. 종목명 대신 코드(NVDA, 005930)를 넣어 주세요.",
+    quantity: "수량은 0보다 큰 숫자여야 해요.",
+    averagePrice: "평균 매입가는 0 이상의 숫자여야 해요 (해외 종목은 달러).",
+    cashKRW: "원화 예수금은 0 이상의 숫자여야 해요.",
+    cashUSD: "달러 예수금은 0 이상의 숫자여야 해요.",
+    holdings: "한 계좌 안에서는 같은 종목을 한 줄로 합쳐 주세요.",
+  };
+  return where + (what[String(key)] ?? (typeof key === "string" && key ? `${key}: ${issue.message}` : issue.message));
+}
+
 export const EntryKind = z.enum(["set", "buy", "sell"]);
 export type EntryKind = z.infer<typeof EntryKind>;
 export const EntrySource = z.enum(["manual", "paste", "chat"]);
