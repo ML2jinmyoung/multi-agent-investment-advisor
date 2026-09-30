@@ -70,6 +70,21 @@ describe("public demo LLM policy", () => {
     await asOwner(() => withoutLlm(async () => expect(isDemo()).toBe(false)));
   });
 
+  it("the owner without a key of their own falls back to the free demo model, still with no quota", async () => {
+    vi.stubEnv("PUBLIC_DEMO_MODE", "true");
+    vi.stubEnv("OPENROUTER_API_KEY", "sk-or-demo");
+    vi.stubEnv("LLM_PROVIDER", "anthropic");
+    vi.stubEnv("SYNTHESIZER_MODEL", "claude-sonnet-5");
+    const { llmAvailable, modelFor } = await import("@/providers/llm/registry");
+    const { demoFor, forUser } = await import("@/providers/llm/demo");
+    const { OWNER_USER_ID } = await import("@/lib/owner-auth");
+    expect(demoFor(OWNER_USER_ID)).toBe(false);
+    await forUser(OWNER_USER_ID, async () => {
+      expect(llmAvailable()).toBe(true);
+      expect((await modelFor("synthesizer")).config).toEqual({ provider: "openrouter", model: "qwen/qwen3.8-27b:free" });
+    });
+  });
+
   it("self-hosted installs keep using their own env keys", async () => {
     vi.stubEnv("PUBLIC_DEMO_MODE", "false");
     vi.stubEnv("ANTHROPIC_API_KEY", "my-key");

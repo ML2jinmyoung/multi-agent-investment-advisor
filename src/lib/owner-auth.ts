@@ -22,6 +22,12 @@ const same = (a: string, b: string) => {
 };
 
 export const isOwnerToken = (value: string | undefined) => !!value && ownerEnabled() && same(value, ownerToken());
+
+/** Secret path segment of the owner's MCP endpoint (for the Claude app connector); separate from the cookie so neither reveals the other. */
+export function mcpToken(): string {
+  return createHmac("sha256", process.env.OWNER_PASSCODE ?? "").update("ai-pb-mcp-v1").digest("base64url");
+}
+export const isMcpToken = (value: string | undefined) => !!value && ownerEnabled() && same(value, mcpToken());
 export const checkPasscode = (input: string) => ownerEnabled() && same(input, process.env.OWNER_PASSCODE ?? "");
 
 // ── brute-force limit (in memory: the app runs on one machine) ──

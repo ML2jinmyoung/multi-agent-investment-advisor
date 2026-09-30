@@ -4,6 +4,7 @@ import { z } from "zod";
 import { getDb, schema } from "@/db";
 import { cassetteMode, recordingModel, replayModel } from "./cassette";
 import { demoFreeModel, isDemo, llmAllowedHere, OPENROUTER_BASE_URL } from "./demo";
+import { flag } from "@/lib/env";
 
 export const AGENT_NAMES = ["orchestratorFallback", "portfolio", "evidence", "critic", "synthesizer"] as const;
 export type AgentName = (typeof AGENT_NAMES)[number];
@@ -86,7 +87,10 @@ export async function modelFor(agent: AgentName): Promise<{ model: ReturnType<ty
   let config = configs[agent];
   if (!hasProviderKey(config.provider) || !config.model) {
     const alt = (Object.values(configs) as ModelConfig[]).find((c) => c.model && hasProviderKey(c.provider));
+    // the owner of a public demo who set no key of their own still gets the demo's free model, without the quota
+    const free = flag("PUBLIC_DEMO_MODE") ? demoFreeModel() : undefined;
     if (alt) config = alt;
+    else if (free) config = { provider: "openrouter", model: free };
   }
   return { model: getModel(config), config };
 }

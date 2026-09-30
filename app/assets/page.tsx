@@ -1,7 +1,8 @@
 import { LedgerEditor } from "@/components/ledger-editor";
 import { LedgerHistory } from "@/components/ledger-history";
 import { OwnerLogin } from "@/components/owner-login";
-import { OWNER_USER_ID, ownerEnabled } from "@/lib/owner-auth";
+import { ConnectorCard } from "@/components/connector-card";
+import { mcpToken, OWNER_USER_ID, ownerEnabled } from "@/lib/owner-auth";
 import { MarketRefresh } from "@/components/market-refresh";
 import { getPortfolioInput } from "@/services/portfolio-input-store";
 import { getLedger, listEntries } from "@/services/ledger-store";
@@ -16,6 +17,7 @@ export const dynamic = "force-dynamic";
 
 export default async function AssetsPage() {
   const userId = await currentUserId();
+  const owner = ownerEnabled() && userId === OWNER_USER_ID;
   const [snap, input, ledger, trades] = await Promise.all([getPortfolioSnapshot(userId), getPortfolioInput(userId), getLedger(userId), listEntries(userId)]);
   // an earlier single-list input opens in the editor as one account whose broker the user must fill before saving
   const initial = ledger.length
@@ -39,7 +41,8 @@ export default async function AssetsPage() {
         </ul>
       </section>
       <MarketRefresh />
-      {ownerEnabled() && <OwnerLogin owner={userId === OWNER_USER_ID} />}
+      {ownerEnabled() && <OwnerLogin owner={owner} />}
+      {owner && <ConnectorCard url={`${process.env.PUBLIC_APP_ORIGIN ?? ""}/api/mcp/${mcpToken()}`} />}
       <LedgerEditor key={JSON.stringify(initial)} initial={initial} custom={ledger.length > 0 || !!input} />
       <LedgerHistory trades={trades} />
       {snap.accounts.map((acct) => {

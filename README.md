@@ -30,6 +30,22 @@
   → 검증 → 필요 시 Critic 및 재작성 → 답변 + Trace
 ```
 
+## 사용 방식 세 가지
+
+| | 1. 앱에서 데모만 | 2. 앱에서 실제 사용 | 3. Claude 앱에서 사용 |
+| --- | --- | --- | --- |
+| 누가 | 비밀번호 없는 방문자 | 소유자 비밀번호로 로그인한 본인 | 본인 (Claude Pro·Max) |
+| 화면 | 이 앱 | 이 앱 (폰 PWA 포함) | Claude 앱 채팅 |
+| 자산 | 데모 자산, 또는 그 브라우저에만 남는 임시 장부 | 내 장부 (모든 기기 공통) | 내 장부 (2와 같은 데이터) |
+| AI | OpenRouter 무료 모델, 하루 5개 질문 | 서버에 넣은 Claude·OpenAI 키. 키가 없으면 무료 모델을 제한 없이 | Claude 앱의 모델, 구독에 포함 |
+| 에이전트 5개와 실행 그래프 | 있음 | 있음 | 없음 (Claude가 도구를 직접 부름, 도구 호출 목록만 보임) |
+| 매매 기록 | 임시 장부에만 | 대화에서 확인 카드 → 장부 | Claude가 미리보기 → 확인 후 장부 |
+| 실제 토스 계좌 조회 | 안 함 | 공개 배포에서는 안 함 | 안 함 |
+| 비용 | 없음 | 키를 넣었을 때만 API 요금 | 없음 (구독) |
+| 설정 | `PUBLIC_DEMO_MODE=true`, `OPENROUTER_API_KEY` | `OWNER_PASSCODE` (+ 선택: `ANTHROPIC_API_KEY` 등) | 2의 설정 + `/assets`의 커넥터 주소를 Claude 앱에 등록 |
+
+한 배포로 세 가지가 동시에 됩니다. 방문자는 1, 로그인한 본인은 2, Claude 앱은 3으로 같은 장부를 봅니다. 자세한 설정은 아래 [내 장부로 로그인](#내-장부로-로그인-여러-기기에서-같은-장부), [소유자는 본인 AI 키로](#소유자는-본인-ai-키로-공개-데모와-함께), [Claude 앱에서 내 장부로 상담하기](#claude-앱에서-내-장부로-상담하기-mcp-커넥터)에 있습니다. 혼자 쓰는 자체 설치(공개 안 함)는 `PUBLIC_DEMO_MODE`를 끄고 키만 넣으면 되며, [실행 방식](#실행-방식)을 보세요.
+
 ## 증권사별 보유자산 장부
 
 여러 증권사에 나눠 가진 자산을 한곳에 정리해 두고, 그 장부를 기준으로 AI PB와 의논하고, 실제 매매 후 대화로 장부를 갱신합니다.
@@ -67,7 +83,9 @@ fly secrets set OWNER_PASSCODE='8자 이상의 긴 비밀번호'   # 로컬은 .
 
 #### 소유자는 본인 AI 키로 (공개 데모와 함께)
 
-`PUBLIC_DEMO_MODE=true`로 공개해 둔 배포에서도, 소유자로 로그인한 기기의 AI 대화는 데모 규칙(무료 모델, 하루 질문 수 제한)을 받지 않고 서버에 넣어 둔 Claude·OpenAI 키로 답합니다. 방문자는 계속 OpenRouter 무료 모델과 하루 질문 제한을 받고, 소유자 키는 쓰지 못합니다.
+`PUBLIC_DEMO_MODE=true`로 공개해 둔 배포에서도, 소유자로 로그인한 기기의 AI 대화는 데모 규칙(무료 모델, 하루 질문 수 제한)을 받지 않습니다. 서버에 Claude·OpenAI 키를 넣어 두면 그 키로 답하고, 키가 없으면 데모와 같은 OpenRouter 무료 모델을 질문 수 제한 없이 씁니다. 방문자는 계속 OpenRouter 무료 모델과 하루 질문 제한을 받고, 소유자 키는 쓰지 못합니다.
+
+키 없이 쓰려면 `OWNER_PASSCODE`만 설정하면 됩니다. 더 좋은 모델을 쓰려면 키를 추가합니다.
 
 ```bash
 fly secrets set ANTHROPIC_API_KEY=sk-ant-...     # OpenAI를 쓰면 OPENAI_API_KEY, fly.toml의 LLM_PROVIDER와 모델명도 바꿉니다
@@ -77,6 +95,19 @@ fly deploy
 - 모델명은 `fly.toml`의 `[env]`(`LLM_PROVIDER`, `ORCHESTRATOR_MODEL` 등)에서 정합니다. 이 값은 소유자에게만 쓰입니다.
 - 홈 화면의 오늘 브리핑은 1분마다 새로고침되므로 공개 데모에서는 소유자도 규칙 기반으로 둡니다. 키 비용은 대화에서만 나갑니다.
 - 실제 토스 계좌 조회는 공개 데모에서 소유자에게도 꺼져 있습니다.
+
+### Claude 앱에서 내 장부로 상담하기 (MCP 커넥터)
+
+이 앱은 소유자의 장부를 MCP 서버로도 내놓습니다. Claude 앱(Pro·Max 플랜)의 커스텀 커넥터로 연결하면, Claude가 장부·시세·오늘의 변화·투자 원칙·시뮬레이션 도구를 직접 불러 답하고, 체결한 매매를 장부에 기록할 수도 있습니다. 모델 비용은 구독에 포함되고 이 서버에서는 LLM을 부르지 않습니다. 앱 안의 대화(에이전트 5개와 실행 그래프)는 그대로 남아 있으니, 둘을 같이 씁니다.
+
+1. `OWNER_PASSCODE`를 설정하고 배포한 뒤 `/assets`에서 소유자로 로그인합니다.
+2. **Claude 앱에서 내 장부로 상담하기** 카드의 주소(`https://<앱 주소>/api/mcp/<비밀 토큰>`)를 복사합니다.
+3. claude.ai 또는 Claude 데스크톱 앱에서 설정 → 커넥터 → 커스텀 커넥터 추가에 이름과 그 주소를 넣습니다. OAuth 항목은 비워 둡니다.
+4. 대화에서 커넥터를 켜고 "오늘 내 자산 변화는?", "삼성에서 엔비디아 5주 120달러에 샀어"처럼 묻습니다.
+
+- 인증은 주소 안의 토큰 하나입니다. 토큰은 비밀번호에서 파생되며(쿠키 값과 다름) 틀리면 404입니다. 비밀번호를 바꾸면 주소도 바뀝니다. 주소를 남에게 보내지 마세요.
+- 도구: `get_ledger`, `get_portfolio`, `get_position`, `get_exposure`, `get_quotes`, `get_price_history`, `get_stock_warnings`, `get_today`, `get_investment_policy`, `check_investment_policy`, `simulate_trade`, `simulate_scenario`, `record_trade`(먼저 미리보기, `confirm: true`로 저장), `list_trades`, `undo_trade`.
+- 전송은 MCP Streamable HTTP(무상태, JSON 응답)이며 엔드포인트는 `app/api/mcp/[token]/route.ts`, 도구 정의는 `src/mcp/server.ts`에 있습니다.
 
 ## 평가 하네스
 
