@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ACCOUNT_TYPE_LABEL, type LedgerAccountInput } from "@/domain/ledger";
-import { BROKER_NAMES, normalizeBroker, parsePastedHoldings } from "@/domain/ledger-parse";
+import { BROKER_NAMES, normalizeBroker, parsePastedHoldings, resolveSymbol } from "@/domain/ledger-parse";
 import type { AccountType } from "@/domain/portfolio";
 
 type Account = Omit<LedgerAccountInput, "holdings"> & { key: string; holdings: { symbol: string; quantity: number; averagePrice?: number }[] };
@@ -49,11 +49,20 @@ export function LedgerEditor({ initial, custom }: { initial: Omit<Account, "key"
     setMessage(`${loaded}줄을 불러왔어요. 확인 후 저장하세요.${errors.length ? ` 읽지 못한 줄: ${errors.join(" / ")}` : ""}`);
   }
 
+  /** "삼성전자" typed in the code field becomes 005930; an unknown name stays as typed so the user sees what to fix. */
+  const codeFor = (typed: string) => resolveSymbol(typed) ?? typed.trim().toUpperCase();
+
   async function save() {
     setBusy(true);
     setMessage("");
     try {
-      const ledger = { accounts: accounts.map((a) => ({ id: initial.some((x) => x.id === a.id) ? a.id : undefined, broker: a.broker, name: a.name, type: a.type, cashKRW: a.cashKRW, cashUSD: a.cashUSD, holdings: a.holdings })) };
+      const resolved = accounts.map((a) => ({ ...a, holdings: a.holdings.map((h) => ({ ...h, symbol: codeFor(h.symbol) })) }));
+      for (const [i, a] of resolved.entries()) {
+        const bad = a.holdings.find((h) => !resolveSymbol(h.symbol));
+        if (bad) throw new Error(`${a.broker || `계좌 ${i + 1}`}의 "${bad.symbol}"은 종목 코드를 모르겠어요. 코드(예: NVDA, 005930)를 넣어 주세요.`);
+      }
+      setAccounts(resolved);
+      const ledger = { accounts: resolved.map((a) => ({ id: initial.some((x) => x.id === a.id) ? a.id : undefined, broker: a.broker, name: a.name, type: a.type, cashKRW: a.cashKRW, cashUSD: a.cashUSD, holdings: a.holdings })) };
       const res = await fetch("/api/ledger", { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ledger, source: pasted ? "paste" : "manual" }) });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error);
@@ -97,12 +106,12 @@ export function LedgerEditor({ initial, custom }: { initial: Omit<Account, "key"
                 </label>
                 <button type="button" className="self-end px-2 pb-2 text-sm" aria-label={`계좌 ${i + 1} 삭제`} onClick={() => setAccounts(accounts.filter((_, j) => j !== i))}>×</button>
               </div>
-              <div className="grid grid-cols-[2fr_1fr_1fr_auto] gap-2 text-xs"><span>종목 코드 (NVDA, 005930)</span><span>수량</span><span>평균 매입가 · 종목 통화</span><span /></div>
+              <div className="grid grid-cols-[2fr_1fr_1fr_auto] gap-2 text-xs"><span>종목 코드 (NVDA, 005930)</span><span>수량</span><span>평균 매입가 (국내 원, 해외 달러)</span><span /></div>
               {a.holdings.map((h, k) => (
                 <div key={k} className="grid grid-cols-[2fr_1fr_1fr_auto] gap-2">
-                  <input aria-label={`계좌 ${i + 1} 종목 ${k + 1}`} className={field} required maxLength={20} value={h.symbol} onChange={(e) => updateHolding(i, k, { symbol: e.target.value.toUpperCase() })} />
+                  <input aria-label={`계좌 ${i + 1} 종목 ${k + 1}`} className={field} required maxLength={30} placeholder="NVDA, 005930, 삼성전자" value={h.symbol} onChange={(e) => updateHolding(i, k, { symbol: e.target.value })} onBlur={(e) => updateHolding(i, k, { symbol: codeFor(e.target.value) })} />
                   <input aria-label={`계좌 ${i + 1} 수량 ${k + 1}`} className={field} required type="number" min="0.00000001" max="1000000000" step="any" value={h.quantity || ""} onChange={(e) => updateHolding(i, k, { quantity: Number(e.target.value) })} />
-                  <input aria-label={`계좌 ${i + 1} 평균 매입가 ${k + 1}`} className={field} type="number" min="0" max="1000000000" step="any" value={h.averagePrice ?? ""} onChange={(e) => updateHolding(i, k, { averagePrice: e.target.value === "" ? undefined : Number(e.target.value) })} />
+                  <input aria-label={`계좌 ${i + 1} 평균 매입가 ${k + 1}`} className={field} type="number" min="0" max="1000000000" step="any" placeholder={/^\d{5}[A-Z0-9]$/.test(codeFor(h.symbol)) ? "원" : "달러"} value={h.averagePrice ?? ""} onChange={(e) => updateHolding(i, k, { averagePrice: e.target.value === "" ? undefined : Number(e.target.value) })} />
                   <button type="button" className="px-2 text-sm" aria-label={`계좌 ${i + 1} 종목 ${k + 1} 삭제`} onClick={() => update(i, { holdings: a.holdings.filter((_, j) => j !== k) })}>×</button>
                 </div>
               ))}
@@ -133,7 +142,7 @@ export function LedgerEditor({ initial, custom }: { initial: Omit<Account, "key"
           </div>
         </fieldset>
         <p role="status" className="text-sm">{message}</p>
-        <p className="text-xs text-muted-foreground">계좌번호·인증정보는 받지 않아요. 가격은 종목이 거래되는 통화로 적어 주세요.</p>
+        <p className="text-xs text-muted-foreground">계좌번호·인증정보는 받지 않아요. 종목은 코드나 흔한 이름(삼성전자, 엔비디아)으로 적고, 평균 매입가는 종목이 거래되는 통화(국내 원, 해외 달러)로 적어 주세요. 증권사 앱의 원화 환산 평단을 해외 종목에 그대로 넣으면 수익률이 틀려요.</p>
       </form>
     </details>
   );
