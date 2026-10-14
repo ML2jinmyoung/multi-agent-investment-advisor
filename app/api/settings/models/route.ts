@@ -9,7 +9,7 @@ export async function GET() {
   return NextResponse.json({
     agents: await getModelConfigs(),
     providers: { openai: hasProviderKey("openai"), anthropic: hasProviderKey("anthropic"), openrouter: hasProviderKey("openrouter") },
-    decision: { provider: process.env.DECISION_PROVIDER ?? "jev", jev: Boolean(process.env.TYPESAFE_API_KEY) },
+    decision: { provider: process.env.DECISION_PROVIDER ?? "clef", clef: Boolean(process.env.CLEF_BASE_URL) },
   });
 }
 

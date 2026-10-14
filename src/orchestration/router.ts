@@ -118,7 +118,7 @@ export function withRuleFloor(model: Record<RoutingKey, number>, rule: Record<Ro
 const PlannerOutput = z.object(Object.fromEntries([...ROUTING_KEYS, "is_prediction_request"].map((k) => [k, z.number().min(0).max(1)])) as Record<RoutingKey | "is_prediction_request", z.ZodNumber>);
 
 /**
- * Jev answers atomic yes/no questions; the graph itself is code. Low confidence escalates to a frontier-LLM planner.
+ * Clef answers atomic yes/no questions; the graph itself is code. Low confidence escalates to a frontier-LLM planner.
  * Without any model configured, keyword rules keep the demo working.
  */
 export async function route(input: RouteInput, dm: DecisionModel | null, tracer: Tracer): Promise<RoutingDecision> {
@@ -168,7 +168,7 @@ export async function route(input: RouteInput, dm: DecisionModel | null, tracer:
         }
       }
       let escalated = false;
-      if (decidedBy === "jev" && confidence < ROUTING_THRESHOLD && llmAvailable()) {
+      if (decidedBy === "clef" && confidence < ROUTING_THRESHOLD && llmAvailable()) {
         escalated = true;
         const { model, config } = await modelFor("orchestratorFallback");
         const r = await generateObject({ model, schema: PlannerOutput, system: PLANNER_SYSTEM, prompt: `STATE: ${JSON.stringify(state)}\nQUESTIONS: ${JSON.stringify(QUESTIONS)}` });

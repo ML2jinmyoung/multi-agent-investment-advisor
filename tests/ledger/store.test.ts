@@ -10,6 +10,8 @@ import { POST } from "../../app/api/agent/route";
 const users: string[] = [];
 const user = () => { const id = randomUUID(); users.push(id); return id; };
 afterEach(async () => { for (const u of users.splice(0)) await resetLedger(u); });
+// trades dated today (KST, like saveLedger's snapshot): a fixed past date sorts before the snapshot and is overridden by it
+const tradeDay = new Date().toLocaleDateString("sv-SE", { timeZone: "Asia/Seoul" });
 
 const twoBrokers = {
   accounts: [
@@ -49,7 +51,7 @@ describe("ledger store", () => {
     const u = user();
     await saveLedger(u, twoBrokers);
     const samsung = (await getLedger(u))[0].id;
-    const trade = { accountId: samsung, action: "buy" as const, symbol: "NVDA", quantity: 10, price: 120, tradedAt: "2026-09-30", source: "chat" as const };
+    const trade = { accountId: samsung, action: "buy" as const, symbol: "NVDA", quantity: 10, price: 120, tradedAt: tradeDay, source: "chat" as const };
     const preview = await recordTrade(u, trade, { dryRun: true });
     expect(preview.entryId).toBeUndefined();
     expect(preview.after).toMatchObject({ quantity: 20, averagePrice: 110 });
@@ -72,13 +74,13 @@ describe("ledger store", () => {
     const u = user(), other = user();
     await saveLedger(u, twoBrokers);
     const [samsung, kiwoom] = await getLedger(u);
-    await recordTrade(u, { accountId: samsung.id, action: "buy", symbol: "NVDA", quantity: 5, price: 100, tradedAt: "2026-09-30", source: "chat" });
+    await recordTrade(u, { accountId: samsung.id, action: "buy", symbol: "NVDA", quantity: 5, price: 100, tradedAt: tradeDay, source: "chat" });
     await saveLedger(u, { accounts: [{ ...twoBrokers.accounts[0], id: samsung.id, holdings: [{ symbol: "NVDA", quantity: 15, averagePrice: 100 }, { symbol: "AAPL", quantity: 1 }] }] });
     const after = await getLedger(u);
     expect(after.map((a) => a.id)).toEqual([samsung.id]); // 키움 removed
     expect(after[0].holdings.map((h) => [h.symbol, h.quantity])).toEqual([["NVDA", 15], ["AAPL", 1]]);
     expect(await listEntries(u)).toHaveLength(1);
-    await expect(recordTrade(other, { accountId: samsung.id, action: "buy", symbol: "NVDA", quantity: 1, price: 1, tradedAt: "2026-09-30", source: "chat" })).rejects.toThrow(/존재하지 않는/);
+    await expect(recordTrade(other, { accountId: samsung.id, action: "buy", symbol: "NVDA", quantity: 1, price: 1, tradedAt: tradeDay, source: "chat" })).rejects.toThrow(/존재하지 않는/);
     await expect(saveLedger(other, { accounts: [{ ...twoBrokers.accounts[1], id: kiwoom.id }] })).rejects.toThrow(/존재하지 않는/);
   });
 });

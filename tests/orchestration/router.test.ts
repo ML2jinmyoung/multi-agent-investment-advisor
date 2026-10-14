@@ -9,7 +9,7 @@ const held = ["NVDA", "QQQ", "VOO", "AAPL", "005930", "000660", "069500", "TSLA"
 describe("rule floor under the model router (F-011)", () => {
   it("a low-scoring model cannot drop portfolio for a held symbol or policy/risk for a decision question", async () => {
     const r = await route(input("삼성전자 최근 공시 있어?"), fakeModel(0.05), new Tracer("t"));
-    expect(r.decidedBy).toBe("jev");
+    expect(r.decidedBy).toBe("clef");
     expect(buildPlan(r).portfolio).toBe(true);
     const d = await route(input("엔비디아 최근 실적 어때?"), fakeModel(0.05), new Tracer("t"));
     expect(buildPlan(d)).toMatchObject({ portfolio: true, evidence: true, policy: true, riskReview: true });
@@ -41,7 +41,7 @@ const input = (message: string) => ({ message, hasPortfolio: true, hasPolicy: tr
 
 function fakeModel(p: number): DecisionModel {
   return {
-    name: "jev",
+    name: "clef",
     async choice() {
       throw new Error("unused");
     },
@@ -108,16 +108,16 @@ describe("routing + plan", () => {
     expect(buildPlan(r)).toMatchObject({ portfolio: true, simulation: true, evidence: true, policy: true, riskReview: true, simple: false });
   });
 
-  it("jev routing with high confidence is not escalated", async () => {
+  it("clef routing with high confidence is not escalated", async () => {
     const r = await route(input("NVDA 500만원 더 살까?"), fakeModel(0.97), new Tracer("t"));
-    expect(r.decidedBy).toBe("jev");
+    expect(r.decidedBy).toBe("clef");
     expect(r.confidence).toBeCloseTo(0.94, 2);
     expect(r.escalated).toBe(false);
   });
 
-  it("ambiguous jev answers fall below the threshold (escalation candidate)", async () => {
+  it("ambiguous clef answers fall below the threshold (escalation candidate)", async () => {
     const r = await route(input("이거 어때?"), fakeModel(0.55), new Tracer("t"));
     expect(r.confidence).toBeLessThan(0.7);
-    expect(r.escalated).toBe(false); // no LLM configured in tests -> stays with jev
+    expect(r.escalated).toBe(false); // no LLM configured in tests -> stays with clef
   });
 });

@@ -34,7 +34,7 @@ fly secrets set DEMO_QUESTIONS_PER_DAY=5            # 선택, 세션(브라우�
 - 세션별 한도나 무료 한도를 넘으면 규칙 기반 답변으로 대체하고 화면에 안내합니다.
 - 홈 브리핑은 60초마다 갱신되므로 데모에서는 LLM 없이 규칙 기반으로 설명합니다.
 - 무료 모델은 제공사가 입력을 학습 등에 사용할 수 있습니다. 데모는 예시·방문자 입력 보유자산만 다룹니다.
-- `TYPESAFE_API_KEY`(Jev)는 이 정책의 대상이 아닙니다. 데모 secrets에 넣으면 방문자 요청의 라우팅·검증이 운영자 Jev 키로 호출됩니다.
+- `CLEF_BASE_URL`(Clef)은 이 정책의 대상이 아닙니다. 데모 secrets에 넣으면 방문자 요청의 라우팅·검증도 운영자의 Clef 서버로 갑니다.
 
 ## 데모 보유자산 + 실제 시장 정보
 
@@ -59,7 +59,7 @@ fly secrets set DEMO_QUESTIONS_PER_DAY=5            # 선택, 세션(브라우�
 | `ANTHROPIC_API_KEY` / `OPENAI_API_KEY` / `OPENROUTER_API_KEY` | LLM 제공자 인증 |
 | `LLM_PROVIDER` | 모든 에이전트의 기본 제공자: `anthropic`(기본) · `openai` · `openrouter` |
 | `ORCHESTRATOR_MODEL`, `PORTFOLIO_MODEL`, `EVIDENCE_MODEL`, `CRITIC_MODEL`, `SYNTHESIZER_MODEL` | 에이전트별 모델명 |
-| `DECISION_PROVIDER=jev`, `TYPESAFE_API_KEY` | 선택적 Jev 라우팅·검증; 미설정 시 LLM 또는 규칙 사용 |
+| `DECISION_PROVIDER=clef`, `CLEF_BASE_URL`, `CLEF_MODEL`, `CLEF_API_KEY` | 선택적 Clef 라우팅·검증; 미설정 시 LLM 또는 규칙 사용 |
 | `ROUTING_THRESHOLD`, `VERIFICATION_THRESHOLD` | planner 전환 및 Critic 호출 임계값 |
 | `ENABLE_AGENT_TRACE=true` | 실행·도구 호출 기록 |
 
@@ -75,7 +75,7 @@ fly secrets set DEMO_QUESTIONS_PER_DAY=5            # 선택, 세션(브라우�
 
 `DART_API_KEY`, `SEC_USER_AGENT`는 외부 공시·재무 데이터 연동에 사용합니다. `DATABASE_URL` 기본값은 `file:./data/app.db`이며 첫 DB 접근 시 migration이 적용됩니다. 모델이나 공시 API가 없을 때 실행되는 경로와 누락 데이터는 UI·Trace에 표시됩니다.
 
-기존 VM 배포는 `docker-compose.prod.yml`과 Caddy HTTPS 구성을 사용합니다. 로컬 JEFF를 사용할 경우 `scripts/jeff.sh`의 설치 경로를 확인하고 `JEV_BASE_URL`을 해당 서버 주소로 설정합니다.
+기존 VM 배포는 `docker-compose.prod.yml`과 Caddy HTTPS 구성을 사용합니다. Clef를 쓸 경우 GPU 서버에서 `scripts/clef.sh`로 SGLang 서버를 띄우고 `CLEF_BASE_URL`을 그 주소로 설정합니다.
 
 최종 배포 검증: `b53e14f`를 별도 작업 폴더에서 빌드했고 55개 테스트와 lint를 통과했습니다. 공개 서버에서 직접 입력 저장·삭제, 브라우저 세션 분리, 입력 수량 × 실제 시세 × 환율 계산, Today 응답과 에이전트 SSE 응답을 확인했습니다.
 

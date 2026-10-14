@@ -184,6 +184,23 @@ ORCHESTRATOR_MODEL=claude-haiku-4-5
 # 또는 OpenRouter: LLM_PROVIDER=openrouter, OPENROUTER_API_KEY=..., *_MODEL에 OpenRouter 모델 ID
 ```
 
+### 결정 모델: Cloudflare Clef (선택)
+
+Router의 노드 선택과 답변 검증은 짧은 예/아니오·선택 질문으로 나뉘어 결정 모델에 들어갑니다. 이 결정 모델로 [Cloudflare Clef](https://huggingface.co/Cloudflare/clef)를 씁니다. Clef는 글을 생성하지 않고, 질문의 선택지마다 확률을 한 번의 추론으로 돌려주는 27B 모델입니다(Apache-2.0). Clef 서버가 없으면 LLM structured output으로, LLM 키도 없으면 규칙으로 같은 판단을 합니다.
+
+Clef는 직접 띄워야 합니다. GPU 서버(테스트 환경 H200 1장)에서 `scripts/clef.sh`를 실행하면 SGLang이 `:30000/v1/systemone`을 엽니다. 더 작은 `Cloudflare/clef-flash`는 `CLEF_MODEL_PATH`로 고릅니다.
+
+```bash
+# GPU 서버
+CLEF_API_KEY=<임의의 키> ./scripts/clef.sh          # CLEF_MODEL_PATH=Cloudflare/clef-flash 도 가능
+
+# 앱 (.env.local 또는 fly secrets set)
+DECISION_PROVIDER=clef
+CLEF_BASE_URL=http://<gpu-host>:30000
+CLEF_MODEL=Cloudflare/clef                          # 서버의 모델과 같게
+CLEF_API_KEY=<위와 같은 키>
+```
+
 Next.js · TypeScript · Vercel AI SDK · Zod · Drizzle / Fly.io.
 
 # TODO

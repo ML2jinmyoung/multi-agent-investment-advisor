@@ -33,10 +33,10 @@ export type YesNoQuestion = string | { question: string; true?: string; false?: 
 
 /**
  * System-One decision model: routing, scoring, verification. Never generates prose.
- * Implementations: JevDecisionModel (TypeSafe Jev), LLMDecisionModel (structured-output fallback).
+ * Implementations: ClefDecisionModel (Cloudflare Clef), LLMDecisionModel (structured-output fallback).
  */
 export interface DecisionModel {
-  readonly name: "jev" | "llm";
+  readonly name: "clef" | "llm";
   choice<T extends string>(state: unknown, choices: readonly T[] | Record<T, string | null>, question: string): Promise<ChoiceDecision<T>>;
   score(state: unknown, criteria: ScoreCriteria): Promise<ScoreDecision>;
   evaluate(state: unknown, statement: string, criteria?: { true?: string; false?: string }): Promise<ProbabilityDecision>;

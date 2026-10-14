@@ -30,7 +30,7 @@ const STAGES: Stage[] = [
   { nodes: ["llm-critic", "synthesizer-revision"], layout: "conditional", caption: "검증에 걸렸을 때만" },
 ];
 
-const ENGINE_LABEL = { decision: "Jev", code: "code", llm: "LLM" } as const;
+const ENGINE_LABEL = { decision: "Clef", code: "code", llm: "LLM" } as const;
 
 type Status = "idle" | "running" | "ok" | "skipped" | "error";
 const STATUS_WORD: Record<Status, string> = { idle: "대기", running: "진행 중", ok: "완료", skipped: "건너뜀", error: "실패" };

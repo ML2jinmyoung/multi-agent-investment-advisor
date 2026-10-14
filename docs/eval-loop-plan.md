@@ -22,7 +22,7 @@
 | 있음 | 위치 | 한계 |
 |---|---|---|
 | 라우팅 golden 30문항, exact-match 평가 | `tests/evals/golden.json`, `routing-eval.test.ts` | 규칙 라우터의 **계획 선택**만 측정. LLM 답변 품질은 0건 |
-| 검증 규칙 5개 (unsupported_claim 등) + Jev/LLM 확률 + Critic 1회 재작성 | `src/orchestration/escalation.ts`, `agents/llm-critic.ts` | 재작성 후 재검증 없음. 임계값 0.3은 근거 데이터 없이 정한 값 |
+| 검증 규칙 5개 (unsupported_claim 등) + Clef/LLM 확률 + Critic 1회 재작성 | `src/orchestration/escalation.ts`, `agents/llm-critic.ts` | 재작성 후 재검증 없음. 임계값 0.3은 근거 데이터 없이 정한 값 |
 | 실행 Trace (단계·도구·토큰·비용) SQLite 저장 | `orchestration/tracer.ts`, `db/schema.ts` | 저장만 하고 **평가 케이스로 되돌리는 경로가 없음**. 사람 라벨 저장 공간 없음 |
 | 결정론적 엔진 회귀 테스트 55개 | `tests/**` | 숫자 계산은 검증되지만 LLM이 그 숫자를 **올바르게 말하는지**는 검증 안 됨 |
 

@@ -1,14 +1,14 @@
 import { llmAvailable } from "@/providers/llm/registry";
 import type { DecisionModel } from "./interface";
-import { JevDecisionModel } from "./jev";
+import { ClefDecisionModel } from "./clef";
 import { LLMDecisionModel } from "./llm-fallback";
 
 export * from "./interface";
 
-/** DECISION_PROVIDER=jev (default) with TYPESAFE_API_KEY -> Jev; otherwise LLM structured output; null when nothing is configured. */
+/** DECISION_PROVIDER=clef (default) with CLEF_BASE_URL -> Clef; otherwise LLM structured output; null when nothing is configured. */
 export function decisionModel(): DecisionModel | null {
-  const pref = process.env.DECISION_PROVIDER ?? "jev";
-  if (pref === "jev" && process.env.TYPESAFE_API_KEY) return new JevDecisionModel(process.env.TYPESAFE_API_KEY);
+  const pref = process.env.DECISION_PROVIDER ?? "clef";
+  if (pref === "clef" && process.env.CLEF_BASE_URL) return new ClefDecisionModel(process.env.CLEF_BASE_URL);
   if (llmAvailable()) return new LLMDecisionModel();
   return null;
 }

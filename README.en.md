@@ -102,6 +102,12 @@ ORCHESTRATOR_MODEL=claude-haiku-4-5
 # Or OpenRouter: LLM_PROVIDER=openrouter, OPENROUTER_API_KEY=..., and OpenRouter model IDs in the *_MODEL variables above
 ```
 
+### Decision model: Cloudflare Clef (optional)
+
+Routing and answer verification are split into short yes/no and choice questions for a decision model, [Cloudflare Clef](https://huggingface.co/Cloudflare/clef): a 27B model that returns a probability for every option in one forward pass instead of generating text. Without a Clef server the same questions go to LLM structured output, or to rules when no LLM key is set.
+
+Clef is self-hosted. On a GPU host (tested on one H200), `scripts/clef.sh` starts SGLang serving `:30000/v1/systemone`; `CLEF_MODEL_PATH=Cloudflare/clef-flash` picks the smaller variant. Point the app at it with `DECISION_PROVIDER=clef`, `CLEF_BASE_URL=http://<gpu-host>:30000`, `CLEF_MODEL` (same as the server's model) and `CLEF_API_KEY` (same as the server's `--api-key`, if set).
+
 Next.js · TypeScript · Vercel AI SDK · Zod · Drizzle / Fly.io.
 
 # TODO

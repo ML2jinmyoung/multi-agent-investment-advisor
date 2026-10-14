@@ -48,7 +48,7 @@ export const agentVariant = (): AgentVariant => {
 };
 
 /**
- * Router -> deterministic engines -> (Portfolio Agent ∥ Evidence Agent) -> Synthesizer -> Jev verification -> optional Critic.
+ * Router -> deterministic engines -> (Portfolio Agent ∥ Evidence Agent) -> Synthesizer -> Clef verification -> optional Critic.
  * Only the intelligence a question needs is invoked; everything numeric is computed in code before any model runs.
  */
 export async function runAgent(

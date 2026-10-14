@@ -14,7 +14,7 @@
  * Exit code 1 when a regression/golden trial fails (status not ok, or a code grader / must-mention rule fails).
  *
  * Environment is pinned before any app module loads: eval DB, fixture market data, external evidence off,
- * LLM-based decision model (Jev needs a local server and would make runs environment-dependent).
+ * LLM-based decision model (Clef needs a GPU server and would make runs environment-dependent).
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
@@ -57,7 +57,7 @@ Object.assign(process.env, {
   LLM_CASSETTE_MODE: mode === "record" || mode === "replay" ? mode : "off",
   LLM_CASSETTE_DIR: CASSETTE_DIR,
 });
-delete process.env.TYPESAFE_API_KEY;
+delete process.env.CLEF_BASE_URL;
 if (mode === "rules") for (const k of ["ANTHROPIC_API_KEY", "OPENAI_API_KEY", "OPENROUTER_API_KEY"]) delete process.env[k];
 // Topping up an existing recording (`--mode record --ids ...`) keeps its models and its day, so old and new
 // cassettes replay together.
