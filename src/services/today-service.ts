@@ -9,7 +9,7 @@ import { buildCandidates, rank } from "./relevance-engine";
 
 /** Optional model steps, injected so the deterministic pipeline works without any API key. */
 export interface TodayModelHooks {
-  /** returns 0..1 relevance per candidate id (Jev noul: "materially relevant to this investor today?") */
+  /** returns 0..1 relevance per candidate id (Clef noul: "materially relevant to this investor today?") */
   relevance?: (candidates: TodayItem[]) => Promise<Record<string, number>>;
   /** rewrites explanations; must stay within `facts` */
   explain?: (items: TodayItem[]) => Promise<TodayItem[]>;

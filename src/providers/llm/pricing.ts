@@ -8,7 +8,6 @@ const PRICES: [string, number, number][] = [
   ["claude-haiku", 1, 5],
   ["claude-sonnet", 3, 15],
   ["claude-opus", 15, 75],
-  ["jev", 0.042, 0],
 ];
 
 export function estimateCost(model: string | undefined, usage: Usage | undefined): number | undefined {

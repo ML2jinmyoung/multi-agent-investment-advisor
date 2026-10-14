@@ -6,7 +6,7 @@
 
 **구현됨**
 
-- `src/orchestration/router.ts`: 질문과 대화 문맥을 파싱하고 필요한 작업을 선택합니다. Jev 판단이 불확실하면 LLM planner로 전환하며, 모델이 없으면 규칙을 사용합니다.
+- `src/orchestration/router.ts`: 질문과 대화 문맥을 파싱하고 필요한 작업을 선택합니다. Clef 판단이 불확실하면 LLM planner로 전환하며, 모델이 없으면 규칙을 사용합니다.
 - `src/orchestration/graph.ts`, `orchestrator.ts`, `runner.ts`: 조건별 실행 계획, Portfolio·Evidence 병렬 실행, 결과 합성, 일부 실패의 수집과 대체 답변을 구현합니다.
 - `src/agents/portfolio-agent.ts`, `evidence-agent.ts`: AI SDK `generateText`에 도구를 전달하며, 4~6단계의 호출 제한과 구조화 출력을 사용합니다.
 - `src/services/conversation-store.ts`: SQLite에 대화를 저장하고 최근 12개 메시지를 사용합니다. assistant 메시지는 요약과 권고를 뽑아 문맥을 줄입니다. 자동 장기 요약이나 벡터 메모리는 없습니다.
@@ -26,7 +26,7 @@ API 키가 없는 실행에서는 규칙 라우팅·금융 계산·메모리·Tr
 
 - 30문항 golden dataset으로 여덟 가지 라우팅 결과를 검사합니다. `route(..., null, ...)`로 모델을 제외한 규칙 경로를 평가합니다.
 - 정책·시뮬레이션·정규화·사용자별 대화 저장·Toss 토큰 처리 등을 회귀 테스트합니다.
-- 검증 규칙과 선택적 Jev 판단으로 원칙 충돌, 예측 단정, 근거 부족 등을 점검합니다. 임계값을 넘으면 LLM Critic이 문제를 지적하고 Synthesizer가 한 번 재작성합니다.
+- 검증 규칙과 선택적 Clef 판단으로 원칙 충돌, 예측 단정, 근거 부족 등을 점검합니다. 임계값을 넘으면 LLM Critic이 문제를 지적하고 Synthesizer가 한 번 재작성합니다.
 
 **한계와 다음 측정**
 

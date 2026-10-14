@@ -4,7 +4,7 @@ import { VERIFICATION_KEYS } from "@/domain/agent";
 import type { PolicyCheck } from "@/domain/policy";
 import type { Tracer } from "./tracer";
 
-export const routingNeedsEscalation = (r: RoutingDecision) => r.decidedBy === "jev" && r.confidence < ROUTING_THRESHOLD;
+export const routingNeedsEscalation = (r: RoutingDecision) => r.decidedBy === "clef" && r.confidence < ROUTING_THRESHOLD;
 
 const PREDICTION_AS_FACT = /(오를\s*것입니다|상승할\s*것입니다|떨어질\s*것입니다|하락할\s*것입니다|확실히\s*(오|상승|하락)|반드시\s*(오|상승)|will\s+(definitely\s+)?(rise|go up|fall))/i;
 const UNQUALIFIED_BUY = /(매수해도\s*(됩니다|좋습니다|괜찮)|사도\s*(됩니다|좋습니다|괜찮)|추가\s*매수를\s*권)/;
@@ -17,7 +17,7 @@ const QUESTIONS: Record<VerificationKey, string> = {
   stale_evidence: "Does the answer rely on data that is stale or explicitly flagged as unavailable?",
 };
 
-/** Code checks first (cheap, deterministic), then Jev atomic questions; LLM Critic runs only above threshold. */
+/** Code checks first (cheap, deterministic), then Clef atomic questions; LLM Critic runs only above threshold. */
 export async function verifyAnswer(
   input: { message: string; answer: AgentAnswer; policyChecks: PolicyCheck[]; dataAsOf: string; warnings: string[] },
   dm: DecisionModel | null,

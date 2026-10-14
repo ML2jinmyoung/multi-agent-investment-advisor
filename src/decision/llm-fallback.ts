@@ -20,7 +20,7 @@ const SYSTEM =
   "You are a calibrated decision function inside an investment assistant. Read the JSON state and answer the questions with probabilities only. " +
   "0 means definitely no, 1 means definitely yes. Do not explain. Be well calibrated: use values near 0.5 only when genuinely uncertain.";
 
-/** Runs the same atomic questions through OpenAI/Claude structured output when Jev is unavailable. */
+/** Runs the same atomic questions through OpenAI/Claude structured output when Clef is unavailable. */
 export class LLMDecisionModel implements DecisionModel {
   readonly name = "llm" as const;
 

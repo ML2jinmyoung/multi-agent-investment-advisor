@@ -42,7 +42,7 @@ export type RoutingKey = (typeof ROUTING_KEYS)[number];
 export const RoutingDecision = z.object({
   scores: z.record(z.enum(ROUTING_KEYS), z.number().min(0).max(1)),
   confidence: z.number().min(0).max(1),
-  decidedBy: z.enum(["jev", "llm", "rule"]),
+  decidedBy: z.enum(["clef", "llm", "rule", "jev"]), // "jev": traces recorded before the switch to Clef
   escalated: z.boolean(),
   symbols: z.array(z.string()),
   trade: z
@@ -68,7 +68,7 @@ export type VerificationKey = (typeof VERIFICATION_KEYS)[number];
 export const VerificationResult = z.object({
   scores: z.record(z.enum(VERIFICATION_KEYS), z.number().min(0).max(1)),
   needsCritic: z.boolean(),
-  decidedBy: z.enum(["jev", "llm", "rule"]),
+  decidedBy: z.enum(["clef", "llm", "rule", "jev"]), // "jev": traces recorded before the switch to Clef
   latencyMs: z.number(),
 });
 export type VerificationResult = z.infer<typeof VerificationResult>;
